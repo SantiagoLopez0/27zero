@@ -131,7 +131,7 @@ p, .text-body, a, .text-link {
 /* ===== Pills ===== */
 .section--pills {
   padding-top: 0;
-  padding-bottom: var(--space-sm);
+  padding-bottom: var(--space-md);
 }
 
 .pills-container {
@@ -203,6 +203,7 @@ p, .text-body, a, .text-link {
 
 /* El header sí queda contenido al max-width con su padding */
 .slider-header {
+  padding-left: 6.5em;
   padding-right: 6.5em;
   max-width: 1440px;
 }
@@ -219,6 +220,7 @@ p, .text-body, a, .text-link {
 .slider-footer {
   display: flex;
   justify-content: flex-end;
+  padding-left: 6.5em;
   padding-right: 6.5em;
   max-width: 1440px;
 }
@@ -267,7 +269,7 @@ p, .text-body, a, .text-link {
   scrollbar-width: none;
   cursor: grab;
   user-select: none;
-  /* Padding-right para que la última card no quede pegada al borde */
+  padding-left: 6.5em;
   padding-right: 6.5em;
 }
 
@@ -335,20 +337,21 @@ p, .text-body, a, .text-link {
   justify-content: flex-end;
 }
 
-/* Eyebrow: 15px / 14 = 1.07em */
+/* Eyebrow: 13px / 14 = 0.93em */
 .card-work-eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 1.07em;
+  font-size: 0.93em;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
   color: var(--color-black);
+  text-transform: capitalize;
 }
 
-/* Title: 24px / 14 = 1.71em */
+/* Title: 20px / 14 = 1.43em — sentence case via JS */
 .card-work-title {
   font-family: 'Inter', sans-serif;
-  font-size: 1.71em;
+  font-size: 1.43em;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0;
@@ -384,9 +387,10 @@ p, .text-body, a, .text-link {
 
 .card-work-client-name {
   font-family: 'Inter', sans-serif;
-  font-size: 1em;
+  font-size: 0.93em;
   font-weight: 500;
   color: var(--color-black);
+  text-transform: capitalize;
 }
 
 .card-work-arrow {

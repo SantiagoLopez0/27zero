@@ -29,7 +29,7 @@ function createCardElement(category) {
     <div class="card-work-body">
       <div class="card-work-content">
         <span class="card-work-eyebrow">[${category.label.toUpperCase()}]</span>
-        <h3 class="card-work-title">[PROJECT HEADLINE]</h3>
+        <h3 class="card-work-title">[Project headline]</h3>
         <div class="card-work-client">
           <div class="card-work-client-logo"><span>CL</span></div>
           <span class="card-work-client-name">[CLIENT NAME]</span>
