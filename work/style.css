@@ -201,9 +201,6 @@ p, .text-body, a, .text-link {
 .slider-header {
   padding-left: 6.5em;
   padding-right: 6.5em;
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .slider-title {
@@ -220,9 +217,6 @@ p, .text-body, a, .text-link {
   justify-content: flex-end;
   padding-left: 6.5em;
   padding-right: 6.5em;
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .slider-nav {
@@ -265,12 +259,9 @@ p, .text-body, a, .text-link {
   overflow: hidden;
 }
 
-/* Inner container replica el max-width del .slider-header para
-   alinear la primera card con el título */
+/* Inner container: solo da el padding-left para alinear con el título.
+   Sin max-width ni restricción de ancho — el corte lo hace el wrap. */
 .slider-track-inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 100%;
   padding-left: 6.5em;
 }
 
