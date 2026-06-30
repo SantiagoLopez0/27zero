@@ -269,8 +269,14 @@ p, .text-body, a, .text-link {
   scrollbar-width: none;
   cursor: grab;
   user-select: none;
-  padding-left: 8.8em;
   padding-right: 6.5em;
+}
+
+/* Spacer invisible que alinea la primera card con el container.
+   El gap del track lo separa de la primera card. */
+.slider-track-spacer {
+  flex: 0 0 8.8em;
+  pointer-events: none;
 }
 
 .slider-track::-webkit-scrollbar {
