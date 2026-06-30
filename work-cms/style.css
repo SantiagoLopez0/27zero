@@ -3,12 +3,13 @@
    ============================ */
 
 :root {
-  --color-indigo:  #440E92;
-  --color-purple:  #B382F9;
-  --color-black:   #101010;
-  --color-gray:    #F5F5F5;
+  --color-indigo:   #440E92;
+  --color-purple:   #B382F9;
+  --color-black:    #000000;
+  --color-black-ui: #101010;
+  --color-gray:     #F5F5F5;
   --color-gray-mid: #D9D9D9;
-  --color-white:   #FFFFFF;
+  --color-white:    #FFFFFF;
 
   --space-xs:  0.5em;
   --space-sm:  1.5em;
@@ -16,6 +17,12 @@
   --space-lg:  6em;
   --space-xl:  9em;
   --space-2xl: 14em;
+
+  /* Page-specific tokens */
+  --spacing-section: 8.93em;   /* 125px */
+  --spacing-block:   7.5em;    /* 105px */
+  --spacing-grid:    5.36em;   /* 75px  */
+  --spacing-images:  1.07em;   /* 15px  */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +32,7 @@ body {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-white);
-  color: var(--color-black);
+  color: var(--color-black-ui);
 }
 
 @media (max-width: 767px) {
@@ -36,7 +43,7 @@ body {
 h1 {
   font-family: 'Lora', serif;
   font-style: normal;
-  font-size: 3.43em;
+  font-size: 3.43em;   /* 48px */
   line-height: 1.25;
   font-weight: 500;
   letter-spacing: -0.48px;
@@ -58,40 +65,50 @@ p, .text-body {
   letter-spacing: 0;
 }
 
-.lora {
-  font-family: 'Lora', serif;
-  font-style: normal;
-  font-weight: 400;
-}
-
 .text-eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 0.93em;
-  font-weight: 500;
+  font-size: 0.86em;   /* 12px */
+  font-weight: 400;
   line-height: 1.5;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: var(--color-black);
+  letter-spacing: 0;
+  text-transform: capitalize;
+  color: var(--color-black-ui);
   display: block;
 }
 
-.text-eyebrow--light { color: rgba(255,255,255,0.6); }
+.text-eyebrow--light {
+  color: var(--color-white);
+}
+
 .text--light { color: var(--color-white); }
 
 /* ===== Layout ===== */
 .section {
-  padding-top: var(--space-lg);
-  padding-bottom: var(--space-lg);
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
 }
 
+/* Hero: padding-bottom = 105px para que hero + client section = correctos */
 .section--hero {
   padding-top: 12em;
-  padding-bottom: var(--space-lg);
+  padding-bottom: var(--spacing-block);
 }
 
-.section--dark    { background-color: var(--color-black); }
-.section--purple  { background-color: var(--color-purple); }
-.section--indigo  { background-color: var(--color-indigo); }
+/* Client section: padding-top = 0 (el hero ya tiene el spacing), pb = 105px */
+.section--client {
+  padding-top: 0;
+  padding-bottom: var(--spacing-block);
+}
+
+/* Results: padding-top 0 */
+.section--results {
+  padding-top: 0;
+  padding-bottom: var(--spacing-section);
+}
+
+.section--dark   { background-color: var(--color-black); }
+.section--purple { background-color: var(--color-purple); }
+.section--indigo { background-color: var(--color-indigo); }
 
 .container {
   max-width: 1440px;
@@ -100,14 +117,19 @@ p, .text-body {
   padding-right: 6.5em;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--spacing-block);  /* 105px entre elementos del container */
+}
+
+/* Container con gap para grids de imagenes (15px) */
+.container--images {
+  gap: var(--spacing-images);
 }
 
 @media (max-width: 767px) {
   .container {
     padding-left: 2em;
     padding-right: 2em;
-    gap: var(--space-sm);
+    gap: var(--space-md);
   }
 }
 
@@ -138,25 +160,21 @@ p, .text-body {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--color-black);
+  color: var(--color-black-ui);
   opacity: 0.35;
 }
 
-.placeholder--white {
-  background-color: var(--color-white);
-}
-
-.placeholder--white span {
-  color: var(--color-black);
-}
+.placeholder--white { background-color: var(--color-white); }
+.placeholder--white span { color: var(--color-black-ui); }
 
 /* Sizes */
-.placeholder--hero  { height: 38em; }
-.placeholder--xl    { height: 28em; }
-.placeholder--lg    { height: 22em; }
-.placeholder--md    { height: 14em; }
-.placeholder--sm    { height: 14em; }
-.placeholder--logo  {
+.placeholder--hero { height: 38em; }
+.placeholder--xl   { height: 28em; }
+.placeholder--lg   { height: 22em; }
+.placeholder--md   { height: 14em; }
+.placeholder--sm   { height: 14em; }
+
+.placeholder--logo {
   width: 4em;
   height: 4em;
   border-radius: 50%;
@@ -174,31 +192,29 @@ p, .text-body {
   letter-spacing: 0;
 }
 
-/* ===== Grids ===== */
+/* ===== Grids — gap de 15px entre imágenes ===== */
 .grid-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5em;
+  gap: var(--spacing-images);
 }
 
 .grid-3col {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5em;
+  gap: var(--spacing-images);
 }
 
 .grid-4col {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5em;
+  gap: var(--spacing-images);
 }
 
 @media (max-width: 767px) {
   .grid-2col,
   .grid-3col,
-  .grid-4col {
-    grid-template-columns: 1fr;
-  }
+  .grid-4col { grid-template-columns: 1fr; }
 }
 
 /* ===== Client block ===== */
@@ -210,16 +226,13 @@ p, .text-body {
 }
 
 @media (max-width: 767px) {
-  .client-block {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
+  .client-block { grid-template-columns: 1fr; gap: var(--space-md); }
 }
 
 .client-meta {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 4.29em;   /* 60px */
 }
 
 .client-logo-wrap {
@@ -238,7 +251,7 @@ p, .text-body {
   font-family: 'Inter', sans-serif;
   font-size: 1.29em;
   font-weight: 700;
-  color: var(--color-black);
+  color: var(--color-black-ui);
 }
 
 .client-tagline {
@@ -248,12 +261,11 @@ p, .text-body {
   color: rgba(16,16,16,0.5);
 }
 
+/* Sin border-top en client-details */
 .client-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-sm);
-  border-top: 1px solid rgba(16,16,16,0.12);
-  padding-top: var(--space-sm);
 }
 
 .client-detail-group {
@@ -283,7 +295,7 @@ p, .text-body {
   font-family: 'Inter', sans-serif;
   font-size: 1em;
   font-weight: 400;
-  color: var(--color-black);
+  color: var(--color-black-ui);
   line-height: 1.5;
 }
 
@@ -297,13 +309,11 @@ p, .text-body {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-sm);
+  gap: 5.36em;   /* 75px */
 }
 
 @media (max-width: 767px) {
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
 }
 
 .stat {
@@ -312,36 +322,43 @@ p, .text-body {
   gap: 0.75em;
 }
 
+/* stat-number: Lora 500 48px como el H1 */
 .stat-number {
-  font-family: 'Inter', sans-serif;
-  font-size: 4em;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -2px;
-  color: var(--color-black);
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-size: 3.43em;   /* 48px */
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.48px;
+  color: var(--color-black-ui);
 }
 
 /* ===== Testimonial ===== */
-.testimonial-block {
+/* Grid de 3 col: eyebrow | quote svg | content */
+.testimonial-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 0.6fr 1fr 1.4fr;
   gap: var(--space-lg);
   align-items: center;
 }
 
 @media (max-width: 767px) {
-  .testimonial-block {
+  .testimonial-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
 }
 
-.testimonial-quotes {
-  font-family: 'Lora', serif;
-  font-size: 18em;
-  line-height: 0.75;
-  color: var(--color-purple);
-  user-select: none;
+.testimonial-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-svg svg {
+  width: 100%;
+  max-width: 26.86em;   /* 376px */
+  height: auto;
 }
 
 .testimonial-content {
@@ -389,8 +406,13 @@ p, .text-body {
 }
 
 @media (max-width: 767px) {
-  .split-intro {
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
-  }
+  .split-intro { grid-template-columns: 1fr; gap: var(--space-sm); }
+}
+
+/* ===== Section content wrapper
+   Agrupa split-intro + grids con gap de 75px ===== */
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-grid);   /* 75px entre intro y grids de imágenes */
 }
