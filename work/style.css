@@ -255,12 +255,23 @@ p, .text-body, a, .text-link {
 }
 
 /* ===== Slider track ===== */
+
+/* El wrap ocupa 100vw y corta visualmente al borde de pantalla */
 .slider-track-wrap {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+/* Inner container replica el max-width del .slider-header para
+   alinear la primera card con el título */
+.slider-track-inner {
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
   padding-left: 6.5em;
-  overflow: visible;
 }
 
 .slider-track {
