@@ -11,7 +11,7 @@
 
   --space-xs:  0.5em;
   --space-sm:  1.5em;
-  --space-md:  3em;
+  --space-md:  3.5em;
   --space-lg:  6em;
   --space-xl:  9em;
   --space-2xl: 14em;
@@ -256,10 +256,9 @@ p, .text-body, a, .text-link {
 
 /* ===== Slider track ===== */
 .slider-track-wrap {
-  max-width: 1440px;
-  margin: 0 auto;
   width: 100%;
-  padding-left: 6.5em;
+  /* aligns first card with title at any viewport width */
+  padding-left: max(6.5em, calc((100vw - 1440px) / 2 + 6.5em));
   overflow: visible;
 }
 

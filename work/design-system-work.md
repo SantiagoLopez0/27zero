@@ -1,6 +1,6 @@
 # Work Page — Sub Design System
 
-Clases específicas de la página `/work`. Complementan el design system global (`/design-system.md`). Siguen la convención `c-` para base y `cc-` para combinaciones/modificadores.
+Clases específicas de la página `/work`. Complementan el design system global (`/design-system.md`).
 
 ---
 
