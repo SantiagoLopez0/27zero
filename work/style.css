@@ -1,0 +1,391 @@
+/* ============================
+   27zero — Work page
+   ============================ */
+
+:root {
+  --color-indigo: #440E92;
+  --color-purple: #B382F9;
+  --color-black:  #101010;
+  --color-gray:   #F5F5F5;
+  --color-white:  #FFFFFF;
+
+  --space-xs:  0.5em;
+  --space-sm:  1.5em;
+  --space-md:  3em;
+  --space-lg:  6em;
+  --space-xl:  9em;
+  --space-2xl: 14em;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+@media (max-width: 767px) {
+  body { font-size: 9px; }
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 3.45em;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.42px;
+}
+
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.71em;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.42px;
+  margin: 0;
+}
+
+p, .text-body, a, .text-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3.56em;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.09px;
+  }
+  p, .text-body { font-size: 1.89em; line-height: 1.5; font-weight: 500; }
+}
+
+.lora {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.text-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.07em;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-black);
+  display: block;
+}
+
+/* ===== Layout primitives ===== */
+.section {
+  padding-top: 6.5em;
+  padding-bottom: 6.5em;
+}
+
+.section--sm {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 6.5em;
+  padding-right: 6.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+/* ===== Hero ===== */
+.hero-container {
+  gap: var(--space-sm);
+  padding-top: 0;
+}
+
+.hero-subtext {
+  max-width: 38em;
+  color: var(--color-black);
+}
+
+/* ===== Pills ===== */
+.pills-container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.pill {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.07em;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-black);
+  background-color: transparent;
+  border: 0.07em solid var(--color-black);
+  border-radius: 5.2em;
+  padding: 0.6em 1.4em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--color-indigo);
+  color: var(--color-indigo);
+}
+
+.pill--active {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+  color: var(--color-black);
+}
+
+.pill--active:hover {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+  color: var(--color-black);
+}
+
+/* ===== Sliders ===== */
+.sliders-container {
+  padding-top: 0;
+  gap: var(--space-lg);
+}
+
+.slider-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  font-weight: 600;
+  letter-spacing: -0.42px;
+}
+
+.slider-nav {
+  display: flex;
+  gap: 0.75em;
+}
+
+.slider-arrow {
+  width: 2.85em;
+  height: 2.85em;
+  border-radius: 50%;
+  border: 0.07em solid var(--color-black);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-black);
+  transition: all 0.2s ease;
+}
+
+.slider-arrow:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.slider-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.slider-track-wrap {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  gap: 1.5em;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-track.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+/* ===== Cards ===== */
+.card {
+  border-radius: 0.5em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-black);
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.card-work-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--color-gray);
+  border: 0.07em dashed #c4c4c4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-work-bg span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #b8b8b8;
+  text-transform: uppercase;
+}
+
+.card-work-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2.28em 1.71em;
+}
+
+.card-work-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.card-work-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.card-work-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.07em;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-black);
+}
+
+.card-work-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.71em;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.42px;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.card-work-client {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.card-work-client-logo {
+  width: 1.71em;
+  height: 1.71em;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 0.07em solid var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-work-client-logo span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.card-work-client-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.card-work-arrow {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 0.1em solid var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.card:hover .card-work-arrow {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Card sizes */
+/* "Los mejores": cards más largas (rectangular, ratio ancho) */
+.card--featured {
+  width: 22em;
+  min-height: 26.5em;
+}
+
+.card--featured .card-work-body {
+  min-height: 26.5em;
+}
+
+/* Categorías normales: casi 1x1 */
+.card--standard {
+  width: 18em;
+  min-height: 18em;
+}
+
+.card--standard .card-work-body {
+  min-height: 18em;
+}
