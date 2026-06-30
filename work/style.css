@@ -255,10 +255,12 @@ p, .text-body, a, .text-link {
 }
 
 /* ===== Slider track ===== */
-/* El track-wrap no tiene overflow:hidden para que se corte
-   por el viewport, no por el contenedor */
 .slider-track-wrap {
-  /* sin overflow:hidden — el corte lo hace el body */
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 6.5em;
+  overflow: visible;
 }
 
 .slider-track {
@@ -270,13 +272,6 @@ p, .text-body, a, .text-link {
   cursor: grab;
   user-select: none;
   padding-right: 6.5em;
-}
-
-/* Spacer invisible que alinea la primera card con el container.
-   El gap del track lo separa de la primera card. */
-.slider-track-spacer {
-  flex: 0 0 8.8em;
-  pointer-events: none;
 }
 
 .slider-track::-webkit-scrollbar {

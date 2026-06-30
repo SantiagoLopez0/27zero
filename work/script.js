@@ -72,12 +72,6 @@ function createSliderBlock(category) {
     track.appendChild(createCardElement(category));
   }
 
-  // Spacer al inicio: alinea la primera card con el container
-  // sin que el padding scrollee junto a las cards
-  const spacer = document.createElement('div');
-  spacer.className = 'slider-track-spacer';
-  track.insertBefore(spacer, track.firstChild);
-
   trackWrap.appendChild(track);
 
   // Footer: flechas abajo a la derecha
