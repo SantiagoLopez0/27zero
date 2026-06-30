@@ -65,9 +65,6 @@ function createSliderBlock(category) {
   const trackWrap = document.createElement('div');
   trackWrap.className = 'slider-track-wrap';
 
-  const trackInner = document.createElement('div');
-  trackInner.className = 'slider-track-inner';
-
   const track = document.createElement('div');
   track.className = 'slider-track';
 
@@ -75,8 +72,7 @@ function createSliderBlock(category) {
     track.appendChild(createCardElement(category));
   }
 
-  trackInner.appendChild(track);
-  trackWrap.appendChild(trackInner);
+  trackWrap.appendChild(track);
 
   // Footer: flechas abajo a la derecha
   const footer = document.createElement('div');
