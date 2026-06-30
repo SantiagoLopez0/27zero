@@ -34,11 +34,21 @@ body {
 
 /* ===== Typography ===== */
 h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 3.45em;
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-size: 3.43em;
   line-height: 1.25;
-  font-weight: 600;
-  letter-spacing: -0.42px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+}
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  margin: 0;
 }
 
 h3 {
@@ -62,23 +72,18 @@ p, .text-body, a, .text-link {
   h1 {
     font-size: 3.56em;
     line-height: 1.25;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.09px;
   }
   p, .text-body { font-size: 1.89em; line-height: 1.5; font-weight: 500; }
 }
 
-.lora {
-  font-family: 'Lora', serif;
-  font-style: normal;
-  font-weight: 400;
-}
-
 .text-eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 1.07em;
-  font-weight: 500;
-  line-height: 1.5;
+  font-size: 1.29em;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
   color: var(--color-black);
   display: block;
 }
@@ -112,20 +117,25 @@ p, .text-body, a, .text-link {
 }
 
 /* ===== Hero ===== */
-.hero-container {
-  gap: var(--space-sm);
-  padding-top: 0;
+/* Section override: 255px top / 70px bottom */
+.section--hero {
+  padding-top: 18.21em;
+  padding-bottom: 5em;
 }
 
-.hero-subtext {
-  max-width: 38em;
-  color: var(--color-black);
+.hero-container {
+  gap: var(--space-xs);
+  padding-left: 13em;
 }
 
 /* ===== Pills ===== */
-.pills-container {
+.section--pills {
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: var(--space-sm);
+}
+
+.pills-container {
+  padding-left: 13em;
 }
 
 .pills-wrap {
@@ -166,29 +176,51 @@ p, .text-body, a, .text-link {
   color: var(--color-black);
 }
 
-/* ===== Sliders ===== */
-.sliders-container {
+/* ===== Sliders section ===== */
+/* El section no tiene padding-right para que el track
+   se corte por el borde de la pantalla, no por el container */
+.section--sliders {
   padding-top: 0;
-  gap: var(--space-lg);
+  padding-bottom: var(--space-lg);
 }
 
+.sliders-container {
+  /* El container tiene padding-left pero no padding-right,
+     así el track desborda hacia la derecha de la pantalla */
+  padding-right: 0;
+  gap: var(--space-lg);
+  /* No hay max-width constraint en el eje derecho */
+  max-width: none;
+  margin: 0;
+}
+
+/* ===== Slider block ===== */
 .slider-block {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
 }
 
+/* El header sí queda contenido al max-width con su padding */
 .slider-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding-right: 6.5em;
+  max-width: 1440px;
 }
 
 .slider-title {
   font-family: 'Inter', sans-serif;
-  font-size: 1.29em;
-  font-weight: 600;
-  letter-spacing: -0.42px;
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* Footer del slider: flechas alineadas abajo a la derecha */
+.slider-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 6.5em;
+  max-width: 1440px;
 }
 
 .slider-nav {
@@ -210,7 +242,7 @@ p, .text-body, a, .text-link {
   transition: all 0.2s ease;
 }
 
-.slider-arrow:hover {
+.slider-arrow:hover:not(:disabled) {
   background-color: var(--color-black);
   color: var(--color-white);
 }
@@ -218,12 +250,13 @@ p, .text-body, a, .text-link {
 .slider-arrow:disabled {
   opacity: 0.3;
   cursor: not-allowed;
-  background-color: var(--color-white);
-  color: var(--color-black);
 }
 
+/* ===== Slider track ===== */
+/* El track-wrap no tiene overflow:hidden para que se corte
+   por el viewport, no por el contenedor */
 .slider-track-wrap {
-  overflow: hidden;
+  /* sin overflow:hidden — el corte lo hace el body */
 }
 
 .slider-track {
@@ -234,6 +267,8 @@ p, .text-body, a, .text-link {
   scrollbar-width: none;
   cursor: grab;
   user-select: none;
+  /* Padding-right para que la última card no quede pegada al borde */
+  padding-right: 6.5em;
 }
 
 .slider-track::-webkit-scrollbar {
@@ -263,7 +298,6 @@ p, .text-body, a, .text-link {
   inset: 0;
   z-index: 0;
   background-color: var(--color-gray);
-  border: 0.07em dashed #c4c4c4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,7 +308,8 @@ p, .text-body, a, .text-link {
   font-size: 1em;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #b8b8b8;
+  color: var(--color-black);
+  opacity: 0.4;
   text-transform: uppercase;
 }
 
@@ -297,28 +332,31 @@ p, .text-body, a, .text-link {
 .card-work-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1em;
+  justify-content: flex-end;
 }
 
+/* Eyebrow: 15px / 14 = 1.07em */
 .card-work-eyebrow {
   font-family: 'Inter', sans-serif;
   font-size: 1.07em;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
+  letter-spacing: 0;
   color: var(--color-black);
 }
 
+/* Title: 24px / 14 = 1.71em */
 .card-work-title {
   font-family: 'Inter', sans-serif;
   font-size: 1.71em;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.42px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
   color: var(--color-black);
   margin: 0;
 }
 
+/* Client row ahora dentro de .card-work-content */
 .card-work-client {
   display: flex;
   align-items: center;
@@ -330,7 +368,7 @@ p, .text-body, a, .text-link {
   height: 1.71em;
   border-radius: 50%;
   background-color: var(--color-white);
-  border: 0.07em solid var(--color-black);
+  border: 0.07em solid rgba(16,16,16,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -362,6 +400,7 @@ p, .text-body, a, .text-link {
   color: var(--color-black);
   background-color: var(--color-white);
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .card:hover .card-work-arrow {
@@ -369,8 +408,8 @@ p, .text-body, a, .text-link {
   color: var(--color-white);
 }
 
-/* Card sizes */
-/* "Los mejores": cards más largas (rectangular, ratio ancho) */
+/* ===== Card sizes ===== */
+/* "Los mejores": rectangular vertical */
 .card--featured {
   width: 22em;
   min-height: 26.5em;
