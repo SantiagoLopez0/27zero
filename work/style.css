@@ -432,3 +432,44 @@ p, .text-body, a, .text-link {
 .card--standard .card-work-body {
   min-height: 18em;
 }
+
+/* ============================
+   Mobile — max-width: 767px
+   ============================ */
+
+@media (max-width: 767px) {
+
+  /* Hero */
+  .hero-container {
+    padding-left: 2em;
+  }
+
+  /* Pills */
+  .pills-wrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .pills-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Slider header */
+  .slider-header {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  /* Slider footer */
+  .slider-footer {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  /* Slider track wrap */
+  .slider-track-wrap {
+    padding-left: max(2em, calc((100vw - 1440px) / 2 + 2em));
+  }
+
+}
