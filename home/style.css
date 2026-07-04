@@ -166,9 +166,9 @@ p, .text-body, a, .text-link {
 
 .text-caption {
   font-family: 'Inter', sans-serif;
-  font-size: 0.86em;
-  font-weight: 500;
-  line-height: 1.5;
+  font-size: 1.07em;
+  font-weight: 400;
+  line-height: 1.6;
   letter-spacing: 0;
   color: var(--color-black);
 }
@@ -176,38 +176,92 @@ p, .text-body, a, .text-link {
 /* ===== Hero ===== */
 .section--hero-home {
   background-color: var(--color-gray);
-  padding-top: 8.57em;
-  padding-bottom: 6em;
+  margin-top: 8.57em;
+  padding-top: 12.14em;
+  padding-bottom: 12.14em;
 }
 
 .hero-home-container {
-  gap: var(--space-xs);
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.section--hero-home h1 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3.43em;
+  line-height: 1.25;
+  letter-spacing: -0.48px;
+}
+
+.section--hero-home h1 .inter-accent {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.25;
+  letter-spacing: -0.48px;
+}
+
+.hero-home-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.hero-home-cta .btn-white {
+  border-color: var(--color-white);
 }
 
 /* ===== Intro + Los mejores ===== */
 .section--intro-home {
   background-color: var(--color-purple);
-  padding-top: 6.5em;
-  padding-bottom: 0;
+  padding-top: 4.29em;
+  padding-bottom: 4.29em;
 }
 
 .intro-home-row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 3em;
+  gap: 1.5em;
 }
 
 .intro-home-text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  align-items: flex-start;
+  gap: 1.5em;
   flex: 0 0 34%;
+}
+
+.section--intro-home h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.57em;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+}
+
+.section--intro-home h2 .inter-accent {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+}
+
+.intro-home-text p {
+  font-size: 1.07em;
 }
 
 .intro-home-media {
   flex: 1;
-  min-height: 22em;
+  min-height: 34em;
   border-radius: 0.5em;
   background-color: var(--color-gray);
   display: flex;

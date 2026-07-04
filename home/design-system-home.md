@@ -9,41 +9,65 @@ Este documento se va completando sección por sección a medida que se construye
 ## Sección Hero
 
 ### `.section--hero-home`
-Modifier de `.section`. Fondo `--color-gray` desde el borde superior de la página (por detrás del navbar fijo, que aún no se ha construido).
-- `padding-top: 8.57em` (120px @ 14px) — espacio para despejar el navbar fijo, según lo indicado por el cliente
-- `padding-bottom: 6em` (84px @ 14px) — valor estimado a falta de spec exacta en px del Figma, ajustar si se provee medida real
+Modifier de `.section`. Fondo `--color-gray`.
+- `margin-top: 8.57em` (120px @ 14px) — espacio en blanco (fondo body, blanco) donde se posicionará el navbar fijo
+- `padding-top: 12.14em` (170px @ 14px)
+- `padding-bottom: 12.14em` (170px @ 14px)
 
 ### `.hero-home-container`
-Modifier de `.container`. Reduce el `gap` entre H1, botón y caption.
-- `gap: var(--space-xs)`
+Modifier de `.container`.
+- `align-items: flex-start`
+- `gap: 1em`
+
+### `.section--hero-home h1`
+Override del H1 global, específico del hero de Home.
+- Lora, weight 500, style normal, `3.43em` (48px @ 14px), line-height 125%, letter-spacing `-0.48px` (-1% de 48px)
+
+### `.inter-accent` (dentro de `.section--hero-home h1`)
+Span para la palabra de acento ("Brand power."), en Inter en vez de Lora, mismo tamaño/line-height/letter-spacing que el H1.
+- Inter, weight 500, style normal, `1em` (hereda 48px del H1), line-height 125%, letter-spacing `-0.48px`
+
+### `.hero-home-cta`
+Wrapper del botón + caption. Los centra entre sí, independientemente del alineado del container.
+- `display: flex; flex-direction: column; align-items: center; gap: 0.5em`
+- `.hero-home-cta .btn-white` → `border-color: var(--color-white)` (override puntual solo en el hero)
 
 ### `.text-caption`
-Texto pequeño auxiliar (ej. "Free. 30 min. No sales pitch.").
-- Inter, 500, `0.86em` (12px @ 14px), line-height 150%
+- Inter, weight 400, `1.07em` (15px @ 14px), line-height 160%, letter-spacing 0
 
 ---
 
 ## Sección Intro + Los mejores
 
 ### `.section--intro-home`
-Modifier de `.section`. Fondo `--color-purple`. Contiene el bloque intro (texto + media) y el slider "Los mejores" apilados verticalmente.
-- `padding-top: 6.5em`
-- `padding-bottom: 0` (el padding inferior lo aporta `.sliders-container`)
+Modifier de `.section`. Fondo `--color-purple`.
+- `padding-top: 4.29em` (60px @ 14px)
+- `padding-bottom: 4.29em` (60px @ 14px)
 
 ### `.intro-home-row`
 Fila flex de dos columnas: texto a la izquierda, media a la derecha.
-- `display: flex; justify-content: space-between; gap: 3em`
+- `display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5em`
 - Mobile (`≤767px`): `flex-direction: column`
 
 ### `.intro-home-text`
 Columna de texto: H2 + párrafo + botón.
+- `align-items: flex-start; gap: 1.5em` (21px @ 14px)
 - `flex: 0 0 34%`
-- `gap: var(--space-xs)`
+
+### `.section--intro-home h2`
+Override del H2 global, específico del intro de Home.
+- Lora, weight 500, style normal, `2.57em` (36px @ 14px), line-height 125%, letter-spacing `-0.36px` (-1% de 36px)
+
+### `.inter-accent` (dentro de `.section--intro-home h2`)
+Span para la frase de acento ("for growth and impact."), en Inter en vez de Lora, mismo tamaño/line-height/letter-spacing que el H2.
+
+### `.intro-home-text p`
+Reduce el párrafo del bloque intro a `1.07em` (15px @ 14px).
 
 ### `.intro-home-media`
 Placeholder de imagen/video (equivalente a `.card-work-bg` pero como bloque suelto, no absoluto). Fondo `--color-gray`, texto centrado tipo wireframe con opacity 0.4.
 - `flex: 1`
-- `min-height: 22em`
+- `min-height: 34em`
 - `border-radius: 0.5em`
 
 ### Slider "Los mejores"
