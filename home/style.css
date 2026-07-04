@@ -534,3 +534,152 @@ p, .text-body, a, .text-link {
     padding-left: max(2em, calc((100vw - 1440px) / 2 + 2em));
   }
 }
+
+/* ===== What sets 27zero apart ===== */
+.section--apart-home {
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.apart-home-container {
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.section--apart-home h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.apart-home-subtitle {
+  max-width: 38em;
+}
+
+.section--apart-home .btn {
+  margin-top: var(--space-xs);
+}
+
+/* ===== Shapes slider ===== */
+.apart-slider {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-lg) 6.5em 0;
+}
+
+.apart-slider-arrow {
+  flex-shrink: 0;
+}
+
+.apart-slider-track-wrap {
+  flex: 1;
+  overflow: hidden;
+}
+
+.apart-slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.apart-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.apart-shape {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apart-shape img {
+  width: 100%;
+  max-width: 22em;
+  height: auto;
+  display: block;
+}
+
+.apart-shape-label {
+  position: absolute;
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.29em;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--color-black);
+  border-bottom: 0.07em solid currentColor;
+  padding-bottom: 0.15em;
+}
+
+.apart-shape-label--white {
+  color: var(--color-white);
+}
+
+.apart-shape-label--accent {
+  color: var(--color-indigo);
+}
+
+/* ===== Execution that Scales ===== */
+.apart-home-scales {
+  align-items: center;
+  gap: var(--space-xs);
+  padding-top: var(--space-lg);
+}
+
+.section--apart-home h3 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.apart-home-scales p {
+  max-width: 44em;
+}
+
+/* ===== Logos marquee ===== */
+.logos-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin-top: var(--space-lg);
+  mask-image: linear-gradient(to right, transparent, black 6.5em, black calc(100% - 6.5em), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6.5em, black calc(100% - 6.5em), transparent);
+}
+
+.logos-track {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+  width: max-content;
+  animation: logos-scroll 25s linear infinite;
+}
+
+.logos-track img {
+  height: 1.75em;
+  width: auto;
+  flex-shrink: 0;
+}
+
+@keyframes logos-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 767px) {
+  .apart-slider {
+    padding: var(--space-lg) 2em 0;
+    gap: 1em;
+  }
+  .apart-slide {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+}

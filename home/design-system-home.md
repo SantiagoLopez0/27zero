@@ -74,3 +74,42 @@ Placeholder de imagen/video (equivalente a `.card-work-bg` pero como bloque suel
 Reutiliza **1:1** las clases y la lógica JS (drag + flechas) del slider de `/work`: `.sliders-container`, `.slider-block`, `.slider-header`, `.slider-title`, `.slider-footer`, `.slider-nav`, `.slider-arrow`, `.slider-track-wrap`, `.slider-track`, `.card`, `.card--work`, `.card--featured`, `.card-work-*`. Sin cambios de valores respecto al design-system de Work. Solo se agregó `padding-top`/`padding-bottom: var(--space-lg)` al `.sliders-container` de Home para separarlo del bloque intro (en Work ese padding lo controlaba `.section--sliders`, aquí no existe una sección propia porque el slider vive dentro de `.section--intro-home`).
 - No se implementaron pills de filtro en esta sección (solo se muestra la categoría "Los mejores").
 
+---
+
+## Sección "What sets 27zero apart"
+
+**Nota sobre assets:** el mensaje original listaba `creativity.png` tanto para el shape purple como para el black. Por el nombre de archivo y el contenido visual de cada imagen, se asumió el mapeo correcto: `research-enhanced.png` → shape purple ("Research Enhanced"), `execution.png` → shape indigo ("Execution"), `creativity.png` → shape black ("Creativity"). Ajustar si no era la intención.
+
+**Renombrados:** los logos en `/assets/logos/` tenían espacios en el nombre (`scolarship magic.svg`, `skillwel.svg`, `world learning.svg`), lo cual es inseguro en URLs. Se renombraron a `scholarship-magic.svg`, `skillwell.svg` y `world-learning.svg`.
+
+### `.section--apart-home`
+Modifier de `.section`. Fondo blanco, todo el contenido centrado (`text-align: center`).
+
+### `.apart-home-container`
+Modifier de `.container`. `align-items: center; gap: var(--space-xs)`.
+
+### `.section--apart-home h2` / `h3`
+Override puntual: Lora, weight 500, style normal (heredan tamaño/line-height del H2/H3 global).
+
+### `.apart-home-subtitle`
+`max-width: 38em` para el párrafo bajo el H2, evita que la línea se estire en pantallas anchas.
+
+### Slider de shapes (`.apart-slider`)
+Carrusel simple de slides completos (no drag, solo flechas), reutiliza `.slider-arrow` del design system global para el estilo de los botones.
+- `.apart-slider`: flex row, flechas a los costados, `.apart-slider-track-wrap` (flex:1, overflow hidden) en el centro
+- `.apart-slider-track`: flex row, `transform: translateX(-N * 100%)` controlado por JS, `transition: transform 0.4s ease`
+- `.apart-slide`: `flex: 0 0 100%`, contiene los 3 `.apart-shape` en fila
+- `.apart-shape`: `flex: 1`, imagen (`max-width: 22em`) + `.apart-shape-label` posicionado absoluto y centrado sobre la imagen
+- `.apart-shape-label`: Lora 500, `1.29em`, subrayado con `border-bottom`. Color por defecto negro; modifiers `--white` (shape indigo) y `--accent` (shape black, color indigo)
+- JS (`initApartSlider`): genera 2 slides idénticos (duplicado del único slide real) para demostrar la funcionalidad; flechas prev/next avanzan/retroceden el índice y se deshabilitan en los extremos
+- Mobile (`≤767px`): `.apart-slide` pasa a `flex-direction: column`
+
+### "Execution that Scales" (`.apart-home-scales`)
+Modifier de `.container`. Centrado, `gap: var(--space-xs)`, `padding-top: var(--space-lg)` para separarlo del slider. Párrafo con `max-width: 44em`.
+
+### Logos — carrusel infinito (`.logos-marquee`)
+- `.logos-marquee`: `overflow: hidden`, aplica `mask-image` en los bordes para un fade-out suave
+- `.logos-track`: flex row, `width: max-content`, animación `logos-scroll` (translateX 0 → -50%) en loop infinito lineal (25s)
+- JS (`initLogosMarquee`): la lista de logos (`CLIENT_LOGOS`) se duplica una vez en el DOM para que el loop del -50% sea continuo y sin salto visible
+- Logos usados: Student First, Doctums, Skillwell, World Learning, Scholarship Magic (no se incluyó OES por no tener el asset)
+

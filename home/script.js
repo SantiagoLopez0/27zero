@@ -157,3 +157,81 @@ function renderLosMejoresSlider() {
 }
 
 renderLosMejoresSlider();
+
+// ===== "What sets 27zero apart" — slider de shapes =====
+
+function createApartSlide() {
+  const slide = document.createElement('div');
+  slide.className = 'apart-slide';
+  slide.innerHTML = `
+    <div class="apart-shape apart-shape--purple">
+      <img src="/assets/research-enhanced.png" alt="Research Enhanced">
+      <span class="apart-shape-label">Research<br>Enhanced</span>
+    </div>
+    <div class="apart-shape apart-shape--indigo">
+      <img src="/assets/execution.png" alt="Execution">
+      <span class="apart-shape-label apart-shape-label--white">Execution</span>
+    </div>
+    <div class="apart-shape apart-shape--black">
+      <img src="/assets/creativity.png" alt="Creativity">
+      <span class="apart-shape-label apart-shape-label--accent">Creativity</span>
+    </div>
+  `;
+  return slide;
+}
+
+function initApartSlider() {
+  const track = document.getElementById('apartSliderTrack');
+  if (!track) return;
+
+  const SLIDE_COUNT = 2; // mismo slide duplicado para mostrar la funcionalidad
+  for (let i = 0; i < SLIDE_COUNT; i++) {
+    track.appendChild(createApartSlide());
+  }
+
+  const prevBtn = document.querySelector('.apart-slider-arrow[data-dir="prev"]');
+  const nextBtn = document.querySelector('.apart-slider-arrow[data-dir="next"]');
+  let index = 0;
+
+  function update() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === SLIDE_COUNT - 1;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) { index--; update(); }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (index < SLIDE_COUNT - 1) { index++; update(); }
+  });
+
+  update();
+}
+
+initApartSlider();
+
+// ===== Logos — infinite horizontal carousel =====
+
+const CLIENT_LOGOS = [
+  { name: 'Student First',   src: '/assets/logos/student-first.svg' },
+  { name: 'Doctums',         src: '/assets/logos/doctums.svg' },
+  { name: 'Skillwell',       src: '/assets/logos/skillwell.svg' },
+  { name: 'World Learning',  src: '/assets/logos/world-learning.svg' },
+  { name: 'Scholarship Magic', src: '/assets/logos/scholarship-magic.svg' },
+];
+
+function initLogosMarquee() {
+  const track = document.getElementById('logosTrack');
+  if (!track) return;
+
+  // Se duplica la lista una vez para que la animación (translateX -50%) sea continua y sin corte
+  const logos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
+
+  track.innerHTML = logos
+    .map(logo => `<img src="${logo.src}" alt="${logo.name}" loading="lazy">`)
+    .join('');
+}
+
+initLogosMarquee();
