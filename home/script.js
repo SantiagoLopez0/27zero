@@ -107,7 +107,7 @@ function enableSliderArrows(footer, track) {
   window.addEventListener('resize', updateArrows);
 }
 
-function renderLosMejoresSlider(containerId) {
+function renderLosMejoresSlider(containerId, showTitle = true) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
@@ -116,7 +116,7 @@ function renderLosMejoresSlider(containerId) {
 
   const header = document.createElement('div');
   header.className = 'slider-header';
-  header.innerHTML = `<h2 class="slider-title">Los mejores</h2>`;
+  header.innerHTML = showTitle ? `<h2 class="slider-title">Los mejores</h2>` : '';
 
   const trackWrap = document.createElement('div');
   trackWrap.className = 'slider-track-wrap';
@@ -147,8 +147,8 @@ function renderLosMejoresSlider(containerId) {
     </div>
   `;
 
-  block.appendChild(header);
   block.appendChild(trackWrap);
+  if (showTitle) block.insertBefore(header, trackWrap);
   block.appendChild(footer);
   container.appendChild(block);
 
@@ -157,7 +157,7 @@ function renderLosMejoresSlider(containerId) {
 }
 
 renderLosMejoresSlider('losMejoresContainer');
-renderLosMejoresSlider('mentorSliderContainer');
+renderLosMejoresSlider('mentorSliderContainer', false);
 
 // ===== "What sets 27zero apart" — slider de shapes =====
 

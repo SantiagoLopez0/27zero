@@ -119,7 +119,7 @@ Modifier de `.container`. Centrado.
 
 ## Sección "The EdTech Mentor"
 
-Duplicado estructural de la sección Intro (`.section--intro-home`), mismo layout (`row` texto+media + slider debajo). **Nota:** se mantuvo el copy (H2, párrafo, botón) idéntico al de Intro como placeholder — falta el contenido real de esta sección, reemplazar cuando se tenga.
+Duplicado estructural de la sección Intro (`.section--intro-home`), mismo layout (`row` texto+media + slider debajo).
 
 ### `.section--mentor-home`
 Fondo `--color-indigo`, `color: var(--color-white)` (cascada a H2, párrafo, etc.).
@@ -136,5 +136,5 @@ Mismo override que `.section--intro-home h2` (Lora 500, 2.57em, letter-spacing -
 Botón usa la variante `.btn-white` (en vez de `.btn-dark` como en Intro), con `border-color: var(--color-white)` — mismo tratamiento que el botón del Hero, para que quede "full blanco" sobre el fondo indigo.
 
 ### Slider dentro de esta sección
-Reutiliza el mismo slider "Los mejores" (misma función JS `renderLosMejoresSlider`, ahora parametrizada por `containerId` y llamada dos veces: `losMejoresContainer` y `mentorSliderContainer`). Único cambio visual: `.section--mentor-home .slider-arrow` → fondo transparente, borde y color blanco; hover invierte a fondo blanco/texto indigo.
+Reutiliza el mismo slider "Los mejores" (misma función JS `renderLosMejoresSlider(containerId, showTitle)`, llamada como `renderLosMejoresSlider('losMejoresContainer')` en Intro y `renderLosMejoresSlider('mentorSliderContainer', false)` aquí, sin `.slider-title`/`.slider-header`). Único cambio visual además: `.section--mentor-home .slider-arrow` → fondo transparente, borde y color blanco; hover invierte a fondo blanco/texto indigo.
 
