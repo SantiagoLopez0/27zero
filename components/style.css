@@ -123,17 +123,44 @@ p, .text-body, a, .text-link {
   cursor: pointer;
 }
 
-/* ===== Componentes (importados) ===== */
-@import url('/components/navbar/navbar.css');
-
-/* ===== Demo section (página components) ===== */
-.section--component-demo {
-  min-height: 250vh;
-  padding-top: 12em;
+/* ===== Menú de navegación (página components) ===== */
+.section--components-menu {
+  min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.section--component-demo .container {
-  gap: var(--space-xs);
+.components-menu-container {
+  gap: var(--space-md);
+}
+
+.components-menu-logo img {
+  height: 2.5em;
+  display: block;
+}
+
+.components-menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.components-menu-item {
+  padding: 0.75em 0;
+  font-size: 1.75em;
+  font-weight: 600;
+  letter-spacing: -0.42px;
+  color: var(--color-black);
+  text-decoration: none;
+  border-top: 1px solid var(--color-black);
+  transition: all 0.2s ease;
+}
+
+.components-menu-item:last-child {
+  border-bottom: 1px solid var(--color-black);
+}
+
+.components-menu-item:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-left: 0.5em;
 }
