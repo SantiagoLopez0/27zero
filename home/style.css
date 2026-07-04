@@ -544,21 +544,19 @@ h4 {
 .section--apart-home {
   background-color: var(--color-white);
   text-align: center;
+  padding-top: 5em;
+  padding-bottom: 8.93em;
 }
 
 .apart-home-container {
   align-items: center;
-  gap: var(--space-xs);
+  gap: 1.79em;
 }
 
 .section--apart-home h2 {
   font-family: 'Lora', serif;
   font-weight: 500;
   font-style: normal;
-}
-
-.apart-home-subtitle {
-  max-width: 38em;
 }
 
 .section--apart-home .btn {
@@ -572,7 +570,7 @@ h4 {
   gap: 2em;
   max-width: 1440px;
   margin: 0 auto;
-  padding: var(--space-lg) 6.5em 0;
+  padding: 5.71em 6.5em 0;
 }
 
 .apart-slider-arrow {
@@ -612,49 +610,32 @@ h4 {
   display: block;
 }
 
-.apart-shape-label {
-  position: absolute;
-  font-family: 'Lora', serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1.29em;
-  line-height: 1.3;
-  text-align: center;
-  color: var(--color-black);
-  border-bottom: 0.07em solid currentColor;
-  padding-bottom: 0.15em;
-}
-
-.apart-shape-label--white {
-  color: var(--color-white);
-}
-
-.apart-shape-label--accent {
-  color: var(--color-indigo);
-}
-
 /* ===== Execution that Scales ===== */
 .apart-home-scales {
   align-items: center;
-  gap: var(--space-xs);
-  padding-top: var(--space-lg);
+  gap: 1.79em;
+  padding-top: 3.93em;
 }
 
 .section--apart-home h3 {
   font-family: 'Lora', serif;
   font-weight: 500;
   font-style: normal;
+  font-size: 1.71em;
+  line-height: 1.25;
+  letter-spacing: -0.24px;
+  text-align: center;
 }
 
 .apart-home-scales p {
-  max-width: 44em;
+  max-width: 45em;
 }
 
 /* ===== Logos marquee ===== */
 .logos-marquee {
   overflow: hidden;
   width: 100%;
-  margin-top: var(--space-lg);
+  margin-top: 6.43em;
   mask-image: linear-gradient(to right, transparent, black 6.5em, black calc(100% - 6.5em), transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 6.5em, black calc(100% - 6.5em), transparent);
 }
