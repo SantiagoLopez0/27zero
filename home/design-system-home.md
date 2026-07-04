@@ -138,3 +138,29 @@ Botón usa la variante `.btn-white` (en vez de `.btn-dark` como en Intro), con `
 ### Slider dentro de esta sección
 Reutiliza el mismo slider "Los mejores" (misma función JS `renderLosMejoresSlider(containerId, showTitle)`, llamada como `renderLosMejoresSlider('losMejoresContainer')` en Intro y `renderLosMejoresSlider('mentorSliderContainer', false)` aquí, sin `.slider-title`/`.slider-header`). Único cambio visual además: `.section--mentor-home .slider-arrow` → fondo transparente, borde y color blanco; hover invierte a fondo blanco/texto indigo.
 
+---
+
+## Sección Testimonials
+
+### `.section--testimonials-home`
+Fondo `--color-black`, `color: var(--color-white)`.
+- `padding-top: 7.86em` (110px @ 14px)
+- `padding-bottom: 4.64em` (65px @ 14px)
+
+### `.testimonials-slider`
+Carrusel de 1 slide por view (igual mecánica que `.apart-slider`: flechas a los costados, track con `transform: translateX`, deshabilitado en los extremos — sin loop).
+- `.testimonials-arrow`: reutiliza `.slider-arrow`, fondo transparente + borde/texto blanco, hover invierte a blanco/negro
+- `.testimonial-slide`: quote SVG + `.testimonial-content` en fila
+- `.testimonial-quote-icon`: el SVG del quote grande (path `#C286FF`), `width: 13em`
+- `.testimonial-text`: Inter 500, `1.5em`, line-height 140%, `max-width: 22em`
+- `.testimonial-divider`: línea blanca de 1px bajo el texto
+- `.testimonial-author`: avatar circular placeholder (`.testimonial-avatar`, iniciales) + nombre/rol (`.testimonial-author-info`)
+- Mobile (`≤767px`): `.testimonial-slide` pasa a columna
+
+### `.testimonials-dots`
+Paginación por dots debajo del slider, sincronizada con el índice del carrusel (click en un dot navega directo a ese slide).
+- `.testimonial-dot`: círculo outline blanco; `.testimonial-dot--active` → fondo/borde `--color-purple`
+
+### Contenido
+4 testimonios placeholder (`TESTIMONIALS` en `script.js`), el primero con el copy real dado ("Erin Grant"), el resto con Lorem ipsum — reemplazar cuando se tenga el contenido definitivo.
+
