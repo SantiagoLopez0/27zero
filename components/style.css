@@ -1,0 +1,273 @@
+/* ============================
+   27zero — Components (Kitchen Sink)
+   ============================ */
+
+:root {
+  --color-indigo: #440E92;
+  --color-purple: #B382F9;
+  --color-black:  #101010;
+  --color-gray:   #F5F5F5;
+  --color-white:  #FFFFFF;
+
+  --space-xs:  0.5em;
+  --space-sm:  1.5em;
+  --space-md:  3em;
+  --space-lg:  6em;
+  --space-xl:  9em;
+  --space-2xl: 14em;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+@media (max-width: 767px) {
+  body { font-size: 9px; }
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 3.45em;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.42px;
+}
+
+h5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86em;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+p, .text-body, a, .text-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.lora {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3.56em;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.09px;
+  }
+  h5 {
+    font-size: 1.56em;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  p, .text-body, a, .text-link {
+    font-size: 1.89em;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+}
+
+/* ===== Layout primitives ===== */
+.section {
+  padding-top: 6.5em;
+  padding-bottom: 6.5em;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 6.5em;
+  padding-right: 6.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.7em;
+  border-radius: 5.2em;
+  border: 0.05em solid transparent;
+  font-family: 'Lora', serif;
+  font-size: 1.15em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* ===== Navbar ===== */
+/* Wrapper fijo — sin fondo */
+.nav {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0;
+  padding-left: 3.25em;
+  padding-right: 3.25em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+/* Contenedor visual con fondo y border-radius */
+.nav-container {
+  border-radius: 1.25em;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.15em 3.25em;
+  gap: 2em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-logo img {
+  height: 1.71em;
+  display: block;
+  transition: filter 0.2s ease;
+}
+
+/* Links centrados entre logo y botón */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.nav-links a {
+  font-size: 1.15em;
+  font-weight: 500;
+  line-height: 1.25em;
+  padding: 0;
+  text-decoration: none;
+  transition: font-weight 0.2s ease;
+}
+
+/* Hover: links se ponen bold */
+.nav-links a:hover {
+  font-weight: 700;
+}
+
+/* ─── Variante TOP WHITE ─── */
+.nav--white .nav-container {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+.nav--white .nav-links a {
+  color: var(--color-black);
+}
+.nav--white .nav-links a:hover {
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+/* ─── Variante TOP BLACK ─── */
+.nav--black .nav-container {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.nav--black .nav-links a {
+  color: var(--color-white);
+}
+.nav--black .nav-links a:hover {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+/* ─── Variante SCROLLED (indigo) — fondo indigo, todo blanco ─── */
+.nav--scrolled .nav-container {
+  background-color: var(--color-indigo);
+  color: var(--color-white);
+}
+.nav--scrolled .nav-links a {
+  color: var(--color-white);
+}
+.nav--scrolled .nav-links a:hover {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+/* ─── Estilo de logo solo para scrolled state ─── */
+.nav--scrolled .nav-logo {
+  filter: invert(1);
+}
+
+/* ─── Botón exclusivo del navbar ─── */
+/* nav--white: outline negro, texto negro, hover filled negro */
+.btn-nav {
+  background-color: transparent;
+  border: 0.05em solid var(--color-black);
+  color: var(--color-black);
+}
+.btn-nav:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+/* nav--black: outline blanco, texto blanco, hover filled blanco */
+.nav--black .btn-nav {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+.nav--black .btn-nav:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+/* nav--scrolled: outline blanco, texto blanco, hover filled blanco texto indigo */
+.nav--scrolled .btn-nav {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+.nav--scrolled .btn-nav:hover {
+  background-color: var(--color-white);
+  color: var(--color-indigo);
+  border-color: var(--color-white);
+}
+
+/* ===== Demo section (página components) ===== */
+/* Altura suficiente para poder scrollear y disparar el estado nav--scrolled */
+.section--component-demo {
+  min-height: 250vh;
+  padding-top: 12em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.section--component-demo .container {
+  gap: var(--space-xs);
+}
