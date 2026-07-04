@@ -84,31 +84,33 @@ Reutiliza **1:1** las clases y la lógica JS (drag + flechas) del slider de `/wo
 
 ### `.section--apart-home`
 Modifier de `.section`. Fondo blanco, todo el contenido centrado (`text-align: center`).
+- `padding-top: 5em` (70px @ 14px)
+- `padding-bottom: 8.93em` (125px @ 14px)
 
 ### `.apart-home-container`
-Modifier de `.container`. `align-items: center; gap: var(--space-xs)`.
+Modifier de `.container`. `align-items: center; gap: 1.79em` (25px @ 14px).
 
 ### `.section--apart-home h2` / `h3`
-Override puntual: Lora, weight 500, style normal (heredan tamaño/line-height del H2/H3 global).
-
-### `.apart-home-subtitle`
-`max-width: 38em` para el párrafo bajo el H2, evita que la línea se estire en pantallas anchas.
+Override puntual: Lora, weight 500, style normal. El H2 hereda tamaño/line-height del H2 global. El H3 tiene tamaño propio: `1.71em` (24px @ 14px), line-height 125%, letter-spacing `-0.24px` (-1% de 24px), `text-align: center`.
 
 ### Slider de shapes (`.apart-slider`)
-Carrusel simple de slides completos (no drag, solo flechas), reutiliza `.slider-arrow` del design system global para el estilo de los botones.
-- `.apart-slider`: flex row, flechas a los costados, `.apart-slider-track-wrap` (flex:1, overflow hidden) en el centro
+Carrusel simple de slides completos (no drag, solo flechas), reutiliza `.slider-arrow` del design system global para el estilo de los botones. Las imágenes (`research-enhanced.png`, `execution.png`, `creativity.png`) ya incluyen el texto embebido, por lo que se eliminó el overlay `.apart-shape-label` que se había agregado antes.
+- `.apart-slider`: flex row, flechas a los costados, `padding-top: 5.71em` (80px @ 14px)
+- `.apart-slider-track-wrap` (flex:1, overflow hidden) en el centro
 - `.apart-slider-track`: flex row, `transform: translateX(-N * 100%)` controlado por JS, `transition: transform 0.4s ease`
 - `.apart-slide`: `flex: 0 0 100%`, contiene los 3 `.apart-shape` en fila
-- `.apart-shape`: `flex: 1`, imagen (`max-width: 22em`) + `.apart-shape-label` posicionado absoluto y centrado sobre la imagen
-- `.apart-shape-label`: Lora 500, `1.29em`, subrayado con `border-bottom`. Color por defecto negro; modifiers `--white` (shape indigo) y `--accent` (shape black, color indigo)
+- `.apart-shape`: `flex: 1`, imagen (`max-width: 22em`)
 - JS (`initApartSlider`): genera 2 slides idénticos (duplicado del único slide real) para demostrar la funcionalidad; flechas prev/next avanzan/retroceden el índice y se deshabilitan en los extremos
 - Mobile (`≤767px`): `.apart-slide` pasa a `flex-direction: column`
 
 ### "Execution that Scales" (`.apart-home-scales`)
-Modifier de `.container`. Centrado, `gap: var(--space-xs)`, `padding-top: var(--space-lg)` para separarlo del slider. Párrafo con `max-width: 44em`.
+Modifier de `.container`. Centrado.
+- `gap: 1.79em` (25px @ 14px)
+- `padding-top: 3.93em` (55px @ 14px)
+- Párrafo con `max-width: 45em`
 
 ### Logos — carrusel infinito (`.logos-marquee`)
-- `.logos-marquee`: `overflow: hidden`, aplica `mask-image` en los bordes para un fade-out suave
+- `.logos-marquee`: `overflow: hidden`, `margin-top: 6.43em` (90px @ 14px), aplica `mask-image` en los bordes para un fade-out suave
 - `.logos-track`: flex row, `width: max-content`, animación `logos-scroll` (translateX 0 → -50%) en loop infinito lineal (25s)
 - JS (`initLogosMarquee`): la lista de logos (`CLIENT_LOGOS`) se duplica una vez en el DOM para que el loop del -50% sea continuo y sin salto visible
 - Logos usados: Student First, Doctums, Skillwell, World Learning, Scholarship Magic (no se incluyó OES por no tener el asset)

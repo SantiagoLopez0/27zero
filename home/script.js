@@ -166,15 +166,12 @@ function createApartSlide() {
   slide.innerHTML = `
     <div class="apart-shape apart-shape--purple">
       <img src="/assets/research-enhanced.png" alt="Research Enhanced">
-      <span class="apart-shape-label">Research<br>Enhanced</span>
     </div>
     <div class="apart-shape apart-shape--indigo">
       <img src="/assets/execution.png" alt="Execution">
-      <span class="apart-shape-label apart-shape-label--white">Execution</span>
     </div>
     <div class="apart-shape apart-shape--black">
       <img src="/assets/creativity.png" alt="Creativity">
-      <span class="apart-shape-label apart-shape-label--accent">Creativity</span>
     </div>
   `;
   return slide;
