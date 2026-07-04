@@ -255,10 +255,6 @@ p, .text-body, a, .text-link {
   letter-spacing: -0.36px;
 }
 
-.intro-home-text p {
-  font-size: 1.07em;
-}
-
 .intro-home-media {
   flex: 1;
   min-height: 34em;

@@ -124,6 +124,16 @@ p, .text-body, a, .text-link {
   font-weight: 400;
   letter-spacing: 0;
 }
+
+/* Variante pequeña de .text-body — 15px, centrada */
+.text-body--sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.07em;       /* 15px */
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-align: center;
+}
 ```
 
 ### Escala tipográfica — Mobile (base 9px)
