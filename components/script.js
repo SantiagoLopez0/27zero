@@ -1,19 +1,5 @@
 // ============================
 // 27zero — Components (Kitchen Sink)
-// Navbar scroll behavior
+// Cada componente trae su propio JS en /components/[componente]/[componente].js
+// Se cargan como <script> independientes en index.html
 // ============================
-
-const nav = document.querySelector('.nav');
-const initialVariant = nav.classList.contains('nav--black') ? 'nav--black' : 'nav--white';
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    nav.classList.add('nav--scrolled');
-    nav.classList.remove('nav--white', 'nav--black');
-    nav.style.top = '2.2em';
-  } else {
-    nav.classList.remove('nav--scrolled');
-    nav.classList.add(initialVariant);
-    nav.style.top = '0';
-  }
-});

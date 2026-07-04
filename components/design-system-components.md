@@ -1,31 +1,56 @@
-# Components Page — Sub Design System
+# Components — Sub Design System
 
-Clases específicas de la página `/components` (kitchen sink de componentes globales). Complementa el design system global (`/design-system.md`).
+Kitchen sink de componentes globales de 27zero. Complementa el design system global (`/design-system.md`).
 
-Esta página reutiliza al máximo las clases globales (`.section`, `.container`, `.nav`, `.btn`, `.lora`, `h1`–`h6`, `p`/`.text-body`). Solo se documentan aquí las clases nuevas, específicas de esta página.
+---
+
+## Estructura
+
+Cada componente vive aislado en su propia subcarpeta, para poder traerlo a cualquier página sin tener que filtrar un archivo único gigante:
+
+```
+components/
+  navbar/               navbar.html · navbar.css · navbar.js
+  footer/               footer.html · footer.css
+  work-card/            work-card.html · work-card.css
+  edtech-mentor-card/   edtech-mentor-card.html · edtech-mentor-card.css
+  featured-card/        featured-card.html · featured-card.css
+  cards-slider/         cards-slider.html · cards-slider.css · cards-slider.js
+  index.html            preview visual del kitchen sink completo
+  style.css             estilos base + @import de cada [componente].css
+  script.js             carga general (cada componente añade su <script> propio en index.html)
+  design-system-components.md
+```
+
+`index.html` es solo el preview — cada componente es la fuente real. Workflow para traer un componente a otra página: leer `components/[componente]/[componente].html` + `.css` (y `.js` si aplica).
 
 ---
 
 ## Navbar
 
-Implementado 1:1 según la sección 4.2 del design system global: `.nav`, `.nav-container`, `.nav-logo`, `.nav-links`, `.btn-nav`, variantes `.nav--white`, `.nav--black`, `.nav--scrolled`. Sin modificaciones.
+Estado: ✅ terminado.
 
-El comportamiento de scroll (`script.js`) reemplaza `nav--white`/`nav--black` por `nav--scrolled` al pasar los 50px de scroll, y baja el nav a `top: 2.2em`. Al volver arriba, restaura la variante inicial y `top: 0`.
+3 variantes de estado:
+- `.nav--white` — fondo blanco, texto/logo negro. Botón outline negro, hover filled negro.
+- `.nav--black` — fondo negro, texto/logo blanco. Botón outline blanco, hover filled blanco (texto negro).
+- `.nav--scrolled` — se activa vía JS a los 50px de scroll (sin importar si el estado inicial era white o black). Fondo indigo, texto blanco, logo invertido, botón outline blanco con hover filled blanco (texto indigo).
+
+`navbar.js` guarda la variante inicial (`nav--white` o `nav--black`) y la restaura al volver al top; baja el nav a `top: 2.2em` mientras está scrolled.
+
+Requiere las variables `:root` del design system global (colores, spacing) y la clase `.btn` como base de `.btn-nav`.
 
 ---
 
-## Sección demo
+## Footer, Work Card, EdTech Mentor Card, Featured Card, Cards Slider
+
+Estado: 🔲 pendiente — solo estructura de archivos creada, sin contenido.
+
+---
+
+## Sección demo (kitchen sink)
 
 ### `.section--component-demo`
-Modifier de `.section`. Exclusivo de esta página — le da a la página suficiente altura para poder scrollear y así probar visualmente el cambio a `nav--scrolled`.
+Modifier de `.section`, exclusivo de `index.html`. Le da a la página suficiente altura para poder scrollear y probar visualmente el `nav--scrolled`.
 - `min-height: 250vh`
-- `padding-top: 12em` — deja espacio bajo el nav fijo para que el H1 no quede tapado
+- `padding-top: 12em`
 - `display: flex; align-items: flex-start`
-
-Se usa junto al `.container` estándar, solo con `gap` reducido (`var(--space-xs)`) entre `h5`, `h1` y `p`.
-
----
-
-## Pendiente
-
-Próximas secciones a agregar en sesiones futuras: Colores, Tipografía, Espaciado, Botones, Footer, Cards.
