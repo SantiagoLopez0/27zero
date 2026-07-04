@@ -132,7 +132,6 @@ p, .text-body, a, .text-link {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0;
-  text-align: center;
 }
 ```
 
