@@ -163,3 +163,320 @@ p, .text-body, a, .text-link {
 
 /* ===== Secciones específicas de Home ===== */
 /* Se agregan aquí paso a paso, documentadas en design-system-home.md */
+
+.text-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86em;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--color-black);
+}
+
+/* ===== Hero ===== */
+.section--hero-home {
+  background-color: var(--color-gray);
+  padding-top: 8.57em;
+  padding-bottom: 6em;
+}
+
+.hero-home-container {
+  gap: var(--space-xs);
+}
+
+/* ===== Intro + Los mejores ===== */
+.section--intro-home {
+  background-color: var(--color-purple);
+  padding-top: 6.5em;
+  padding-bottom: 0;
+}
+
+.intro-home-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3em;
+}
+
+.intro-home-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 0 0 34%;
+}
+
+.intro-home-media {
+  flex: 1;
+  min-height: 22em;
+  border-radius: 0.5em;
+  background-color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-home-media span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-black);
+  opacity: 0.4;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .intro-home-row {
+    flex-direction: column;
+  }
+  .intro-home-text {
+    flex: 1 1 auto;
+  }
+}
+
+/* ===== Sliders (copiado 1:1 de /work) ===== */
+.sliders-container {
+  padding-left: 6.5em;
+  padding-right: 0;
+  max-width: none;
+  margin: 0;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.slider-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.slider-header {
+  padding-left: 6.5em;
+  padding-right: 6.5em;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.slider-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.slider-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 6.5em;
+  padding-right: 6.5em;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.slider-nav {
+  display: flex;
+  gap: 0.75em;
+}
+
+.slider-arrow {
+  width: 2.85em;
+  height: 2.85em;
+  border-radius: 50%;
+  border: 0.07em solid var(--color-black);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-black);
+  transition: all 0.2s ease;
+}
+
+.slider-arrow:hover:not(:disabled) {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.slider-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.slider-track-wrap {
+  width: 100%;
+  padding-left: max(6.5em, calc((100vw - 1440px) / 2 + 6.5em));
+  overflow: visible;
+}
+
+.slider-track {
+  display: flex;
+  gap: 1.5em;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+  padding-right: 6.5em;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-track.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+/* ===== Cards (copiado 1:1 de /work) ===== */
+.card {
+  border-radius: 0.5em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-black);
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.card-work-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-work-bg span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-black);
+  opacity: 0.4;
+  text-transform: uppercase;
+}
+
+.card-work-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2.28em 1.71em;
+}
+
+.card-work-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.card-work-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card-work-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93em;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--color-black);
+  text-transform: capitalize;
+}
+
+.card-work-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.43em;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.card-work-client {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.card-work-client-logo {
+  width: 1.71em;
+  height: 1.71em;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 0.07em solid rgba(16,16,16,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-work-client-logo span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.card-work-client-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93em;
+  font-weight: 500;
+  color: var(--color-black);
+  text-transform: capitalize;
+}
+
+.card-work-arrow {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 0.1em solid var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.card:hover .card-work-arrow {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.card--featured {
+  width: 22em;
+  min-height: 26.5em;
+}
+
+.card--featured .card-work-body {
+  min-height: 26.5em;
+}
+
+@media (max-width: 767px) {
+  .sliders-container {
+    padding-left: 2em;
+  }
+  .slider-header,
+  .slider-footer {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  .slider-track-wrap {
+    padding-left: max(2em, calc((100vw - 1440px) / 2 + 2em));
+  }
+}
