@@ -58,6 +58,17 @@ Estado: ✅ terminado.
 
 `navbar.js` guarda la variante inicial (`nav--white` o `nav--black`) y la restaura al volver al top; baja el nav a `top: 2.2em` mientras está scrolled.
 
+### Mobile (<=767px)
+A esa resolución se esconden `.nav-links` y el `.btn-nav` del `.nav-container`, y aparece `.nav-hamburger`.
+
+- **`.nav-hamburger`** — botón que contiene el ícono lottie (`.nav-hamburger-icon`). Oculto en desktop (`display: none`), visible en mobile.
+- **Ícono (Lottie)** — `hamburger-menu-animation.json` (asset del componente, en esta misma carpeta). Se anima con `lottie-web` (CDN): click abre → `setDirection(1)` + `play()` (0% a 100%, hamburger a X); segundo click o click afuera → `setDirection(-1)` + `play()` (100% a 0%). El SVG viene en negro fijo por json, así que se invierte con `filter: invert(1)` en `nav--black` y `nav--scrolled`, igual que el logo.
+- **`.nav-mobile-menu`** — dropdown absoluto debajo del `.nav`, mismo ancho. Oculto por defecto (`opacity: 0`, `pointer-events: none`), visible con `.is-open`. Hereda color según la variante activa (`nav--white/black/scrolled`), mismo patrón que `.nav-links`.
+- **`.nav-mobile-links`** — misma lista de links que `.nav-links`, en columna, font-size mayor (`1.5em`) para mobile.
+- Dentro del dropdown se repite el `.btn-nav` como CTA — reusa sus mismos estilos por variante.
+
+Requiere `lottie-web` cargado antes de `navbar.js` (CDN: `https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js`).
+
 ---
 
 ## Footer, Work Card, EdTech Mentor Card, Featured Card, Cards Slider

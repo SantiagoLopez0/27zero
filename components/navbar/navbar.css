@@ -141,3 +141,96 @@
   color: var(--color-indigo);
   border-color: var(--color-white);
 }
+
+/* ============================
+   Mobile (<=767px)
+   Esconde .nav-links y .btn-nav, muestra el hamburger + mobile menu
+   ============================ */
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 2.5em;
+  height: 2.5em;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-hamburger-icon {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+/* El SVG del lottie viene en negro fijo — se invierte en variantes oscuras, igual que el logo */
+.nav--black .nav-hamburger-icon svg,
+.nav--scrolled .nav-hamburger-icon svg {
+  filter: invert(1);
+}
+
+/* Dropdown — hereda el color de la variante activa del nav (mismo patrón que .nav-links) */
+.nav-mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5em;
+  border-radius: 1.25em;
+  padding: 2em 3.25em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  opacity: 0;
+  transform: translateY(-0.5em);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-mobile-menu.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.nav-mobile-links a {
+  font-size: 1.5em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: font-weight 0.2s ease;
+}
+
+.nav-mobile-links a:hover {
+  font-weight: 700;
+}
+
+.nav--white .nav-mobile-menu { background-color: var(--color-white); color: var(--color-black); }
+.nav--white .nav-mobile-links a { color: var(--color-black); }
+
+.nav--black .nav-mobile-menu { background-color: var(--color-black); color: var(--color-white); }
+.nav--black .nav-mobile-links a { color: var(--color-white); }
+
+.nav--scrolled .nav-mobile-menu { background-color: var(--color-indigo); color: var(--color-white); }
+.nav--scrolled .nav-mobile-links a { color: var(--color-white); }
+
+/* El botón dentro del dropdown mobile usa la misma clase .btn-nav — ya cambia de color por variante */
+.nav-mobile-menu .btn-nav {
+  align-self: flex-start;
+}
+
+@media (max-width: 767px) {
+  .nav-links,
+  .nav-container > .btn-nav {
+    display: none;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+}

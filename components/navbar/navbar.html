@@ -56,7 +56,7 @@
   /* Spacer solo para poder probar el estado nav--scrolled en esta vista aislada */
   .scroll-spacer { height: 200vh; }
 </style>
-<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="/components/navbar/navbar.css">
 </head>
 <body>
 
@@ -73,11 +73,29 @@
       <a href="/about">About</a>
     </nav>
     <a href="/contact" class="btn btn-nav">Let's Talk!</a>
+
+    <!-- Hamburger — solo visible en mobile (<=767px) -->
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <div class="nav-hamburger-icon"></div>
+    </button>
+  </div>
+
+  <!-- Dropdown mobile — hereda el color de la variante activa del nav -->
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <nav class="nav-mobile-links">
+      <a href="/work">Work</a>
+      <a href="/edtech-marketing">Edtech Marketing</a>
+      <a href="/the-edtech-mentor">The EdTech Mentor</a>
+      <a href="/resources">Resources</a>
+      <a href="/about">About</a>
+    </nav>
+    <a href="/contact" class="btn btn-nav">Let's Talk!</a>
   </div>
 </header>
 
 <div class="scroll-spacer"></div>
 
-<script src="navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+<script src="/components/navbar/navbar.js"></script>
 </body>
 </html>
