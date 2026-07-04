@@ -150,11 +150,13 @@ Fondo `--color-black`, `color: var(--color-white)`.
 ### `.testimonials-slider`
 Carrusel de 1 slide por view (igual mecánica que `.apart-slider`: flechas a los costados, track con `transform: translateX`, deshabilitado en los extremos — sin loop).
 - `.testimonials-arrow`: reutiliza `.slider-arrow`, fondo transparente + borde/texto blanco, hover invierte a blanco/negro
-- `.testimonial-slide`: quote SVG + `.testimonial-content` en fila
-- `.testimonial-quote-icon`: el SVG del quote grande (path `#C286FF`), `width: 13em`
-- `.testimonial-text`: Inter 500, `1.5em`, line-height 140%, `max-width: 22em`
-- `.testimonial-divider`: línea blanca de 1px bajo el texto
+- `.testimonial-slide`: `justify-content: center` (slide centrado), quote SVG + `.testimonial-content` en fila
+- `.testimonial-quote-icon`: el SVG del quote grande (path `#C286FF`), `width: 30em`
+- `.testimonial-content`: `max-width: 30em`, `gap: 2.86em` (40px @ 14px)
+- `.testimonial-text`: Inter 500, `1.5em` (21px @ 14px), line-height 150%, letter-spacing 0
+- `.testimonial-divider`: línea blanca de 1px bajo el texto (ancho 100% del `.testimonial-content`, sin max-width propio)
 - `.testimonial-author`: avatar circular placeholder (`.testimonial-avatar`, iniciales) + nombre/rol (`.testimonial-author-info`)
+- `.testimonial-name`: Inter 400, `1.5em` (21px @ 14px)
 - Mobile (`≤767px`): `.testimonial-slide` pasa a columna
 
 ### `.testimonials-dots`
