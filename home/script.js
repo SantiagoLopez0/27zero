@@ -107,8 +107,8 @@ function enableSliderArrows(footer, track) {
   window.addEventListener('resize', updateArrows);
 }
 
-function renderLosMejoresSlider() {
-  const container = document.getElementById('losMejoresContainer');
+function renderLosMejoresSlider(containerId) {
+  const container = document.getElementById(containerId);
   if (!container) return;
 
   const block = document.createElement('div');
@@ -156,7 +156,8 @@ function renderLosMejoresSlider() {
   enableSliderArrows(footer, track);
 }
 
-renderLosMejoresSlider();
+renderLosMejoresSlider('losMejoresContainer');
+renderLosMejoresSlider('mentorSliderContainer');
 
 // ===== "What sets 27zero apart" — slider de shapes =====
 

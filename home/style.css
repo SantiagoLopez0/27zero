@@ -293,6 +293,92 @@ h4 {
   }
 }
 
+/* ===== The EdTech Mentor (duplicado de Intro, bg indigo) ===== */
+.section--mentor-home {
+  background-color: var(--color-indigo);
+  color: var(--color-white);
+  padding-top: 10.36em;
+  padding-bottom: 5.71em;
+}
+
+.mentor-home-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+
+.mentor-home-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5em;
+  flex: 0 0 34%;
+}
+
+.section--mentor-home h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.57em;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+}
+
+.section--mentor-home h2 .inter-accent {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+}
+
+.section--mentor-home .btn-white {
+  border-color: var(--color-white);
+}
+
+.mentor-home-media {
+  flex: 1;
+  min-height: 34em;
+  border-radius: 0.5em;
+  background-color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mentor-home-media span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-black);
+  opacity: 0.4;
+  text-transform: uppercase;
+}
+
+/* Slider dentro de esta sección: flechas blancas, fondo transparente */
+.section--mentor-home .slider-arrow {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.section--mentor-home .slider-arrow:hover:not(:disabled) {
+  background-color: var(--color-white);
+  color: var(--color-indigo);
+}
+
+@media (max-width: 767px) {
+  .mentor-home-row {
+    flex-direction: column;
+  }
+  .mentor-home-text {
+    flex: 1 1 auto;
+  }
+}
+
 /* ===== Sliders (copiado 1:1 de /work) ===== */
 .sliders-container {
   padding-left: 6.5em;

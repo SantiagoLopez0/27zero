@@ -115,3 +115,26 @@ Modifier de `.container`. Centrado.
 - JS (`initLogosMarquee`): la lista de logos (`CLIENT_LOGOS`) se duplica una vez en el DOM para que el loop del -50% sea continuo y sin salto visible
 - Logos usados: Student First, Doctums, Skillwell, World Learning, Scholarship Magic (no se incluyó OES por no tener el asset)
 
+---
+
+## Sección "The EdTech Mentor"
+
+Duplicado estructural de la sección Intro (`.section--intro-home`), mismo layout (`row` texto+media + slider debajo). **Nota:** se mantuvo el copy (H2, párrafo, botón) idéntico al de Intro como placeholder — falta el contenido real de esta sección, reemplazar cuando se tenga.
+
+### `.section--mentor-home`
+Fondo `--color-indigo`, `color: var(--color-white)` (cascada a H2, párrafo, etc.).
+- `padding-top: 10.36em` (145px @ 14px)
+- `padding-bottom: 5.71em` (80px @ 14px)
+
+### `.mentor-home-row` / `.mentor-home-text` / `.mentor-home-media`
+Mismos estilos que `.intro-home-row` / `.intro-home-text` / `.intro-home-media` (duplicados 1:1, sin cambios de spacing).
+
+### `.section--mentor-home h2`
+Mismo override que `.section--intro-home h2` (Lora 500, 2.57em, letter-spacing -0.36px).
+
+### `.section--mentor-home .btn-white`
+Botón usa la variante `.btn-white` (en vez de `.btn-dark` como en Intro), con `border-color: var(--color-white)` — mismo tratamiento que el botón del Hero, para que quede "full blanco" sobre el fondo indigo.
+
+### Slider dentro de esta sección
+Reutiliza el mismo slider "Los mejores" (misma función JS `renderLosMejoresSlider`, ahora parametrizada por `containerId` y llamada dos veces: `losMejoresContainer` y `mentorSliderContainer`). Único cambio visual: `.section--mentor-home .slider-arrow` → fondo transparente, borde y color blanco; hover invierte a fondo blanco/texto indigo.
+
