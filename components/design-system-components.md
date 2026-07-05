@@ -72,6 +72,20 @@ Requiere `lottie-web` cargado antes de `navbar.js` (CDN: `https://cdn.jsdelivr.n
 
 ---
 
-## Footer, Work Card, EdTech Mentor Card, Featured Card, Cards Slider
+## Work Card
+
+Estado: ✅ terminado. Extraído de `/work` (markup de `script.js`, estilos de `style.css`).
+
+`.card` es la base compartida (border-radius, overflow, flex column, cursor pointer). `.card--work` es la única variante activa por ahora — el tamaño "standard" (`18em × min-height 18em`) quedó integrado directo en `.card--work`, sin modifier `--standard` separado (se descartó esa variante).
+
+Estructura: `.card-work-bg` (fondo absoluto, placeholder gris con label) + `.card-work-body` (contenido, z-index 1) → `.card-work-content` (eyebrow + title + client) y `.card-work-footer` (flecha).
+
+Hover: `.card:hover .card-work-arrow` — flecha pasa de outline negro a fondo negro/ícono blanco.
+
+Sin JS — es una card estática, el hover es puro CSS.
+
+---
+
+## Footer, EdTech Mentor Card, Featured Card, Cards Slider
 
 Estado: 🔲 pendiente — solo estructura de archivos creada, sin contenido.
