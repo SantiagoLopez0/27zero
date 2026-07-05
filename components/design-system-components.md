@@ -86,6 +86,22 @@ Sin JS — es una card estática, el hover es puro CSS.
 
 ---
 
-## Footer, EdTech Mentor Card, Featured Card, Cards Slider
+## Cards Slider
+
+Estado: ✅ terminado. Extraído de `/work` (`.slider-block` + `.slider-header`, markup/lógica de `script.js`, estilos de `style.css`).
+
+Estructura: `.slider-block` (wrapper) → `.slider-header` (título, `.slider-title`), `.slider-track-wrap` → `.slider-track` (scroll horizontal, drag con pointer events), `.slider-footer` con `.slider-nav` (botones `.slider-arrow` prev/next).
+
+El demo trae 8 `.card.card--work` (componente Work Card) como slides — requiere `/components/work-card/work-card.css` además de `cards-slider.css`.
+
+**JS (`cards-slider.js`):**
+- `enableSliderDrag(track)` — drag con pointer events (`pointerdown/move/up/leave/cancel`), clase `.dragging` mientras arrastra.
+- `enableSliderArrows(footer, track)` — scroll por flechas (`scrollBy` con step = 2 cards), disabled automático en los extremos, recalcula en resize/scroll.
+
+No se extrajeron `.section--sliders` ni `.sliders-container` (layout específico de la página `/work`, no del componente). El `.slider-track-wrap` usa `padding-left: max(6.5em, calc((100vw - 1440px)/2 + 6.5em))` para alinearse solo, sin depender de un `.container` externo.
+
+---
+
+## Footer, EdTech Mentor Card, Featured Card
 
 Estado: 🔲 pendiente — solo estructura de archivos creada, sin contenido.
