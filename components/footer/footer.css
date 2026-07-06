@@ -41,6 +41,7 @@
 .footer-links-col {
   display: flex;
   flex-direction: column;
+  gap: 1.71em; /* 24px */
 }
 
 .footer-links-col a {
@@ -51,12 +52,7 @@
   letter-spacing: 0;
   color: var(--color-white);
   text-decoration: none;
-  margin-bottom: 2.86em; /* 40px */
   transition: font-weight 0.2s ease;
-}
-
-.footer-links-col a:last-child {
-  margin-bottom: 0;
 }
 
 .footer-links-col a:hover {
@@ -79,8 +75,10 @@
 
 .footer-copy {
   font-family: 'Inter', sans-serif;
-  font-size: 0.93em;
   font-weight: 400;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
   color: rgba(255, 255, 255, 0.6);
 }
 

@@ -127,9 +127,9 @@ Estado: ✅ v1 — pendiente de ajustes con Figma.
 Estructura: `.footer` (bg `#101010`) → `.footer-container` (max-width 1440, padding `5em 6.5em 6.86em` — 70px/—/96px) → `.footer-top` (logo + `.footer-links` en 3 columnas) → `.footer-divider` → `.footer-bottom` (copyright + legal link).
 
 - **`.footer-logo`** — usa el logo del navbar (mismo SVG) con `filter: invert(1)`, `width: 11.07em` (155px), `height: auto`.
-- **`.footer-links-col a`** — 15px/400, line-height 160%, `margin-bottom: 2.86em` (40px, 0 en el último).
+- **`.footer-links-col`** — `gap: 1.71em` (24px). Links: 15px/400, line-height 160%, sin margin-bottom.
 - **`.footer-divider`** — línea `rgba(255,255,255,.15)`, `margin-bottom: 2.14em` (30px).
-- **`.footer-legal`** — 15px/400, line-height 160%, color atenuado `rgba(255,255,255,.6)`.
+- **`.footer-copy`** y **`.footer-legal`** — mismos estilos: 15px/400, line-height 160%, color atenuado `rgba(255,255,255,.6)`.
 - Mobile (`<=767px`): `.footer-links` con `flex-wrap: wrap`.
 
 ---
