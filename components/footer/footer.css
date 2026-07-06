@@ -10,7 +10,7 @@
 .footer-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 6.5em 6.5em 3em;
+  padding: 5em 6.5em 6.86em; /* 70px / — / 96px */
 }
 
 /* ===== Top: logo + columnas de links ===== */
@@ -23,12 +23,14 @@
 }
 
 .footer-logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.71em;
-  font-weight: 700;
-  color: var(--color-white);
-  text-decoration: none;
-  letter-spacing: -0.02em;
+  display: block;
+}
+
+.footer-logo img {
+  width: 11.07em; /* 155px */
+  height: auto;
+  display: block;
+  filter: invert(1);
 }
 
 .footer-links {
@@ -39,16 +41,22 @@
 .footer-links-col {
   display: flex;
   flex-direction: column;
-  gap: 1em;
 }
 
 .footer-links-col a {
   font-family: 'Inter', sans-serif;
-  font-size: 1em;
   font-weight: 400;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
   color: var(--color-white);
   text-decoration: none;
+  margin-bottom: 2.86em; /* 40px */
   transition: font-weight 0.2s ease;
+}
+
+.footer-links-col a:last-child {
+  margin-bottom: 0;
 }
 
 .footer-links-col a:hover {
@@ -59,7 +67,7 @@
 .footer-divider {
   height: 0.07em;
   background-color: rgba(255, 255, 255, 0.15);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 2.14em; /* 30px */
 }
 
 /* ===== Bottom row ===== */
@@ -78,8 +86,10 @@
 
 .footer-legal {
   font-family: 'Inter', sans-serif;
-  font-size: 0.93em;
   font-weight: 400;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -101,6 +111,7 @@
 
   .footer-links {
     gap: 2.5em;
+    flex-wrap: wrap;
   }
 
   .footer-bottom {

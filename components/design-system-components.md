@@ -124,14 +124,13 @@ Sin JS — todo el efecto hover es CSS puro.
 
 Estado: ✅ v1 — pendiente de ajustes con Figma.
 
-Estructura: `.footer` (bg `#101010`) → `.footer-container` (max-width 1440, padding 6.5em) → `.footer-top` (logo + `.footer-links` en 3 columnas) → `.footer-divider` → `.footer-bottom` (copyright + legal link).
+Estructura: `.footer` (bg `#101010`) → `.footer-container` (max-width 1440, padding `5em 6.5em 6.86em` — 70px/—/96px) → `.footer-top` (logo + `.footer-links` en 3 columnas) → `.footer-divider` → `.footer-bottom` (copyright + legal link).
 
-- **`.footer-logo`** — "27ZERO.", 1.71em, bold.
-- **`.footer-links-col`** — columna de links, hover = `font-weight: 700` (mismo patrón que `.nav-links`).
-- **`.footer-divider`** — línea `rgba(255,255,255,.15)`.
-- **`.footer-bottom`** — copyright + legal link, texto atenuado `rgba(255,255,255,.6)`.
-
-Valores estimados (sin spec exacta de Figma aún): gaps entre columnas, tamaños de fuente, padding vertical. Pendiente ajuste fino.
+- **`.footer-logo`** — usa el logo del navbar (mismo SVG) con `filter: invert(1)`, `width: 11.07em` (155px), `height: auto`.
+- **`.footer-links-col a`** — 15px/400, line-height 160%, `margin-bottom: 2.86em` (40px, 0 en el último).
+- **`.footer-divider`** — línea `rgba(255,255,255,.15)`, `margin-bottom: 2.14em` (30px).
+- **`.footer-legal`** — 15px/400, line-height 160%, color atenuado `rgba(255,255,255,.6)`.
+- Mobile (`<=767px`): `.footer-links` con `flex-wrap: wrap`.
 
 ---
 
