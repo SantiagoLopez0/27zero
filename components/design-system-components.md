@@ -112,7 +112,7 @@ Extiende `.card` base (de `work-card.css`). `.card--edtech-mentor` es el wrapper
 - **`.card-edtech-mentor-body`** — la card real: `405px × 405px`, `padding: 2.5em` (35px), `border-radius: 0.5em`, todos los bordes redondeados. Bg gray por default; `::after` con gradiente (gray → black) en `opacity: 0` que pasa a `1` en `:hover` del card (el gradiente no es animable directo con `transition`, por eso el overlay).
 - **`.card-edtech-mentor-tag`** — 15px/400, line-height 150%.
 - **`.card-edtech-mentor-title`** — 18px/500, line-height 140%. Oculto por default, aparece con el hover del card (junto al gradiente).
-- **`.card-edtech-mentor-arrow`** — bg siempre transparent salvo hover directo. Default: border/ícono `#000`. Hover de toda la card: border/ícono pasan a `#fff` (bg sigue transparent). Hover directo sobre el arrow (prioridad sobre el de la card): bg `#fff`, ícono `#000`, border `#fff`.
+- **`.card-edtech-mentor-arrow`** — bg siempre transparent salvo hover directo. Default: border/ícono `#000`. Hover directo sobre el arrow: bg `#fff`, ícono `#000`, border `#fff`. No cambia por el hover de la card.
 
 Sin JS — todo el efecto hover es CSS puro.
 

@@ -145,11 +145,6 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.card--edtech-mentor:hover .card-edtech-mentor-arrow {
-  border-color: #fff;
-  color: #fff;
-}
-
 /* Hover directo sobre el arrow tiene prioridad sobre el hover de la card */
 .card-edtech-mentor-arrow:hover {
   background-color: #fff;
