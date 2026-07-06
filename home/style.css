@@ -357,18 +357,6 @@ h4 {
   text-transform: uppercase;
 }
 
-/* Slider dentro de esta sección: flechas blancas, fondo transparente */
-.section--mentor-home .slider-arrow {
-  background-color: transparent;
-  border-color: var(--color-white);
-  color: var(--color-white);
-}
-
-.section--mentor-home .slider-arrow:hover:not(:disabled) {
-  background-color: var(--color-white);
-  color: var(--color-indigo);
-}
-
 @media (max-width: 767px) {
   .mentor-home-row {
     flex-direction: column;
@@ -386,16 +374,6 @@ h4 {
   margin: 0;
   padding-top: var(--space-lg);
   padding-bottom: var(--space-lg);
-}
-
-/* ===== Card variant — usada por el slider de "The EdTech Mentor" (extiende .card--work del componente work-card) ===== */
-.card--work.card--featured {
-  width: 22em;
-  min-height: 26.5em;
-}
-
-.card--work.card--featured .card-work-body {
-  min-height: 26.5em;
 }
 
 @media (max-width: 767px) {

@@ -123,7 +123,7 @@ Modifier de `.container`. Centrado.
 
 ## Sección "The EdTech Mentor"
 
-Duplicado estructural de la sección Intro (`.section--intro-home`), mismo layout (`row` texto+media + slider debajo).
+Duplicado estructural del bloque de texto+media de Intro (`.section--intro-home`). **Ya no tiene slider** (se eliminó por completo: HTML, JS y CSS relacionados).
 
 ### `.section--mentor-home`
 Fondo `--color-indigo`, `color: var(--color-white)` (cascada a H2, párrafo, etc.).
@@ -138,9 +138,6 @@ Mismo override que `.section--intro-home h2` (Lora 500, 2.57em, letter-spacing -
 
 ### `.section--mentor-home .btn-white`
 Botón usa la variante `.btn-white` (en vez de `.btn-dark` como en Intro), con `border-color: var(--color-white)` — mismo tratamiento que el botón del Hero, para que quede "full blanco" sobre el fondo indigo.
-
-### Slider dentro de esta sección
-Generado por JS (`renderMentorSlider('mentorSliderContainer')` en `script.js`), usando las clases de los componentes `work-card` (`.card`, `.card--work`, `.card-work-*`) y `cards-slider` (`.slider-block`, `.slider-track-wrap`, `.slider-track`, `.slider-footer`, `.slider-nav`, `.slider-arrow` — importadas vía `<link>`, no duplicadas en `home/style.css`). No usa `.slider-header`/`.slider-title` (sin título). El drag y las flechas reutilizan las funciones globales `enableSliderDrag`/`enableSliderArrows` que ya provee `/components/cards-slider/cards-slider.js` (cargado antes que `home/script.js`). Variante `.card--featured` (22em, `min-height: 26.5em`) definida en `home/style.css` como `.card--work.card--featured` para ganarle en especificidad al `.card--work` del componente sin depender del orden de carga. Único cambio visual además: `.section--mentor-home .slider-arrow` → fondo transparente, borde y color blanco; hover invierte a fondo blanco/texto indigo.
 
 ---
 
@@ -183,8 +180,8 @@ Integrados desde `/components/navbar/` y `/components/footer/`, tal como están 
 
 ## Work Card y Cards Slider
 
-Integrados desde `/components/work-card/` y `/components/cards-slider/`, usados en el slider "Los mejores" (Intro, markup estático) y en el slider de "The EdTech Mentor" (generado por JS):
+Integrados desde `/components/work-card/` y `/components/cards-slider/`, usados en el slider "Los mejores" (Intro, markup estático):
 - CSS: `<link>` a `/components/work-card/work-card.css` y `/components/cards-slider/cards-slider.css` en el `<head>` (cargados después de `home/style.css`, junto con navbar/footer)
 - JS: `/components/cards-slider/cards-slider.js` — auto-inicializa drag + flechas en cada `.slider-block` presente en el DOM al momento de cargar el script
-- `home/style.css` ya **no** duplica `.slider-block`, `.slider-header`, `.slider-title`, `.slider-footer`, `.slider-nav`, `.slider-arrow`, `.slider-track-wrap`, `.slider-track`, `.card`, `.card-work-*` — todo viene del componente. Solo quedan en `home/style.css` los overrides propios de la página: `.sliders-container` (spacing wrapper) y `.card--work.card--featured` (variante usada en el slider de Mentor)
+- `home/style.css` ya **no** duplica `.slider-block`, `.slider-header`, `.slider-title`, `.slider-footer`, `.slider-nav`, `.slider-arrow`, `.slider-track-wrap`, `.slider-track`, `.card`, `.card-work-*` — todo viene del componente. Solo queda en `home/style.css` el override propio de la página: `.sliders-container` (spacing wrapper)
 
