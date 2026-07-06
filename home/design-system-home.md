@@ -55,11 +55,10 @@ Columna de texto: H2 + párrafo + botón.
 - `flex: 0 0 34%`
 
 ### `.section--intro-home h2`
-Override del H2 global, específico del intro de Home.
-- Lora, weight 500, style normal, `2.57em` (36px @ 14px), line-height 125%, letter-spacing `-0.36px` (-1% de 36px)
+Se eliminó el override — ahora hereda el H2 global sin estilos propios.
 
 ### `.inter-accent` (dentro de `.section--intro-home h2`)
-Span para la frase de acento ("for growth and impact."), en Inter en vez de Lora, mismo tamaño/line-height/letter-spacing que el H2.
+Span para la frase de acento ("for growth and impact."). **Nota:** al quitar el override del H2 padre, este selector queda con valores fijos propios (Inter, 500, `1em`, line-height 125%, letter-spacing `-0.36px`) que ya no coinciden necesariamente con el tamaño del H2 global — revisar si aplica.
 
 ### `.intro-home-text p`
 Reduce el párrafo del bloque intro a `1.07em` (15px @ 14px).

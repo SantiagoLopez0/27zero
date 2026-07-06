@@ -245,15 +245,6 @@ h4 {
   flex: 0 0 34%;
 }
 
-.section--intro-home h2 {
-  font-family: 'Lora', serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 2.57em;
-  line-height: 1.25;
-  letter-spacing: -0.36px;
-}
-
 .section--intro-home h2 .inter-accent {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
