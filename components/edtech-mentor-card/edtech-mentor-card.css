@@ -152,7 +152,7 @@
 
 /* Hover directo sobre el arrow tiene prioridad sobre el hover de la card */
 .card-edtech-mentor-arrow:hover {
-  background-color: #000;
-  border-color: #000;
-  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
 }
