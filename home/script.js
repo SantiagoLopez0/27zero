@@ -4,9 +4,9 @@
 
 // La lógica de interacción de cada sección se agrega aquí paso a paso.
 
-// ===== Slider "Los mejores" (copiado 1:1 del patrón de /work) =====
+// ===== Slider de "The EdTech Mentor" (generado por JS, usa las clases de los componentes work-card / cards-slider) =====
 
-const LOS_MEJORES_CARDS = [
+const MENTOR_SLIDER_CARDS = [
   { client: 'Student flirts' },
   { client: 'Doctums' },
   { client: 'OES' },
@@ -45,78 +45,15 @@ function createFeaturedCard(card) {
   return a;
 }
 
-function enableSliderDrag(track) {
-  let isDown  = false;
-  let startX  = 0;
-  let startSL = 0;
+// Nota: enableSliderDrag() y enableSliderArrows() ya las provee /components/cards-slider/cards-slider.js
+// (cargado antes que este script), así que no se duplican aquí.
 
-  track.addEventListener('pointerdown', (e) => {
-    isDown = true;
-    track.classList.add('dragging');
-    startX  = e.pageX;
-    startSL = track.scrollLeft;
-    track.setPointerCapture(e.pointerId);
-  });
-
-  track.addEventListener('pointermove', (e) => {
-    if (!isDown) return;
-    track.scrollLeft = startSL - (e.pageX - startX);
-  });
-
-  const stopDrag = () => {
-    isDown = false;
-    track.classList.remove('dragging');
-  };
-
-  track.addEventListener('pointerup',     stopDrag);
-  track.addEventListener('pointerleave',  stopDrag);
-  track.addEventListener('pointercancel', stopDrag);
-}
-
-function enableSliderArrows(footer, track) {
-  const prevBtn = footer.querySelector('[data-dir="prev"]');
-  const nextBtn = footer.querySelector('[data-dir="next"]');
-
-  function getScrollStep() {
-    const card = track.querySelector('.card');
-    if (!card) return 320;
-    const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    return (card.getBoundingClientRect().width + gap) * 2;
-  }
-
-  function updateArrows() {
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    prevBtn.disabled = track.scrollLeft <= 2;
-    nextBtn.disabled = maxScroll <= 2 || track.scrollLeft >= maxScroll - 2;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-  });
-
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-  });
-
-  track.addEventListener('scroll', updateArrows);
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(updateArrows);
-  });
-
-  window.addEventListener('resize', updateArrows);
-}
-
-function renderLosMejoresSlider(containerId, showTitle = true) {
+function renderMentorSlider(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   const block = document.createElement('div');
   block.className = 'slider-block';
-
-  const header = document.createElement('div');
-  header.className = 'slider-header';
-  header.innerHTML = showTitle ? `<h2 class="slider-title">Los mejores</h2>` : '';
 
   const trackWrap = document.createElement('div');
   trackWrap.className = 'slider-track-wrap';
@@ -124,7 +61,7 @@ function renderLosMejoresSlider(containerId, showTitle = true) {
   const track = document.createElement('div');
   track.className = 'slider-track';
 
-  LOS_MEJORES_CARDS.forEach(card => track.appendChild(createFeaturedCard(card)));
+  MENTOR_SLIDER_CARDS.forEach(card => track.appendChild(createFeaturedCard(card)));
 
   trackWrap.appendChild(track);
 
@@ -148,7 +85,6 @@ function renderLosMejoresSlider(containerId, showTitle = true) {
   `;
 
   block.appendChild(trackWrap);
-  if (showTitle) block.insertBefore(header, trackWrap);
   block.appendChild(footer);
   container.appendChild(block);
 
@@ -156,8 +92,7 @@ function renderLosMejoresSlider(containerId, showTitle = true) {
   enableSliderArrows(footer, track);
 }
 
-renderLosMejoresSlider('losMejoresContainer');
-renderLosMejoresSlider('mentorSliderContainer', false);
+renderMentorSlider('mentorSliderContainer');
 
 // ===== "What sets 27zero apart" — slider de shapes =====
 
