@@ -102,6 +102,23 @@ No se extrajeron `.section--sliders` ni `.sliders-container` (layout específico
 
 ---
 
-## Footer, EdTech Mentor Card, Featured Card
+## EdTech Mentor Card
+
+Estado: ✅ terminado. Replicado a partir de mockups (default + hover).
+
+Extiende `.card` base (de `work-card.css`). `.card--edtech-mentor` fija `width: 18em`.
+
+- **`.card-edtech-mentor-header`** — bg indigo, flex row: `.card-edtech-mentor-avatar` (círculo, placeholder con iniciales) + `.card-edtech-mentor-meta` (`.card-edtech-mentor-role` texto pequeño, `.card-edtech-mentor-name` más grande, bold).
+- **`.card-edtech-mentor-body`** — bg gray por default. Tiene un `::after` con gradiente (gray → black) en `opacity: 0`, que pasa a `opacity: 1` en `:hover` del card — así se oscurece el fondo sin animar el gradiente directamente (no es animable con `transition`).
+- **`.card-edtech-mentor-tag`** — texto simple arriba a la izquierda, siempre visible.
+- **`.card-edtech-mentor-footer`** — fila inferior: `.card-edtech-mentor-title` (oculto por default, `opacity: 0` + `translateY`, aparece con el hover del card) + `.card-edtech-mentor-arrow` (círculo bg blanco fijo, border negro — se mantiene visible tanto sobre el gray default como sobre el gradiente oscuro del hover).
+
+Asunciones de tamaño (sin spec en px): avatar 40px, header padding 16px/24px, body padding 24px, title 16px. Ajustables si no calzan con Figma.
+
+Sin JS — todo el efecto hover es CSS puro.
+
+---
+
+## Footer, Featured Card
 
 Estado: 🔲 pendiente — solo estructura de archivos creada, sin contenido.
