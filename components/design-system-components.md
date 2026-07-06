@@ -76,7 +76,7 @@ Requiere `lottie-web` cargado antes de `navbar.js` (CDN: `https://cdn.jsdelivr.n
 
 Estado: ✅ terminado. Extraído de `/work` (markup de `script.js`, estilos de `style.css`).
 
-`.card` es la base compartida (border-radius, overflow, flex column, cursor pointer). `.card--work` es la única variante activa por ahora — tamaño fijo `405px × 405px` (`28.93em`) integrado directo en `.card--work`, sin modifier `--standard` separado.
+`.card` es la base compartida (border-radius, overflow, flex column, cursor pointer). `.card--work` es la única variante activa por ahora — tamaño fijo `28em` (392px) integrado directo en `.card--work`, sin modifier `--standard` separado.
 
 Estructura: `.card-work-bg` (fondo absoluto, placeholder gris con label) + `.card-work-body` (contenido, z-index 1) → `.card-work-content` (eyebrow + title + client) y `.card-work-footer` (flecha).
 
