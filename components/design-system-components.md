@@ -138,12 +138,12 @@ Estructura: `.footer` (bg `#101010`) → `.footer-container` (max-width 1440, pa
 
 Estado: ✅ terminado. Reusa `.card` base (`work-card.css`) + estilos de texto tomados de `edtech-mentor-card.css`.
 
-`.card--featured`: `44em` de ancho, bg gray, `padding: 2.5em`, flex column `justify-content: space-between` (tag arriba, contenido abajo).
+`.card--featured`: `width: 100%; height: 100%` — el tamaño real lo define el wrapper de cada página donde se use (mismo patrón que `cards-slider` con `.card--work`). Bg gray, `padding: 2.86em` (40px), flex column `justify-content: space-between` (tag arriba, contenido abajo).
 
 - **`.card-featured-tag`** — mismo estilo que el tag de edtech-mentor (15px/400, line-height 150%).
 - **`.card-featured-meta`** — avatar (58px, placeholder iniciales) + `.card-featured-role` (15px/500) y `.card-featured-name` (21px/500) — mismos estilos que el header de edtech-mentor.
 - **`.card-featured-footer`** — título (`.card-featured-title`, 18px/500, mismo que edtech-mentor) + `.card-featured-arrow`.
-- **`.card-featured-arrow`** — outline negro, bg transparent por default; en `:hover` se rellena (bg negro, ícono blanco), como un botón normal — sin el comportamiento de dos estados de edtech-mentor-card.
+- **`.card-featured-arrow`** — outline negro, bg transparent por default; se rellena (bg negro, ícono blanco) con el hover de **toda la card** (`.card--featured:hover .card-featured-arrow`), no solo al pasar sobre el botón.
 
 Mobile (`<=767px`): footer pasa a columna (título arriba, arrow abajo), card a `width: 100%`.
 

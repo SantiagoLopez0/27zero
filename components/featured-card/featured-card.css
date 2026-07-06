@@ -6,10 +6,10 @@
    ============================ */
 
 .card--featured {
-  width: 44em;
-  min-height: 22em;
+  width: 100%;
+  height: 100%;
   background-color: var(--color-gray);
-  padding: 2.5em; /* 35px, igual que edtech-mentor-card body */
+  padding: 2.86em; /* 40px */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -113,16 +113,12 @@
   transition: all 0.2s ease;
 }
 
-.card-featured-arrow:hover {
+.card--featured:hover .card-featured-arrow {
   background-color: var(--color-black);
   color: var(--color-white);
 }
 
 @media (max-width: 767px) {
-  .card--featured {
-    width: 100%;
-  }
-
   .card-featured-footer {
     flex-direction: column;
     align-items: flex-start;

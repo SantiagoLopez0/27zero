@@ -30,12 +30,19 @@
     padding: 3em;
   }
   @media (max-width: 767px) { body { font-size: 9px; } }
+
+  /* Wrapper de ejemplo — el tamaño real lo define cada página */
+  .featured-card-demo-wrap {
+    width: 44em;
+    height: 22em;
+  }
 </style>
 <link rel="stylesheet" href="/components/work-card/work-card.css">
 <link rel="stylesheet" href="/components/featured-card/featured-card.css">
 </head>
 <body>
 
+<div class="featured-card-demo-wrap">
 <a href="#" class="card card--featured">
   <span class="card-featured-tag">Tag</span>
 
@@ -59,6 +66,7 @@
     </div>
   </div>
 </a>
+</div>
 
 </body>
 </html>
