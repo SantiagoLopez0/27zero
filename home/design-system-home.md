@@ -166,3 +166,14 @@ Paginación por dots debajo del slider, sincronizada con el índice del carrusel
 ### Contenido
 4 testimonios placeholder (`TESTIMONIALS` en `script.js`), el primero con el copy real dado ("Erin Grant"), el resto con Lorem ipsum — reemplazar cuando se tenga el contenido definitivo.
 
+---
+
+## Navbar y Footer
+
+Integrados desde `/components/navbar/` y `/components/footer/`, tal como están definidos ahí (sin modificaciones):
+- CSS: `<link>` a `/components/navbar/navbar.css` y `/components/footer/footer.css` en el `<head>`
+- HTML: markup del `<header class="nav nav--white">` y del `<footer class="footer">` copiado tal cual del componente
+- JS: `/components/navbar/navbar.js` (requiere `lottie-web` por CDN antes) para el estado `nav--scrolled` y el menú mobile animado
+- El navbar es `position: fixed` (definido en su propio CSS). Variante usada: `nav--white`, consistente con el fondo claro del Hero
+- El footer no requiere JS propio
+
