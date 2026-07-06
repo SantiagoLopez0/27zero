@@ -62,7 +62,7 @@
 
 /* ─── Variante TOP WHITE — fondo blanco, texto/logo negro ─── */
 .nav--white .nav-container {
-  background-color: var(--color-white);
+  background-color: transparent;
   color: var(--color-black);
 }
 .nav--white .nav-links a {
@@ -75,7 +75,7 @@
 
 /* ─── Variante TOP BLACK — fondo negro, texto/logo blanco ─── */
 .nav--black .nav-container {
-  background-color: var(--color-black);
+  background-color: transparent;
   color: var(--color-white);
 }
 .nav--black .nav-links a {

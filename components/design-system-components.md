@@ -52,9 +52,9 @@ Estado: ✅ terminado.
 `navbar.html` es standalone: incluye inline los tokens `:root` (colores, spacing) y la clase base `.btn` que necesita `.btn-nav`, más un `.scroll-spacer` (200vh) solo para poder probar el scroll en esta vista aislada. El componente real sigue siendo `navbar.css` + `navbar.js`.
 
 3 variantes de estado:
-- `.nav--white` — fondo blanco, texto/logo negro. Botón outline negro, hover filled negro.
-- `.nav--black` — fondo negro, texto/logo blanco. Botón outline blanco, hover filled blanco (texto negro).
-- `.nav--scrolled` — se activa vía JS a los 50px de scroll (sin importar si el estado inicial era white o black). Fondo indigo, texto blanco, logo invertido, botón outline blanco con hover filled blanco (texto indigo).
+- `.nav--white` — fondo transparente (lo da el hero de cada página), texto/logo negro. Botón outline negro, hover filled negro.
+- `.nav--black` — fondo transparente (lo da el hero de cada página), texto/logo blanco. Botón outline blanco, hover filled blanco (texto negro).
+- `.nav--scrolled` — se activa vía JS a los 50px de scroll (sin importar si el estado inicial era white o black). Fondo indigo (única variante con bg propio), texto blanco, logo invertido, botón outline blanco con hover filled blanco (texto indigo).
 
 `navbar.js` guarda la variante inicial (`nav--white` o `nav--black`) y la restaura al volver al top; baja el nav a `top: 2.2em` mientras está scrolled.
 
