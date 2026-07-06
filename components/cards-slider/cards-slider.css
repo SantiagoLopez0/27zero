@@ -1,6 +1,7 @@
 /* ============================
    Cards Slider — 27zero
-   Extraído de /work (style.css). Requiere work-card.css para las .card--work.
+   Extraído de /work (style.css). Agnóstico del tipo de slide: solo requiere que
+   cada hijo de .slider-track tenga la clase .card (work-card, edtech-mentor-card, etc).
    ============================ */
 
 .slider-block {

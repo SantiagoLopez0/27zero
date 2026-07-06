@@ -95,8 +95,11 @@ Estructura: `.slider-block` (wrapper) → `.slider-header` (título, `.slider-ti
 El demo trae 8 `.card.card--work` (componente Work Card) como slides — requiere `/components/work-card/work-card.css` además de `cards-slider.css`.
 
 **JS (`cards-slider.js`):**
+- Soporta **múltiples `.slider-block` en la misma página** — el init usa `querySelectorAll` + `forEach`, cada uno con su propia instancia de drag/arrows, sin interferir entre sí.
 - `enableSliderDrag(track)` — drag con pointer events (`pointerdown/move/up/leave/cancel`), clase `.dragging` mientras arrastra.
 - `enableSliderArrows(footer, track)` — scroll por flechas (`scrollBy` con step = 2 cards), disabled automático en los extremos, recalcula en resize/scroll.
+
+**Agnóstico del tipo de slide**: `cards-slider.css` no tiene ninguna regla acoplada a `.card-work-*`; el JS solo busca el primer `.card` dentro del track para medir el step. Se puede usar `work-card`, `edtech-mentor-card`, o cualquier componente que tenga la clase base `.card`, sin tocar el JS — solo cambia el markup dentro de `.slider-track` y se linkea el CSS del componente correspondiente. El título de cada slider (`.slider-title`) es contenido estático en el HTML de cada `.slider-block`, no depende de JS.
 
 No se extrajeron `.section--sliders` ni `.sliders-container` (layout específico de la página `/work`, no del componente). El `.slider-track-wrap` usa `padding-left: max(6.5em, calc((100vw - 1440px)/2 + 6.5em))` para alinearse solo, sin depender de un `.container` externo.
 

@@ -66,10 +66,11 @@ function enableSliderArrows(footer, track) {
 }
 
 // ===== Init =====
-const sliderBlock = document.querySelector('.slider-block');
-if (sliderBlock) {
+// Soporta múltiples .slider-block en la misma página — cada uno con su propia instancia.
+document.querySelectorAll('.slider-block').forEach((sliderBlock) => {
   const track  = sliderBlock.querySelector('.slider-track');
   const footer = sliderBlock.querySelector('.slider-footer');
+  if (!track || !footer) return;
   enableSliderDrag(track);
   enableSliderArrows(footer, track);
-}
+});
