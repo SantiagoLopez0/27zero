@@ -1,0 +1,111 @@
+/* ============================
+   Footer — 27zero
+   Requiere las variables globales de :root — ver /design-system.md
+   ============================ */
+
+.footer {
+  background-color: #101010;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 6.5em 6.5em 3em;
+}
+
+/* ===== Top: logo + columnas de links ===== */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3em;
+  margin-bottom: var(--space-lg);
+}
+
+.footer-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.71em;
+  font-weight: 700;
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 4.5em;
+}
+
+.footer-links-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.footer-links-col a {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: font-weight 0.2s ease;
+}
+
+.footer-links-col a:hover {
+  font-weight: 700;
+}
+
+/* ===== Divider ===== */
+.footer-divider {
+  height: 0.07em;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-bottom: var(--space-sm);
+}
+
+/* ===== Bottom row ===== */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93em;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-legal {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93em;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal:hover {
+  color: var(--color-white);
+}
+
+@media (max-width: 767px) {
+  .footer-container {
+    padding: 3.5em 2em 2em;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .footer-links {
+    gap: 2.5em;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75em;
+  }
+}

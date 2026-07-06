@@ -120,6 +120,21 @@ Sin JS — todo el efecto hover es CSS puro.
 
 ---
 
-## Footer, Featured Card
+## Footer
+
+Estado: ✅ v1 — pendiente de ajustes con Figma.
+
+Estructura: `.footer` (bg `#101010`) → `.footer-container` (max-width 1440, padding 6.5em) → `.footer-top` (logo + `.footer-links` en 3 columnas) → `.footer-divider` → `.footer-bottom` (copyright + legal link).
+
+- **`.footer-logo`** — "27ZERO.", 1.71em, bold.
+- **`.footer-links-col`** — columna de links, hover = `font-weight: 700` (mismo patrón que `.nav-links`).
+- **`.footer-divider`** — línea `rgba(255,255,255,.15)`.
+- **`.footer-bottom`** — copyright + legal link, texto atenuado `rgba(255,255,255,.6)`.
+
+Valores estimados (sin spec exacta de Figma aún): gaps entre columnas, tamaños de fuente, padding vertical. Pendiente ajuste fino.
+
+---
+
+## Featured Card
 
 Estado: 🔲 pendiente — solo estructura de archivos creada, sin contenido.
