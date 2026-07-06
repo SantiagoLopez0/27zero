@@ -1,0 +1,135 @@
+/* ============================
+   Featured Card — 27zero
+   Reusa .card (base) de /components/work-card/work-card.css
+   Estilos de texto tomados de edtech-mentor-card.css.
+   Requiere las variables globales de :root — ver /design-system.md
+   ============================ */
+
+.card--featured {
+  width: 44em;
+  min-height: 22em;
+  background-color: var(--color-gray);
+  padding: 2.5em; /* 35px, igual que edtech-mentor-card body */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-featured-tag {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0;
+  color: var(--color-black);
+}
+
+.card-featured-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+/* ===== Meta: avatar + rol/nombre ===== */
+.card-featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.86em;
+}
+
+.card-featured-avatar {
+  width: 4.14em; /* 58px, igual que edtech-mentor-card */
+  height: 4.14em;
+  border-radius: 50%;
+  background-color: var(--color-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.card-featured-avatar span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  font-weight: 700;
+  color: var(--color-indigo);
+}
+
+.card-featured-meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.card-featured-role {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.4; /* 140% */
+  letter-spacing: 0;
+  color: var(--color-black);
+}
+
+.card-featured-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em; /* 21px */
+  line-height: 1.4; /* 140% */
+  letter-spacing: 0;
+  color: var(--color-black);
+}
+
+/* ===== Footer: título + arrow ===== */
+.card-featured-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+
+.card-featured-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.29em; /* 18px */
+  line-height: 1.4; /* 140% */
+  letter-spacing: 0;
+  color: var(--color-black);
+  max-width: 28em;
+}
+
+/* Arrow — outline por default, se rellena en hover como un botón normal */
+.card-featured-arrow {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 0.1em solid var(--color-black);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.card-featured-arrow:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+@media (max-width: 767px) {
+  .card--featured {
+    width: 100%;
+  }
+
+  .card-featured-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+  }
+
+  .card-featured-title {
+    max-width: 100%;
+  }
+}

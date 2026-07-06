@@ -136,4 +136,15 @@ Estructura: `.footer` (bg `#101010`) → `.footer-container` (max-width 1440, pa
 
 ## Featured Card
 
-Estado: 🔲 pendiente — solo estructura de archivos creada, sin contenido.
+Estado: ✅ terminado. Reusa `.card` base (`work-card.css`) + estilos de texto tomados de `edtech-mentor-card.css`.
+
+`.card--featured`: `44em` de ancho, bg gray, `padding: 2.5em`, flex column `justify-content: space-between` (tag arriba, contenido abajo).
+
+- **`.card-featured-tag`** — mismo estilo que el tag de edtech-mentor (15px/400, line-height 150%).
+- **`.card-featured-meta`** — avatar (58px, placeholder iniciales) + `.card-featured-role` (15px/500) y `.card-featured-name` (21px/500) — mismos estilos que el header de edtech-mentor.
+- **`.card-featured-footer`** — título (`.card-featured-title`, 18px/500, mismo que edtech-mentor) + `.card-featured-arrow`.
+- **`.card-featured-arrow`** — outline negro, bg transparent por default; en `:hover` se rellena (bg negro, ícono blanco), como un botón normal — sin el comportamiento de dos estados de edtech-mentor-card.
+
+Mobile (`<=767px`): footer pasa a columna (título arriba, arrow abajo), card a `width: 100%`.
+
+Sin JS — hover puro CSS.
