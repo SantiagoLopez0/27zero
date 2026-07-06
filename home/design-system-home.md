@@ -98,7 +98,7 @@ Modifier de `.container`. `align-items: center; gap: 1.79em` (25px @ 14px).
 Override puntual: Lora, weight 500, style normal. El H2 hereda tamaño/line-height del H2 global. El H3 tiene tamaño propio: `1.71em` (24px @ 14px), line-height 125%, letter-spacing `-0.24px` (-1% de 24px), `text-align: center`.
 
 ### Slider de shapes (`.apart-slider`)
-Carrusel simple de slides completos (no drag, solo flechas), reutiliza `.slider-arrow` del design system global para el estilo de los botones. Las imágenes (`research-enhanced.png`, `execution.png`, `creativity.png`) ya incluyen el texto embebido, por lo que se eliminó el overlay `.apart-shape-label` que se había agregado antes.
+Carrusel simple de slides completos (no drag, solo flechas), con su propia clase `.apart-slider-arrow` (círculo, borde negro, hover invertido) — independiente de `.slider-arrow` del componente `cards-slider` para evitar colisiones entre ambos. Las imágenes (`research-enhanced.png`, `execution.png`, `creativity.png`) ya incluyen el texto embebido, por lo que se eliminó el overlay `.apart-shape-label` que se había agregado antes.
 - `.apart-slider`: flex row, flechas a los costados, `padding-top: 5.71em` (80px @ 14px)
 - `.apart-slider-track-wrap` (flex:1, overflow hidden) en el centro
 - `.apart-slider-track`: flex row, `transform: translateX(-N * 100%)` controlado por JS, `transition: transform 0.4s ease`
@@ -150,7 +150,7 @@ Fondo `--color-black`, `color: var(--color-white)`.
 
 ### `.testimonials-slider`
 Carrusel de 1 slide por view (igual mecánica que `.apart-slider`: flechas a los costados, track con `transform: translateX`, deshabilitado en los extremos — sin loop).
-- `.testimonials-arrow`: reutiliza `.slider-arrow`, fondo transparente + borde/texto blanco, hover invierte a blanco/negro
+- `.testimonials-arrow`: clase propia (círculo, borde blanco, fondo transparente, hover invierte a blanco/negro) — independiente de `.slider-arrow` del componente `cards-slider` para evitar colisiones entre ambos
 - `.testimonial-slide`: `justify-content: center` (slide centrado), quote SVG + `.testimonial-content` en fila
 - `.testimonial-quote-icon`: el SVG del quote grande (path `#C286FF`), `width: 30em`
 - `.testimonial-content`: `max-width: 30em`, `gap: 2.86em` (40px @ 14px)
@@ -184,4 +184,5 @@ Integrados desde `/components/work-card/` y `/components/cards-slider/`, usados 
 - CSS: `<link>` a `/components/work-card/work-card.css` y `/components/cards-slider/cards-slider.css` en el `<head>` (cargados después de `home/style.css`, junto con navbar/footer)
 - JS: `/components/cards-slider/cards-slider.js` — auto-inicializa drag + flechas en cada `.slider-block` presente en el DOM al momento de cargar el script
 - `home/style.css` ya **no** duplica `.slider-block`, `.slider-header`, `.slider-title`, `.slider-footer`, `.slider-nav`, `.slider-arrow`, `.slider-track-wrap`, `.slider-track`, `.card`, `.card-work-*` — todo viene del componente. Solo queda en `home/style.css` el override propio de la página: `.sliders-container` (spacing wrapper)
+- **Nota:** `.apart-slider-arrow` y `.testimonials-arrow` (sliders de "What sets apart" y "Testimonials") antes reutilizaban la clase `.slider-arrow` para heredar su estilo — esto entraba en conflicto porque `.slider-arrow` ahora la define el componente `cards-slider.css`, cargado después en el `<head>`, pisando el estilo propio de esas secciones. Se desacoplaron dándoles su propio set de estilos completo (mismo look visual, sin depender de la clase del componente).
 
