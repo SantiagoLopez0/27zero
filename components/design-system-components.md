@@ -76,7 +76,7 @@ Requiere `lottie-web` cargado antes de `navbar.js` (CDN: `https://cdn.jsdelivr.n
 
 Estado: ✅ terminado. Extraído de `/work` (markup de `script.js`, estilos de `style.css`).
 
-`.card` es la base compartida (border-radius, overflow, flex column, cursor pointer). `.card--work` es la única variante activa por ahora — el tamaño "standard" (`18em × min-height 18em`) quedó integrado directo en `.card--work`, sin modifier `--standard` separado (se descartó esa variante).
+`.card` es la base compartida (border-radius, overflow, flex column, cursor pointer). `.card--work` es la única variante activa por ahora — tamaño fijo `405px × 405px` (`28.93em`) integrado directo en `.card--work`, sin modifier `--standard` separado.
 
 Estructura: `.card-work-bg` (fondo absoluto, placeholder gris con label) + `.card-work-body` (contenido, z-index 1) → `.card-work-content` (eyebrow + title + client) y `.card-work-footer` (flecha).
 
@@ -99,6 +99,8 @@ El demo trae 8 `.card.card--work` (componente Work Card) como slides — requier
 - `enableSliderArrows(footer, track)` — scroll por flechas (`scrollBy` con step = 2 cards), disabled automático en los extremos, recalcula en resize/scroll.
 
 No se extrajeron `.section--sliders` ni `.sliders-container` (layout específico de la página `/work`, no del componente). El `.slider-track-wrap` usa `padding-left: max(6.5em, calc((100vw - 1440px)/2 + 6.5em))` para alinearse solo, sin depender de un `.container` externo.
+
+El slider no tiene tamaños de card hardcodeados (flex + gap), así que hereda automáticamente cualquier cambio de tamaño de `.card--work` en `work-card.css` (ej: el ajuste a `405px × 405px`).
 
 ---
 
