@@ -10,7 +10,7 @@ Este documento se va completando sección por sección a medida que se construye
 
 ### `.section--hero-home`
 Modifier de `.section`. Fondo `--color-gray`.
-- `margin-top: 8.57em` (120px @ 14px) — espacio en blanco (fondo body, blanco) donde se posicionará el navbar fijo
+- `margin-top: 5.5em` (77px @ 14px) — espacio para el navbar fijo (ahora `nav--white` es transparent, así que este espacio ya no necesita ser "en blanco" estricto)
 - `padding-top: 12.14em` (170px @ 14px)
 - `padding-bottom: 12.14em` (170px @ 14px)
 
