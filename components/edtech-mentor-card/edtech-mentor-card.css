@@ -4,22 +4,25 @@
    Requiere las variables globales de :root — ver /design-system.md
    ============================ */
 
+/* Wrapper: header (transparente) + body (la card real), en columna */
 .card--edtech-mentor {
-  width: 18em;
+  width: 28.93em; /* 405px */
+  gap: 2em; /* 28px */
+  background-color: transparent;
 }
 
-/* ===== Header — indigo, avatar + meta ===== */
+/* ===== Header — transparente, sin padding, no es parte de la card ===== */
 .card-edtech-mentor-header {
-  background-color: var(--color-indigo);
+  background-color: transparent;
+  padding: 0;
   display: flex;
   align-items: center;
   gap: 0.86em;
-  padding: 1.14em 1.71em;
 }
 
 .card-edtech-mentor-avatar {
-  width: 2.86em;
-  height: 2.86em;
+  width: 4.14em; /* 58px */
+  height: 4.14em; /* 58px */
   border-radius: 50%;
   background-color: var(--color-purple);
   display: flex;
@@ -31,7 +34,7 @@
 
 .card-edtech-mentor-avatar span {
   font-family: 'Inter', sans-serif;
-  font-size: 0.93em;
+  font-size: 1.29em;
   font-weight: 700;
   color: var(--color-indigo);
 }
@@ -44,31 +47,33 @@
 
 .card-edtech-mentor-role {
   font-family: 'Inter', sans-serif;
-  font-size: 0.79em;
   font-weight: 500;
-  line-height: 1.4;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.4; /* 140% */
+  letter-spacing: 0;
   color: var(--color-white);
-  opacity: 0.85;
 }
 
 .card-edtech-mentor-name {
   font-family: 'Inter', sans-serif;
-  font-size: 1.29em;
-  font-weight: 600;
-  line-height: 1.3;
+  font-weight: 500;
+  font-size: 1.5em; /* 21px */
+  line-height: 1.4; /* 140% */
+  letter-spacing: 0;
   color: var(--color-white);
 }
 
-/* ===== Body — gray por default, gradiente oscuro en hover ===== */
+/* ===== Body — la card real: gray por default, gradiente oscuro en hover, bordes redondeados ===== */
 .card-edtech-mentor-body {
   position: relative;
-  flex: 1;
-  min-height: 14em;
+  width: 28.93em; /* 405px */
+  height: 28.93em; /* 405px */
+  padding: 2.5em; /* 35px */
+  border-radius: 0.5em;
   background-color: var(--color-gray);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.71em;
   overflow: hidden;
 }
 
@@ -91,8 +96,10 @@
   position: relative;
   z-index: 1;
   font-family: 'Inter', sans-serif;
-  font-size: 0.86em;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0;
   color: var(--color-black);
 }
 
@@ -108,9 +115,10 @@
 /* Título — oculto por default, aparece con el gradiente en hover */
 .card-edtech-mentor-title {
   font-family: 'Inter', sans-serif;
-  font-size: 1.14em;
-  font-weight: 600;
-  line-height: 1.4;
+  font-weight: 500;
+  font-size: 1.29em; /* 18px */
+  line-height: 1.4; /* 140% */
+  letter-spacing: 0;
   color: var(--color-white);
   opacity: 0;
   transform: translateY(0.5em);
@@ -122,16 +130,23 @@
   transform: translateY(0);
 }
 
-/* Arrow — siempre visible, bg blanco fijo para mantener contraste sobre gray y sobre el gradiente oscuro */
+/* Arrow — bg transparent por default, hover propio (independiente del hover de la card) */
 .card-edtech-mentor-arrow {
   width: 2.5em;
   height: 2.5em;
   border-radius: 50%;
-  border: 0.07em solid var(--color-black);
-  background-color: var(--color-white);
+  border: 0.14em solid #000; /* 2px */
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black);
+  color: #000;
   flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.card-edtech-mentor-arrow:hover {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
 }
