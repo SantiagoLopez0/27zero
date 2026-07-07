@@ -113,10 +113,10 @@ Estado: ✅ terminado. Replicado a partir de mockups (default + hover) + specs e
 
 Extiende `.card` base (de `work-card.css`). `.card--edtech-mentor` es el wrapper: `width: 25em`, `gap: 2em` (28px), `background: transparent` — header y body van en columna, separados por el gap.
 
-- **`.card-edtech-mentor-header`** — transparente, sin padding (no es parte de la card visual). Flex row: `.card-edtech-mentor-avatar` (58px, círculo, placeholder con iniciales) + `.card-edtech-mentor-meta` (`.card-edtech-mentor-role` 15px/500, `.card-edtech-mentor-name` 21px/500).
-- **`.card-edtech-mentor-body`** — la card real: `25em × 25em`, `padding: 2.5em` (35px), `border-radius: 0.5em`, todos los bordes redondeados. Bg gray por default; `::after` con gradiente (gray → black) en `opacity: 0` que pasa a `1` en `:hover` del card (el gradiente no es animable directo con `transition`, por eso el overlay).
-- **`.card-edtech-mentor-tag`** — 15px/400, line-height 150%.
-- **`.card-edtech-mentor-title`** — 18px/500, line-height 140%. Oculto por default, aparece con el hover del card (junto al gradiente).
+- **`.card-edtech-mentor-header`** — transparente, sin padding (no es parte de la card visual). Flex row: `.card-edtech-mentor-avatar` (`3em × 3em`, span interno `0.93em` proporcional) + `.card-edtech-mentor-meta` (`.card-edtech-mentor-role` `0.85em`, `.card-edtech-mentor-name` `1.15em`).
+- **`.card-edtech-mentor-body`** — la card real: `25em × 25em`, `padding: 1.5em`, `border-radius: 0.5em`, todos los bordes redondeados. Bg gray por default; `::after` con gradiente (gray → black) en `opacity: 0` que pasa a `1` en `:hover` del card (el gradiente no es animable directo con `transition`, por eso el overlay).
+- **`.card-edtech-mentor-tag`** — `0.85em`.
+- **`.card-edtech-mentor-title`** — `1em`. Oculto por default, aparece con el hover del card (junto al gradiente).
 - **`.card-edtech-mentor-arrow`** — bg siempre transparent salvo hover directo. Default: border/ícono `#000`. Hover de toda la card: border/ícono pasan a `#fff` (bg sigue transparent). Hover directo sobre el arrow (prioridad sobre el de la card, `color` con `!important`): bg `#fff`, ícono `#000`, border `#fff`.
 
 Sin JS — todo el efecto hover es CSS puro.
@@ -141,11 +141,11 @@ Estructura: `.footer` (bg `#101010`) → `.footer-container` (max-width 1440, pa
 
 Estado: ✅ terminado. Reusa `.card` base (`work-card.css`) + estilos de texto tomados de `edtech-mentor-card.css`.
 
-`.card--featured`: `width: 100%; height: 100%` — el tamaño real lo define el wrapper de cada página donde se use (mismo patrón que `cards-slider` con `.card--work`). Bg gray, `padding: 2.86em` (40px), flex column `justify-content: space-between` (tag arriba, contenido abajo).
+`.card--featured`: `width: 100%; height: 100%` — el tamaño real lo define el wrapper de cada página donde se use (mismo patrón que `cards-slider` con `.card--work`). Bg gray, `padding: 1.7em`, flex column `justify-content: space-between` (tag arriba, contenido abajo).
 
-- **`.card-featured-tag`** — mismo estilo que el tag de edtech-mentor (15px/400, line-height 150%).
-- **`.card-featured-meta`** — avatar (58px, placeholder iniciales) + `.card-featured-role` (15px/500) y `.card-featured-name` (21px/500) — mismos estilos que el header de edtech-mentor.
-- **`.card-featured-footer`** — título (`.card-featured-title`, 18px/500, mismo que edtech-mentor) + `.card-featured-arrow`.
+- **`.card-featured-tag`** — `font-size: 0.85em`.
+- **`.card-featured-meta`** — avatar `3em × 3em` (span interno `0.93em`, proporcional) + `.card-featured-role` (`0.85em`) y `.card-featured-name` (`1.15em`).
+- **`.card-featured-footer`** — título (`.card-featured-title`, `1em`) + `.card-featured-arrow`.
 - **`.card-featured-arrow`** — outline negro, bg transparent por default; se rellena (bg negro, ícono blanco) con el hover de **toda la card** (`.card--featured:hover .card-featured-arrow`), no solo al pasar sobre el botón.
 
 Mobile (`<=767px`): footer pasa a columna (título arriba, arrow abajo), card a `width: 100%`.

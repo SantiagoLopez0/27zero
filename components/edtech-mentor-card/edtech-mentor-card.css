@@ -21,8 +21,8 @@
 }
 
 .card-edtech-mentor-avatar {
-  width: 4.14em; /* 58px */
-  height: 4.14em; /* 58px */
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
   background-color: var(--color-purple);
   display: flex;
@@ -34,7 +34,7 @@
 
 .card-edtech-mentor-avatar span {
   font-family: 'Inter', sans-serif;
-  font-size: 1.29em;
+  font-size: 0.93em; /* proporcional al avatar (era 1.29em @ 4.14em) */
   font-weight: 700;
   color: var(--color-indigo);
 }
@@ -48,7 +48,7 @@
 .card-edtech-mentor-role {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 1.07em; /* 15px */
+  font-size: 0.85em;
   line-height: 1.4; /* 140% */
   letter-spacing: 0;
   color: var(--color-white);
@@ -57,7 +57,7 @@
 .card-edtech-mentor-name {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 1.5em; /* 21px */
+  font-size: 1.15em;
   line-height: 1.4; /* 140% */
   letter-spacing: 0;
   color: var(--color-white);
@@ -68,7 +68,7 @@
   position: relative;
   width: 25em;
   height: 25em;
-  padding: 2.5em; /* 35px */
+  padding: 1.5em;
   border-radius: 0.5em;
   background-color: var(--color-gray);
   display: flex;
@@ -97,7 +97,7 @@
   z-index: 1;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 1.07em; /* 15px */
+  font-size: 0.85em;
   line-height: 1.5; /* 150% */
   letter-spacing: 0;
   color: var(--color-black);
@@ -116,7 +116,7 @@
 .card-edtech-mentor-title {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 1.29em; /* 18px */
+  font-size: 1em;
   line-height: 1.4; /* 140% */
   letter-spacing: 0;
   color: var(--color-white);
