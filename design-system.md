@@ -715,6 +715,12 @@ Fondo negro (`#101010`). Logo invertido a blanco. Arriba: logo + 3 columnas de l
     align-items: flex-start;
     gap: 0.75em;
   }
+
+  .footer-links-col a,
+  .footer-copy,
+  .footer-legal {
+    font-size: 13px;
+  }
 }
 ```
 
