@@ -57,5 +57,5 @@ function initMarquee(marquee, pxPerSecond = 60) {
 }
 
 window.addEventListener('load', () => {
-  document.querySelectorAll('.marquee').forEach(initMarquee);
+  document.querySelectorAll('.marquee').forEach((marquee) => initMarquee(marquee));
 });
