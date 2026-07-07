@@ -35,10 +35,6 @@ body {
   color: var(--color-black-ui);
 }
 
-@media (max-width: 767px) {
-  body { font-size: 9px; }
-}
-
 /* ===== Typography ===== */
 h1 {
   font-family: 'Lora', serif;
@@ -125,14 +121,6 @@ p, .text-body {
   gap: var(--spacing-images);
 }
 
-@media (max-width: 767px) {
-  .container {
-    padding-left: 2em;
-    padding-right: 2em;
-    gap: var(--space-md);
-  }
-}
-
 /* ===== Divider ===== */
 .divider {
   border: none;
@@ -211,22 +199,12 @@ p, .text-body {
   gap: var(--spacing-images);
 }
 
-@media (max-width: 767px) {
-  .grid-2col,
-  .grid-3col,
-  .grid-4col { grid-template-columns: 1fr; }
-}
-
 /* ===== Client block ===== */
 .client-block {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
   gap: var(--space-lg);
   align-items: start;
-}
-
-@media (max-width: 767px) {
-  .client-block { grid-template-columns: 1fr; gap: var(--space-md); }
 }
 
 .client-meta {
@@ -312,10 +290,6 @@ p, .text-body {
   gap: 5.36em;   /* 75px */
 }
 
-@media (max-width: 767px) {
-  .stats-grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
-}
-
 .stat {
   display: flex;
   flex-direction: column;
@@ -340,13 +314,6 @@ p, .text-body {
   grid-template-columns: 0.6fr 1fr 1.4fr;
   gap: var(--space-lg);
   align-items: center;
-}
-
-@media (max-width: 767px) {
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
 }
 
 .testimonial-svg {
@@ -405,14 +372,43 @@ p, .text-body {
   align-items: start;
 }
 
-@media (max-width: 767px) {
-  .split-intro { grid-template-columns: 1fr; gap: var(--space-sm); }
-}
-
 /* ===== Section content wrapper
    Agrupa split-intro + grids con gap de 75px ===== */
 .section-content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-grid);   /* 75px entre intro y grids de imágenes */
+}
+
+/* ============================
+   Mobile — max-width: 768px
+   No hay componentes (work-card, cards-slider, featured-card,
+   edtech-mentor-card) importados en esta página, por lo que h1/h2
+   como tag global no representan riesgo de conflicto hoy. Aun así,
+   se documentan aquí por si se integran componentes a futuro.
+   ============================ */
+
+@media (max-width: 768px) {
+  body { font-size: 9px; }
+
+  .container {
+    padding-left: 2em;
+    padding-right: 2em;
+    gap: var(--space-md);
+  }
+
+  .grid-2col,
+  .grid-3col,
+  .grid-4col { grid-template-columns: 1fr; }
+
+  .client-block { grid-template-columns: 1fr; gap: var(--space-md); }
+
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .split-intro { grid-template-columns: 1fr; gap: var(--space-sm); }
 }

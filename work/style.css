@@ -28,12 +28,8 @@ body {
   color: var(--color-black);
 }
 
-@media (max-width: 767px) {
-  body { font-size: 9px; }
-}
-
 /* ===== Typography ===== */
-h1 {
+.section--hero h1 {
   font-family: 'Lora', serif;
   font-style: normal;
   font-size: 3.43em;
@@ -68,16 +64,6 @@ p, .text-body, a, .text-link {
   letter-spacing: 0;
 }
 
-@media (max-width: 767px) {
-  h1 {
-    font-size: 3.56em;
-    line-height: 1.25;
-    font-weight: 500;
-    letter-spacing: -0.09px;
-  }
-  p, .text-body { font-size: 1.89em; line-height: 1.5; font-weight: 500; }
-}
-
 .text-eyebrow {
   font-family: 'Inter', sans-serif;
   font-size: 1.29em;
@@ -107,13 +93,6 @@ p, .text-body, a, .text-link {
   display: flex;
   flex-direction: column;
   gap: 2em;
-}
-
-@media (max-width: 767px) {
-  .container {
-    padding-left: 2em;
-    padding-right: 2em;
-  }
 }
 
 /* ===== Hero ===== */
@@ -434,14 +413,37 @@ p, .text-body, a, .text-link {
 }
 
 /* ============================
-   Mobile — max-width: 767px
+   Mobile — max-width: 768px
+   Tipografía mobile siempre en px fijos, nunca em.
+   Se usan selectores scoped (nunca tags h1-h4 sueltos) para
+   no pisar los h2/h3 internos de los componentes
+   (card-work-title, card-featured-title, card-edtech-mentor-title, slider-title).
    ============================ */
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  body { font-size: 9px; }
+
+  .container {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 
   /* Hero */
   .hero-container {
     padding-left: 2em;
+  }
+
+  .section--hero h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.09px;
+  }
+
+  p, .text-body {
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
   }
 
   /* Pills */
@@ -471,5 +473,4 @@ p, .text-body, a, .text-link {
   .slider-track-wrap {
     padding-left: max(2em, calc((100vw - 1440px) / 2 + 2em));
   }
-
 }
