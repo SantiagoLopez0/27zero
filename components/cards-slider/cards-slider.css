@@ -82,7 +82,7 @@
   user-select: none;
   /* padding-left here (not on the wrap) so the scroll container spans the full
      viewport width — cards clip at the screen edge on both left and right */
-  padding-left: max(6.5em, calc((100vw - 1440px) / 2 + 6.5em));
+  padding-left: max(6.5em, calc((99.5vw - 1440px) / 2 + 6.5em));
   padding-right: 6.5em;
 }
 
