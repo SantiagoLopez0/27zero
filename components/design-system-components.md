@@ -151,3 +151,11 @@ Estado: ✅ terminado. Reusa `.card` base (`work-card.css`) + estilos de texto t
 Mobile (`<=767px`): footer pasa a columna (título arriba, arrow abajo), card a `width: 100%`.
 
 Sin JS — hover puro CSS.
+
+---
+
+## Marquee Logos
+
+Estado: ✅ terminado. Documentación propia en `marquee-logos/marquee-logos.md` (a diferencia de los demás, este trae su propio MD además de esta entrada, por pedido explícito).
+
+Carrusel infinito: dos `.marquee-list` idénticas animadas `0% → -100%` en simultáneo — loop perfecto sin salto. `.marquee-logo` con `max-height: 3.57em` (50px), gap `3.21em` (45px). JS ajusta `animation-duration` según el ancho real del contenido para mantener velocidad constante (px/s), soporta múltiples `.marquee` por página. Pausa en hover, respeta `prefers-reduced-motion`.
