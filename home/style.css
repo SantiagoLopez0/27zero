@@ -359,10 +359,6 @@ h4 {
 
 /* ===== Sliders container (wrapper de spacing para sliders embebidos en una sección) ===== */
 .sliders-container {
-  padding-left: 6.5em;
-  padding-right: 0;
-  max-width: none;
-  margin: 0;
   padding-top: var(--space-lg);
   padding-bottom: var(--space-lg);
 }
