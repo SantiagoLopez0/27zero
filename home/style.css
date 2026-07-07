@@ -716,6 +716,6 @@ h4 {
   .section--mentor-home h2 { font-size: 24px; }
   .section--apart-home h2 { font-size: 24px; }
   .section--apart-home h3 { font-size: 21px; }
-  .text-body, a, .text-link, .text-body--sm { font-size: 13px !important; line-height: 1.5 !important; font-weight: 500 !important; letter-spacing: 0 !important; }
+  .text-body, a, .text-link, .text-body--sm { font-size: 13px !important; }
   .btn { font-size: 13px !important; }
 }
