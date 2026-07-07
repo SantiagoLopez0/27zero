@@ -1,30 +1,61 @@
 // ============================
 // Marquee Logos — 27zero
-// La animación CSS mueve cada .marquee-list de 0% a -100%. Con un
-// animation-duration fijo, la velocidad visual cambiaría según cuántos
-// logos haya. Este script calcula la duración según el ancho real del
-// contenido, para mantener una velocidad constante (px/s) sin importar
-// cuántos logos se agreguen o quiten.
+// WAAPI: clona logos hasta cubrir viewport + un período, luego anima
+// translateX(0 → -período) en loop infinito. Período = ancho de un set
+// + un gap, garantizando que el primer clon queda justo donde empezó
+// el set original — loop sin saltos ni espacios en blanco.
 // ============================
 
-function setMarqueeSpeed(marquee, pxPerSecond = 60) {
-  const lists = marquee.querySelectorAll('.marquee-list');
-  if (!lists.length) return;
+function initMarquee(marquee, pxPerSecond = 60) {
+  const track = marquee.querySelector('.marquee-track');
+  if (!track) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const width = lists[0].scrollWidth;
-  const duration = width / pxPerSecond;
+  const origLogos = Array.from(track.querySelectorAll('.marquee-logo'));
+  let anim = null;
 
-  lists.forEach((list) => {
-    list.style.animationDuration = `${duration}s`;
-  });
+  function setup() {
+    if (anim) { anim.cancel(); anim = null; }
+    track.querySelectorAll('[aria-hidden="true"]').forEach(el => el.remove());
+
+    const gapPx = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const oneSetWidth = track.scrollWidth;
+    const period = oneSetWidth + gapPx;
+
+    if (period <= 0) return;
+
+    const needed = marquee.offsetWidth + period;
+    let added = 0;
+    while (added < needed) {
+      origLogos.forEach(logo => {
+        const clone = logo.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.setAttribute('alt', '');
+        track.appendChild(clone);
+      });
+      added += period;
+    }
+
+    anim = track.animate(
+      [
+        { transform: 'translateX(0)' },
+        { transform: `translateX(-${period}px)` }
+      ],
+      {
+        duration: (period / pxPerSecond) * 1000,
+        iterations: Infinity,
+        easing: 'linear'
+      }
+    );
+  }
+
+  marquee.addEventListener('mouseenter', () => { if (anim) anim.pause(); });
+  marquee.addEventListener('mouseleave', () => { if (anim) anim.play(); });
+
+  setup();
+  window.addEventListener('resize', setup);
 }
 
-document.querySelectorAll('.marquee').forEach((marquee) => {
-  setMarqueeSpeed(marquee);
-});
-
-window.addEventListener('resize', () => {
-  document.querySelectorAll('.marquee').forEach((marquee) => {
-    setMarqueeSpeed(marquee);
-  });
+window.addEventListener('load', () => {
+  document.querySelectorAll('.marquee').forEach(initMarquee);
 });
