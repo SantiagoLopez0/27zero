@@ -46,13 +46,16 @@ body {
   font-size: 14px; /* Desktop: 1em = 14px */
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   body {
     font-size: 9px; /* Mobile: 1em = 9px */
   }
 }
 ```
-Todo el sistema tipográfico usa `em`, lo que hace que escale automáticamente con la base del `body`.  
+El breakpoint mobile del proyecto es siempre `max-width: 768px`.
+
+En **desktop** todo el sistema tipográfico usa `em`, escalando con la base del `body`.
+En **mobile**, el `em` queda reservado únicamente para espaciados (paddings, margins, gaps) — los tamaños de texto se definen en `px` fijos (ver escala mobile más abajo).
 El `letter-spacing` se define en `px` para evitar distorsiones a escalas pequeñas.
 
 ---
@@ -135,64 +138,63 @@ p, .text-body, a, .text-link {
 }
 ```
 
-### Escala tipográfica — Mobile (base 9px)
+### Escala tipográfica — Mobile (`max-width: 768px`)
+
+> **Regla:** en mobile los tamaños de texto se manejan en `px` fijos, no en `em`. El `em` en mobile queda reservado para espaciados (paddings, margins, gaps), no para tipografía. Por eso estos valores no escalan con el `body font-size: 9px` — son valores absolutos.
 
 ```css
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   h1 {
-    font-size: 3.56em;     /* 32px */
+    font-size: 32px;
     line-height: 1.25;
     font-weight: 700;
     letter-spacing: -0.09px;
   }
 
   h2 {
-    font-size: 2.67em;     /* 24px */
+    font-size: 24px;
     line-height: 1.25;
     font-weight: 700;
     letter-spacing: 0;
   }
 
   h3 {
-    font-size: 2.33em;     /* 21px */
+    font-size: 21px;
     line-height: 1.25;
     font-weight: 700;
     letter-spacing: 0;
   }
 
   h4 {
-    font-size: 2em;        /* 18px */
+    font-size: 18px;
     line-height: 1.5;
     font-weight: 700;
     letter-spacing: 0;
   }
 
   h5 {
-    font-size: 1.56em;     /* 14px */
+    font-size: 14px;
     line-height: 1.5;
     font-weight: 700;
     letter-spacing: 0;
   }
 
   h6 {
-    font-size: 1.89em;     /* 17px */
+    font-size: 17px;
     line-height: 1.5;
     font-weight: 500;
     letter-spacing: 0;
   }
 
-  p, .text-body {
-    font-size: 1.89em;     /* 17px */
+  p, .text-body, a, .text-link, .text-body--sm, .text-button {
+    font-size: 13px;
     line-height: 1.5;
     font-weight: 500;
     letter-spacing: 0;
   }
 
-  a, .text-link {
-    font-size: 1.89em;     /* 17px */
-    line-height: 1.5;
-    font-weight: 500;
-    letter-spacing: 0;
+  .btn, .nav-links a {
+    font-size: 13px;
   }
 }
 ```
@@ -813,7 +815,7 @@ Cuando se te pida crear el kitchen sink de 27zero, genera un único archivo `ind
 - Importar Inter y Lora desde Google Fonts
 - Incluir todas las variables CSS (colores, espaciado) en `:root`
 - Incluir el reset base: `box-sizing: border-box`, `margin: 0`, `padding: 0`, `scroll-behavior: smooth`, `-webkit-font-smoothing: antialiased`
-- Responsivo: `body font-size: 14px` desktop, `9px` mobile (`max-width: 767px`)
+- Responsivo: `body font-size: 14px` desktop, `9px` mobile (`max-width: 768px`); tamaños de texto en mobile van en `px` fijos, no en `em`
 - **Implementar TODOS los hover states definidos en este documento. No omitir ninguno.**
 
 ### Estructura del archivo
