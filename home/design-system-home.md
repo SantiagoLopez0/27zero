@@ -202,3 +202,19 @@ Integrados desde `/components/work-card/` y `/components/cards-slider/`, usados 
 - `home/style.css` ya **no** duplica `.slider-block`, `.slider-header`, `.slider-title`, `.slider-footer`, `.slider-nav`, `.slider-arrow`, `.slider-track-wrap`, `.slider-track`, `.card`, `.card-work-*` — todo viene del componente. Solo queda en `home/style.css` el override propio de la página: `.sliders-container` (spacing wrapper)
 - **Nota:** `.apart-slider-arrow` y `.testimonials-arrow` (sliders de "What sets apart" y "Testimonials") antes reutilizaban la clase `.slider-arrow` para heredar su estilo — esto entraba en conflicto porque `.slider-arrow` ahora la define el componente `cards-slider.css`, cargado después en el `<head>`, pisando el estilo propio de esas secciones. Se desacoplaron dándoles su propio set de estilos completo (mismo look visual, sin depender de la clase del componente).
 
+## Mobile (breakpoint estándar del proyecto: `max-width: 768px`)
+
+De ahora en adelante el breakpoint mobile del proyecto es `max-width: 768px` (páginas ya construidas usan `767px`, se mantienen así — no se tocaron por estar fuera del scope de este chat). Cambios aplicados en `home/style.css`:
+
+- **`.container`** (global, también documentado en `/design-system.md`): `padding-left`/`padding-right: 2em` en mobile, sin importar la página.
+- **`.section--hero-home`**: `padding-top`/`padding-bottom: 12.86em` (180px @ 14px)
+- **`.section--intro-home`**: `padding-top`/`padding-bottom: 6em` (84px @ 14px)
+- **`.intro-home-row`**: `gap: 4.64em` (65px @ 14px)
+- **`.intro-home-media`**: `width: 100%`
+- **`.sliders-container`**: `padding-top: 3.93em` (55px @ 14px), `padding-left: 0`
+- **`.section--apart-home`**: `padding-top`/`padding-bottom: 4.29em` (60px @ 14px)
+- **`.apart-slider`**: `padding-top: 6.07em` (85px @ 14px) — se combina con el `padding: var(--space-lg) 2em 0` ya existente en el bloque `767px` (ese sigue controlando left/right/bottom, este solo pisa el `padding-top`)
+- **`.apart-home-scales`**: `padding-top: 4.29em` (60px @ 14px)
+- **`.section--mentor-home`**: `padding-top: 6.07em` (85px @ 14px), `padding-bottom: 4.5em` (63px @ 14px)
+- **`.mentor-home-row`**: `gap: 4.64em` (65px @ 14px)
+- **Testimonials**: `.testimonial-quote-icon` y `.testimonials-arrow` → `display: none`; `.testimonial-content` → `max-width: 100%` (el `max-width: 30em` de desktop lo achicaba innecesariamente, esto lo hace ocupar el ancho completo del container); `.testimonials-dots` → `gap: 1.2em`

@@ -258,6 +258,19 @@ Toda sección sigue esta jerarquía:
 }
 ```
 
+### Container — Mobile
+
+A partir de ahora, el breakpoint mobile del proyecto es `max-width: 768px` (antes se usaba 767px en páginas ya construidas; nuevas reglas usan 768px). `.container` en mobile siempre tiene `padding-left`/`padding-right: 2em`, sin importar la página:
+
+```css
+@media (max-width: 768px) {
+  .container {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+```
+
 ### Variantes de section
 
 Cuando una sección requiere más o menos espacio vertical, se agrega una clase modificadora:

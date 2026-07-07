@@ -116,6 +116,13 @@ h4 {
 .section--lg { padding-top: 9em;  padding-bottom: 9em; }
 .section--xl { padding-top: 14em; padding-bottom: 14em; }
 
+@media (max-width: 768px) {
+  .container {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
 /* ===== Botones ===== */
 .btn {
   display: flex;
@@ -366,12 +373,6 @@ h4 {
 .sliders-container {
   padding-top: 4.29em;
   padding-bottom: 0;
-}
-
-@media (max-width: 767px) {
-  .sliders-container {
-    padding-left: 2em;
-  }
 }
 
 /* ===== What sets 27zero apart ===== */
@@ -673,5 +674,60 @@ h4 {
   }
   .testimonial-quote-icon {
     width: 8em;
+  }
+}
+
+/* ===== Mobile (max-width: 768px) — breakpoint estándar del proyecto de ahora en adelante ===== */
+@media (max-width: 768px) {
+  .section--hero-home {
+    padding-top: 12.86em;
+    padding-bottom: 12.86em;
+  }
+
+  .section--intro-home {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+  .intro-home-row {
+    gap: 4.64em;
+  }
+  .intro-home-media {
+    width: 100%;
+  }
+  .sliders-container {
+    padding-top: 3.93em;
+    padding-left: 0;
+  }
+
+  .section--apart-home {
+    padding-top: 4.29em;
+    padding-bottom: 4.29em;
+  }
+  .apart-slider {
+    padding-top: 6.07em;
+  }
+  .apart-home-scales {
+    padding-top: 4.29em;
+  }
+
+  .section--mentor-home {
+    padding-top: 6.07em;
+    padding-bottom: 4.5em;
+  }
+  .mentor-home-row {
+    gap: 4.64em;
+  }
+
+  .testimonial-quote-icon {
+    display: none;
+  }
+  .testimonials-arrow {
+    display: none;
+  }
+  .testimonial-content {
+    max-width: 100%;
+  }
+  .testimonials-dots {
+    gap: 1.2em;
   }
 }
