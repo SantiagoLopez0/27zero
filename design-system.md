@@ -201,6 +201,10 @@ h6 {
 }
 ```
 
+> ⚠️ **Advertencia — no usar `h1`-`h4` como tag global en el media query si la página tiene componentes importados (`work-card`, `featured-card`, `edtech-mentor-card`, `cards-slider`, etc.):** esos componentes usan `h2`/`h3` internamente para sus propios títulos (`.slider-title`, `.card-work-title`, `.card-featured-title`, `.card-edtech-mentor-title`). Un selector de tag global (`h2 { font-size: 24px }`) los pisa también, aunque no debería. En vez de eso, escribe el `font-size` de mobile usando el **mismo selector scoped que ya usas en desktop** para cada heading real de la página (ej. `.section--hero-home h1`, `.section--nombre-seccion h2`), nunca el tag suelto. Esto también evita tener que usar `!important`, porque al ir en el bloque mobile (al final del archivo) ya gana por orden sobre su propia versión desktop.
+
+> ⚠️ **Todos los media queries van al final del archivo:** en un empate de especificidad, CSS resuelve por orden de aparición, no por estar dentro de un media query. Si una regla mobile queda antes de una regla base con la misma especificidad, puede perder el empate y no aplicarse. Por eso: un único bloque `@media (max-width: 768px)` al final absoluto de cada `style.css`, nunca intercalado entre las reglas de desktop.
+
 ### Uso de Lora en H1
 El H1 mezcla Inter y Lora. Las palabras de acento van dentro de un `<span class="lora">`:
 ```html
