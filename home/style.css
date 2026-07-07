@@ -29,10 +29,6 @@ body {
   color: var(--color-black);
 }
 
-@media (max-width: 768px) {
-  body { font-size: 9px; }
-}
-
 /* ===== Typography ===== */
 h1 {
   font-family: 'Inter', sans-serif;
@@ -107,13 +103,6 @@ h4 {
 .section--sm { padding-top: 3em;  padding-bottom: 3em; }
 .section--lg { padding-top: 9em;  padding-bottom: 9em; }
 .section--xl { padding-top: 14em; padding-bottom: 14em; }
-
-@media (max-width: 768px) {
-  .container {
-    padding-left: 2em;
-    padding-right: 2em;
-  }
-}
 
 /* ===== Botones ===== */
 .btn {
@@ -282,15 +271,6 @@ h4 {
   text-transform: uppercase;
 }
 
-@media (max-width: 767px) {
-  .intro-home-row {
-    flex-direction: column;
-  }
-  .intro-home-text {
-    flex: 1 1 auto;
-  }
-}
-
 /* ===== The EdTech Mentor (duplicado de Intro, bg indigo) ===== */
 .section--mentor-home {
   background-color: var(--color-indigo);
@@ -350,15 +330,6 @@ h4 {
 .mentor-home-featured-wrap {
   flex: 1;
   height: 30em;
-}
-
-@media (max-width: 767px) {
-  .mentor-home-row {
-    flex-direction: column;
-  }
-  .mentor-home-text {
-    flex: 1 1 auto;
-  }
 }
 
 /* ===== Sliders container (wrapper de spacing para sliders embebidos en una sección) ===== */
@@ -478,17 +449,6 @@ h4 {
 
 .apart-home-scales p {
   max-width: 45em;
-}
-
-@media (max-width: 767px) {
-  .apart-slider {
-    padding: var(--space-lg) 2em 0;
-    gap: 1em;
-  }
-  .apart-slide {
-    flex-direction: column;
-    gap: 1.5em;
-  }
 }
 
 /* ===== Testimonials ===== */
@@ -654,34 +614,32 @@ h4 {
   border-color: var(--color-purple);
 }
 
-@media (max-width: 767px) {
-  .testimonials-slider {
-    padding: 0 2em;
-    gap: 1em;
-  }
-  .testimonial-slide {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5em;
-  }
-  .testimonial-quote-icon {
-    width: 8em;
-  }
-}
-
-/* ===== Mobile (max-width: 768px) — breakpoint estándar del proyecto de ahora en adelante ===== */
 @media (max-width: 768px) {
+  /* Layout base */
+  body { font-size: 9px; }
+
+  .container {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  /* Hero */
   .section--hero-home {
     padding-top: 12.86em;
     padding-bottom: 12.86em;
   }
 
+  /* Intro */
   .section--intro-home {
     padding-top: 6em;
     padding-bottom: 6em;
   }
   .intro-home-row {
+    flex-direction: column;
     gap: 4.64em;
+  }
+  .intro-home-text {
+    flex: 1 1 auto;
   }
   .intro-home-media {
     width: 100%;
@@ -691,25 +649,46 @@ h4 {
     padding-left: 0;
   }
 
-  .section--apart-home {
-    padding-top: 4.29em;
-    padding-bottom: 4.29em;
-  }
-  .apart-slider {
-    padding-top: 6.07em;
-  }
-  .apart-home-scales {
-    padding-top: 4.29em;
-  }
-
+  /* The EdTech Mentor */
   .section--mentor-home {
     padding-top: 6.07em;
     padding-bottom: 4.5em;
   }
   .mentor-home-row {
+    flex-direction: column;
     gap: 4.64em;
   }
+  .mentor-home-text {
+    flex: 1 1 auto;
+  }
 
+  /* What sets 27zero apart */
+  .section--apart-home {
+    padding-top: 4.29em;
+    padding-bottom: 4.29em;
+  }
+  .apart-slider {
+    padding: 6.07em 2em 0;
+    gap: 1em;
+  }
+  .apart-slide {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  .apart-home-scales {
+    padding-top: 4.29em;
+  }
+
+  /* Testimonials */
+  .testimonials-slider {
+    padding: 0 2em;
+    gap: 1em;
+  }
+  .testimonial-slide {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+  }
   .testimonial-quote-icon {
     display: none;
   }
@@ -723,8 +702,7 @@ h4 {
     gap: 1.2em;
   }
 
-  /* Tipografía mobile — siempre en px fijos, nunca em. Va al final del archivo
-     para que gane la cascada sin importar el orden de las reglas base/componentes. */
+  /* Tipografía mobile — siempre en px fijos, nunca em */
   h1 { font-size: 32px; line-height: 1.25; font-weight: 700; letter-spacing: -0.09px; }
   h2 { font-size: 24px; line-height: 1.25; font-weight: 700; letter-spacing: 0; }
   h3 { font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: 0; }
