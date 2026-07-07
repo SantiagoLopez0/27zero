@@ -112,12 +112,6 @@ Modifier de `.container`. Centrado.
 - `padding-top: 3.93em` (55px @ 14px)
 - Párrafo con `max-width: 45em`
 
-### Logos — carrusel infinito (`.logos-marquee`)
-- `.logos-marquee`: `overflow: hidden`, `margin-top: 6.43em` (90px @ 14px), aplica `mask-image` en los bordes para un fade-out suave
-- `.logos-track`: flex row, `width: max-content`, animación `logos-scroll` (translateX 0 → -50%) en loop infinito lineal (25s)
-- JS (`initLogosMarquee`): la lista de logos (`CLIENT_LOGOS`) se duplica una vez en el DOM para que el loop del -50% sea continuo y sin salto visible
-- Logos usados: Student First, Doctums, Skillwell, World Learning, Scholarship Magic (no se incluyó OES por no tener el asset)
-
 ---
 
 ## Sección "The EdTech Mentor"

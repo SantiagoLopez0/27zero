@@ -55,30 +55,6 @@ function initApartSlider() {
 
 initApartSlider();
 
-// ===== Logos — infinite horizontal carousel =====
-
-const CLIENT_LOGOS = [
-  { name: 'Student First',   src: '/assets/logos/student-first.svg' },
-  { name: 'Doctums',         src: '/assets/logos/doctums.svg' },
-  { name: 'Skillwell',       src: '/assets/logos/skillwell.svg' },
-  { name: 'World Learning',  src: '/assets/logos/world-learning.svg' },
-  { name: 'Scholarship Magic', src: '/assets/logos/scholarship-magic.svg' },
-];
-
-function initLogosMarquee() {
-  const track = document.getElementById('logosTrack');
-  if (!track) return;
-
-  // Se duplica la lista una vez para que la animación (translateX -50%) sea continua y sin corte
-  const logos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
-
-  track.innerHTML = logos
-    .map(logo => `<img src="${logo.src}" alt="${logo.name}" loading="lazy">`)
-    .join('');
-}
-
-initLogosMarquee();
-
 // ===== Testimonials =====
 
 const QUOTE_ICON_SVG = `

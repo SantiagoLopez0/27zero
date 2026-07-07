@@ -481,34 +481,6 @@ h4 {
   max-width: 45em;
 }
 
-/* ===== Logos marquee ===== */
-.logos-marquee {
-  overflow: hidden;
-  width: 100%;
-  margin-top: 6.43em;
-  mask-image: linear-gradient(to right, transparent, black 6.5em, black calc(100% - 6.5em), transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 6.5em, black calc(100% - 6.5em), transparent);
-}
-
-.logos-track {
-  display: flex;
-  align-items: center;
-  gap: 4em;
-  width: max-content;
-  animation: logos-scroll 25s linear infinite;
-}
-
-.logos-track img {
-  height: 1.75em;
-  width: auto;
-  flex-shrink: 0;
-}
-
-@keyframes logos-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
 @media (max-width: 767px) {
   .apart-slider {
     padding: var(--space-lg) 2em 0;
