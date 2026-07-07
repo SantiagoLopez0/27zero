@@ -562,130 +562,159 @@ Agregar también esta transición al CSS de `.nav` para que el movimiento sea su
 
 ### 4.3 Footer
 
-Fondo blanco. Lista de links de navegación separados por línea divisoria, cada fila con hover black. Bottom bar con logo, copyright y links legales.
+Fondo negro (`#101010`). Logo invertido a blanco. Arriba: logo + 3 columnas de links. Divisor sutil (`rgba(255,255,255,0.15)`). Abajo: copyright y link legal, ambos en blanco 60% de opacidad con hover a blanco sólido.
 
 ```html
 <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <a href="/" class="footer-logo">
+        <img src="https://cdn.prod.website-files.com/65144cb53e0e9c74de079e3b/65144ded0328ecd5efb8b691_Logo.svg" alt="27zero">
+      </a>
 
-  <nav class="footer-nav">
-    <a href="/" class="footer-nav-item">Home</a>
-    <a href="/work" class="footer-nav-item">Work</a>
-    <a href="/services" class="footer-nav-item">Services</a>
-    <a href="/the-edtech-mentor" class="footer-nav-item">The EdTech Mentor</a>
-    <a href="/about" class="footer-nav-item">About</a>
-    <a href="/contact" class="footer-nav-item">Let's Talk!</a>
-    <a href="/careers" class="footer-nav-item">Careers</a>
-    <div class="footer-nav-item footer-nav-social">
-      <span>Social media</span>
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <nav class="footer-links">
+        <div class="footer-links-col">
+          <a href="/">Home</a>
+          <a href="/work">Work</a>
+          <a href="/services">Services</a>
+          <a href="/about">About</a>
+        </div>
+        <div class="footer-links-col">
+          <a href="/the-edtech-mentor">The EdTech Mentor</a>
+          <a href="/careers">Careers</a>
+          <a href="/contact">Let's Talk!</a>
+        </div>
+        <div class="footer-links-col">
+          <a href="https://linkedin.com" target="_blank" rel="noopener">Linkedin</a>
+        </div>
+      </nav>
     </div>
-  </nav>
 
-  <div class="footer-bottom">
-    <a href="/" class="footer-bottom-logo">
-      <img src="https://cdn.prod.website-files.com/65144cb53e0e9c74de079e3b/65144ded0328ecd5efb8b691_Logo.svg" alt="27zero">
-    </a>
-    <p>2025 27zero. All rights reserved.</p>
-    <div class="footer-bottom-legal">
-      <a href="/privacy">Privacy</a>
-      <a href="/security">Security Policy</a>
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">2025 27zero. All rights reserved.</span>
+      <a href="/privacy" class="footer-legal">Privacy Security Policy</a>
     </div>
   </div>
-
 </footer>
 ```
 
 ```css
 .footer {
-  background-color: var(--color-white);
-  width: 100%;
+  background-color: #101010;
 }
 
-/* Nav rows */
-.footer-nav {
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5em 6.5em 6.86em; /* 70px / — / 96px */
+}
+
+/* ===== Top: logo + columnas de links ===== */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3em;
+  margin-bottom: var(--space-lg);
+}
+
+.footer-logo {
+  display: block;
+}
+
+.footer-logo img {
+  width: 11.07em; /* 155px */
+  height: auto;
+  display: block;
+  filter: invert(1);
+}
+
+.footer-links {
+  display: flex;
+  gap: 4.5em;
+}
+
+.footer-links-col {
   display: flex;
   flex-direction: column;
+  gap: 1.71em; /* 24px */
 }
 
-.footer-nav-item {
-  display: flex;
-  align-items: center;
-  padding: 0.75em 6.5em;
-  font-size: 1.75em;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: -0.42px;
-  color: var(--color-black);
+.footer-links-col a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
+  color: var(--color-white);
   text-decoration: none;
-  border-top: 1px solid var(--color-black);
-  transition: all 0.2s ease;
+  transition: font-weight 0.2s ease;
 }
 
-.footer-nav-item:last-child {
-  border-bottom: 1px solid var(--color-black);
+.footer-links-col a:hover {
+  font-weight: 700;
 }
 
-.footer-nav-item:hover {
-  background-color: var(--color-black);
+/* ===== Divider ===== */
+.footer-divider {
+  height: 0.07em;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 2.14em; /* 30px */
+}
+
+/* ===== Bottom row ===== */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-legal {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.07em; /* 15px */
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal:hover {
   color: var(--color-white);
 }
 
-/* Fila especial Social media */
-.footer-nav-social {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25em;
-}
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 3.5em 2em 2em;
+  }
 
-.footer-nav-social span {
-  font-size: 1em;
-  font-weight: 600;
-}
+  .footer-top {
+    flex-direction: column;
+    gap: 2em;
+  }
 
-.footer-nav-social a {
-  font-size: 0.6em;
-  font-weight: 500;
-  color: var(--color-indigo);
-  text-decoration: underline;
-}
+  .footer-links {
+    gap: 2.5em;
+    flex-wrap: wrap;
+  }
 
-.footer-nav-social:hover a {
-  color: var(--color-purple);
-}
-
-/* Bottom bar */
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2em 6.5em;
-}
-
-.footer-bottom img {
-  height: 2em;
-}
-
-.footer-bottom p {
-  font-size: 1em;
-  font-weight: 500;
-  color: var(--color-black);
-  margin: 0;
-}
-
-.footer-bottom-legal {
-  display: flex;
-  gap: 1.5em;
-}
-
-.footer-bottom-legal a {
-  font-size: 1em;
-  font-weight: 500;
-  color: var(--color-black);
-  text-decoration: none;
-}
-
-.footer-bottom-legal a:hover {
-  text-decoration: underline;
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75em;
+  }
 }
 ```
 
