@@ -706,10 +706,16 @@ h4 {
      !important es necesario: h1-h4 en desktop se overridean con selectores
      más específicos (ej. .section--hero-home h1, .section--mentor-home h2),
      que le ganan en especificidad a un simple "h1" aunque este bloque esté al final. */
-  h1 { font-size: 32px !important; }
-  h2 { font-size: 24px !important; }
-  h3 { font-size: 21px !important; }
-  h4 { font-size: 18px !important; }
+  /* Se usan los MISMOS selectores scoped de desktop (no tags globales),
+     para no afectar los h2/h3 internos de los componentes (card-work-title,
+     card-featured-title, card-edtech-mentor-title, slider-title, etc.).
+     Al estar en este bloque (al final del archivo) ganan por orden sobre
+     su propia versión desktop sin necesitar !important. */
+  .section--hero-home h1 { font-size: 32px; }
+  .intro-home-text h2:not(.slider-title) { font-size: 24px; }
+  .section--mentor-home h2 { font-size: 24px; }
+  .section--apart-home h2 { font-size: 24px; }
+  .section--apart-home h3 { font-size: 21px; }
   .text-body, a, .text-link, .text-body--sm { font-size: 13px !important; line-height: 1.5 !important; font-weight: 500 !important; letter-spacing: 0 !important; }
   .btn { font-size: 13px !important; }
 }
