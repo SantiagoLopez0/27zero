@@ -88,15 +88,6 @@ h4 {
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  h1 { font-size: 32px; line-height: 1.25; font-weight: 700; letter-spacing: -0.09px; }
-  h2 { font-size: 24px; line-height: 1.25; font-weight: 700; letter-spacing: 0; }
-  h3 { font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: 0; }
-  h4 { font-size: 18px; line-height: 1.5;  font-weight: 700; letter-spacing: 0; }
-  .text-body, a, .text-link, .text-body--sm { font-size: 13px; line-height: 1.5; font-weight: 500; letter-spacing: 0; }
-  .btn { font-size: 13px; }
-}
-
 /* ===== Base layout ===== */
 .section {
   padding-top: 6.5em;
@@ -731,4 +722,13 @@ h4 {
   .testimonials-dots {
     gap: 1.2em;
   }
+
+  /* Tipografía mobile — siempre en px fijos, nunca em. Va al final del archivo
+     para que gane la cascada sin importar el orden de las reglas base/componentes. */
+  h1 { font-size: 32px; line-height: 1.25; font-weight: 700; letter-spacing: -0.09px; }
+  h2 { font-size: 24px; line-height: 1.25; font-weight: 700; letter-spacing: 0; }
+  h3 { font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: 0; }
+  h4 { font-size: 18px; line-height: 1.5;  font-weight: 700; letter-spacing: 0; }
+  .text-body, a, .text-link, .text-body--sm { font-size: 13px; line-height: 1.5; font-weight: 500; letter-spacing: 0; }
+  .btn { font-size: 13px; }
 }
