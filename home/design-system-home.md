@@ -57,6 +57,10 @@ Columna de texto: H2 + párrafo + botón.
 ### `.section--intro-home h2`
 Se eliminó el override — ahora hereda el H2 global sin estilos propios.
 
+### `.intro-home-text h2:not(.slider-title)`
+Override puntual del H2 dentro del bloque de texto (excluye `.slider-title` por si algún slider quedara anidado ahí).
+- Lora, weight 500, style normal, `2.57em` (36px @ 14px), line-height 125%, letter-spacing `-0.36px` (-1% de 36px)
+
 ### `.inter-accent` (dentro de `.section--intro-home h2`)
 Span para la frase de acento ("for growth and impact."). **Nota:** al quitar el override del H2 padre, este selector queda con valores fijos propios (Inter, 500, `1em`, line-height 125%, letter-spacing `-0.36px`) que ya no coinciden necesariamente con el tamaño del H2 global — revisar si aplica.
 
