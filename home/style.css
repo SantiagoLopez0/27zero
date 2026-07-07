@@ -300,6 +300,17 @@ h4 {
   padding-bottom: 5.71em;
 }
 
+.section--mentor-home .slider-arrow {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.section--mentor-home .slider-arrow:hover:not(:disabled) {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
 .mentor-home-row {
   display: flex;
   align-items: flex-start;
