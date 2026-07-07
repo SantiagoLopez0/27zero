@@ -95,15 +95,18 @@
   scroll-behavior: auto;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .slider-header {
     padding-left: 2em;
     padding-right: 2em;
   }
 
+  .slider-title {
+    font-size: 20px;
+  }
+
   .slider-footer {
-    padding-left: 2em;
-    padding-right: 2em;
+    display: none;
   }
 
   .slider-track {

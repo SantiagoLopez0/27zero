@@ -156,3 +156,47 @@
   border-color: #fff;
   color: #000 !important;
 }
+
+/* ============================
+   Mobile (<=768px) — tamaños de texto en px fijos, no em
+   ============================ */
+@media (max-width: 768px) {
+  .card--edtech-mentor {
+    width: 250px;
+  }
+
+  .card-edtech-mentor-body {
+    width: 250px;
+    height: 250px;
+  }
+
+  .card-edtech-mentor-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-edtech-mentor-role {
+    font-size: 10px;
+  }
+
+  .card-edtech-mentor-name {
+    font-size: 18px;
+  }
+
+  .card-edtech-mentor-tag {
+    font-size: 13px;
+  }
+
+  /* En mobile no hay hover — el título se ve siempre, no solo al pasar el mouse.
+     También forzamos visible el overlay de gradiente (::after), si no el título
+     blanco quedaría sobre el fondo gray claro, sin contraste. */
+  .card-edtech-mentor-body::after {
+    opacity: 1;
+  }
+
+  .card-edtech-mentor-title {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

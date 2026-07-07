@@ -84,6 +84,10 @@ Hover: `.card:hover .card-work-arrow` — flecha pasa de outline negro a fondo n
 
 Sin JS — es una card estática, el hover es puro CSS.
 
+Mobile (`<=768px`, breakpoint global del proyecto): `.card--work` 250×250px, `.card-work-eyebrow` 9px, `.card-work-title` 17px, `.card-work-client-name` 12px, `.card-work-client-logo` 30×30px. Todo en px fijos (regla global: en mobile la tipografía va en px, no em).
+
+⚠️ Pendiente revisar: `.card-work-body` mantiene `min-height: 25em` (~350px) sin override mobile — es mayor que los 250px de `.card--work`, podría desbordar. No se tocó porque no estaba en el pedido explícito.
+
 ---
 
 ## Cards Slider
@@ -105,6 +109,8 @@ No se extrajeron `.section--sliders` ni `.sliders-container` (layout específico
 
 El slider no tiene tamaños de card hardcodeados (flex + gap), así que hereda automáticamente cualquier cambio de tamaño de `.card--work` en `work-card.css` (ej: el ajuste a `25em`).
 
+Mobile (`<=768px`, breakpoint bump de 767→768 al tocar este bloque): `.slider-title` a `20px` (px fijo); `.slider-footer` (flechas prev/next) se oculta por completo (`display: none`) — en mobile no hay navegación por flechas, solo scroll/drag táctil.
+
 ---
 
 ## EdTech Mentor Card
@@ -120,6 +126,8 @@ Extiende `.card` base (de `work-card.css`). `.card--edtech-mentor` es el wrapper
 - **`.card-edtech-mentor-arrow`** — bg siempre transparent salvo hover directo. Default: border/ícono `#000`. Hover de toda la card: border/ícono pasan a `#fff` (bg sigue transparent). Hover directo sobre el arrow (prioridad sobre el de la card, `color` con `!important`): bg `#fff`, ícono `#000`, border `#fff`.
 
 Sin JS — todo el efecto hover es CSS puro.
+
+Mobile (`<=768px`): `.card--edtech-mentor` a `250px` de ancho, `.card-edtech-mentor-body` `250×250px`, `.card-edtech-mentor-avatar` `50×50px`. Tipografía en px fijos: role `10px`, name `18px`, tag `13px`, title `13px`. Como en mobile no hay hover, `.card-edtech-mentor-title` se fuerza `opacity: 1; transform: translateY(0)` por default (siempre visible) — y también se fuerza visible el overlay `::after` (gradiente), porque si no el título blanco quedaría sin contraste sobre el gray claro del fondo por default.
 
 ---
 
@@ -148,7 +156,7 @@ Estado: ✅ terminado. Reusa `.card` base (`work-card.css`) + estilos de texto t
 - **`.card-featured-footer`** — título (`.card-featured-title`, `1em`) + `.card-featured-arrow`.
 - **`.card-featured-arrow`** — outline negro, bg transparent por default; se rellena (bg negro, ícono blanco) con el hover de **toda la card** (`.card--featured:hover .card-featured-arrow`), no solo al pasar sobre el botón.
 
-Mobile (`<=767px`): footer pasa a columna (título arriba, arrow abajo), card a `width: 100%`.
+Mobile (`<=768px`): mismos valores que EdTech Mentor Card, aplicados a las clases equivalentes (dado que no hay split header/body, `.card--featured` juega ambos roles): `.card--featured` `250×250px`, `.card-featured-avatar` `50×50px`, role `10px`, name `18px`, tag `13px`, title `13px`. Footer pasa a columna (título arriba, arrow abajo).
 
 Sin JS — hover puro CSS.
 

@@ -138,3 +138,30 @@
   background-color: var(--color-black);
   color: var(--color-white);
 }
+
+/* ============================
+   Mobile (<=768px) — tamaños de texto en px fijos, no em
+   ============================ */
+@media (max-width: 768px) {
+  .card--work {
+    width: 250px;
+    height: 250px;
+  }
+
+  .card-work-eyebrow {
+    font-size: 9px;
+  }
+
+  .card-work-title {
+    font-size: 17px;
+  }
+
+  .card-work-client-name {
+    font-size: 12px;
+  }
+
+  .card-work-client-logo {
+    width: 30px;
+    height: 30px;
+  }
+}
