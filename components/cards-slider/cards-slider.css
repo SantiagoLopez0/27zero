@@ -48,7 +48,7 @@
   height: 2.85em;
   border-radius: 50%;
   border: 0.07em solid var(--color-black);
-  background-color: var(--color-white);
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
