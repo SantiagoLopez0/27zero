@@ -148,6 +148,10 @@
     height: 250px;
   }
 
+  .card-work-body {
+    min-height: 250px;
+  }
+
   .card-work-eyebrow {
     font-size: 9px;
   }

@@ -84,9 +84,7 @@ Hover: `.card:hover .card-work-arrow` — flecha pasa de outline negro a fondo n
 
 Sin JS — es una card estática, el hover es puro CSS.
 
-Mobile (`<=768px`, breakpoint global del proyecto): `.card--work` 250×250px, `.card-work-eyebrow` 9px, `.card-work-title` 17px, `.card-work-client-name` 12px, `.card-work-client-logo` 30×30px. Todo en px fijos (regla global: en mobile la tipografía va en px, no em).
-
-⚠️ Pendiente revisar: `.card-work-body` mantiene `min-height: 25em` (~350px) sin override mobile — es mayor que los 250px de `.card--work`, podría desbordar. No se tocó porque no estaba en el pedido explícito.
+Mobile (`<=768px`, breakpoint global del proyecto): `.card--work` 250×250px, `.card-work-body` `min-height: 250px`, `.card-work-eyebrow` 9px, `.card-work-title` 17px, `.card-work-client-name` 12px, `.card-work-client-logo` 30×30px. Todo en px fijos (regla global: en mobile la tipografía va en px, no em).
 
 ---
 
@@ -141,7 +139,7 @@ Estructura: `.footer` (bg `#101010`) → `.footer-container` (max-width 1440, pa
 - **`.footer-links-col`** — `gap: 1.71em` (24px). Links: 15px/400, line-height 160%, sin margin-bottom.
 - **`.footer-divider`** — línea `rgba(255,255,255,.15)`, `margin-bottom: 2.14em` (30px).
 - **`.footer-copy`** y **`.footer-legal`** — mismos estilos: 15px/400, line-height 160%, color atenuado `rgba(255,255,255,.6)`.
-- Mobile (`<=767px`): `.footer-links` con `flex-wrap: wrap`.
+- Mobile (`<=768px`): `.footer-links` con `flex-wrap: wrap`. Tipografía en px fijo: `.footer-links-col a`, `.footer-copy` y `.footer-legal` — todos a `13px` (regla global del design system: mobile va en px fijos, no em).
 
 ---
 

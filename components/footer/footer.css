@@ -97,7 +97,7 @@
   color: var(--color-white);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .footer-container {
     padding: 3.5em 2em 2em;
   }
@@ -110,6 +110,12 @@
   .footer-links {
     gap: 2.5em;
     flex-wrap: wrap;
+  }
+
+  .footer-links-col a,
+  .footer-copy,
+  .footer-legal {
+    font-size: 13px;
   }
 
   .footer-bottom {
