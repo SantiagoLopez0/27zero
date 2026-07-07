@@ -6,7 +6,7 @@
 
 /* Wrapper: header (transparente) + body (la card real), en columna */
 .card--edtech-mentor {
-  width: 28.93em; /* 405px */
+  width: 25em;
   gap: 2em; /* 28px */
   background-color: transparent;
 }
@@ -66,8 +66,8 @@
 /* ===== Body — la card real: gray por default, gradiente oscuro en hover, bordes redondeados ===== */
 .card-edtech-mentor-body {
   position: relative;
-  width: 28.93em; /* 405px */
-  height: 28.93em; /* 405px */
+  width: 25em;
+  height: 25em;
   padding: 2.5em; /* 35px */
   border-radius: 0.5em;
   background-color: var(--color-gray);

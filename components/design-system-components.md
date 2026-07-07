@@ -76,7 +76,7 @@ Requiere `lottie-web` cargado antes de `navbar.js` (CDN: `https://cdn.jsdelivr.n
 
 Estado: ✅ terminado. Extraído de `/work` (markup de `script.js`, estilos de `style.css`).
 
-`.card` es la base compartida (border-radius, overflow, flex column, cursor pointer). `.card--work` es la única variante activa por ahora — tamaño fijo `28em` (392px) integrado directo en `.card--work`, sin modifier `--standard` separado.
+`.card` es la base compartida (border-radius, overflow, flex column, cursor pointer). `.card--work` es la única variante activa por ahora — tamaño fijo `25em` integrado directo en `.card--work`, sin modifier `--standard` separado.
 
 Estructura: `.card-work-bg` (fondo absoluto, placeholder gris con label) + `.card-work-body` (contenido, z-index 1) → `.card-work-content` (eyebrow + title + client) y `.card-work-footer` (flecha).
 
@@ -103,7 +103,7 @@ El demo trae 8 `.card.card--work` (componente Work Card) como slides — requier
 
 No se extrajeron `.section--sliders` ni `.sliders-container` (layout específico de la página `/work`, no del componente). El `.slider-track-wrap` usa `padding-left: max(6.5em, calc((100vw - 1440px)/2 + 6.5em))` para alinearse solo, sin depender de un `.container` externo.
 
-El slider no tiene tamaños de card hardcodeados (flex + gap), así que hereda automáticamente cualquier cambio de tamaño de `.card--work` en `work-card.css` (ej: el ajuste a `405px × 405px`).
+El slider no tiene tamaños de card hardcodeados (flex + gap), así que hereda automáticamente cualquier cambio de tamaño de `.card--work` en `work-card.css` (ej: el ajuste a `25em`).
 
 ---
 
@@ -111,10 +111,10 @@ El slider no tiene tamaños de card hardcodeados (flex + gap), así que hereda a
 
 Estado: ✅ terminado. Replicado a partir de mockups (default + hover) + specs exactas de Figma.
 
-Extiende `.card` base (de `work-card.css`). `.card--edtech-mentor` es el wrapper: `width: 28.93em` (405px), `gap: 2em` (28px), `background: transparent` — header y body van en columna, separados por el gap.
+Extiende `.card` base (de `work-card.css`). `.card--edtech-mentor` es el wrapper: `width: 25em`, `gap: 2em` (28px), `background: transparent` — header y body van en columna, separados por el gap.
 
 - **`.card-edtech-mentor-header`** — transparente, sin padding (no es parte de la card visual). Flex row: `.card-edtech-mentor-avatar` (58px, círculo, placeholder con iniciales) + `.card-edtech-mentor-meta` (`.card-edtech-mentor-role` 15px/500, `.card-edtech-mentor-name` 21px/500).
-- **`.card-edtech-mentor-body`** — la card real: `405px × 405px`, `padding: 2.5em` (35px), `border-radius: 0.5em`, todos los bordes redondeados. Bg gray por default; `::after` con gradiente (gray → black) en `opacity: 0` que pasa a `1` en `:hover` del card (el gradiente no es animable directo con `transition`, por eso el overlay).
+- **`.card-edtech-mentor-body`** — la card real: `25em × 25em`, `padding: 2.5em` (35px), `border-radius: 0.5em`, todos los bordes redondeados. Bg gray por default; `::after` con gradiente (gray → black) en `opacity: 0` que pasa a `1` en `:hover` del card (el gradiente no es animable directo con `transition`, por eso el overlay).
 - **`.card-edtech-mentor-tag`** — 15px/400, line-height 150%.
 - **`.card-edtech-mentor-title`** — 18px/500, line-height 140%. Oculto por default, aparece con el hover del card (junto al gradiente).
 - **`.card-edtech-mentor-arrow`** — bg siempre transparent salvo hover directo. Default: border/ícono `#000`. Hover de toda la card: border/ícono pasan a `#fff` (bg sigue transparent). Hover directo sobre el arrow (prioridad sobre el de la card, `color` con `!important`): bg `#fff`, ícono `#000`, border `#fff`.
