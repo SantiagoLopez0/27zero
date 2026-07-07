@@ -330,7 +330,7 @@ h4 {
 
 .mentor-home-featured-wrap {
   flex: 1;
-  min-height: 34em;
+  height: 30em;
 }
 
 @media (max-width: 767px) {

@@ -135,7 +135,7 @@ Fondo `--color-indigo`, `color: var(--color-white)` (cascada a H2, párrafo, etc
 Mismos estilos que `.intro-home-row` / `.intro-home-text` (duplicados 1:1, sin cambios de spacing).
 
 ### `.mentor-home-featured-wrap` — componente `featured-card`
-Reemplaza el placeholder `.mentor-home-media` (ya no existe). Wrapper con el **mismo tamaño** que tenía el placeholder (`flex: 1; min-height: 34em`), conteniendo el componente real `featured-card` (`.card.card--featured`, `width/height: 100%`, se ajusta automáticamente al wrapper). **Importado directamente desde `/components/`:**
+Reemplaza el placeholder `.mentor-home-media` (ya no existe). Wrapper con `flex: 1; height: 30em`, conteniendo el componente real `featured-card` (`.card.card--featured`, `width/height: 100%`, se ajusta automáticamente al wrapper). **Nota:** se usa `height` (no `min-height`) porque el `height: 100%` del `.card--featured` necesita que el padre tenga una altura definida para resolver el porcentaje — con solo `min-height` la card no heredaba tamaño y quedaba chica. **Importado directamente desde `/components/`:**
 - `<link>` a `/components/work-card/work-card.css` (ya estaba) y `/components/featured-card/featured-card.css` en el `<head>`
 - Markup estático tal como está en `components/featured-card/featured-card.html`, contenido placeholder (Julie Kelleher / Kelleher Consulting Group)
 - Sin JS propio
