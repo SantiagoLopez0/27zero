@@ -41,8 +41,8 @@ Wrapper del botón + caption. Los centra entre sí, independientemente del aline
 
 ### `.section--intro-home`
 Modifier de `.section`. Fondo `--color-purple`.
-- `padding-top: 4.29em` (60px @ 14px)
-- `padding-bottom: 4.29em` (60px @ 14px)
+- `padding-top: 6.07em` (85px @ 14px)
+- `padding-bottom: 6.07em` (85px @ 14px)
 
 ### `.intro-home-row`
 Fila flex de dos columnas: texto a la izquierda, media a la derecha.
@@ -74,7 +74,7 @@ Placeholder de imagen/video (equivalente a `.card-work-bg` pero como bloque suel
 - `<link>` a `/components/work-card/work-card.css` y `/components/cards-slider/cards-slider.css` en el `<head>`
 - `<script>` a `/components/cards-slider/cards-slider.js` (antes de `/home/script.js`)
 - Markup estático (no generado por JS) tal como está en `components/cards-slider/cards-slider.html`, 8 Work Cards placeholder, título "Los mejores"
-- Envuelto en `.sliders-container` (única clase propia de Home, agrega `padding-top`/`padding-bottom: var(--space-lg)` para separarlo del bloque intro — el resto de clases del slider/card vienen 100% del componente)
+- Envuelto en `.sliders-container` (única clase propia de Home, agrega `padding-top: 4.29em` (60px @ 14px) y `padding-bottom: 0` para separarlo del bloque intro — el resto de clases del slider/card vienen 100% del componente)
 - `cards-slider.js` inicializa drag + flechas automáticamente sobre cualquier `.slider-block` presente en el DOM al cargar la página (por eso el markup debe ser estático, no inyectado por JS después)
 
 ---
@@ -110,7 +110,15 @@ Carrusel simple de slides completos (no drag, solo flechas), con su propia clase
 Modifier de `.container`. Centrado.
 - `gap: 1.79em` (25px @ 14px)
 - `padding-top: 3.93em` (55px @ 14px)
+- `padding-bottom: 6.43em` (90px @ 14px)
 - Párrafo con `max-width: 45em`
+
+### Marquee de logos — componente `marquee-logos`
+Sibling de `.apart-home-scales` dentro de `.section--apart-home`. **Importado directamente desde `/components/marquee-logos/`, sin duplicar CSS/JS:**
+- `<link>` a `/components/marquee-logos/marquee-logos.css` en el `<head>`
+- `<script>` a `/components/marquee-logos/marquee-logos.js` (auto-inicializa por `window.addEventListener('load', ...)` sobre cualquier `.marquee` del DOM — clona logos vía WAAPI hasta cubrir el viewport y anima loop infinito sin salto)
+- Markup estático tal como está en `components/marquee-logos/marquee-logos.html`, con los 5 logos de `/assets/logos/`
+- Sin clases propias de Home — todo el estilo viene del componente
 
 ---
 
@@ -123,8 +131,14 @@ Fondo `--color-indigo`, `color: var(--color-white)` (cascada a H2, párrafo, etc
 - `padding-top: 10.36em` (145px @ 14px)
 - `padding-bottom: 5.71em` (80px @ 14px)
 
-### `.mentor-home-row` / `.mentor-home-text` / `.mentor-home-media`
-Mismos estilos que `.intro-home-row` / `.intro-home-text` / `.intro-home-media` (duplicados 1:1, sin cambios de spacing).
+### `.mentor-home-row` / `.mentor-home-text`
+Mismos estilos que `.intro-home-row` / `.intro-home-text` (duplicados 1:1, sin cambios de spacing).
+
+### `.mentor-home-featured-wrap` — componente `featured-card`
+Reemplaza el placeholder `.mentor-home-media` (ya no existe). Wrapper con el **mismo tamaño** que tenía el placeholder (`flex: 1; min-height: 34em`), conteniendo el componente real `featured-card` (`.card.card--featured`, `width/height: 100%`, se ajusta automáticamente al wrapper). **Importado directamente desde `/components/`:**
+- `<link>` a `/components/work-card/work-card.css` (ya estaba) y `/components/featured-card/featured-card.css` en el `<head>`
+- Markup estático tal como está en `components/featured-card/featured-card.html`, contenido placeholder (Julie Kelleher / Kelleher Consulting Group)
+- Sin JS propio
 
 ### `.section--mentor-home h2`
 Mismo override que `.section--intro-home h2` (Lora 500, 2.57em, letter-spacing -0.36px).

@@ -226,8 +226,8 @@ h4 {
 /* ===== Intro ===== */
 .section--intro-home {
   background-color: var(--color-purple);
-  padding-top: 4.29em;
-  padding-bottom: 4.29em;
+  padding-top: 6.07em;
+  padding-bottom: 6.07em;
 }
 
 .intro-home-row {
@@ -328,24 +328,9 @@ h4 {
   border-color: var(--color-white);
 }
 
-.mentor-home-media {
+.mentor-home-featured-wrap {
   flex: 1;
   min-height: 34em;
-  border-radius: 0.5em;
-  background-color: var(--color-gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mentor-home-media span {
-  font-family: 'Inter', sans-serif;
-  font-size: 1em;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--color-black);
-  opacity: 0.4;
-  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
@@ -359,8 +344,8 @@ h4 {
 
 /* ===== Sliders container (wrapper de spacing para sliders embebidos en una sección) ===== */
 .sliders-container {
-  padding-top: var(--space-lg);
-  padding-bottom: var(--space-lg);
+  padding-top: 4.29em;
+  padding-bottom: 0;
 }
 
 @media (max-width: 767px) {
@@ -465,6 +450,7 @@ h4 {
   align-items: center;
   gap: 1.79em;
   padding-top: 3.93em;
+  padding-bottom: 6.43em;
 }
 
 .section--apart-home h3 {
