@@ -150,6 +150,11 @@ Mismo override que `.section--intro-home h2` (Lora 500, 2.57em, letter-spacing -
 ### `.section--mentor-home .btn-white`
 Botón usa la variante `.btn-white` (en vez de `.btn-dark` como en Intro), con `border-color: var(--color-white)` — mismo tratamiento que el botón del Hero, para que quede "full blanco" sobre el fondo indigo.
 
+### Slider de `edtech-mentor-card` — sibling de `.mentor-home-container`
+Componente `cards-slider` reutilizando el mismo `.sliders-container` de Intro (mismo padding, ya no se duplica CSS). **Sin título** — no se incluye `.slider-header`/`.slider-title`, el `.slider-block` va directo a `.slider-track-wrap`. Cards: 6 placeholders del componente `edtech-mentor-card` (`.card--edtech-mentor`, 25em, header transparente + body gray con gradiente/título en hover). **Importado directamente desde `/components/`:**
+- `<link>` a `/components/edtech-mentor-card/edtech-mentor-card.css` en el `<head>` (además de `work-card.css` y `cards-slider.css`, ya presentes)
+- Markup estático, mismas flechas `.slider-arrow` por defecto del componente (blancas/negras) — no se overrideó color para esta sección, revisar contraste sobre el fondo indigo si hace falta ajustar
+
 ---
 
 ## Sección Testimonials
