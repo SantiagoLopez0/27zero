@@ -54,6 +54,8 @@ body {
 ```
 El breakpoint mobile del proyecto es siempre `max-width: 768px`.
 
+**Regla:** el tamaño de texto (`font-size`) nunca se define sobre tags globales como `p` o `a` — siempre se asigna mediante clases (`.text-body`, `.text-link`, `.text-body--sm`, `.text-button`, etc.), tanto en desktop como en mobile. Excepción: `h1`–`h6` sí mantienen tamaño fijo directo por tag.
+
 En **desktop** todo el sistema tipográfico usa `em`, escalando con la base del `body`.
 En **mobile**, el `em` queda reservado únicamente para espaciados (paddings, margins, gaps) — los tamaños de texto se definen en `px` fijos (ver escala mobile más abajo).
 El `letter-spacing` se define en `px` para evitar distorsiones a escalas pequeñas.
@@ -111,7 +113,7 @@ h6 {
   letter-spacing: 0;
 }
 
-p, .text-body, a, .text-link {
+.text-body, .text-link {
   font-family: 'Inter', sans-serif;
   font-size: 1.29em;       /* 18px */
   line-height: 1.6;
@@ -186,7 +188,7 @@ p, .text-body, a, .text-link {
     letter-spacing: 0;
   }
 
-  p, .text-body, a, .text-link, .text-body--sm, .text-button {
+  .text-body, .text-link, .text-body--sm, .text-button {
     font-size: 13px;
     line-height: 1.5;
     font-weight: 500;
