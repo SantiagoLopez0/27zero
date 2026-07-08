@@ -140,6 +140,7 @@ p, .text-body {
 .categories-wrap {
   display: flex;
   flex-direction: column;
+  gap: 2.86em; /* 40px / 14 */
 }
 
 .category-anchor {
