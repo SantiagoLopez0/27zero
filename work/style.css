@@ -140,6 +140,26 @@ body {
   color: var(--color-indigo);
 }
 
+/* ===== Variante card los-mejores ===== */
+#los-mejores .card--work {
+  width: 25em;
+  height: 32em !important;
+}
+
+#los-mejores .card-work-body {
+  min-height: 32em !important;
+}
+
+@media (max-width: 768px) {
+  #los-mejores .card--work {
+    height: 320px !important;
+  }
+
+  #los-mejores .card-work-body {
+    min-height: 320px !important;
+  }
+}
+
 /* ===== Marquee ===== */
 .section--marquee {
   padding-top: 0;
