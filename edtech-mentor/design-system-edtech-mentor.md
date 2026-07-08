@@ -92,10 +92,10 @@ Fondo indigo (duplica el patrón visual de `.section--mentor-home` en `/home`). 
 
 ### `.section--essential-mentor`
 Modifier de `.section`. Fondo `--color-indigo`, texto `--color-white` por default (heredado por hijos como `.text-body--sm`).
+- `padding-top: 6.86em` — `padding-bottom: 6.86em` (96px @ 14px base)
 
 ### `.essential-mentor-container`
-Modifier de `.container`. Restringe el ancho del bloque de texto para forzar el wrap del H2 a 2 líneas.
-- `max-width: 34em`
+Modifier de `.container`. Sin restricción de ancho (el H2 hace wrap natural con el `max-width` del `.container` base).
 
 ### `.section--essential-mentor h2`
 Override tipográfico scoped (mismo patrón que `.section--mentor-home h2` en `/home`).
@@ -108,10 +108,13 @@ Span que cambia la segunda parte del título a Inter (sans), manteniendo el rest
 Fila flex de los 2 botones (`Go to Series` — placeholder `href="#"` — y `Subscribe on LinkedIn` — link real a LinkedIn).
 
 ### `.section--essential-mentor .btn-white`
-Override scoped de la variante global `.btn-white`: sobre fondo indigo el texto pasa a `--color-purple` (en vez del negro default). Hover: fondo purple, texto blanco.
+Override scoped de la variante global `.btn-white`: sobre fondo indigo, fondo y borde blancos sólidos, texto `--color-purple`. Hover: fondo transparente, borde y texto blancos.
 
 ### `.section--essential-mentor .slider-arrow`
 Override scoped del `cards-slider`: outline blanco sobre indigo (en vez del negro default). Hover: fondo blanco, ícono negro.
+
+### `.section--essential-mentor .sliders-container`
+- `padding-top: 7.14em` (100px @ 14px base)
 
 ### Slider de esta sección
 Usa `.sliders-container` (mismo nombre que en `/home`) para el spacing, `.slider-block` **sin** `.slider-header` (sin título, según lo pedido), y 6 `card--edtech-mentor` con contenido placeholder (Julie Kelleher / Kelleher Consulting Group — mismo placeholder que el featured card y que `/home`).

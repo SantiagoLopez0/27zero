@@ -199,11 +199,11 @@ body {
 .section--essential-mentor {
   background-color: var(--color-indigo);
   color: var(--color-white);
-  padding-bottom: 5.7em;
+  padding-top: 6.86em; /* 96px @ 14px base */
+  padding-bottom: 6.86em; /* 96px @ 14px base */
 }
 
 .essential-mentor-container {
-  max-width: 34em;
   gap: var(--space-sm);
 }
 
@@ -230,20 +230,22 @@ body {
   gap: 0.75em;
 }
 
-/* Sobre fondo indigo, .btn-white pasa a texto purple */
+/* Sobre fondo indigo, .btn-white pasa a bg/border blanco sólido, texto purple */
 .section--essential-mentor .btn-white {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
   color: var(--color-purple);
 }
 
 .section--essential-mentor .btn-white:hover {
-  background-color: var(--color-purple);
+  background-color: transparent;
+  border-color: var(--color-white);
   color: var(--color-white);
-  border-color: var(--color-purple);
 }
 
 /* Slider embebido — sin título, cards edtech-mentor */
 .section--essential-mentor .sliders-container {
-  padding-top: 4.29em;
+  padding-top: 7.14em; /* 100px @ 14px base */
 }
 
 .section--essential-mentor .slider-arrow {
@@ -307,10 +309,6 @@ body {
 
   .featured-mentor-wrap {
     height: 35.56em; /* 320px @ 9px base */
-  }
-
-  .essential-mentor-container {
-    max-width: 100%;
   }
 
   .section--essential-mentor h2 {
