@@ -125,7 +125,7 @@ Extiende `.card` base (de `work-card.css`). `.card--edtech-mentor` es el wrapper
 
 Sin JS — todo el efecto hover es CSS puro.
 
-Mobile (`<=768px`): `.card--edtech-mentor` a `250px` de ancho, `.card-edtech-mentor-body` `250×250px`, `.card-edtech-mentor-avatar` `50×50px`. Tipografía en px fijos: role `10px`, name `18px`, tag `13px`, title `13px`. Como en mobile no hay hover, `.card-edtech-mentor-title` se fuerza `opacity: 1; transform: translateY(0)` por default (siempre visible) — y también se fuerza visible el overlay `::after` (gradiente), porque si no el título blanco quedaría sin contraste sobre el gray claro del fondo por default.
+Mobile (`<=768px`): `.card--edtech-mentor` a `250px` de ancho, `.card-edtech-mentor-body` `250×250px`, `.card-edtech-mentor-avatar` `50×50px`. Tipografía en px fijos: role `10px`, name `18px`, tag `13px`, title `13px`. Como en mobile no hay hover, `.card-edtech-mentor-title` se fuerza `opacity: 1; transform: translateY(0)` por default (siempre visible) — y también se fuerza visible el overlay `::after` (gradiente), porque si no el título blanco quedaría sin contraste sobre el gray claro del fondo por default. `.card-edtech-mentor-arrow` también queda blanco (`border-color`/`color: #fff`) por default — el mismo estado que en desktop se ve al hacer hover sobre toda la card.
 
 ---
 

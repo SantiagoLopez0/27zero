@@ -165,6 +165,12 @@
     width: 250px;
   }
 
+  /* En mobile no hay hover — el arrow siempre se ve como el estado de hover-de-card en desktop */
+  .card-edtech-mentor-arrow {
+    border-color: #fff;
+    color: #fff;
+  }
+
   .card-edtech-mentor-body {
     width: 250px;
     height: 250px;
