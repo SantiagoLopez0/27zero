@@ -131,7 +131,7 @@ body {
 
 /* ==============================
    FEATURED CARD (horizontal)
-   Un solo bloque: grid de 2 columnas (imagen 1.3fr / contenido 1fr)
+   Div block, grid de 2 columnas (imagen 1.3fr / contenido 1fr)
    ============================== */
 .card--resource-featured {
   display: grid;
@@ -139,8 +139,6 @@ body {
   align-items: stretch;
   gap: 2.5em;
   width: 100%;
-  text-decoration: none;
-  color: var(--color-black);
 }
 
 .card-resource-featured-image {
@@ -155,7 +153,6 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1em;
-  text-decoration: none;
 }
 
 .card-resource-date {
@@ -164,7 +161,6 @@ body {
   font-weight: 600;
   letter-spacing: 0;
   color: var(--color-black);
-  text-decoration: none;
 }
 
 .card-resource-featured-title {
@@ -175,7 +171,6 @@ body {
   line-height: 1.25;
   letter-spacing: -0.36px;
   color: var(--color-black);
-  text-decoration: none;
 }
 
 .card-resource-featured-desc {
