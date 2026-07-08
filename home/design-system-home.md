@@ -13,6 +13,7 @@ Modifier de `.section`. Fondo `--color-gray`.
 - `margin-top: 5.5em` (77px @ 14px) — espacio para el navbar fijo (ahora `nav--white` es transparent, así que este espacio ya no necesita ser "en blanco" estricto)
 - `padding-top: 12.14em` (170px @ 14px)
 - `padding-bottom: 12.14em` (170px @ 14px)
+- Mobile (`≤768px`): `padding-top`/`padding-bottom: 18em`
 
 ### `.hero-home-container`
 Modifier de `.container`.
@@ -34,6 +35,7 @@ Wrapper del botón + caption. Los centra entre sí, independientemente del aline
 
 ### `.text-caption`
 - Inter, weight 400, `1.07em` (15px @ 14px), line-height 160%, letter-spacing 0
+- Mobile (`≤768px`): `font-size: 10px` (fijo, no em)
 
 ---
 

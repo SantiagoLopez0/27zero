@@ -625,8 +625,11 @@ h4 {
 
   /* Hero */
   .section--hero-home {
-    padding-top: 12.86em;
-    padding-bottom: 12.86em;
+    padding-top: 18em;
+    padding-bottom: 18em;
+  }
+  .text-caption {
+    font-size: 10px;
   }
 
   /* Intro */
