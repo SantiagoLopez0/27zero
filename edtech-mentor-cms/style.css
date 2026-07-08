@@ -346,45 +346,51 @@ body {
 /* ===== Rapid fire questions — intro + chat de preguntas/respuestas ===== */
 .section--rapid-fire-cms {
   background-color: var(--color-white);
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 4.29em;
+  padding-bottom: 4.29em;
 }
 
 .rapid-fire-container {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 70px;
-  align-items: start;
+  gap: 5em;
+  align-items: stretch;
 }
 
 .rapid-fire-intro {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .rapid-fire-title {
   font-family: 'Lora', serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 36px;
+  font-size: 2.57em;
   line-height: 125%;
   letter-spacing: -0.36px;
   color: var(--color-black-ui);
+  margin-bottom: 2.29em;
 }
 
-.placeholder--rapid-fire { height: 24em; }
+.rapid-fire-intro .text-body {
+  margin-bottom: 4.29em;
+}
+
+.placeholder--rapid-fire {
+  flex: 1;
+}
 
 .rapid-fire-chat {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2.29em;
 }
 
 .chat-pair {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 1.21em;
 }
 
 .chat-row {
@@ -398,17 +404,17 @@ body {
 .chat-row--answer {
   justify-content: flex-end;
   align-items: center;
-  gap: 12px;
+  gap: 0.86em;
 }
 
 .chat-bubble {
   font-family: 'Lora', serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 18px;
+  font-size: 1.29em;
   line-height: 1.4;
-  padding: 16px 28px;
-  border-radius: 999px;
+  padding: 1.14em 2.29em;
+  border-radius: 50em;
 }
 
 .chat-bubble--question {
@@ -422,14 +428,14 @@ body {
 }
 
 .chat-bubble--answer-long {
-  border-radius: 24px;
+  border-radius: 5em;
   text-align: center;
   max-width: 26em;
 }
 
 .chat-avatar {
-  width: 48px;
-  height: 48px;
+  width: 3.43em;
+  height: 3.43em;
   border-radius: 50%;
   flex-shrink: 0;
   background-color: var(--color-gray-mid);
@@ -529,12 +535,12 @@ body {
 
   .article-closing { font-size: 14px; }
 
-  .rapid-fire-container { grid-template-columns: 1fr; gap: 40px; }
+  .rapid-fire-container { grid-template-columns: 1fr; }
   .rapid-fire-title { font-size: 24px; }
-  .placeholder--rapid-fire { height: 16em; }
+  .placeholder--rapid-fire { height: 16em; flex: none; }
 
-  .chat-bubble { font-size: 14px; padding: 12px 20px; }
-  .chat-avatar { width: 36px; height: 36px; }
+  .chat-bubble { font-size: 14px; }
+  .chat-avatar { width: 50px; height: 50px; }
   .chat-bubble--answer-long { max-width: 80%; }
 
   .breadcrumb { font-size: 12px; }
