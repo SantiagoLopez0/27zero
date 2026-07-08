@@ -42,7 +42,49 @@
   </div>
 </header>
 
-<!-- Contenido de la página EdTech Mentor se construirá aquí, sección por sección -->
+<!-- HERO / INTRO -->
+<section class="section section--hero">
+  <div class="container hero-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">&gt;</span>
+      <span class="breadcrumb-current">EdTech Mentor Interviews.</span>
+    </nav>
+    <h1>The EdTech Mentor Interview Series.</h1>
+    <p class="text-body">Global EdTech leaders sharing their perspectives, experiences, and valuable lessons from their journey in this formidable industry.</p>
+  </div>
+</section>
+
+<!-- FILTER PILLS -->
+<section class="section section--pills">
+  <div class="container pills-container">
+    <div class="pills-wrap" id="pillsWrap">
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="pill pill--subscribe">Subscribe on LinkedIn</a>
+      <button class="pill" data-filter="essencial">Essencial</button>
+      <button class="pill" data-filter="investor">Investor</button>
+      <button class="pill" data-filter="founders">Founders</button>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY ANCHORS — contenido se añadirá sección por sección -->
+<section class="section" id="essencial">
+  <div class="container">
+    <!-- Cards de la categoría "Essencial" -->
+  </div>
+</section>
+
+<section class="section" id="investor">
+  <div class="container">
+    <!-- Cards de la categoría "Investor" -->
+  </div>
+</section>
+
+<section class="section" id="founders">
+  <div class="container">
+    <!-- Cards de la categoría "Founders" -->
+  </div>
+</section>
 
 <footer class="footer">
   <div class="footer-container">
@@ -77,6 +119,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
 <script src="/components/navbar/navbar.js"></script>
-<script src="/edtech-mentor/script.js"></script>
+<script src="/edtech-mentor/script.js" defer></script>
 </body>
 </html>

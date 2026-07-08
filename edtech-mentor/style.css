@@ -45,6 +45,124 @@ body {
   gap: 2em;
 }
 
+/* ===== Base .btn — requerida por .btn-nav del navbar ===== */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.7em;
+  border-radius: 5.2em;
+  border: 0.05em solid transparent;
+  font-family: 'Lora', serif;
+  font-size: 1.15em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* ===== Hero ===== */
+.section--hero {
+  padding-top: 9em;
+  padding-bottom: 2.5em;
+}
+
+.hero-container {
+  gap: var(--space-xs);
+}
+
+.section--hero h1 {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-size: 2.9em;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.34px;
+}
+
+/* ===== Breadcrumb ===== */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-black);
+  opacity: 0.55;
+  margin-bottom: var(--space-xs);
+}
+
+.breadcrumb-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-indigo);
+}
+
+.breadcrumb-separator {
+  display: inline-block;
+}
+
+/* ===== Pills ===== */
+.section--pills {
+  padding-top: 0;
+  padding-bottom: var(--space-lg);
+}
+
+.pills-container {
+  flex-direction: row;
+}
+
+.pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.07em;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-black);
+  background-color: transparent;
+  border: 0.07em solid var(--color-black);
+  border-radius: 5.2em;
+  padding: 0.6em 1.4em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--color-indigo);
+  color: var(--color-indigo);
+}
+
+.pill--subscribe {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+  color: var(--color-black);
+}
+
+.pill--subscribe:hover {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+  color: var(--color-black);
+  opacity: 0.85;
+}
+
 /* Contenido de la página se construirá sección por sección aquí abajo */
 
 /* ============================
@@ -57,5 +175,39 @@ body {
   .container {
     padding-left: 2em;
     padding-right: 2em;
+  }
+
+  .section--hero {
+    padding-top: 5em;
+    padding-bottom: 1.5em;
+  }
+
+  .section--hero h1 {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.09px;
+  }
+
+  .text-body {
+    font-size: 13px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+  }
+
+  .section--pills {
+    padding-bottom: var(--space-md);
+  }
+
+  .pills-wrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .pills-wrap::-webkit-scrollbar {
+    display: none;
   }
 }
