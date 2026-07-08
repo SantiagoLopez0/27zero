@@ -122,9 +122,60 @@ Usa `.sliders-container` (mismo nombre que en `/home`) para el spacing, `.slider
 
 ---
 
-## Anchors de categoría restantes
+---
 
-Dos secciones vacías (`#investor`, `#founders`) como destino del scroll de sus pills correspondientes. `#essencial` ya tiene contenido real (ver sección arriba). El contenido de `#investor` y `#founders` se añadirá sección por sección más adelante.
+## Sección "Investor series" (`#investor`)
+
+Copia exacta de la estructura de `#essencial` (mismo `.container` + `.sliders-container` + `.slider-block` sin título, mismas 6 `edtech-mentor-card`), con su propia paleta:
+
+### `.section--investor-mentor`
+- Fondo `--color-purple`, texto `--color-black`
+- `padding-top`/`padding-bottom: 6.86em` (96px @ 14px base)
+
+### `.investor-mentor-container` / `.investor-mentor-actions`
+Mismos nombres que en Essential pero con el prefijo `investor-`. `.investor-mentor-actions` en mobile: `flex-direction: column; align-items: baseline;` (igual que Essential).
+
+### `.section--investor-mentor .btn-white`
+Fondo/borde negro, texto blanco. Hover: fondo transparente, borde negro, texto negro.
+
+### `.section--investor-mentor .card-edtech-mentor-role` / `.card-edtech-mentor-name`
+Override a `--color-black` (el componente los trae blancos por default, pensado para fondos oscuros/indigo).
+
+### `.section--investor-mentor .slider-arrow`
+Outline negro (coincide con el default del componente, pero se declara explícito para este contexto). Hover: fondo negro, ícono blanco.
+
+### `.section--investor-mentor .sliders-container`
+`padding-top: 7.14em` (100px @ 14px base)
+
+**Título:** `Investor Series <span class="inter-accent">Interviews</span>` — **Subtítulo:** "The Impact of Investment in EdTech, hosted by Phill Miller"
+
+---
+
+## Sección "Founders series" (`#founders`)
+
+Misma copia exacta, con su propia paleta:
+
+### `.section--founders-mentor`
+- Fondo `--color-black` (#101010), texto `--color-white`
+- `padding-top`/`padding-bottom: 6.86em` (96px @ 14px base)
+
+### `.founders-mentor-container` / `.founders-mentor-actions`
+Mismos nombres que en Essential pero con el prefijo `founders-`. `.founders-mentor-actions` en mobile: `flex-direction: column; align-items: baseline;`
+
+### `.section--founders-mentor .btn-white`
+Mismos colores que en Essential series: fondo/borde blanco, texto indigo. Hover: fondo transparente, borde y texto blancos.
+
+### `.section--founders-mentor .slider-arrow`
+Outline blanco. Hover: fondo blanco, ícono negro. (No hace falta override de `card-edtech-mentor-role`/`name`: el default blanco del componente ya funciona sobre este fondo oscuro.)
+
+### `.section--founders-mentor .sliders-container`
+`padding-top: 7.14em` (100px @ 14px base)
+
+**Título:** `Founders Series <span class="inter-accent">Interviews</span>` — **Subtítulo:** "Conversations with EdTech founders about growth and impact."
+
+---
+
+Las 3 secciones (`#essencial`, `#investor`, `#founders`) ya tienen contenido completo — no quedan anchors vacíos.
 
 ### `.section` (sin modifier)
 Las secciones ancla usan el `.section`/`.container` base del design system global, sin overrides todavía.
