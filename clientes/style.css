@@ -181,6 +181,7 @@ body {
 .category-anchor {
   /* Wrapper vacío que sirve como target de anchor scroll.
      El contenido real de cada categoría se añadirá aquí. */
+  scroll-margin-top: 8em;
 }
 
 /* ============================
