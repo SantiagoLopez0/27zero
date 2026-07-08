@@ -1,0 +1,498 @@
+/* ============================
+   27zero — EdTech Mentor CMS page (blog article template)
+   ============================ */
+
+:root {
+  --color-indigo:   #440E92;
+  --color-purple:   #B382F9;
+  --color-black:    #000000;
+  --color-black-ui: #101010;
+  --color-gray:     #F5F5F5;
+  --color-gray-mid: #D9D9D9;
+  --color-white:    #FFFFFF;
+
+  --space-xs:  0.5em;
+  --space-sm:  1.5em;
+  --space-md:  3.5em;
+  --space-lg:  6em;
+  --space-xl:  9em;
+  --space-2xl: 14em;
+
+  /* Page-specific tokens */
+  --spacing-section: 6.5em;
+  --spacing-block:   3em;
+  --article-width:   50em;    /* ~700px — ancho de lectura cómodo para el body del artículo */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-white);
+  color: var(--color-black-ui);
+}
+
+/* ===== Botones — base .btn requerida por .btn-nav del navbar ===== */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.7em;
+  border-radius: 5.2em;
+  border: 0.05em solid transparent;
+  font-family: 'Lora', serif;
+  font-size: 1.15em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* ===== Layout base ===== */
+.section {
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 6.5em;
+  padding-right: 6.5em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-block);
+}
+
+/* El body del artículo se centra y limita su ancho para lectura cómoda */
+.container--article {
+  max-width: var(--article-width);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section--hero-cms {
+  padding-top: 12em;
+  padding-bottom: var(--space-md);
+}
+
+.section--hero-cms .container {
+  gap: var(--space-xs);
+}
+
+.section--body-cms {
+  padding-top: 0;
+}
+
+/* ===== Breadcrumb ===== */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-black-ui);
+  opacity: 0.55;
+  margin-bottom: var(--space-xs);
+}
+
+.breadcrumb-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-indigo);
+}
+
+.breadcrumb-separator {
+  display: inline-block;
+}
+
+/* ===== Eyebrow (categoría del artículo) ===== */
+.text-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86em;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-indigo);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+/* ===== H1 del artículo — scoped a .section--hero-cms ===== */
+.section--hero-cms h1 {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-size: 2.9em;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.34px;
+  color: var(--color-black-ui);
+}
+
+.article-dek {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(16, 16, 16, 0.7);
+}
+
+/* ===== Meta row: autor / fecha / tiempo de lectura ===== */
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+.article-meta-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.article-meta-avatar {
+  width: 2.86em;
+  height: 2.86em;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-color: var(--color-gray-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.article-meta-avatar span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-black-ui);
+  opacity: 0.35;
+}
+
+.article-meta-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--color-black-ui);
+  display: block;
+}
+
+.article-meta-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86em;
+  font-weight: 400;
+  color: rgba(16, 16, 16, 0.5);
+  display: block;
+}
+
+.article-meta-divider {
+  width: 0.07em;
+  height: 2.14em;
+  background-color: rgba(16, 16, 16, 0.15);
+}
+
+.article-meta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.article-meta-date,
+.article-meta-readtime {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93em;
+  font-weight: 400;
+  color: rgba(16, 16, 16, 0.55);
+}
+
+/* ===== Placeholder de imagen (mismo patrón que work-cms) ===== */
+.placeholder {
+  background-color: var(--color-gray-mid);
+  border-radius: 0.57em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.placeholder span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-black-ui);
+  opacity: 0.35;
+}
+
+.placeholder--featured { height: 32em; }
+.placeholder--inline   { height: 22em; }
+
+/* ===== Article body — clases scoped para h2/h3/h4 dentro del artículo ===== */
+.article-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.article-body h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.42px;
+  color: var(--color-black-ui);
+  margin-top: var(--space-xs);
+}
+
+.article-body h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  color: var(--color-black-ui);
+  margin-top: var(--space-xs);
+}
+
+.article-body h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.21em;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--color-black-ui);
+}
+
+.article-body .text-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.14em;
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--color-black-ui);
+}
+
+.article-body .text-body strong {
+  font-weight: 600;
+}
+
+/* ===== Blockquote ===== */
+.article-blockquote {
+  border-left: 0.2em solid var(--color-indigo);
+  padding: 0.3em 0 0.3em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.article-blockquote p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  font-weight: 500;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--color-black-ui);
+}
+
+.article-blockquote cite {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93em;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(16, 16, 16, 0.55);
+}
+
+/* ===== Lista dentro del artículo ===== */
+.article-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.article-body ul li {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.14em;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-black-ui);
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.article-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.43em;
+  height: 0.43em;
+  border-radius: 50%;
+  background-color: var(--color-indigo);
+}
+
+.article-body figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.article-body figcaption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.93em;
+  font-weight: 400;
+  color: rgba(16, 16, 16, 0.5);
+  text-align: center;
+}
+
+/* ===== Divider ===== */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(16, 16, 16, 0.15);
+  width: 100%;
+}
+
+/* ===== Author bio ===== */
+.author-bio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: var(--color-gray);
+  border-radius: 0.86em;
+  padding: 2em;
+}
+
+.author-bio-avatar {
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-color: var(--color-gray-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-bio-avatar span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.79em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-black-ui);
+  opacity: 0.35;
+}
+
+.author-bio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.author-bio-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.79em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(16, 16, 16, 0.4);
+}
+
+.author-bio-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  font-weight: 700;
+  color: var(--color-black-ui);
+}
+
+.author-bio-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(16, 16, 16, 0.7);
+}
+
+/* ============================
+   Mobile — max-width: 768px
+   Esta página solo importa navbar y footer (sin componentes de card
+   con h2/h3 internos), pero igual se mantienen los headings del
+   artículo scoped a `.article-body`/`.section--hero-cms` (nunca tag
+   global) para evitar cualquier conflicto si a futuro se integran
+   componentes como edtech-mentor-card.
+   ============================ */
+
+@media (max-width: 768px) {
+  body { font-size: 9px; }
+
+  .container {
+    padding-left: 2em;
+    padding-right: 2em;
+    gap: var(--space-md);
+  }
+
+  .container--article {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section--hero-cms { padding-top: 8em; }
+
+  .section--hero-cms h1 { font-size: 32px; }
+
+  .article-dek { font-size: 13px; }
+
+  .article-meta { flex-wrap: wrap; gap: var(--space-xs); }
+
+  .article-meta-name { font-size: 12px; }
+  .article-meta-role { font-size: 11px; }
+  .article-meta-date,
+  .article-meta-readtime { font-size: 11px; }
+
+  .placeholder--featured { height: 16em; }
+  .placeholder--inline   { height: 12em; }
+  .placeholder span { font-size: 11px; }
+
+  .article-body h2 { font-size: 22px; }
+  .article-body h3 { font-size: 19px; }
+  .article-body h4 { font-size: 16px; }
+  .article-body .text-body { font-size: 14px; }
+  .article-body ul li { font-size: 14px; }
+
+  .article-blockquote p { font-size: 15px; }
+  .article-blockquote cite { font-size: 12px; }
+
+  .article-body figcaption { font-size: 11px; }
+
+  .author-bio {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .author-bio-label { font-size: 10px; }
+  .author-bio-name { font-size: 15px; }
+  .author-bio-text { font-size: 13px; }
+
+  .breadcrumb { font-size: 12px; }
+  .text-eyebrow { font-size: 11px; }
+
+  .btn { font-size: 13px; }
+}
