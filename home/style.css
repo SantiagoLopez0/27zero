@@ -661,6 +661,16 @@ h4 {
   .mentor-home-text {
     flex: 1 1 auto;
   }
+  .mentor-home-featured-wrap {
+    height: auto;
+  }
+  .card--featured {
+    width: 100%;
+    height: auto;
+  }
+  .card-featured-content {
+    gap: 6.5em;
+  }
 
   /* What sets 27zero apart */
   .section--apart-home {
