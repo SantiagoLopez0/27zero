@@ -154,7 +154,7 @@ Estado: ✅ terminado. Reusa `.card` base (`work-card.css`) + estilos de texto t
 - **`.card-featured-footer`** — título (`.card-featured-title`, `1em`) + `.card-featured-arrow`.
 - **`.card-featured-arrow`** — outline negro, bg transparent por default; se rellena (bg negro, ícono blanco) con el hover de **toda la card** (`.card--featured:hover .card-featured-arrow`), no solo al pasar sobre el botón.
 
-Mobile (`<=768px`): `.card--featured` pasa a `width: 100%; height: auto; gap: 6.5em !important` (ya no es 250×250px fijo). El resto: mismos valores que EdTech Mentor Card, aplicados a las clases equivalentes (dado que no hay split header/body, `.card--featured` juega ambos roles): `.card-featured-avatar` `50×50px`, role `10px`, name `18px`, tag `13px`, title `13px`. Footer pasa a columna (título arriba, arrow abajo).
+Mobile (`<=768px`): `.card--featured` pasa a `width: 100%; height: 100%; gap: 6.5em !important` (ya no es 250×250px fijo). El resto: mismos valores que EdTech Mentor Card, aplicados a las clases equivalentes (dado que no hay split header/body, `.card--featured` juega ambos roles): `.card-featured-avatar` `50×50px`, role `10px`, name `18px`, tag `13px`, title `13px`. Footer pasa a columna (título arriba, arrow abajo).
 
 Sin JS — hover puro CSS.
 
