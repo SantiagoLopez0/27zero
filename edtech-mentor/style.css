@@ -446,7 +446,7 @@ body {
   font-size: 3.43em; /* 48px @ 14px base */
   line-height: 1.25;
   letter-spacing: -0.36px;
-  max-width: 28.57em; /* 400px @ 14px base */
+  max-width: 10em;
 }
 
 .cta-mentor-actions {

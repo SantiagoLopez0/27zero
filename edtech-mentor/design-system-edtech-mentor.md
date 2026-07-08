@@ -230,7 +230,7 @@ Wrapper flex-column para el H2 + subtítulo.
 ### `.cta-mentor-title`
 Clase dedicada para el H2 de esta sección (en vez del selector `.section--cta-mentor h2`). Todo el título en Lora (sin `.inter-accent`, a diferencia de los otros H2 de la página).
 - Lora, 500, `3.43em` (48px @ 14px base), line-height 1.25, letter-spacing `-0.36px`
-- `max-width: 28.57em` (400px @ 14px base)
+- `max-width: 10em`
 - Mobile: `24px` (H2, sin conflicto — el mobile sigue usando px fijo)
 
 ### `.cta-mentor-actions`
