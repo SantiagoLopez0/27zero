@@ -39,7 +39,7 @@ body {
   letter-spacing: -0.48px;
 }
 
-p, .text-body {
+.text-body {
   font-family: 'Inter', sans-serif;
   font-size: 1.29em;
   line-height: 1.6;
@@ -140,18 +140,6 @@ p, .text-body {
   color: var(--color-indigo);
 }
 
-.pill--active {
-  background-color: var(--color-purple);
-  border-color: var(--color-purple);
-  color: var(--color-black);
-}
-
-.pill--active:hover {
-  background-color: var(--color-purple);
-  border-color: var(--color-purple);
-  color: var(--color-black);
-}
-
 /* ===== Marquee ===== */
 .section--marquee {
   padding-top: 0;
@@ -202,10 +190,8 @@ p, .text-body {
     letter-spacing: -0.09px;
   }
 
-  p, .text-body {
+  .text-body {
     font-size: 13px;
-    line-height: 1.5;
-    font-weight: 500;
   }
 
   .pills-wrap {
