@@ -179,3 +179,22 @@ Las 3 secciones (`#essencial`, `#investor`, `#founders`) ya tienen contenido com
 
 ### `.section` (sin modifier)
 Las secciones ancla usan el `.section`/`.container` base del design system global, sin overrides todavía.
+
+---
+
+## Tipografía mobile — valores fijos en PX
+
+Según el design system global, todo `font-size` en mobile (`≤768px`) usa PX fijo, nunca `em` (el `em` en mobile queda reservado solo para spacing). Valores aplicados en esta página:
+
+| Clase | Mobile font-size |
+|---|---|
+| `.section--hero h1` | `32px` (H1) |
+| `.section--essential-mentor h2` / `.investor-mentor` / `.founders-mentor` | `24px` (H2) |
+| `.inter-accent` dentro de cada h2 | `24px` (hereda el tamaño del H2, ya no vía `em`) |
+| `.text-body` | `13px` |
+| `.text-body--sm` | `13px` |
+| `.btn` | `13px` |
+| `.pill` | `13px` |
+| `.breadcrumb` | `13px` |
+
+No se tocó ningún componente importado (`navbar`, `footer`, `work-card`, `featured-card`, `edtech-mentor-card`, `cards-slider`) — sus textos internos (ej. `card-featured-title`, `card-edtech-mentor-name`, `slider-title`) se manejan en otro chat.

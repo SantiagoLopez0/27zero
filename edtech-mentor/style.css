@@ -421,6 +421,18 @@ body {
     font-size: 13px;
   }
 
+  .text-body--sm {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+
+  .pill {
+    font-size: 13px;
+  }
+
   .breadcrumb {
     font-size: 13px;
   }
@@ -447,6 +459,10 @@ body {
     font-size: 24px;
   }
 
+  .section--essential-mentor h2 .inter-accent {
+    font-size: 24px;
+  }
+
   .section--essential-mentor {
     padding-bottom: 4.5em;
   }
@@ -460,6 +476,10 @@ body {
     font-size: 24px;
   }
 
+  .section--investor-mentor h2 .inter-accent {
+    font-size: 24px;
+  }
+
   .section--investor-mentor {
     padding-bottom: 4.5em;
   }
@@ -470,6 +490,10 @@ body {
   }
 
   .section--founders-mentor h2 {
+    font-size: 24px;
+  }
+
+  .section--founders-mentor h2 .inter-accent {
     font-size: 24px;
   }
 
