@@ -207,6 +207,45 @@ body {
   border-color: var(--color-black-ui);
 }
 
+/* ===== Text body — clase reutilizable para párrafos de la página ===== */
+.text-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: var(--color-black-ui);
+}
+
+/* ===== Featured — imagen + resumen + highlight ===== */
+.section--featured-cms {
+  background-color: var(--color-white);
+  padding-top: 90px;
+  padding-bottom: 110px;
+}
+
+.container--featured {
+  gap: 115px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.featured-highlight {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 0px;
+  text-align: center;
+  color: var(--color-purple);
+}
+
 /* ===== Placeholder de imagen (mismo patrón que work-cms) ===== */
 .placeholder {
   background-color: var(--color-gray-mid);
@@ -273,6 +312,10 @@ body {
   .placeholder--featured { height: 16em; }
   .placeholder--inline   { height: 12em; }
   .placeholder span { font-size: 11px; }
+
+  .featured-grid { grid-template-columns: 1fr; }
+  .text-body { font-size: 13px; }
+  .featured-highlight { font-size: 24px; }
 
   .breadcrumb { font-size: 12px; }
   .breadcrumb-link,
