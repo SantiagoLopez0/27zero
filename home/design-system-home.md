@@ -108,7 +108,7 @@ Carrusel simple de slides completos (no drag, solo flechas), con su propia clase
 - `.apart-slide`: `flex: 0 0 100%`, contiene los 3 `.apart-shape` en fila
 - `.apart-shape`: `flex: 1`, imagen (`max-width: 22em`)
 - JS (`initApartSlider`): genera 2 slides idénticos (duplicado del único slide real) para demostrar la funcionalidad; flechas prev/next avanzan/retroceden el índice y se deshabilitan en los extremos
-- Mobile (`≤768px`): `.apart-slide` pasa a `flex-direction: column`
+- **Mobile (`≤768px`) — comportamiento distinto al de desktop:** se ocultan las flechas (`.apart-slider-arrow { display: none }`, la transform de JS queda fija en `translateX(0)` sin interferir) y el grupo de 3 shapes se "desarma": `.apart-slide` pasa a `display: contents` (pierde su caja, sus 3 `.apart-shape` hijos quedan como items directos del `.apart-slider-track`), cada `.apart-shape` pasa a `flex: 0 0 83.33%` con `scroll-snap-align: center`, y `.apart-slider-track-wrap` pasa a `overflow-x: auto` con `scroll-snap-type: x mandatory`. Resultado: scroll nativo horizontal con snap, un shape por "slide" pero mostrando ~1.2 por vista (efecto peek del siguiente).
 
 ### "Execution that Scales" (`.apart-home-scales`)
 Modifier de `.container`. Centrado.
