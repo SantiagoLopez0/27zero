@@ -120,8 +120,9 @@
 
 @media (max-width: 768px) {
   .card--featured {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: auto;
+    gap: 6.5em !important;
   }
 
   .card-featured-avatar {
