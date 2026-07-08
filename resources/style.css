@@ -197,7 +197,8 @@ body {
 .resources-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.9286em; /* 13px */
+  column-gap: 0.9286em; /* 13px */
+  row-gap: 6.4286em; /* 90px */
 }
 
 .card-resource-item {
@@ -223,24 +224,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 0.85em;
+  gap: 1.1429em; /* 16px */
 }
 
 .card-resource-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.43em;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.2px;
+  font-family: 'Lora', serif;
+  font-size: 1.7143em; /* 24px */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.24px;
   color: var(--color-black);
 }
 
 .card-resource-desc {
   font-family: 'Inter', sans-serif;
-  font-size: 1.07em;
+  font-size: 1.0714em; /* 15px */
   font-weight: 400;
-  line-height: 1.6;
-  color: rgba(16, 16, 16, 0.65);
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--color-black);
 }
 
 .card-resource-body .btn {
@@ -295,7 +298,7 @@ body {
   }
 
   .card-resource-title {
-    font-size: 17px;
+    font-size: 21px;
   }
 
   .resources-grid {
