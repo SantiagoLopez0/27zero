@@ -163,6 +163,17 @@ body {
   opacity: 0.85;
 }
 
+/* ===== Featured card wrap ===== */
+.section--featured-mentor {
+  padding-top: 0;
+}
+
+.featured-mentor-wrap {
+  width: 100%;
+  height: 43.93em; /* 615px @ 14px base */
+  overflow: hidden;
+}
+
 /* Contenido de la página se construirá sección por sección aquí abajo */
 
 /* ============================
@@ -209,5 +220,9 @@ body {
 
   .pills-wrap::-webkit-scrollbar {
     display: none;
+  }
+
+  .featured-mentor-wrap {
+    height: 35.56em; /* 320px @ 9px base */
   }
 }

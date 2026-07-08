@@ -62,6 +62,25 @@ Modifier de `.pill`. Pill fija (no es un filtro) para el link "Subscribe on Link
 
 ---
 
+## Featured Card
+
+Componente reutilizado tal cual desde `/components/featured-card` (requiere también `/components/work-card/work-card.css` por la clase base `.card`). Markup y contenido placeholder (Julie Kelleher / Kelleher Consulting Group) idénticos a los usados en `/home`.
+
+**Importado en `<head>`:**
+- `/components/work-card/work-card.css`
+- `/components/featured-card/featured-card.css`
+
+### `.section--featured-mentor`
+Modifier de `.section`. Sin padding-top para quedar pegada a la sección de pills.
+
+### `.featured-mentor-wrap`
+Wrapper que define el tamaño real de `.card--featured` (que es `width/height: 100%`).
+- Desktop: `height: 43.93em` (615px @ 14px base)
+- Mobile (`≤768px`): `height: 35.56em` (320px @ 9px base)
+- `overflow: hidden` para garantizar que el wrapper nunca exceda esa altura, incluso considerando que el componente `featured-card` trae su propio override `height: auto !important` en su media query mobile (pensado para el caso de `/home`, donde la card crece libremente). En esta página el wrapper fuerza el alto fijo en ambos breakpoints y recorta cualquier contenido que se pase.
+
+---
+
 ## Anchors de categoría
 
 Tres secciones vacías (`#essencial`, `#investor`, `#founders`) como destino del scroll de cada pill. El contenido (cards `edtech-mentor-card`) se añadirá sección por sección más adelante.
