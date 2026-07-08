@@ -224,14 +224,19 @@ Modifier de `.container`.
 Wrapper flex-column para el H2 + subtítulo.
 - `gap: 0.71em` (10px @ 14px base) — separación entre título y subtítulo
 
-### `.section--cta-mentor h2`
-Todo el título en Lora (sin `.inter-accent`, a diferencia de los otros H2 de la página).
-- Lora, 500, `2.57em`, line-height 1.25, letter-spacing `-0.36px`
-- Mobile: `24px` (H2)
+### `.cta-mentor-title-block .text-body`
+- `max-width: 42.86em` (600px @ 14px base)
+
+### `.cta-mentor-title`
+Clase dedicada para el H2 de esta sección (en vez del selector `.section--cta-mentor h2`). Todo el título en Lora (sin `.inter-accent`, a diferencia de los otros H2 de la página).
+- Lora, 500, `3.43em` (48px @ 14px base), line-height 1.25, letter-spacing `-0.36px`
+- `max-width: 28.57em` (400px @ 14px base)
+- Mobile: `24px` (H2, sin conflicto — el mobile sigue usando px fijo)
 
 ### `.cta-mentor-actions`
 Fila flex de los 2 botones.
 - `Let's Talk` → `.btn.btn-purple` (fondo/borde purple, texto negro — hover: fondo transparente, borde negro)
 - `Learn more` → `.btn.btn-white` (outline negro, fondo/texto blanco/negro default — hover: fondo negro, texto blanco)
+- Mobile: `flex-direction: column; align-items: baseline;`
 
 **Título:** "Begin your journey to growth." — **Subtítulo:** "Let's partner to articulate and unpack meaningful results. Together, we'll discover an approach that will expand your impact."
