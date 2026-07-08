@@ -411,9 +411,9 @@ body {
   font-family: 'Lora', serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.29em;
+  font-size: 15px;
   line-height: 1.4;
-  padding: 1.14em 2.29em;
+  padding: 1em 2.29em;
   border-radius: 50em;
 }
 
@@ -430,7 +430,7 @@ body {
 .chat-bubble--answer-long {
   border-radius: 5em;
   text-align: center;
-  max-width: 26em;
+  max-width: 80%;
 }
 
 .chat-avatar {
@@ -541,7 +541,6 @@ body {
 
   .chat-bubble { font-size: 14px; }
   .chat-avatar { width: 50px; height: 50px; }
-  .chat-bubble--answer-long { max-width: 80%; }
 
   .breadcrumb { font-size: 12px; }
   .breadcrumb-link,
