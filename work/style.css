@@ -159,7 +159,7 @@ p, .text-body, a, .text-link {
   padding-bottom: var(--space-lg);
 }
 
-.sliders-container {
+.sliders-wrap {
   /* El container tiene padding-left pero no padding-right,
      así el track desborda hacia la derecha de la pantalla */
   padding-right: 0;

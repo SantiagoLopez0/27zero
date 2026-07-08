@@ -3,14 +3,13 @@
 // ============================
 
 const CATEGORIES = [
-  { id: 'los-mejores',               label: 'Los mejores',                cardType: 'featured'  },
-  { id: 'ux-ui-web-design',          label: 'Ux/Ui & Web Design',         cardType: 'standard'  },
-  { id: 'brand-messaging-strategy',  label: 'Brand & Messaging Strategy',  cardType: 'standard'  },
-  { id: 'events',                    label: 'Events',                      cardType: 'standard'  },
-  { id: 'content-marketing',         label: 'Content Marketing',           cardType: 'standard'  },
-  { id: 'marketing-programs',        label: 'Marketing Programs',          cardType: 'standard'  },
-  { id: 'thought-leadership-programs', label: 'Thought Leadership Programs', cardType: 'standard' },
-  { id: 'strategic-services',        label: 'Strategic Services',          cardType: 'standard'  },
+  { id: 'ux-ui-web-design',            label: 'Ux/Ui & Web Design',          cardType: 'standard'  },
+  { id: 'brand-messaging-strategy',    label: 'Brand & Messaging Strategy',   cardType: 'standard'  },
+  { id: 'events',                      label: 'Events',                       cardType: 'standard'  },
+  { id: 'content-marketing',           label: 'Content Marketing',            cardType: 'standard'  },
+  { id: 'marketing-programs',          label: 'Marketing Programs',           cardType: 'standard'  },
+  { id: 'thought-leadership-programs', label: 'Thought Leadership Programs',  cardType: 'standard'  },
+  { id: 'strategic-services',          label: 'Strategic Services',           cardType: 'standard'  },
 ];
 
 const CARDS_PER_CATEGORY = 6;
@@ -54,6 +53,7 @@ function createCardElement(category) {
 function createSliderBlock(category) {
   const block = document.createElement('div');
   block.className = 'slider-block';
+  block.id = category.id;           // ID para anchor scroll
   block.dataset.category = category.id;
 
   // Header: solo título
@@ -175,16 +175,16 @@ function enableSliderArrows(footer, track) {
 
 // ===== Render sliders =====
 
-const slidersContainer = document.getElementById('slidersContainer');
+const slidersWrap = document.getElementById('slidersWrap');
 
 function renderAllSliders() {
-  slidersContainer.innerHTML = '';
-  CATEGORIES.forEach(cat => slidersContainer.appendChild(createSliderBlock(cat)));
+  slidersWrap.innerHTML = '';
+  CATEGORIES.forEach(cat => slidersWrap.appendChild(createSliderBlock(cat)));
 }
 
 renderAllSliders();
 
-// ===== Pills filtering =====
+// ===== Pills — anchor scroll =====
 
 const pillsWrap = document.getElementById('pillsWrap');
 const pills     = pillsWrap.querySelectorAll('.pill');
@@ -197,11 +197,10 @@ pillsWrap.addEventListener('click', (e) => {
   pill.classList.add('pill--active');
 
   const filterId = pill.dataset.filter;
-  const blocks   = slidersContainer.querySelectorAll('.slider-block');
+  if (filterId === 'all') return;   // "All" no scrollea a ningún lugar
 
-  blocks.forEach(block => {
-    block.style.display = (filterId === 'all' || block.dataset.category === filterId)
-      ? ''
-      : 'none';
-  });
+  const target = document.getElementById(filterId);
+  if (!target) return;
+
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
