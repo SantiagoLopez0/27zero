@@ -18,6 +18,7 @@ Ver `/components/design-system-components.md` para el detalle de clases de ambos
 ### `.section--hero`
 Modifier de `.section`. Padding reducido respecto al default (no es un hero full-height, es un intro corto de página interna).
 - `padding-top: 9em` — `padding-bottom: 2.5em`
+- Mobile (`≤768px`): `padding-top: 20em` (180px @ 9px base)
 
 ### `.hero-container`
 Modifier de `.container`. Gap reducido entre breadcrumb, H1 y subtítulo.
@@ -198,3 +199,39 @@ Según el design system global, todo `font-size` en mobile (`≤768px`) usa PX f
 | `.breadcrumb` | `13px` |
 
 No se tocó ningún componente importado (`navbar`, `footer`, `work-card`, `featured-card`, `edtech-mentor-card`, `cards-slider`) — sus textos internos (ej. `card-featured-title`, `card-edtech-mentor-name`, `slider-title`) se manejan en otro chat.
+
+---
+
+## Gap de las filas de botones (`*-mentor-actions`)
+
+`.essential-mentor-actions`, `.investor-mentor-actions` y `.founders-mentor-actions` usan `gap: 2em` (antes `0.75em`) en desktop. En mobile mantienen `flex-direction: column; align-items: baseline;`.
+
+---
+
+## Sección CTA final (bg blanco)
+
+Va después de `.section--founders-mentor`, antes del footer. Reutiliza `.btn-purple` y `.btn-white` **globales** (no scoped) recién agregados — mismos colores que documenta `/design-system.md`.
+
+### `.section--cta-mentor`
+- Fondo `--color-white`, texto `--color-black` (heredado, es el color default de `body`)
+- `padding-top`/`padding-bottom: 5.71em` (80px @ 14px base)
+
+### `.cta-mentor-container`
+Modifier de `.container`.
+- `gap: 2.5em` (35px @ 14px base) — separación entre el `.cta-mentor-title-block` y `.cta-mentor-actions`
+
+### `.cta-mentor-title-block`
+Wrapper flex-column para el H2 + subtítulo.
+- `gap: 0.71em` (10px @ 14px base) — separación entre título y subtítulo
+
+### `.section--cta-mentor h2`
+Todo el título en Lora (sin `.inter-accent`, a diferencia de los otros H2 de la página).
+- Lora, 500, `2.57em`, line-height 1.25, letter-spacing `-0.36px`
+- Mobile: `24px` (H2)
+
+### `.cta-mentor-actions`
+Fila flex de los 2 botones.
+- `Let's Talk` → `.btn.btn-purple` (fondo/borde purple, texto negro — hover: fondo transparente, borde negro)
+- `Learn more` → `.btn.btn-white` (outline negro, fondo/texto blanco/negro default — hover: fondo negro, texto blanco)
+
+**Título:** "Begin your journey to growth." — **Subtítulo:** "Let's partner to articulate and unpack meaningful results. Together, we'll discover an approach that will expand your impact."

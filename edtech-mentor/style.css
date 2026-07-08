@@ -86,6 +86,32 @@ body {
   cursor: pointer;
 }
 
+/* White: outline negro, texto negro, hover fondo negro texto blanco (default global) */
+.btn-white {
+  background-color: var(--color-white);
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.btn-white:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+/* Purple: fondo purple, texto negro (default global) */
+.btn-purple {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+  color: var(--color-black);
+}
+
+.btn-purple:hover {
+  background-color: transparent;
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+
 /* ===== Hero ===== */
 .section--hero {
   padding-top: 9em;
@@ -227,7 +253,7 @@ body {
 .essential-mentor-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75em;
+  gap: 2em;
 }
 
 /* Sobre fondo indigo, .btn-white pasa a bg/border blanco sólido, texto indigo */
@@ -291,7 +317,7 @@ body {
 .investor-mentor-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75em;
+  gap: 2em;
 }
 
 /* Sobre fondo purple, .btn-white pasa a bg/border negro sólido, texto blanco */
@@ -360,7 +386,7 @@ body {
 .founders-mentor-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75em;
+  gap: 2em;
 }
 
 /* Mismos colores de botón que Essential series: bg/border blanco, texto indigo */
@@ -391,6 +417,39 @@ body {
   color: var(--color-black);
 }
 
+/* ===== CTA (bg blanco) ===== */
+.section--cta-mentor {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding-top: 5.71em; /* 80px @ 14px base */
+  padding-bottom: 5.71em; /* 80px @ 14px base */
+}
+
+.cta-mentor-container {
+  gap: 2.5em; /* 35px @ 14px base — separación entre title-block y actions */
+}
+
+.cta-mentor-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.71em; /* 10px @ 14px base — separación entre título y subtítulo */
+}
+
+.section--cta-mentor h2 {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.57em;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+}
+
+.cta-mentor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
 /* Contenido de la página se construirá sección por sección aquí abajo */
 
 /* ============================
@@ -406,7 +465,7 @@ body {
   }
 
   .section--hero {
-    padding-top: 5em;
+    padding-top: 20em; /* 180px @ 9px base */
     padding-bottom: 1.5em;
   }
 
@@ -504,5 +563,9 @@ body {
   .founders-mentor-actions {
     flex-direction: column;
     align-items: baseline;
+  }
+
+  .section--cta-mentor h2 {
+    font-size: 24px;
   }
 }
