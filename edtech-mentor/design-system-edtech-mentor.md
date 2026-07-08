@@ -106,9 +106,10 @@ Span que cambia la segunda parte del título a Inter (sans), manteniendo el rest
 
 ### `.essential-mentor-actions`
 Fila flex de los 2 botones (`Go to Series` — placeholder `href="#"` — y `Subscribe on LinkedIn` — link real a LinkedIn).
+- Mobile (`≤768px`): `flex-direction: column`
 
 ### `.section--essential-mentor .btn-white`
-Override scoped de la variante global `.btn-white`: sobre fondo indigo, fondo y borde blancos sólidos, texto `--color-purple`. Hover: fondo transparente, borde y texto blancos.
+Override scoped de la variante global `.btn-white`: sobre fondo indigo, fondo y borde blancos sólidos, texto `--color-indigo`. Hover: fondo transparente, borde y texto blancos.
 
 ### `.section--essential-mentor .slider-arrow`
 Override scoped del `cards-slider`: outline blanco sobre indigo (en vez del negro default). Hover: fondo blanco, ícono negro.
