@@ -81,9 +81,46 @@ Wrapper que define el tamaño real de `.card--featured` (que es `width/height: 1
 
 ---
 
-## Anchors de categoría
+## Sección "Essential series" (`#essencial`)
 
-Tres secciones vacías (`#essencial`, `#investor`, `#founders`) como destino del scroll de cada pill. El contenido (cards `edtech-mentor-card`) se añadirá sección por sección más adelante.
+Fondo indigo (duplica el patrón visual de `.section--mentor-home` en `/home`). Contiene intro (título + subtítulo + 2 botones) y, debajo, un `cards-slider` sin título con cards `edtech-mentor-card`.
+
+**Importado en `<head>`:**
+- `/components/edtech-mentor-card/edtech-mentor-card.css`
+- `/components/cards-slider/cards-slider.css` (además de `work-card.css`, ya importado para el featured card)
+- `/components/cards-slider/cards-slider.js` al final del `<body>` (auto-inicializa cualquier `.slider-block` de la página)
+
+### `.section--essential-mentor`
+Modifier de `.section`. Fondo `--color-indigo`, texto `--color-white` por default (heredado por hijos como `.text-body--sm`).
+
+### `.essential-mentor-container`
+Modifier de `.container`. Restringe el ancho del bloque de texto para forzar el wrap del H2 a 2 líneas.
+- `max-width: 34em`
+
+### `.section--essential-mentor h2`
+Override tipográfico scoped (mismo patrón que `.section--mentor-home h2` en `/home`).
+- Lora, 500, `2.57em`, line-height 1.25, letter-spacing `-0.36px`
+
+### `.inter-accent` (dentro del h2)
+Span que cambia la segunda parte del título a Inter (sans), manteniendo el resto en Lora.
+
+### `.essential-mentor-actions`
+Fila flex de los 2 botones (`Go to Series` — placeholder `href="#"` — y `Subscribe on LinkedIn` — link real a LinkedIn).
+
+### `.section--essential-mentor .btn-white`
+Override scoped de la variante global `.btn-white`: sobre fondo indigo el texto pasa a `--color-purple` (en vez del negro default). Hover: fondo purple, texto blanco.
+
+### `.section--essential-mentor .slider-arrow`
+Override scoped del `cards-slider`: outline blanco sobre indigo (en vez del negro default). Hover: fondo blanco, ícono negro.
+
+### Slider de esta sección
+Usa `.sliders-container` (mismo nombre que en `/home`) para el spacing, `.slider-block` **sin** `.slider-header` (sin título, según lo pedido), y 6 `card--edtech-mentor` con contenido placeholder (Julie Kelleher / Kelleher Consulting Group — mismo placeholder que el featured card y que `/home`).
+
+---
+
+## Anchors de categoría restantes
+
+Dos secciones vacías (`#investor`, `#founders`) como destino del scroll de sus pills correspondientes. `#essencial` ya tiene contenido real (ver sección arriba). El contenido de `#investor` y `#founders` se añadirá sección por sección más adelante.
 
 ### `.section` (sin modifier)
 Las secciones ancla usan el `.section`/`.container` base del design system global, sin overrides todavía.

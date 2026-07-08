@@ -45,6 +45,27 @@ body {
   gap: 2em;
 }
 
+/* ===== Tipografía de texto ===== */
+.text-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.text-body--sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.07em;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.inter-accent {
+  font-family: 'Inter', sans-serif;
+}
+
 /* ===== Base .btn — requerida por .btn-nav del navbar ===== */
 .btn {
   display: flex;
@@ -174,6 +195,68 @@ body {
   overflow: hidden;
 }
 
+/* ===== Essential series (bg indigo) ===== */
+.section--essential-mentor {
+  background-color: var(--color-indigo);
+  color: var(--color-white);
+  padding-bottom: 5.7em;
+}
+
+.essential-mentor-container {
+  max-width: 34em;
+  gap: var(--space-sm);
+}
+
+.section--essential-mentor h2 {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.57em;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+}
+
+.section--essential-mentor h2 .inter-accent {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+}
+
+.essential-mentor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+/* Sobre fondo indigo, .btn-white pasa a texto purple */
+.section--essential-mentor .btn-white {
+  color: var(--color-purple);
+}
+
+.section--essential-mentor .btn-white:hover {
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  border-color: var(--color-purple);
+}
+
+/* Slider embebido — sin título, cards edtech-mentor */
+.section--essential-mentor .sliders-container {
+  padding-top: 4.29em;
+}
+
+.section--essential-mentor .slider-arrow {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.section--essential-mentor .slider-arrow:hover:not(:disabled) {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
 /* Contenido de la página se construirá sección por sección aquí abajo */
 
 /* ============================
@@ -224,5 +307,17 @@ body {
 
   .featured-mentor-wrap {
     height: 35.56em; /* 320px @ 9px base */
+  }
+
+  .essential-mentor-container {
+    max-width: 100%;
+  }
+
+  .section--essential-mentor h2 {
+    font-size: 24px;
+  }
+
+  .section--essential-mentor {
+    padding-bottom: 4.5em;
   }
 }
