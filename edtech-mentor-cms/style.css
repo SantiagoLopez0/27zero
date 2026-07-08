@@ -454,6 +454,83 @@ body {
   opacity: 0.35;
 }
 
+/* ===== Botón blanco — outline negro, hover fondo negro (base sitewide) ===== */
+.btn-white {
+  background-color: var(--color-white);
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.btn-white:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+/* ===== Text body sm — clase reutilizable para subtítulos ===== */
+.text-body--sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.07em;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* ===== Read more! — igual a .section--essential-mentor de /edtech-mentor,
+   slider embebido sin título con las cards de edtech-mentor-card ===== */
+.section--read-more-cms {
+  background-color: var(--color-indigo);
+  color: var(--color-white);
+  padding-top: 6.86em;
+  padding-bottom: 6.86em;
+}
+
+.read-more-container {
+  gap: var(--space-sm);
+}
+
+.section--read-more-cms h2 {
+  font-family: 'Lora', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.57em;
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+}
+
+.read-more-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.section--read-more-cms .btn-white {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-indigo);
+}
+
+.section--read-more-cms .btn-white:hover {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.section--read-more-cms .sliders-container {
+  padding-top: 7.14em;
+}
+
+.section--read-more-cms .slider-arrow {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.section--read-more-cms .slider-arrow:hover:not(:disabled) {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
 /* ===== Placeholder de imagen (mismo patrón que work-cms) ===== */
 .placeholder {
   background-color: var(--color-gray-mid);
@@ -541,6 +618,11 @@ body {
 
   .chat-bubble { font-size: 14px; }
   .chat-avatar { width: 50px; height: 50px; }
+
+  .section--read-more-cms h2 { font-size: 24px; }
+  .section--read-more-cms { padding-bottom: 4.5em; }
+  .read-more-actions { flex-direction: column; align-items: baseline; }
+  .text-body--sm { font-size: 13px; }
 
   .breadcrumb { font-size: 12px; }
   .breadcrumb-link,
