@@ -442,6 +442,8 @@ h2 {
     gap: var(--space-md);
   }
 
+  .testimonial-svg { display: none; }
+
   .split-intro { grid-template-columns: 1fr; gap: var(--space-sm); }
 
   /* ===== Tipografía mobile — según el global design system ===== */
@@ -450,6 +452,7 @@ h2 {
   .text-body { font-size: 13px; }
 
   .text-eyebrow { font-size: 8px; }
+  .text-eyebrow.text-eyebrow--light { font-size: 12px; }
   .placeholder span { font-size: 8px; }
   .placeholder--avatar span,
   .placeholder--logo span { font-size: 5px; }
