@@ -35,6 +35,26 @@ body {
   color: var(--color-black-ui);
 }
 
+/* ===== Botones — base .btn requerida por .btn-nav del navbar ===== */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.7em;
+  border-radius: 5.2em;
+  border: 0.05em solid transparent;
+  font-family: 'Lora', serif;
+  font-size: 1.15em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
 /* ===== Typography ===== */
 h1 {
   font-family: 'Lora', serif;
@@ -433,4 +453,6 @@ p, .text-body {
   .testimonial-quote { font-size: 13px; }
   .author-name { font-size: 9px; }
   .author-role { font-size: 8px; }
+
+  .btn { font-size: 13px; }
 }
