@@ -106,6 +106,10 @@ body {
   margin: 0 auto;
 }
 
+.text-block--full {
+  max-width: 100%;
+}
+
 .text-block > h2 {
   font-family: 'Lora', serif;
   font-weight: 500;
@@ -136,6 +140,7 @@ body {
 .pearl-box {
   width: 100%;
   background-color: var(--color-purple);
+  border-radius: 10px;
   padding: 60px 70px;
   display: flex;
   flex-direction: column;
@@ -404,6 +409,7 @@ body {
 
   .pearl-title { font-size: 24px; }
   .pearl-text { font-size: 14px; }
+  .pearl-box { padding: 62px 2em; }
 
   .article-closing { font-size: 14px; }
 
