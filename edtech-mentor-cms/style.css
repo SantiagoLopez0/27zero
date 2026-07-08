@@ -343,6 +343,111 @@ body {
   color: var(--color-purple);
 }
 
+/* ===== Rapid fire questions — intro + chat de preguntas/respuestas ===== */
+.section--rapid-fire-cms {
+  background-color: var(--color-white);
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.rapid-fire-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.rapid-fire-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rapid-fire-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 125%;
+  letter-spacing: -0.36px;
+  color: var(--color-black-ui);
+}
+
+.placeholder--rapid-fire { height: 24em; }
+
+.rapid-fire-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.chat-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.chat-row {
+  display: flex;
+}
+
+.chat-row--question {
+  justify-content: flex-start;
+}
+
+.chat-row--answer {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-bubble {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.4;
+  padding: 16px 28px;
+  border-radius: 999px;
+}
+
+.chat-bubble--question {
+  background-color: var(--color-purple);
+  color: var(--color-black-ui);
+}
+
+.chat-bubble--answer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.chat-bubble--answer-long {
+  border-radius: 24px;
+  text-align: center;
+  max-width: 26em;
+}
+
+.chat-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-color: var(--color-gray-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-avatar span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-black-ui);
+  opacity: 0.35;
+}
+
 /* ===== Placeholder de imagen (mismo patrón que work-cms) ===== */
 .placeholder {
   background-color: var(--color-gray-mid);
@@ -423,6 +528,14 @@ body {
   .pearl-box { padding: 62px 2em; }
 
   .article-closing { font-size: 14px; }
+
+  .rapid-fire-container { grid-template-columns: 1fr; gap: 40px; }
+  .rapid-fire-title { font-size: 24px; }
+  .placeholder--rapid-fire { height: 16em; }
+
+  .chat-bubble { font-size: 14px; padding: 12px 20px; }
+  .chat-avatar { width: 36px; height: 36px; }
+  .chat-bubble--answer-long { max-width: 80%; }
 
   .breadcrumb { font-size: 12px; }
   .breadcrumb-link,
