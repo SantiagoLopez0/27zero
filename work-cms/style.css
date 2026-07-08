@@ -20,7 +20,7 @@
 
   /* Page-specific tokens */
   --spacing-section: 8.93em;   /* 125px */
-  --spacing-block:   7.5em;    /* 105px */
+  --spacing-block:   3.93em;   /* 55px */
   --spacing-grid:    5.36em;   /* 75px  */
   --spacing-images:  1.07em;   /* 15px  */
 }
@@ -59,7 +59,7 @@ body {
 h1 {
   font-family: 'Lora', serif;
   font-style: normal;
-  font-size: 48px;
+  font-size: 3.43em;   /* 48px */
   line-height: 1.25;
   font-weight: 500;
   letter-spacing: -0.48px;
@@ -67,15 +67,15 @@ h1 {
 
 h2 {
   font-family: 'Inter', sans-serif;
-  font-size: 28px;
+  font-size: 2em;   /* 28px */
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.42px;
 }
 
-p, .text-body {
+.text-body {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 1.14em;   /* 16px */
   line-height: 1.6;
   font-weight: 400;
   letter-spacing: 0;
@@ -83,7 +83,7 @@ p, .text-body {
 
 .text-eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
+  font-size: 0.86em;   /* 12px */
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
@@ -104,13 +104,13 @@ p, .text-body {
   padding-bottom: var(--spacing-section);
 }
 
-/* Hero: padding-bottom = 105px para que hero + client section = correctos */
+/* Hero: padding-bottom = 55px para que hero + client section = correctos */
 .section--hero {
   padding-top: 12em;
   padding-bottom: var(--spacing-block);
 }
 
-/* Client section: padding-top = 0 (el hero ya tiene el spacing), pb = 105px */
+/* Client section: padding-top = 0 (el hero ya tiene el spacing), pb = 55px */
 .section--client {
   padding-top: 0;
   padding-bottom: var(--spacing-block);
@@ -133,7 +133,7 @@ p, .text-body {
   padding-right: 6.5em;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-block);  /* 105px entre elementos del container */
+  gap: var(--spacing-block);  /* 55px entre elementos del container */
 }
 
 /* Container con gap para grids de imagenes (15px) */
@@ -164,7 +164,7 @@ p, .text-body {
 
 .placeholder span {
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-size: 0.93em;   /* 13px */
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -196,7 +196,7 @@ p, .text-body {
 }
 .placeholder--avatar span,
 .placeholder--logo span {
-  font-size: 8px;
+  font-size: 0.57em;   /* 8px */
   letter-spacing: 0;
 }
 
@@ -247,14 +247,14 @@ p, .text-body {
 
 .client-name {
   font-family: 'Inter', sans-serif;
-  font-size: 18px;
+  font-size: 1.29em;   /* 18px */
   font-weight: 700;
   color: var(--color-black-ui);
 }
 
 .client-tagline {
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-size: 0.93em;   /* 13px */
   font-weight: 400;
   color: rgba(16,16,16,0.5);
 }
@@ -274,7 +274,7 @@ p, .text-body {
 
 .detail-label {
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 0.79em;   /* 11px */
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -291,7 +291,7 @@ p, .text-body {
 .detail-list li,
 .client-detail-group p {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 1em;   /* 14px */
   font-weight: 400;
   color: var(--color-black-ui);
   line-height: 1.5;
@@ -320,7 +320,7 @@ p, .text-body {
 .stat-number {
   font-family: 'Lora', serif;
   font-style: normal;
-  font-size: 48px;
+  font-size: 3.43em;   /* 48px */
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.48px;
@@ -334,6 +334,10 @@ p, .text-body {
   grid-template-columns: 0.6fr 1fr 1.4fr;
   gap: var(--space-lg);
   align-items: center;
+}
+
+.testimonial-eyebrow-col {
+  height: 100%;
 }
 
 .testimonial-svg {
@@ -356,7 +360,7 @@ p, .text-body {
 
 .testimonial-quote {
   font-family: 'Inter', sans-serif;
-  font-size: 20px;
+  font-size: 1.43em;   /* 20px */
   font-weight: 500;
   line-height: 1.5;
   color: var(--color-white);
@@ -370,7 +374,7 @@ p, .text-body {
 
 .author-name {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 1em;   /* 14px */
   font-weight: 600;
   color: var(--color-white);
   display: block;
@@ -378,7 +382,7 @@ p, .text-body {
 
 .author-role {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
+  font-size: 0.86em;   /* 12px */
   font-weight: 400;
   color: rgba(255,255,255,0.55);
   display: block;
@@ -393,11 +397,19 @@ p, .text-body {
 }
 
 /* ===== Section content wrapper
-   Agrupa split-intro + grids con gap de 75px ===== */
+   Agrupa split-intro + image-stack con gap de 75px (--spacing-grid) ===== */
 .section-content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-grid);   /* 75px entre intro y grids de imágenes */
+  gap: var(--spacing-grid);   /* 75px entre el split-intro y el bloque de grids */
+}
+
+/* Agrupa los grids de imágenes entre sí (grid-4col, grid-3col, grid-2col,
+   placeholder--xl) con el mismo spacing de 15px que hay dentro de cada grid */
+.image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-images);   /* 15px entre grids de imágenes */
 }
 
 /* ============================
@@ -435,7 +447,7 @@ p, .text-body {
   /* ===== Tipografía mobile — según el global design system ===== */
   h1 { font-size: 32px; }
   h2 { font-size: 24px; }
-  p, .text-body { font-size: 13px; }
+  .text-body { font-size: 13px; }
 
   .text-eyebrow { font-size: 8px; }
   .placeholder span { font-size: 8px; }
