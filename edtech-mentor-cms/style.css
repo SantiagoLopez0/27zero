@@ -140,8 +140,16 @@ body {
 }
 
 .breadcrumb-link {
-  color: inherit;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0px;
+  color: #000;
   text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  text-underline-offset: 0%;
 }
 
 .breadcrumb-link:hover {
@@ -261,6 +269,7 @@ body {
   .placeholder span { font-size: 11px; }
 
   .breadcrumb { font-size: 12px; }
+  .breadcrumb-link { font-size: 13px; }
 
   .btn { font-size: 13px; }
 }
