@@ -71,11 +71,11 @@ body {
   gap: var(--spacing-block);
 }
 
-/* El body del artículo se centra y limita su ancho para lectura cómoda */
+/* El body del artículo ocupa todo el ancho del container, con su propio padding lateral */
 .container--article {
-  max-width: var(--article-width);
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  gap: 90px;
 }
 
 /* ===== Hero — bg-image (placeholder gris = imagen de fondo vía CMS) =====
@@ -94,8 +94,93 @@ body {
   gap: 40px;
 }
 
-.section--body-cms {
-  padding-top: 0;
+/* ===== Article — bloques de texto sobre fondo gris ===== */
+.section--article-cms {
+  background-color: #D9D9D9;
+  padding-top: 70px;
+  padding-bottom: 45px;
+}
+
+.text-block {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.text-block > h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 125%;
+  letter-spacing: -0.36px; /* -1% de 36px */
+  color: var(--color-black-ui);
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.text-block > h2:first-child {
+  margin-top: 0;
+}
+
+.text-block > p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0px;
+  color: var(--color-black-ui);
+  margin-bottom: 24px;
+}
+
+/* ===== Pearl of wisdom — highlight box dentro del bloque de texto ===== */
+.pearl-box {
+  width: 100%;
+  background-color: var(--color-purple);
+  padding: 60px 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.pearl-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 125%;
+  letter-spacing: -0.36px;
+  color: var(--color-black-ui);
+}
+
+.pearl-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0px;
+  color: var(--color-black-ui);
+}
+
+/* ===== Cierre del artículo — divider + texto con links ===== */
+.article-divider {
+  border: none;
+  border-top: 1px solid #000;
+  width: 100%;
+}
+
+.article-closing {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0px;
+  color: var(--color-black-ui);
+  margin-top: 20px;
+}
+
+.article-closing-link {
+  color: var(--color-purple);
+  text-decoration: underline;
 }
 
 .hero-cms-content {
@@ -287,10 +372,7 @@ body {
     gap: var(--space-md);
   }
 
-  .container--article {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  .text-block { max-width: 100%; }
 
   .section--hero-cms {
     margin-top: 96px;
@@ -316,6 +398,14 @@ body {
   .featured-grid { grid-template-columns: 1fr; }
   .text-body { font-size: 13px; }
   .featured-highlight { font-size: 24px; }
+
+  .text-block > h2 { font-size: 24px; }
+  .text-block > p { font-size: 14px; }
+
+  .pearl-title { font-size: 24px; }
+  .pearl-text { font-size: 14px; }
+
+  .article-closing { font-size: 14px; }
 
   .breadcrumb { font-size: 12px; }
   .breadcrumb-link,
