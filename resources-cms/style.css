@@ -218,8 +218,8 @@ body {
 .section--cta-resources-cms {
   background-color: var(--color-indigo);
   color: var(--color-white);
-  padding-top: 6.5em;
-  padding-bottom: 6.5em;
+  padding-top: 8.2143em; /* 115px */
+  padding-bottom: 8.2143em; /* 115px */
 }
 
 .cta-resources-cms-content {
