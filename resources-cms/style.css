@@ -213,6 +213,42 @@ body {
 }
 
 /* ==============================
+   CTA — sección final fondo indigo
+   ============================== */
+.section--cta-resources-cms {
+  background-color: var(--color-indigo);
+  color: var(--color-white);
+  padding-top: 6.5em;
+  padding-bottom: 6.5em;
+}
+
+.cta-resources-cms-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2em;
+  max-width: 34%;
+}
+
+.section--cta-resources-cms h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.5714em; /* 36px */
+  line-height: 1.25;
+  letter-spacing: -0.36px;
+  color: var(--color-white);
+}
+
+.cta-resources-cms-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em; /* 14px */
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ==============================
    MOBILE — solo el font-size de los textos va en px fijos;
    todos los espaciados y tamaños siguen en em
    ============================== */
@@ -270,5 +306,17 @@ body {
 
   .article-list li {
     font-size: 15px;
+  }
+
+  .cta-resources-cms-content {
+    max-width: 100%;
+  }
+
+  .section--cta-resources-cms h2 {
+    font-size: 24px;
+  }
+
+  .cta-resources-cms-desc {
+    font-size: 14px;
   }
 }
