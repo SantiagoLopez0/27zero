@@ -102,8 +102,8 @@ body {
    ARTICLE — layout de 2 columnas (TOC + contenido)
    ============================== */
 .section--article-resources-cms {
-  padding-top: 6.5em;
-  padding-bottom: 6.5em;
+  padding-top: 3.5714em; /* 50px */
+  padding-bottom: 4.7143em; /* 66px */
 }
 
 .container--article-resources-cms {
@@ -125,9 +125,14 @@ body {
 
 .toc-title {
   font-family: 'Lora', serif;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.2857em; /* 18px */
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.7143em; /* 24px */
+  line-height: 1.6;
+  letter-spacing: 0px;
+  text-decoration: underline solid;
+  text-decoration-thickness: 0%;
+  text-underline-offset: 0%;
   color: var(--color-indigo);
 }
 
@@ -181,6 +186,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
+  scroll-margin-top: 9em;
 }
 
 .article-section h2 {
@@ -247,6 +253,10 @@ body {
 
   .toc-title {
     font-size: 16px;
+  }
+
+  .toc-title {
+    font-size: 20px;
   }
 
   .toc-link,
