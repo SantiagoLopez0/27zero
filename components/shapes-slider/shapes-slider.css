@@ -65,11 +65,13 @@
 .apart-shapes-wrap {
   position: relative;
   flex: 1;
+  min-width: 0;
   display: flex;
 }
 
 .apart-shapes {
   flex: 1;
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +80,11 @@
 
 /* Zonas invisibles de navegación — solo existen visualmente en mobile */
 .apart-shapes-nav-zone {
+  display: none;
+}
+
+/* Spacers del track — solo existen (y ocupan espacio) en mobile */
+.apart-shapes-spacer {
   display: none;
 }
 
@@ -143,11 +150,19 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     gap: 1em;
-    padding: 0 15%;
     justify-content: flex-start;
   }
   .apart-shapes::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Spacers reales (no padding) — dejan que la primera/última shape
+     alcancen a scrollear hasta el centro real de la pantalla. Al ser
+     elementos del track (no padding del contenedor), el 70% de las
+     shapes se calcula contra el ancho completo, sin auto-reducción. */
+  .apart-shapes-spacer {
+    display: block;
+    flex: 0 0 15%;
   }
 
   .apart-shape {

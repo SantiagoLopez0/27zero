@@ -41,11 +41,15 @@ function initApartShapes() {
   const textEl = document.getElementById('apartScalesText');
   if (!shapesWrap) return;
 
-  shapesWrap.innerHTML = SHAPES.map((s) => `
-    <div class="apart-shape ${s.modifier}">
-      <img src="${s.src}" alt="${s.alt}">
-    </div>
-  `).join('');
+  shapesWrap.innerHTML = `
+    <div class="apart-shapes-spacer" aria-hidden="true"></div>
+    ${SHAPES.map((s) => `
+      <div class="apart-shape ${s.modifier}">
+        <img src="${s.src}" alt="${s.alt}">
+      </div>
+    `).join('')}
+    <div class="apart-shapes-spacer" aria-hidden="true"></div>
+  `;
 
   const shapeEls = Array.from(shapesWrap.querySelectorAll('.apart-shape'));
   const prevBtn = document.querySelector('.apart-slider-arrow[data-dir="prev"]');
