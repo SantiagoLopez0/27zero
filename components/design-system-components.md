@@ -160,6 +160,20 @@ Sin JS — hover puro CSS.
 
 ---
 
+## Shapes Slider
+
+Estado: ✅ terminado. Duplicado 1:1 de la sección `.section--apart-home` de `/home` (HTML, CSS y JS) — **sin** el `.marquee`, que es un componente aparte (`/components/marquee-logos`).
+
+Estructura: `.container.apart-home-container` (h2 + text-body--sm + `.btn-dark`) → `.apart-slider` (flechas `.apart-slider-arrow` + `.apart-slider-track-wrap`/`.apart-slider-track`, slides `.apart-slide` con 3 `.apart-shape` — purple/indigo/black, imágenes PNG pre-renderizadas) → `.container.apart-home-scales` (h3 "Execution that Scales" + texto).
+
+JS (`shapes-slider.js`): `initApartSlider()` genera 2 `.apart-slide` (mismo contenido duplicado, para poder mostrar la navegación) e implementa el avance por flechas con `translateX(-index*100%)`, disabled automático en los extremos.
+
+Mobile (`<=768px`): flechas ocultas, `.apart-slider-track-wrap` pasa a scroll-snap horizontal táctil; `.apart-slide` usa `display: contents` para "desarmar" el grupo de 3 shapes y que cada `.apart-shape` sea un slide individual (`flex: 0 0 83.33%`, efecto "1.2 slides per view"). `h2`/`h3` en px fijos (24px/21px).
+
+Depende de clases base compartidas del design system global (`.section`, `.container`, `h2`, `h3`, `.text-body--sm`, `.btn`, `.btn-dark`) — incluidas inline en el `<style>` del HTML standalone, igual que en los demás componentes.
+
+---
+
 ## Marquee Logos
 
 Estado: ✅ terminado. Documentación propia en `marquee-logos/marquee-logos.md` (a diferencia de los demás, este trae su propio MD además de esta entrada, por pedido explícito).
