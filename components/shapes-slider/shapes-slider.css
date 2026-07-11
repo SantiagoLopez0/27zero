@@ -3,32 +3,39 @@
    Ya NO es un slider: es un bloque fijo de 3 shapes que nunca se mueven.
    Las flechas solo cambian el scale (1 la activa, 0.9 las otras 2).
    Duplicado originalmente de .section--apart-home de /home (sin el .marquee).
+
+   TODO scoped bajo .shapes-slider (clase raíz única del componente) para
+   que no colisione con /home/style.css ni con ningún otro uso de nombres
+   como .apart-slider, .apart-shape, etc. en otras páginas. Las únicas
+   excepciones son las clases base compartidas del design system global
+   (.section, .container, h2, h3, .text-body--sm, .btn, .btn-dark), que
+   son intencionalmente globales — esas no se scopean.
    ============================ */
 
-.section--apart-home {
+.shapes-slider {
   background-color: var(--color-white);
   text-align: center;
   padding-top: 5em;
   padding-bottom: 6.43em; /* 90px */
 }
 
-.apart-home-container {
+.shapes-slider .apart-home-container {
   align-items: center;
   gap: 1.79em;
 }
 
-.section--apart-home h2 {
+.shapes-slider h2 {
   font-family: 'Lora', serif;
   font-weight: 500;
   font-style: normal;
 }
 
-.section--apart-home .btn {
+.shapes-slider .btn {
   margin-top: var(--space-xs);
 }
 
 /* ===== Shapes block (ya no es un slider — nada se mueve, solo cambia el scale) ===== */
-.apart-slider {
+.shapes-slider .apart-slider {
   display: flex;
   align-items: center;
   gap: 2em;
@@ -37,7 +44,7 @@
   padding: 5.71em 6.5em 0;
 }
 
-.apart-slider-arrow {
+.shapes-slider .apart-slider-arrow {
   flex-shrink: 0;
   width: 2.85em;
   height: 2.85em;
@@ -52,24 +59,24 @@
   transition: all 0.2s ease;
 }
 
-.apart-slider-arrow:hover:not(:disabled) {
+.shapes-slider .apart-slider-arrow:hover:not(:disabled) {
   background-color: var(--color-black);
   color: var(--color-white);
 }
 
-.apart-slider-arrow:disabled {
+.shapes-slider .apart-slider-arrow:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-.apart-shapes-wrap {
+.shapes-slider .apart-shapes-wrap {
   position: relative;
   flex: 1;
   min-width: 0;
   display: flex;
 }
 
-.apart-shapes {
+.shapes-slider .apart-shapes {
   flex: 1;
   min-width: 0;
   display: flex;
@@ -79,16 +86,16 @@
 }
 
 /* Zonas invisibles de navegación — solo existen visualmente en mobile */
-.apart-shapes-nav-zone {
+.shapes-slider .apart-shapes-nav-zone {
   display: none;
 }
 
 /* Spacers del track — solo existen (y ocupan espacio) en mobile */
-.apart-shapes-spacer {
+.shapes-slider .apart-shapes-spacer {
   display: none;
 }
 
-.apart-shape {
+.shapes-slider .apart-shape {
   position: relative;
   flex: 1;
   display: flex;
@@ -98,7 +105,7 @@
   transition: transform 0.3s ease;
 }
 
-.apart-shape img {
+.shapes-slider .apart-shape img {
   width: 100%;
   max-width: 22em;
   height: auto;
@@ -106,14 +113,14 @@
 }
 
 /* ===== Execution that Scales ===== */
-.apart-home-scales {
+.shapes-slider .apart-home-scales {
   align-items: center;
   gap: 1.79em;
   padding-top: 3.93em;
   padding-bottom: 0;
 }
 
-.section--apart-home h3 {
+.shapes-slider h3 {
   font-family: 'Lora', serif;
   font-weight: 500;
   font-style: normal;
@@ -123,28 +130,28 @@
   text-align: center;
 }
 
-.apart-home-scales p {
+.shapes-slider .apart-home-scales p {
   max-width: 45em;
 }
 
 @media (max-width: 768px) {
-  .section--apart-home {
+  .shapes-slider {
     padding-top: 4.29em;
     padding-bottom: 4.29em;
   }
-  .apart-slider {
+  .shapes-slider .apart-slider {
     padding: 6.07em 0 0;
     gap: 0;
   }
 
   /* Sin flechas en mobile — se navega por swipe o tap en los extremos */
-  .apart-slider-arrow {
+  .shapes-slider .apart-slider-arrow {
     display: none;
   }
 
   /* Scroll-snap horizontal: la shape activa queda centrada y se ven
      "peeks" de las de los lados, como un slider normal */
-  .apart-shapes {
+  .shapes-slider .apart-shapes {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -152,7 +159,7 @@
     gap: 1em;
     justify-content: flex-start;
   }
-  .apart-shapes::-webkit-scrollbar {
+  .shapes-slider .apart-shapes::-webkit-scrollbar {
     display: none;
   }
 
@@ -160,21 +167,21 @@
      alcancen a scrollear hasta el centro real de la pantalla. Al ser
      elementos del track (no padding del contenedor), el 70% de las
      shapes se calcula contra el ancho completo, sin auto-reducción. */
-  .apart-shapes-spacer {
+  .shapes-slider .apart-shapes-spacer {
     display: block;
     flex: 0 0 15%;
   }
 
-  .apart-shape {
+  .shapes-slider .apart-shape {
     flex: 0 0 70%;
     scroll-snap-align: center;
   }
-  .apart-shape img {
+  .shapes-slider .apart-shape img {
     max-width: 100%;
   }
 
   /* Zonas invisibles a los extremos — ocupan todo el alto del bloque de shapes */
-  .apart-shapes-nav-zone {
+  .shapes-slider .apart-shapes-nav-zone {
     display: block;
     position: absolute;
     top: 0;
@@ -186,13 +193,13 @@
     cursor: pointer;
     z-index: 2;
   }
-  .apart-shapes-nav-zone--prev { left: 0; }
-  .apart-shapes-nav-zone--next { right: 0; }
+  .shapes-slider .apart-shapes-nav-zone--prev { left: 0; }
+  .shapes-slider .apart-shapes-nav-zone--next { right: 0; }
 
-  .apart-home-scales {
+  .shapes-slider .apart-home-scales {
     padding-top: 4.29em;
   }
 
-  .section--apart-home h2 { font-size: 24px; }
-  .section--apart-home h3 { font-size: 21px; }
+  .shapes-slider h2 { font-size: 24px; }
+  .shapes-slider h3 { font-size: 21px; }
 }
