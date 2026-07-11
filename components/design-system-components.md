@@ -168,7 +168,7 @@ Estado: ✅ terminado. Originalmente duplicado de `.section--apart-home` de `/ho
 
 Estructura: `.container.apart-home-container` (h2 + text-body--sm + `.btn-dark`) → `.apart-slider` (flecha prev + `.apart-shapes` con las 3 `.apart-shape` + flecha next) → `.container.apart-home-scales` (h3 "Execution that Scales" + texto).
 
-JS (`shapes-slider.js`): `initApartShapes()` renderiza las 3 shapes una sola vez (ya no hay slides duplicados), guarda `activeIndex` y en cada click de flecha actualiza `transform: scale(...)` en cada shape vía `element.style.transform`, con `transition: transform 0.3s ease` en CSS para la animación suave.
+JS (`shapes-slider.js`): `initApartShapes()` renderiza las 3 shapes una sola vez (ya no hay slides duplicados), guarda `activeIndex` y en cada click de flecha actualiza `transform: scale(...)` en cada shape vía `element.style.transform`, con `transition: transform 0.3s ease` en CSS para la animación suave. **Cada shape tiene su propio título + párrafo** (array `SHAPES`, con `title`/`text` por shape); al cambiar `activeIndex`, el mismo `update()` también reescribe el `textContent` de `#apartScalesTitle`/`#apartScalesText` (dentro de `.apart-home-scales`) con el texto de la shape activa. Solo la de "Execution" (centro) tiene copy real — las otras dos (Research Enhanced, Creativity) llevan texto placeholder hasta que Santiago dé el copy final.
 
 Mobile (`<=768px`): las flechas ya no se ocultan (siguen siendo necesarias para controlar el scale, no hay touch-scroll). Se quitó todo el scroll-snap/`display:contents` de la versión anterior — ahora es el mismo bloque de 3 shapes, solo con gap reducido. `h2`/`h3` en px fijos (24px/21px).
 
