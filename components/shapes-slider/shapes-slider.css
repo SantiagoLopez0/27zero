@@ -9,7 +9,7 @@
   background-color: var(--color-white);
   text-align: center;
   padding-top: 5em;
-  padding-bottom: 8.93em;
+  padding-bottom: 6.43em; /* 90px */
 }
 
 .apart-home-container {
@@ -110,7 +110,7 @@
   align-items: center;
   gap: 1.79em;
   padding-top: 3.93em;
-  padding-bottom: 6.43em;
+  padding-bottom: 0;
 }
 
 .section--apart-home h3 {
