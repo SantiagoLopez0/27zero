@@ -162,13 +162,15 @@ Sin JS — hover puro CSS.
 
 ## Shapes Slider
 
-Estado: ✅ terminado. Duplicado 1:1 de la sección `.section--apart-home` de `/home` (HTML, CSS y JS) — **sin** el `.marquee`, que es un componente aparte (`/components/marquee-logos`).
+Estado: ✅ terminado. Originalmente duplicado de `.section--apart-home` de `/home`, pero **ya no es un slider** — se reemplazó la funcionalidad completa por pedido explícito.
 
-Estructura: `.container.apart-home-container` (h2 + text-body--sm + `.btn-dark`) → `.apart-slider` (flechas `.apart-slider-arrow` + `.apart-slider-track-wrap`/`.apart-slider-track`, slides `.apart-slide` con 3 `.apart-shape` — purple/indigo/black, imágenes PNG pre-renderizadas) → `.container.apart-home-scales` (h3 "Execution that Scales" + texto).
+**Funcionamiento actual**: bloque fijo de 3 `.apart-shape` (purple/indigo/black — Research Enhanced, Execution, Creativity) que **nunca cambian de posición**. Por default, la shape del centro (index 1, "Execution") tiene `scale(1)` y las otras dos `scale(0.9)`. Las flechas (`.apart-slider-arrow`) no mueven nada — solo cambian cuál shape está "activa": la flecha `next` avanza el índice activo (cíclico, `(i+1) % 3`), `prev` lo retrocede (`(i-1+3) % 3`). Nunca se deshabilitan (loop infinito entre las 3).
 
-JS (`shapes-slider.js`): `initApartSlider()` genera 2 `.apart-slide` (mismo contenido duplicado, para poder mostrar la navegación) e implementa el avance por flechas con `translateX(-index*100%)`, disabled automático en los extremos.
+Estructura: `.container.apart-home-container` (h2 + text-body--sm + `.btn-dark`) → `.apart-slider` (flecha prev + `.apart-shapes` con las 3 `.apart-shape` + flecha next) → `.container.apart-home-scales` (h3 "Execution that Scales" + texto).
 
-Mobile (`<=768px`): flechas ocultas, `.apart-slider-track-wrap` pasa a scroll-snap horizontal táctil; `.apart-slide` usa `display: contents` para "desarmar" el grupo de 3 shapes y que cada `.apart-shape` sea un slide individual (`flex: 0 0 83.33%`, efecto "1.2 slides per view"). `h2`/`h3` en px fijos (24px/21px).
+JS (`shapes-slider.js`): `initApartShapes()` renderiza las 3 shapes una sola vez (ya no hay slides duplicados), guarda `activeIndex` y en cada click de flecha actualiza `transform: scale(...)` en cada shape vía `element.style.transform`, con `transition: transform 0.3s ease` en CSS para la animación suave.
+
+Mobile (`<=768px`): las flechas ya no se ocultan (siguen siendo necesarias para controlar el scale, no hay touch-scroll). Se quitó todo el scroll-snap/`display:contents` de la versión anterior — ahora es el mismo bloque de 3 shapes, solo con gap reducido. `h2`/`h3` en px fijos (24px/21px).
 
 Depende de clases base compartidas del design system global (`.section`, `.container`, `h2`, `h3`, `.text-body--sm`, `.btn`, `.btn-dark`) — incluidas inline en el `<style>` del HTML standalone, igual que en los demás componentes.
 

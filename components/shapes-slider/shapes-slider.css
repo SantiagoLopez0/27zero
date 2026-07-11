@@ -1,7 +1,8 @@
 /* ============================
    Shapes Slider — 27zero
-   Duplicado de la sección .section--apart-home de /home (sin el .marquee,
-   que es un componente aparte: ver /components/marquee-logos).
+   Ya NO es un slider: es un bloque fijo de 3 shapes que nunca se mueven.
+   Las flechas solo cambian el scale (1 la activa, 0.9 las otras 2).
+   Duplicado originalmente de .section--apart-home de /home (sin el .marquee).
    ============================ */
 
 .section--apart-home {
@@ -26,7 +27,7 @@
   margin-top: var(--space-xs);
 }
 
-/* ===== Shapes slider ===== */
+/* ===== Shapes block (ya no es un slider — nada se mueve, solo cambia el scale) ===== */
 .apart-slider {
   display: flex;
   align-items: center;
@@ -61,18 +62,8 @@
   cursor: not-allowed;
 }
 
-.apart-slider-track-wrap {
+.apart-shapes {
   flex: 1;
-  overflow: hidden;
-}
-
-.apart-slider-track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
-
-.apart-slide {
-  flex: 0 0 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,6 +76,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-origin: center;
+  transition: transform 0.3s ease;
 }
 
 .apart-shape img {
@@ -125,26 +118,8 @@
     padding: 6.07em 2em 0;
     gap: 1em;
   }
-  .apart-slider-arrow {
-    display: none;
-  }
-  .apart-slider-track-wrap {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-  .apart-slider-track {
+  .apart-shapes {
     gap: 1em;
-  }
-  .apart-slide {
-    /* Se "desarma" el grupo de 3 shapes: cada .apart-shape pasa a ser
-       un item directo del track (slide individual), en vez de un bloque
-       de 3 que avanza de a uno. Así se logra el efecto "1.2 slides per view". */
-    display: contents;
-  }
-  .apart-shape {
-    flex: 0 0 83.33%;
-    scroll-snap-align: center;
   }
   .apart-shape img {
     max-width: 100%;
