@@ -11,10 +11,9 @@
   padding: 1.79em; /* 25px */
   border: 0.07em solid var(--color-white); /* 1px */
   border-radius: 0.71em; /* 10px */
-  min-width: 17.14em; /* 240px */
-  min-height: 17.14em; /* 240px */
-  aspect-ratio: 1 / 1;
-  background-color: var(--color-black);
+  width: 19em;
+  height: 19em;
+  background-color: transparent;
   color: var(--color-white);
   text-decoration: none;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -40,7 +39,7 @@
 
 .service-card .service-card-footer {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   gap: 1em;
 }
