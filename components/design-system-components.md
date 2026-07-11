@@ -182,15 +182,13 @@ Depende de clases base compartidas del design system global (`.section`, `.conta
 
 Estado: ✅ terminado. Todo scoped bajo `.practices-card` (clase raíz única) — cero clases sueltas globales.
 
-`.practices-card`: bg gray, `border-radius: 0.5em`, `padding: 2.86em 1.86em` (40px/26px), flex column con `gap: 10em` (140px) entre los 2 bloques.
+`.practices-card`: es un `<a>` (no `<div>`), `text-decoration: none`. `width: 100%; max-width: 28em`. Bg gray, `border-radius: 0.5em`, `padding: 2.86em 1.86em` (40px/26px), flex column con `gap: 10em` (140px) entre los 2 bloques. El fondo es un **placeholder de imagen** (`.practices-card-bg`, absoluto, `z-index:0`, mismo patrón que `.card-work-bg` de `work-card`: texto `[image]` centrado) — los dos bloques de contenido van con `z-index:1` encima.
 
 - **`.practices-card-block--intro`** (bloque 1): `gap: 4.29em` (60px) entre ícono y texto.
   - **`.practices-card-icon`** — wrapper del ícono; **intercambiable**, solo hay que reemplazar el `<svg>` interno (el wrapper controla tamaño vía `.practices-card-icon svg { width/height }`). Default: el ícono de 3 rombos (59×39px).
   - **`.practices-card-text`** — `gap: 0.71em` (10px) entre título y párrafo. `.practices-card-title` (Lora, 500, `1.71em`/24px, line-height 140%) + `.practices-card-body` (reusa `.text-body--sm` global).
 - **`.practices-card-block--cta`** (bloque 2): fila `justify-content: space-between`. `.practices-card-cta-text` — texto fijo "Explore the practice" (Lora, 500, `1.21em`/17px, line-height 140%) + `.practices-card-arrow`.
 - **`.practices-card-arrow`** — outline negro, bg transparent por default; se rellena (bg negro, ícono blanco) con el hover de **toda la card** (`.practices-card:hover .practices-card-arrow`), mismo patrón que `featured-card`.
-
-⚠️ Asunción: `width: 25em` fijo en `.practices-card` — no se especificó tamaño ni wrapper-driven sizing para este componente (a diferencia de `featured-card`, que es explícitamente `100%/100%`). Ajustar si Santiago quiere que también sea wrapper-driven.
 
 Sin JS — hover puro CSS.
 
