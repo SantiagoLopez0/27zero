@@ -143,10 +143,7 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     gap: 1em;
-    /* vw (no %) — si no, el padding basado en % se calcula sobre el
-       content-box ya encogido por el propio padding, y el scroll
-       máximo no alcanza para centrar el último item */
-    padding: 0 15vw;
+    padding: 0 15%;
     justify-content: flex-start;
   }
   .apart-shapes::-webkit-scrollbar {
@@ -154,9 +151,7 @@
   }
 
   .apart-shape {
-    /* vw por la misma razón que el padding de arriba */
-    flex: 0 0 70vw;
-    max-width: 70vw;
+    flex: 0 0 70%;
     scroll-snap-align: center;
   }
   .apart-shape img {
