@@ -62,12 +62,23 @@
   cursor: not-allowed;
 }
 
+.apart-shapes-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+
 .apart-shapes {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2em;
+}
+
+/* Zonas invisibles de navegación — solo existen visualmente en mobile */
+.apart-shapes-nav-zone {
+  display: none;
 }
 
 .apart-shape {
@@ -115,15 +126,54 @@
     padding-bottom: 4.29em;
   }
   .apart-slider {
-    padding: 6.07em 2em 0;
-    gap: 1em;
+    padding: 6.07em 0 0;
+    gap: 0;
   }
+
+  /* Sin flechas en mobile — se navega por swipe o tap en los extremos */
+  .apart-slider-arrow {
+    display: none;
+  }
+
+  /* Scroll-snap horizontal: la shape activa queda centrada y se ven
+     "peeks" de las de los lados, como un slider normal */
   .apart-shapes {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     gap: 1em;
+    padding: 0 15%;
+    justify-content: flex-start;
+  }
+  .apart-shapes::-webkit-scrollbar {
+    display: none;
+  }
+
+  .apart-shape {
+    flex: 0 0 70%;
+    scroll-snap-align: center;
   }
   .apart-shape img {
     max-width: 100%;
   }
+
+  /* Zonas invisibles a los extremos — ocupan todo el alto del bloque de shapes */
+  .apart-shapes-nav-zone {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .apart-shapes-nav-zone--prev { left: 0; }
+  .apart-shapes-nav-zone--next { right: 0; }
+
   .apart-home-scales {
     padding-top: 4.29em;
   }
