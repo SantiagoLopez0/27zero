@@ -434,7 +434,6 @@ h4 {
   align-items: center;
   gap: 1.79em;
   padding-top: 3.93em;
-  padding-bottom: 6.43em;
 }
 
 .section--apart-home h3 {
@@ -449,6 +448,12 @@ h4 {
 
 .apart-home-scales p {
   max-width: 45em;
+}
+
+/* ===== Logos ===== */
+.section--logos-home {
+  padding-top: 0;
+  padding-bottom: 8.93em;
 }
 
 /* ===== Testimonials ===== */

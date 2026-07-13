@@ -116,11 +116,19 @@ Carrusel simple de slides completos (no drag, solo flechas), con su propia clase
 Modifier de `.container`. Centrado.
 - `gap: 1.79em` (25px @ 14px)
 - `padding-top: 3.93em` (55px @ 14px)
-- `padding-bottom: 6.43em` (90px @ 14px)
 - Párrafo con `max-width: 45em`
 
+---
+
+## Sección Logos
+
+### `.section--logos-home`
+Sección propia e independiente (ya no vive dentro de `.section--apart-home`).
+- `padding-top: 0`
+- `padding-bottom: 8.93em` (125px @ 14px)
+
 ### Marquee de logos — componente `marquee-logos`
-Sibling de `.apart-home-scales` dentro de `.section--apart-home`. **Importado directamente desde `/components/marquee-logos/`, sin duplicar CSS/JS:**
+**Importado directamente desde `/components/marquee-logos/`, sin duplicar CSS/JS:**
 - `<link>` a `/components/marquee-logos/marquee-logos.css` en el `<head>`
 - `<script>` a `/components/marquee-logos/marquee-logos.js` (auto-inicializa por `window.addEventListener('load', ...)` sobre cualquier `.marquee` del DOM — clona logos vía WAAPI hasta cubrir el viewport y anima loop infinito sin salto)
 - Markup estático tal como está en `components/marquee-logos/marquee-logos.html`, con los 5 logos de `/assets/logos/`
