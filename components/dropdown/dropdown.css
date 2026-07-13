@@ -49,23 +49,16 @@
 }
 
 /* ===== Content ===== */
-/* Técnica grid 0fr -> 1fr: anima la altura sin necesidad de JS midiendo
-   scrollHeight, y se adapta solo a cualquier contenido (párrafo, botón,
-   lo que sea) sin recalcular nada. */
+/* height: 0 -> Xpx (medido con JS via scrollHeight) -> auto una vez abierto.
+   El grid-template-rows 0fr/1fr no colapsaba limpio con contenido real
+   (dejaba un "sliver" visible); esta técnica clásica es más confiable. */
 .dropdown .dropdown-content {
-  display: grid;
-  grid-template-rows: 0fr;
+  height: 0;
   overflow: hidden;
-  transition: grid-template-rows 0.3s ease;
-}
-
-.dropdown.is-open .dropdown-content {
-  grid-template-rows: 1fr;
+  transition: height 0.3s ease;
 }
 
 .dropdown .dropdown-content-inner {
-  overflow: hidden;
-  min-height: 0;
   width: 90%;
   padding-bottom: 1.79em;
 }
