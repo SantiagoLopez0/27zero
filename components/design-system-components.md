@@ -215,3 +215,18 @@ Estado: ✅ terminado. Nombre asumido por Santiago aún no confirmado (por el co
 - **Hover directo del arrow** (prioridad sobre el de la card, mismo patrón que `edtech-mentor-card`/`practices-card`): `background-color: #000`, `color: #fff` (ícono blanco), `border-color: #000`.
 
 Sin JS — hover puro CSS.
+
+---
+
+## Dropdown (FAQ)
+
+Estado: ✅ terminado. Todo scoped bajo `.dropdown` (clase raíz única), sin bg propio (vive siempre sobre `#101010` del body de la página). `width: 100%` — el ancho real lo define el wrapper de cada página.
+
+**Múltiples instancias independientes**: se puede tener varios `.dropdown` en la misma página y abrir cualquier combinación a la vez — abrir uno no cierra los demás (decisión explícita de Santiago, no es acordeón).
+
+- **`.dropdown-toggle`** — botón full-width, `padding: 2.14em 0` (30px top/bottom), siempre con `border-top: 0.07em solid #FFFFFF1A`. Contiene `.dropdown-title` (Lora, 500, `1.71em`/24px, line-height 125%, letter-spacing `-0.24px`, color purple) y `.dropdown-arrow` (chevron, color purple, rota `180deg` cuando el dropdown está `.is-open`).
+- **`.dropdown-content`** — usa la técnica CSS `grid-template-rows: 0fr → 1fr` (con `.dropdown-content-inner { min-height: 0; overflow: hidden }`) para animar la altura sin JS midiendo `scrollHeight` — se adapta solo a cualquier contenido que se le ponga adentro, sin recalcular nada.
+- **`.dropdown-content-inner`** — `width: 90%` del padre (según pedido), `padding-bottom: 1.79em` (asunción, no especificado — ajustar si hace falta). Puede contener **cualquier cosa** (párrafos, botones, listas, etc.).
+- **`.dropdown-content-inner p`** — único elemento con estilo fijo garantizado: Inter, 400, `1.29em`/18px, line-height 160%, color blanco. Cualquier otro elemento (botones, etc.) no tiene estilos propios del componente — se estiliza aparte según la página.
+
+JS (`dropdown.js`): un `querySelectorAll('.dropdown').forEach(...)` — cada dropdown tiene su propio listener de click en `.dropdown-toggle` que hace `classList.toggle('is-open')` sobre sí mismo únicamente, sin tocar los demás.

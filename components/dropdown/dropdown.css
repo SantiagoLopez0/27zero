@@ -1,0 +1,81 @@
+/* ============================
+   Dropdown (FAQ) — 27zero
+   Todo scoped bajo .dropdown (clase raíz única del componente).
+   Sin color de fondo propio — siempre vive sobre bg #101010 de la página.
+   width: 100% — el ancho real lo define el wrapper de cada página.
+   Requiere las variables globales de :root — ver /design-system.md
+   ============================ */
+
+.dropdown {
+  width: 100%;
+}
+
+/* ===== Toggle ===== */
+.dropdown .dropdown-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5em;
+  padding: 2.14em 0; /* 30px top/bottom */
+  border: none;
+  border-top: 0.07em solid #FFFFFF1A; /* 1px */
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown .dropdown-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.71em; /* 24px */
+  line-height: 1.25; /* 125% */
+  letter-spacing: -0.24px; /* -1% de 24px */
+  color: var(--color-purple);
+}
+
+.dropdown .dropdown-arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-purple);
+  transition: transform 0.3s ease;
+}
+
+.dropdown.is-open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* ===== Content ===== */
+/* Técnica grid 0fr -> 1fr: anima la altura sin necesidad de JS midiendo
+   scrollHeight, y se adapta solo a cualquier contenido (párrafo, botón,
+   lo que sea) sin recalcular nada. */
+.dropdown .dropdown-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.dropdown.is-open .dropdown-content {
+  grid-template-rows: 1fr;
+}
+
+.dropdown .dropdown-content-inner {
+  overflow: hidden;
+  min-height: 0;
+  width: 90%;
+  padding-bottom: 1.79em;
+}
+
+/* P del contenido — único elemento con estilo fijo garantizado;
+   cualquier otra cosa (botones, listas, etc.) el usuario la estiliza aparte */
+.dropdown .dropdown-content-inner p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.29em; /* 18px */
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
+  color: var(--color-white);
+}
