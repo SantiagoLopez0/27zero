@@ -85,38 +85,13 @@ Placeholder de imagen/video (equivalente a `.card-work-bg` pero como bloque suel
 
 ---
 
-## Sección "What sets 27zero apart"
+## Sección "What sets 27zero apart" — PENDIENTE (removida, se reemplaza por componente)
 
-**Nota sobre assets:** el mensaje original listaba `creativity.png` tanto para el shape purple como para el black. Por el nombre de archivo y el contenido visual de cada imagen, se asumió el mapeo correcto: `research-enhanced.png` → shape purple ("Research Enhanced"), `execution.png` → shape indigo ("Execution"), `creativity.png` → shape black ("Creativity"). Ajustar si no era la intención.
+Se eliminó por completo la implementación anterior (HTML, CSS y JS): `.section--apart-home`, `.apart-home-container`, `.apart-slider` y todo lo relacionado (`.apart-slider-arrow`, `.apart-slider-track-wrap`, `.apart-slider-track`, `.apart-slide`, `.apart-shape`, `.apart-home-scales`), incluyendo sus overrides mobile. Ya no queda nada de esto en `home/index.html`, `home/style.css` ni `home/script.js`.
 
-**Renombrados:** los logos en `/assets/logos/` tenían espacios en el nombre (`scolarship magic.svg`, `skillwel.svg`, `world learning.svg`), lo cual es inseguro en URLs. Se renombraron a `scholarship-magic.svg`, `skillwell.svg` y `world-learning.svg`.
+Se va a reemplazar por el componente `shapes-slider` (`/components/shapes-slider/`), reutilizable entre páginas — pendiente de implementar en una próxima instrucción. El componente scopea todo bajo la clase raíz `.shapes-slider` (evita colisiones con `/home/style.css`), excepto las clases globales del design system que ya comparte con el resto de Home (`.section`, `.container`, `h2`, `h3`, `.text-body--sm`, `.btn`, `.btn-dark`).
 
-### `.section--apart-home`
-Modifier de `.section`. Fondo blanco, todo el contenido centrado (`text-align: center`).
-- `padding-top: 5em` (70px @ 14px)
-- `padding-bottom: 8.93em` (125px @ 14px)
-
-### `.apart-home-container`
-Modifier de `.container`. `align-items: center; gap: 1.79em` (25px @ 14px).
-
-### `.section--apart-home h2` / `h3`
-Override puntual: Lora, weight 500, style normal. El H2 hereda tamaño/line-height del H2 global. El H3 tiene tamaño propio: `1.71em` (24px @ 14px), line-height 125%, letter-spacing `-0.24px` (-1% de 24px), `text-align: center`.
-
-### Slider de shapes (`.apart-slider`)
-Carrusel simple de slides completos (no drag, solo flechas), con su propia clase `.apart-slider-arrow` (círculo, borde negro, hover invertido) — independiente de `.slider-arrow` del componente `cards-slider` para evitar colisiones entre ambos. Las imágenes (`research-enhanced.png`, `execution.png`, `creativity.png`) ya incluyen el texto embebido, por lo que se eliminó el overlay `.apart-shape-label` que se había agregado antes.
-- `.apart-slider`: flex row, flechas a los costados, `padding-top: 5.71em` (80px @ 14px)
-- `.apart-slider-track-wrap` (flex:1, overflow hidden) en el centro
-- `.apart-slider-track`: flex row, `transform: translateX(-N * 100%)` controlado por JS, `transition: transform 0.4s ease`
-- `.apart-slide`: `flex: 0 0 100%`, contiene los 3 `.apart-shape` en fila
-- `.apart-shape`: `flex: 1`, imagen (`max-width: 22em`)
-- JS (`initApartSlider`): genera 2 slides idénticos (duplicado del único slide real) para demostrar la funcionalidad; flechas prev/next avanzan/retroceden el índice y se deshabilitan en los extremos
-- **Mobile (`≤768px`) — comportamiento distinto al de desktop:** se ocultan las flechas (`.apart-slider-arrow { display: none }`, la transform de JS queda fija en `translateX(0)` sin interferir) y el grupo de 3 shapes se "desarma": `.apart-slide` pasa a `display: contents` (pierde su caja, sus 3 `.apart-shape` hijos quedan como items directos del `.apart-slider-track`), cada `.apart-shape` pasa a `flex: 0 0 83.33%` con `scroll-snap-align: center`, y `.apart-slider-track-wrap` pasa a `overflow-x: auto` con `scroll-snap-type: x mandatory`. Resultado: scroll nativo horizontal con snap, un shape por "slide" pero mostrando ~1.2 por vista (efecto peek del siguiente).
-
-### "Execution that Scales" (`.apart-home-scales`)
-Modifier de `.container`. Centrado.
-- `gap: 1.79em` (25px @ 14px)
-- `padding-top: 3.93em` (55px @ 14px)
-- Párrafo con `max-width: 45em`
+**Nota sobre assets (histórica, ya no aplica):** las imágenes `research-enhanced.png`/`execution.png`/`creativity.png` y los logos ya renombrados (`scholarship-magic.svg`, `skillwell.svg`, `world-learning.svg`) en `/assets/` siguen en el repo por si el nuevo componente los reutiliza.
 
 ---
 
@@ -175,7 +150,7 @@ Fondo `--color-black`, `color: var(--color-white)`.
 - `padding-bottom: 4.64em` (65px @ 14px)
 
 ### `.testimonials-slider`
-Carrusel de 1 slide por view (igual mecánica que `.apart-slider`: flechas a los costados, track con `transform: translateX`, deshabilitado en los extremos — sin loop).
+Carrusel de 1 slide por view (mismo mecanismo: flechas a los costados, track con `transform: translateX`, deshabilitado en los extremos — sin loop).
 - `.testimonials-arrow`: clase propia (círculo, borde blanco, fondo transparente, hover invierte a blanco/negro) — independiente de `.slider-arrow` del componente `cards-slider` para evitar colisiones entre ambos
 - `.testimonial-slide`: `justify-content: center` (slide centrado), quote SVG + `.testimonial-content` en fila
 - `.testimonial-quote-icon`: el SVG del quote grande (path `#C286FF`), `width: 30em`
@@ -210,13 +185,13 @@ Integrados desde `/components/work-card/` y `/components/cards-slider/`, usados 
 - CSS: `<link>` a `/components/work-card/work-card.css` y `/components/cards-slider/cards-slider.css` en el `<head>` (cargados después de `home/style.css`, junto con navbar/footer)
 - JS: `/components/cards-slider/cards-slider.js` — auto-inicializa drag + flechas en cada `.slider-block` presente en el DOM al momento de cargar el script
 - `home/style.css` ya **no** duplica `.slider-block`, `.slider-header`, `.slider-title`, `.slider-footer`, `.slider-nav`, `.slider-arrow`, `.slider-track-wrap`, `.slider-track`, `.card`, `.card-work-*` — todo viene del componente. Solo queda en `home/style.css` el override propio de la página: `.sliders-container` (spacing wrapper)
-- **Nota:** `.apart-slider-arrow` y `.testimonials-arrow` (sliders de "What sets apart" y "Testimonials") antes reutilizaban la clase `.slider-arrow` para heredar su estilo — esto entraba en conflicto porque `.slider-arrow` ahora la define el componente `cards-slider.css`, cargado después en el `<head>`, pisando el estilo propio de esas secciones. Se desacoplaron dándoles su propio set de estilos completo (mismo look visual, sin depender de la clase del componente).
+- **Nota histórica:** `.testimonials-arrow` (y `.apart-slider-arrow`, ya removido junto con toda la sección "What sets 27zero apart") reutilizaban antes la clase `.slider-arrow` para heredar su estilo — esto entraba en conflicto porque `.slider-arrow` ahora la define el componente `cards-slider.css`, cargado después en el `<head>`, pisando el estilo propio de esas secciones. Se desacoplaron dándoles su propio set de estilos completo (mismo look visual, sin depender de la clase del componente).
 
 ## Mobile (breakpoint estándar del proyecto: `max-width: 768px`)
 
 Todos los media queries de `home/style.css` están unificados en **un único bloque `@media (max-width: 768px)` al final absoluto del archivo** (ya no hay reglas mobile intercaladas entre las de desktop). Esto es intencional: en un empate de especificidad, CSS resuelve por orden de aparición en el archivo, no por estar dentro de un media query — así que cualquier regla mobile que quedara antes de una regla base con la misma especificidad podía perder el empate y no aplicarse. Poniendo todo el mobile al final se garantiza que siempre gane **cuando la especificidad es igual**.
 
-**Caso aparte — tipografía (`h1`-`h4`, `.text-body`, `.text-body--sm`, `.btn`):** primero se detectó un problema de **especificidad** (selectores de página con clase+elemento le ganaban a un simple `h1`/`h2`/`h3`), pero al forzar esas etiquetas globalmente con `!important` apareció un problema más de fondo: los tags `h2`/`h3` también los usan los componentes importados (`.slider-title` es un `h2`, y `.card-work-title`/`.card-featured-title`/`.card-edtech-mentor-title` son `h3`), así que el selector global les pisaba su propio tamaño. La solución: en vez de seleccionar el tag globalmente, el bloque mobile usa los **mismos selectores scoped que ya existían en desktop** (`.section--hero-home h1`, `.intro-home-text h2:not(.slider-title)`, `.section--mentor-home h2`, `.section--apart-home h2`, `.section--apart-home h3`) — así solo tocan el heading real de cada sección y nunca a los de las cards/slider. Al estar en el bloque mobile (al final del archivo), ganan por orden sobre su propia versión desktop sin necesitar `!important`. `h4` no se usa en ningún lado de Home, así que se quitó esa regla.
+**Caso aparte — tipografía (`h1`-`h4`, `.text-body`, `.text-body--sm`, `.btn`):** primero se detectó un problema de **especificidad** (selectores de página con clase+elemento le ganaban a un simple `h1`/`h2`/`h3`), pero al forzar esas etiquetas globalmente con `!important` apareció un problema más de fondo: los tags `h2`/`h3` también los usan los componentes importados (`.slider-title` es un `h2`, y `.card-work-title`/`.card-featured-title`/`.card-edtech-mentor-title` son `h3`), así que el selector global les pisaba su propio tamaño. La solución: en vez de seleccionar el tag globalmente, el bloque mobile usa los **mismos selectores scoped que ya existían en desktop** (`.section--hero-home h1`, `.intro-home-text h2:not(.slider-title)`, `.section--mentor-home h2`) — así solo tocan el heading real de cada sección y nunca a los de las cards/slider. Al estar en el bloque mobile (al final del archivo), ganan por orden sobre su propia versión desktop sin necesitar `!important`. `h4` no se usa en ningún lado de Home, así que se quitó esa regla.
 
 Cambios aplicados en `home/style.css`:
 
@@ -226,9 +201,6 @@ Cambios aplicados en `home/style.css`:
 - **`.intro-home-row`**: `gap: 4.64em` (65px @ 14px)
 - **`.intro-home-media`**: `width: 100%`
 - **`.sliders-container`**: `padding-top: 3.93em` (55px @ 14px), `padding-left: 0`
-- **`.section--apart-home`**: `padding-top`/`padding-bottom: 4.29em` (60px @ 14px)
-- **`.apart-slider`**: `padding: 6.07em 2em 0` (85px top @ 14px, 2em left/right, 0 bottom — unificado en un solo bloque, antes estaba partido entre dos media queries distintas)
-- **`.apart-home-scales`**: `padding-top: 4.29em` (60px @ 14px)
 - **`.section--mentor-home`**: `padding-top: 6.07em` (85px @ 14px), `padding-bottom: 4.5em` (63px @ 14px)
 - **`.mentor-home-row`**: `gap: 4.64em` (65px @ 14px)
 - **Testimonials**: `.testimonial-quote-icon` y `.testimonials-arrow` → `display: none`; `.testimonial-content` → `max-width: 100%` (el `max-width: 30em` de desktop lo achicaba innecesariamente, esto lo hace ocupar el ancho completo del container); `.testimonials-dots` → `gap: 1.2em`
