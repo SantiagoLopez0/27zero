@@ -145,3 +145,28 @@ Se implementaron los 8 `.menu-block` completos. Los íconos de `service-card` ro
 8. **Others** (1 card): Project Management (icon 1)
 
 Todos los bloques con más de 3 cards (Project Management, Content Development, Marketing Programs) hacen wrap automático dentro del mismo `grid-template-columns: repeat(3, 1fr)` — no requieren CSS adicional.
+
+---
+
+## Sección Closing CTA
+
+Última sección de la página.
+
+### `.section--closing-cta`
+- `background-color: var(--color-white)`
+- `padding-top: 5.71em` (80px @ 14px base, mobile `6.67em` = 60px @ 9px base)
+- `padding-bottom: 5.71em` (80px, mobile `6.67em` = 60px)
+- `text-align: center`
+
+### `.closing-cta-container`
+Modifier de `.container`.
+- `align-items: center`
+- `gap: 2.14em` (30px @ 14px base) entre título y botón
+
+### `.section--closing-cta h2`
+- Lora, weight 500, `font-style: normal`, color negro (default)
+
+### `.closing-cta-container .btn-dark`
+Botón reutiliza `.btn-dark` global, con dos overrides propios de esta sección:
+- `color: var(--color-white)` + `text-decoration: underline` (en vez del texto purple sin subrayar del `.btn-dark` global)
+- Hover: `color: var(--color-black)` (el resto del hover — bg transparent, border black — lo hereda de `.btn-dark:hover` global)
