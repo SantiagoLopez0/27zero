@@ -102,7 +102,7 @@ Sección larga con varios bloques de servicios — **por ahora se implementa sol
 
 ### `.menu-container`
 Modifier de `.container`, pisa el `display:flex` base con grid propio.
-- `display: grid; grid-template-columns: 0.7fr 1fr` (columna izquierda ~40%)
+- `display: grid; grid-template-columns: 0.45fr 1fr` (columna izquierda más angosta)
 - `gap: 8.21em` (115px @ 14px base)
 - `align-items: start`
 - Mobile: `grid-template-columns: 1fr; gap: 4.29em`
@@ -110,7 +110,7 @@ Modifier de `.container`, pisa el `display:flex` base con grid propio.
 ### `.menu-intro` (columna izquierda)
 - `display: flex; flex-direction: column; gap: 2.5em` (35px)
 - `h2`: Lora 500, `font-size: 2.57em` (36px, mobile `28px` fijos), `line-height: 1.25`, `letter-spacing: -0.36px` (-1%), color blanco
-- `.text-body--sm`: color `rgba(255,255,255,0.85)`
+- `.text-body`: color `rgba(255,255,255,0.85)`
 
 ### `.menu-blocks` (columna derecha, wrapper de todos los bloques)
 - `display: flex; flex-direction: column; align-items: stretch; gap: 3.93em` (55px)
@@ -125,5 +125,6 @@ Modifier de `.container`, pisa el `display:flex` base con grid propio.
 ### `.menu-block-grid`
 - `display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.07em` (15px)
 - Mobile: `grid-template-columns: 1fr`
-- Contiene 3 instancias de `service-card` (componente sin modificar, `width: 100%` agregado vía `.menu-block-grid .service-card` para que llene la celda; en mobile además `height: auto`)
+- Contiene 3 instancias de `service-card` (componente sin modificar) con override propio en `.menu-block-grid .service-card`: `width: 100%; height: auto; aspect-ratio: 1/1` — la card se vuelve cuadrada y llena la celda del grid
+- Mobile: `.menu-block-grid` pasa de grid a `display: flex` con `overflow-x: auto` + `scroll-snap-type: x mandatory` (scroll horizontal, sin scrollbar visible); cada `.service-card` mantiene `aspect-ratio: 1/1` con `flex: 0 0 65%`
 - Contenido de las 3 cards: placeholder por defecto del componente ("Website Design") — pendiente el contenido real de cada una.
