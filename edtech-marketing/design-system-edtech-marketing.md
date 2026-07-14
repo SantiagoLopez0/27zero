@@ -125,6 +125,22 @@ Modifier de `.container`, pisa el `display:flex` base con grid propio.
 ### `.menu-block-grid`
 - `display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.07em` (15px)
 - Mobile: `grid-template-columns: 1fr`
-- Contiene 3 instancias de `service-card` (componente sin modificar) con override propio en `.menu-block-grid .service-card`: `width: 100%; height: auto; aspect-ratio: 1/1` — la card se vuelve cuadrada y llena la celda del grid
+- Contiene N instancias de `service-card` por bloque (componente sin modificar) con override propio en `.menu-block-grid .service-card`: `width: 100%; height: auto; aspect-ratio: 1/1` — la card se vuelve cuadrada y llena la celda del grid
 - Mobile: `.menu-block-grid` pasa de grid a `display: flex` con `overflow-x: auto` + `scroll-snap-type: x mandatory` (scroll horizontal, sin scrollbar visible); cada `.service-card` mantiene `aspect-ratio: 1/1` con `flex: 0 0 60%`
-- Contenido de las 3 cards: placeholder por defecto del componente ("Website Design") — pendiente el contenido real de cada una.
+
+### Los 8 bloques de la sección Menu
+Se implementaron los 8 `.menu-block` completos. Los íconos de `service-card` rotan en ciclo de 3 (**siempre reiniciando en el ícono 1 al empezar cada bloque nuevo**, sin continuar el conteo del bloque anterior), todos con `fill="currentColor"` para heredar el color en hover:
+- **Ícono 1** — el de 3 rombos/aspas (con `<clipPath>` — cada instancia tiene un `id` único generado, ej. `clip_icon1_1`, `clip_icon1_2`, etc., para evitar IDs duplicados en el DOM)
+- **Ícono 2** — el de 4 hojas/pétalos
+- **Ícono 3** — el de círculo con corte diagonal
+
+1. **UX/UI & Web Design** (3 cards): Website Adjustments or Updates (icon 1), Website Design (icon 2), SEO | GEO (icon 3)
+2. **Brand & Messaging Strategy** (3 cards): Corporate Video (icon 1), Corporate-level messaging update (icon 2), Brand Awareness Fundamentals (icon 3)
+3. **Project Management** (4 cards): Project Management (icon 1), Follow-up Sessions (icon 2), Performace Review (icon 3), Marketing Operations (icon 1)
+4. **Events** (2 cards): In-Person Event Marketing (icon 1), Webinar Marketing (icon 2)
+5. **Content Development** (8 cards): On-Demand Creative Production (icon 1), Special Email Campaigns (icon 2), Newsletter (icon 3), LinkedIn Posts (icon 1), Blog (icon 2), Ad-hoc Announcements (icon 3), Ad-hoc Social Post (icon 1), WhitePaper (icon 2)
+6. **Marketing Programs** (5 cards): Paid Advertising Management (icon 1), ABM Granular Campaigns (icon 2), Brand Awareness Marketing Campaigns (icon 3), Core Content Campaigns (icon 1), Customer Spotlights / Case Studies (icon 2)
+7. **Strategic Services** (2 cards): Marketing Audit (icon 1), Marketing Strategy Development (icon 2)
+8. **Others** (1 card): Project Management (icon 1)
+
+Todos los bloques con más de 3 cards (Project Management, Content Development, Marketing Programs) hacen wrap automático dentro del mismo `grid-template-columns: repeat(3, 1fr)` — no requieren CSS adicional.
