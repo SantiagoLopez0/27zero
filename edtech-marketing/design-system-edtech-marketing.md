@@ -126,5 +126,5 @@ Modifier de `.container`, pisa el `display:flex` base con grid propio.
 - `display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.07em` (15px)
 - Mobile: `grid-template-columns: 1fr`
 - Contiene 3 instancias de `service-card` (componente sin modificar) con override propio en `.menu-block-grid .service-card`: `width: 100%; height: auto; aspect-ratio: 1/1` — la card se vuelve cuadrada y llena la celda del grid
-- Mobile: `.menu-block-grid` pasa de grid a `display: flex` con `overflow-x: auto` + `scroll-snap-type: x mandatory` (scroll horizontal, sin scrollbar visible); cada `.service-card` mantiene `aspect-ratio: 1/1` con `flex: 0 0 65%`
+- Mobile: `.menu-block-grid` pasa de grid a `display: flex` con `overflow-x: auto` + `scroll-snap-type: x mandatory` (scroll horizontal, sin scrollbar visible); cada `.service-card` mantiene `aspect-ratio: 1/1` con `flex: 0 0 60%`
 - Contenido de las 3 cards: placeholder por defecto del componente ("Website Design") — pendiente el contenido real de cada una.

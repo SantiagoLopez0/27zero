@@ -393,8 +393,8 @@ h6 {
     display: none;
   }
   .menu-block-grid .service-card {
-    flex: 0 0 65%;
-    width: 65%;
+    flex: 0 0 60%;
+    width: 60%;
     height: auto;
     aspect-ratio: 1 / 1;
     scroll-snap-align: start;
