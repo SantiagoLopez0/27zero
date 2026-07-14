@@ -2,7 +2,7 @@
 
 Clases específicas de la página `/edtech-marketing`. Complementan el design system global (`/design-system.md`).
 
-Componentes implementados en esta página: `navbar` (variante `nav--white`), `shapes-slider`, `footer`.
+Componentes implementados en esta página: `navbar` (variante `nav--white`), `shapes-slider`, `practices-card`, `footer`.
 
 ---
 
@@ -47,6 +47,43 @@ Elemento reutilizado tal cual de `/home` (mismas clases y estilos, desktop y mob
 - `.hero-home-cta .btn-white` fuerza `border-color: var(--color-white)`
 
 ---
+
+---
+
+## Sección Practices
+
+### `.section--practices`
+Modifier de `.section`.
+- `background-color: var(--color-indigo)`
+- `padding-top: 8.93em` (125px @ 14px base)
+- `padding-bottom: 10.71em` (150px @ 14px base)
+- Mobile: hereda el padding de desktop (no especificado distinto)
+
+### `.practices-container`
+Modifier de `.container`.
+- `gap: 7.14em` (100px @ 14px base) entre el bloque de intro y el grid
+
+### `.practices-intro`
+Wrapper del título y subtítulo de la sección.
+- `display: flex; flex-direction: column; gap: 0.71em`
+
+### `.section--practices h2`
+- Lora, weight 500, `font-style: normal`, color `--color-white`
+- Hereda `font-size` global de `h2` (2.6em desktop / 24px mobile vía `.section--practices h2` scoped)
+
+### `.practices-intro .text-body--sm`
+- `color: rgba(255,255,255,0.85)` — texto blanco atenuado sobre fondo indigo
+- `max-width: 34em` (mobile: `100%`)
+
+### `.practices-grid`
+- `display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.14em` (30px @ 14px base)
+- Mobile: `grid-template-columns: 1fr`
+
+### Practices Card (componente)
+3 instancias de `/components/practices-card/` implementadas **sin modificar el componente**. Cada una usa el ícono intercambiable documentado en `/components/design-system-components.md` (wrapper fijo, SVG interno reemplazable):
+1. **Customer Marketing** — ícono default de 3 rombos
+2. **Granular Marketing Programs** — ícono circular tipo swirl
+3. **Agile Brand Development** — ícono cuadrado con círculo blanco centrado
 
 ## Notas
 - El único bloque `@media (max-width: 768px)` vive al final del archivo `style.css`, sin `!important`, usando selectores scoped (`.section--hero-marketing h1`) en vez de tags globales, siguiendo el patrón del design system.

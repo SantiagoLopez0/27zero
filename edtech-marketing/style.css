@@ -248,6 +248,41 @@ h6 {
   border-color: var(--color-white);
 }
 
+/* ===== Practices ===== */
+.section--practices {
+  background-color: var(--color-indigo);
+  padding-top: 8.93em;    /* 125px @ 14px base */
+  padding-bottom: 10.71em; /* 150px @ 14px base */
+}
+
+.practices-container {
+  gap: 7.14em; /* 100px @ 14px base */
+}
+
+.practices-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.71em;
+}
+
+.section--practices h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--color-white);
+}
+
+.practices-intro .text-body--sm {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 34em;
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.14em; /* 30px @ 14px base */
+}
+
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
   body { font-size: 9px; }
@@ -268,4 +303,9 @@ h6 {
   .text-body, .text-link, .text-body--sm { font-size: 13px; }
   .text-caption { font-size: 13px; }
   .btn { font-size: 13px; }
+
+  /* Practices */
+  .section--practices h2 { font-size: 24px; }
+  .practices-intro .text-body--sm { max-width: 100%; }
+  .practices-grid { grid-template-columns: 1fr; }
 }
