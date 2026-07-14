@@ -80,4 +80,9 @@
   .service-card .service-card-title {
     font-size: 22px;
   }
+
+  .service-card .service-card-icon svg {
+    width: 7em;
+    height: 7em;
+  }
 }
