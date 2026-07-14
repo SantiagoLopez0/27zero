@@ -165,8 +165,16 @@ Modifier de `.container`.
 
 ### `.section--closing-cta h2`
 - Lora, weight 500, `font-style: normal`, color negro (default)
+- `max-width: 50%` (mobile: `100%`)
+- Mobile: `font-size: 24px` (fijo, no em — ver nota de tipografía mobile más abajo)
 
 ### `.closing-cta-container .btn-dark`
-Botón reutiliza `.btn-dark` global, con dos overrides propios de esta sección:
-- `color: var(--color-white)` + `text-decoration: underline` (en vez del texto purple sin subrayar del `.btn-dark` global)
+Botón reutiliza `.btn-dark` global, con un override propio de esta sección:
+- `color: var(--color-white)` (en vez del texto purple del `.btn-dark` global) — sin subrayado
 - Hover: `color: var(--color-black)` (el resto del hover — bg transparent, border black — lo hereda de `.btn-dark:hover` global)
+
+### Nota de tipografía mobile (auditoría)
+Revisado todo el árbol de headings de la página para que **todos** tengan `font-size` fijo en `px` en mobile (nunca `em`), según la regla del design system:
+- `.menu-block-title` no tenía override mobile — se agregó `font-size: 21px` (mismo tamaño que el H3 global mobile del design system)
+- `.section--closing-cta h2` no tenía override mobile — se agregó `font-size: 24px`
+- **Pendiente fuera de esta página**: `.practices-card-title` (dentro de `/components/practices-card/practices-card.css`) no tiene ningún `@media` y su `font-size` queda en `em` también en mobile — al ser un componente compartido, este ajuste debe hacerse en la sesión de componentes, no aquí.

@@ -371,11 +371,11 @@ h6 {
   font-weight: 500;
   font-style: normal;
   color: var(--color-black);
+  max-width: 50%;
 }
 
 .closing-cta-container .btn-dark {
   color: var(--color-white);
-  text-decoration: underline;
 }
 
 .closing-cta-container .btn-dark:hover {
@@ -411,6 +411,7 @@ h6 {
   /* Menu */
   .menu-container { grid-template-columns: 1fr; gap: 4.29em; }
   .menu-intro h2 { font-size: 28px; }
+  .menu-block-title { font-size: 21px; }
   .menu-block-grid {
     display: flex;
     grid-template-columns: none;
@@ -434,5 +435,9 @@ h6 {
   .section--closing-cta {
     padding-top: 6.67em;    /* 60px @ 9px base */
     padding-bottom: 6.67em; /* 60px @ 9px base */
+  }
+  .section--closing-cta h2 {
+    font-size: 24px;
+    max-width: 100%;
   }
 }
