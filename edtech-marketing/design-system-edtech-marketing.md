@@ -2,7 +2,7 @@
 
 Clases específicas de la página `/edtech-marketing`. Complementan el design system global (`/design-system.md`).
 
-Componentes implementados en esta página: `navbar` (variante `nav--white`), `shapes-slider`, `practices-card`, `footer`.
+Componentes implementados en esta página: `navbar` (variante `nav--white`), `shapes-slider`, `practices-card`, `service-card`, `footer`.
 
 ---
 
@@ -88,3 +88,42 @@ Wrapper del título y subtítulo de la sección.
 ## Notas
 - El único bloque `@media (max-width: 768px)` vive al final del archivo `style.css`, sin `!important`, usando selectores scoped (`.section--hero-marketing h1`) en vez de tags globales, siguiendo el patrón del design system.
 - **Shapes Slider**: componente importado tal cual desde `/components/shapes-slider/` (HTML, CSS y JS sin modificar), colocado justo debajo del hero. Usa clases globales compartidas ya definidas en este `style.css` (`h2`, `h3`, `.text-body--sm`, `.btn`, `.btn-dark`), que coinciden con los valores del design system global. No se documentan sus clases aquí — ver `/components/design-system-components.md`.
+
+---
+
+## Sección Menu ("What's on the menu?")
+
+Sección larga con varios bloques de servicios — **por ahora se implementa solo el primer bloque** ("UX/UI & Web Design"). El resto se agrega en próximos pasos.
+
+### `.section--menu`
+- `background-color: var(--color-black)` (#101010)
+- `padding-top: 7.14em` (100px @ 14px base)
+- `padding-bottom: 10.71em` (150px @ 14px base)
+
+### `.menu-container`
+Modifier de `.container`, pisa el `display:flex` base con grid propio.
+- `display: grid; grid-template-columns: 0.7fr 1fr` (columna izquierda ~40%)
+- `gap: 8.21em` (115px @ 14px base)
+- `align-items: start`
+- Mobile: `grid-template-columns: 1fr; gap: 4.29em`
+
+### `.menu-intro` (columna izquierda)
+- `display: flex; flex-direction: column; gap: 2.5em` (35px)
+- `h2`: Lora 500, `font-size: 2.57em` (36px, mobile `28px` fijos), `line-height: 1.25`, `letter-spacing: -0.36px` (-1%), color blanco
+- `.text-body--sm`: color `rgba(255,255,255,0.85)`
+
+### `.menu-blocks` (columna derecha, wrapper de todos los bloques)
+- `display: flex; flex-direction: column; align-items: stretch; gap: 3.93em` (55px)
+
+### `.menu-block` (cada bloque individual)
+- `display: flex; flex-direction: column; gap: 3em` (42px, entre título y grid)
+
+### `.menu-block-title`
+- Lora 500, `font-size: 1.71em` (24px), `line-height: 1.4`, `letter-spacing: 0`, color blanco
+- Clase dedicada (no tag `h3` global) para no colisionar con el `h3` interno de `service-card`
+
+### `.menu-block-grid`
+- `display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.07em` (15px)
+- Mobile: `grid-template-columns: 1fr`
+- Contiene 3 instancias de `service-card` (componente sin modificar, `width: 100%` agregado vía `.menu-block-grid .service-card` para que llene la celda; en mobile además `height: auto`)
+- Contenido de las 3 cards: placeholder por defecto del componente ("Website Design") — pendiente el contenido real de cada una.
