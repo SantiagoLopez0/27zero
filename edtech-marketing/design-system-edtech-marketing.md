@@ -82,8 +82,8 @@ Wrapper del título y subtítulo de la sección.
 ### Practices Card (componente)
 3 instancias de `/components/practices-card/` implementadas **sin modificar el componente**. Cada una usa el ícono intercambiable documentado en `/components/design-system-components.md` (wrapper fijo, SVG interno reemplazable):
 1. **Customer Marketing** — ícono default de 3 rombos
-2. **Granular Marketing Programs** — ícono circular tipo swirl
-3. **Agile Brand Development** — ícono cuadrado con círculo blanco centrado
+2. **Granular Marketing Programs** — ícono circular tipo swirl (SVG provisto por Santiago)
+3. **Agile Brand Development** — ícono cuadrado con espiral circular interior (SVG provisto por Santiago)
 
 ## Notas
 - El único bloque `@media (max-width: 768px)` vive al final del archivo `style.css`, sin `!important`, usando selectores scoped (`.section--hero-marketing h1`) en vez de tags globales, siguiendo el patrón del design system.
