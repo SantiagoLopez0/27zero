@@ -184,7 +184,7 @@ h6 {
 /* ===== Hero ===== */
 .section--hero-marketing {
   position: relative;
-  margin-top: 12em;
+  margin-top: 0.71em;   /* 10px @ 14px base */
   padding-top: 4.29em;   /* 60px @ 14px base */
   padding-bottom: 8.57em; /* 120px @ 14px base */
   overflow: hidden;
@@ -220,6 +220,7 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  max-width: 50%;
 }
 
 .section--hero-marketing h1 {
@@ -231,11 +232,16 @@ h6 {
   letter-spacing: -0.48px;
 }
 
+.hero-marketing-text .text-body {
+  max-width: 90%;
+}
+
 .hero-home-cta {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5em;
+  margin-right: auto;
 }
 
 .hero-home-cta .btn-white {
@@ -252,6 +258,12 @@ h6 {
   }
 
   /* Hero */
+  .section--hero-marketing {
+    margin-top: 10.67em;   /* 96px @ 9px base */
+    padding-top: 13.89em;  /* 125px @ 9px base */
+    padding-bottom: 19.44em; /* 175px @ 9px base */
+  }
+  .hero-marketing-text { max-width: 100%; }
   .section--hero-marketing h1 { font-size: 32px; }
   .text-body, .text-link, .text-body--sm { font-size: 13px; }
   .text-caption { font-size: 13px; }
