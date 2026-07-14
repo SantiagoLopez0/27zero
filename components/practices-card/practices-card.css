@@ -13,7 +13,6 @@
   flex-direction: column;
   gap: 10em; /* 140px */
   width: 100%;
-  max-width: 28em;
   text-decoration: none;
   color: var(--color-black);
   overflow: hidden;
