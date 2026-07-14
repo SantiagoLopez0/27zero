@@ -182,7 +182,7 @@ Depende de clases base compartidas del design system global (`.section`, `.conta
 
 Estado: ✅ terminado. Todo scoped bajo `.practices-card` (clase raíz única) — cero clases sueltas globales.
 
-`.practices-card`: es un `<a>` (no `<div>`), `text-decoration: none`. `width: 100%`. Bg gray, `border-radius: 0.5em`, `padding: 2.86em 1.86em` (40px/26px), flex column con `gap: 10em` (140px) entre los 2 bloques. El fondo es un **placeholder de imagen** (`.practices-card-bg`, absoluto, `z-index:0`, mismo patrón que `.card-work-bg` de `work-card`: texto `[image]` centrado) — los dos bloques de contenido van con `z-index:1` encima.
+`.practices-card`: es un `<a>` (no `<div>`), `text-decoration: none`. `width: 100%`. Bg gray, `border-radius: 0.5em`, `padding: 2.86em 1.86em` (40px/26px), flex column con `justify-content: space-between` y `gap: 10em` (140px) entre los 2 bloques. El fondo es un **placeholder de imagen** (`.practices-card-bg`, absoluto, `z-index:0`, mismo patrón que `.card-work-bg` de `work-card`: texto `[image]` centrado) — los dos bloques de contenido van con `z-index:1` encima.
 
 - **`.practices-card-block--intro`** (bloque 1): `gap: 4.29em` (60px) entre ícono y texto.
   - **`.practices-card-icon`** — wrapper del ícono; **intercambiable**, solo hay que reemplazar el `<svg>` interno (el wrapper controla tamaño vía `.practices-card-icon svg { width/height }`). Default: el ícono de 3 rombos (59×39px).
