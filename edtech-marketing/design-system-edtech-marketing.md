@@ -114,6 +114,7 @@ Modifier de `.container`, pisa el `display:flex` base con grid propio.
 
 ### `.menu-blocks` (columna derecha, wrapper de todos los bloques)
 - `display: flex; flex-direction: column; align-items: stretch; gap: 3.93em` (55px)
+- `overflow: hidden`
 
 ### `.menu-block` (cada bloque individual)
 - `display: flex; flex-direction: column; gap: 3em` (42px, entre título y grid)
