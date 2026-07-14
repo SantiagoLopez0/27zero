@@ -85,13 +85,14 @@ Placeholder de imagen/video (equivalente a `.card-work-bg` pero como bloque suel
 
 ---
 
-## Sección "What sets 27zero apart" — PENDIENTE (removida, se reemplaza por componente)
+## Sección "What sets 27zero apart" — componente `shapes-slider`
 
-Se eliminó por completo la implementación anterior (HTML, CSS y JS): `.section--apart-home`, `.apart-home-container`, `.apart-slider` y todo lo relacionado (`.apart-slider-arrow`, `.apart-slider-track-wrap`, `.apart-slider-track`, `.apart-slide`, `.apart-shape`, `.apart-home-scales`), incluyendo sus overrides mobile. Ya no queda nada de esto en `home/index.html`, `home/style.css` ni `home/script.js`.
+Implementado tal cual está en `/components/shapes-slider/` (HTML, CSS y JS sin modificar), como sibling entre la sección de "The EdTech Mentor" y la de Logos.
 
-Se va a reemplazar por el componente `shapes-slider` (`/components/shapes-slider/`), reutilizable entre páginas — pendiente de implementar en una próxima instrucción. El componente scopea todo bajo la clase raíz `.shapes-slider` (evita colisiones con `/home/style.css`), excepto las clases globales del design system que ya comparte con el resto de Home (`.section`, `.container`, `h2`, `h3`, `.text-body--sm`, `.btn`, `.btn-dark`).
-
-**Nota sobre assets (histórica, ya no aplica):** las imágenes `research-enhanced.png`/`execution.png`/`creativity.png` y los logos ya renombrados (`scholarship-magic.svg`, `skillwell.svg`, `world-learning.svg`) en `/assets/` siguen en el repo por si el nuevo componente los reutiliza.
+- **HTML:** markup copiado 1:1 de `components/shapes-slider/shapes-slider.html` (la parte del `<section>`, no el harness de preview standalone). Clase raíz `.shapes-slider` + las mismas clases del design system global que ya usa el resto de Home (`.section`, `.container`, `h2`, `h3`, `.text-body--sm`, `.btn`, `.btn-dark`) — no se agregó ni duplicó CSS nuevo en `home/style.css`.
+- **CSS:** `<link>` a `/components/shapes-slider/shapes-slider.css` en el `<head>`. Todo el estilo específico del componente (`.apart-slider`, `.apart-slider-arrow`, `.apart-shapes-wrap`, `.apart-shapes`, `.apart-shape`, `.apart-shapes-nav-zone`, `.apart-shapes-spacer`, `.apart-home-scales`) va scoped bajo `.shapes-slider` dentro de ese archivo — nada de esto vive en `home/style.css`.
+- **JS:** `<script>` a `/components/shapes-slider/shapes-slider.js` (antes de `/home/script.js`). Sin cambios: ya no es un slider que se mueve — es un bloque fijo de 3 shapes donde las flechas solo cambian el `scale` (activa 1, inactivas 0.9) y actualizan el título/texto de "Execution that Scales" (`#apartScalesTitle`/`#apartScalesText`) según la shape activa. En mobile se ocultan las flechas y se navega con swipe (scroll-snap) o tap en las zonas invisibles de los extremos (`.apart-shapes-nav-zone`).
+- **Assets reutilizados:** `research-enhanced.png`, `execution.png`, `creativity.png` (ya existían en `/assets/`).
 
 ---
 
