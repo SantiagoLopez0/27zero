@@ -11,7 +11,7 @@ Componentes implementados en esta página: `navbar` (variante `nav--white`), `fo
 ### `.section--hero-marketing`
 Modifier de `.section`. Hero principal de la página.
 - `position: relative` — necesario para posicionar el bg absoluto
-- `margin-top: 0.71em` (10px @ 14px base)
+- `margin-top: 10em`
 - `padding-top: 4.29em` (60px @ 14px base)
 - `padding-bottom: 8.57em` (120px @ 14px base)
 - `overflow: hidden`
