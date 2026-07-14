@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/edtech-marketing/style.css">
 <link rel="stylesheet" href="/components/navbar/navbar.css">
+<link rel="stylesheet" href="/components/shapes-slider/shapes-slider.css">
 <link rel="stylesheet" href="/components/footer/footer.css">
 </head>
 <body>
@@ -57,6 +58,42 @@
   </div>
 </section>
 
+<!-- SHAPES SLIDER -->
+<section class="shapes-slider section section--apart-home">
+  <div class="container apart-home-container">
+    <h2>What sets 27zero apart.</h2>
+    <p class="text-body--sm">Our foundations connect insight, creativity, and efficient execution — helping EdTech brands turn purpose into lasting impact.</p>
+    <a href="/services" class="btn btn-dark">Our services</a>
+  </div>
+
+  <div class="apart-slider">
+    <button class="apart-slider-arrow" data-dir="prev" aria-label="Previous">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </button>
+    <div class="apart-shapes-wrap">
+      <div class="apart-shapes" id="apartShapes">
+        <!-- Generado por JS -->
+      </div>
+      <button class="apart-shapes-nav-zone apart-shapes-nav-zone--prev" data-dir="prev" aria-label="Previous"></button>
+      <button class="apart-shapes-nav-zone apart-shapes-nav-zone--next" data-dir="next" aria-label="Next"></button>
+    </div>
+    <button class="apart-slider-arrow" data-dir="next" aria-label="Next">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <div class="container apart-home-scales">
+    <h3 id="apartScalesTitle">Execution that Scales</h3>
+    <p class="text-body--sm" id="apartScalesText">We deliver the complete capability of a full-service agency with the focus of a boutique partner — with regional expertise in North America and Europe, and agile production in Latin America.</p>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-top">
@@ -90,6 +127,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
 <script src="/components/navbar/navbar.js"></script>
+<script src="/components/shapes-slider/shapes-slider.js"></script>
 <script src="/edtech-marketing/script.js"></script>
 </body>
 </html>

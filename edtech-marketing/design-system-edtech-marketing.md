@@ -2,7 +2,7 @@
 
 Clases específicas de la página `/edtech-marketing`. Complementan el design system global (`/design-system.md`).
 
-Componentes implementados en esta página: `navbar` (variante `nav--white`), `footer`.
+Componentes implementados en esta página: `navbar` (variante `nav--white`), `shapes-slider`, `footer`.
 
 ---
 
@@ -50,3 +50,4 @@ Elemento reutilizado tal cual de `/home` (mismas clases y estilos, desktop y mob
 
 ## Notas
 - El único bloque `@media (max-width: 768px)` vive al final del archivo `style.css`, sin `!important`, usando selectores scoped (`.section--hero-marketing h1`) en vez de tags globales, siguiendo el patrón del design system.
+- **Shapes Slider**: componente importado tal cual desde `/components/shapes-slider/` (HTML, CSS y JS sin modificar), colocado justo debajo del hero. Usa clases globales compartidas ya definidas en este `style.css` (`h2`, `h3`, `.text-body--sm`, `.btn`, `.btn-dark`), que coinciden con los valores del design system global. No se documentan sus clases aquí — ver `/components/design-system-components.md`.
