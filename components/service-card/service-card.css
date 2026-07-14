@@ -47,8 +47,8 @@
 /* El ícono es intercambiable: solo se cambia el <svg> interno (fill/stroke
    currentColor), el wrapper controla el tamaño fijo 86x86px */
 .service-card .service-card-icon svg {
-  width: 6.14em; /* 86px */
-  height: 6.14em; /* 86px */
+  width: 5em;
+  height: 5em;
   display: block;
   color: currentColor;
 }

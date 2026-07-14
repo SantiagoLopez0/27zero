@@ -209,7 +209,7 @@ Estado: ✅ terminado. Nombre asumido por Santiago aún no confirmado (por el co
 `.service-card` es un `<a>`: `padding: 1.79em` (25px), `border: 0.07em solid #fff` (1px), `border-radius: 0.71em` (10px), `width`/`height: 19em` fijos. Bg **transparente** por default (el body de la página que lo use debe ser oscuro, `#101010`), texto blanco.
 
 - **`.service-card-title`** — Lora, 500, `1.5em` (21px), line-height 123%.
-- **`.service-card-footer`** — fila `justify-content: space-between; align-items: end`: `.service-card-icon` (86×86px, **intercambiable** — el `<svg>` interno usa `fill="currentColor"` o `stroke="currentColor"` para heredar color automáticamente) + `.service-card-arrow`.
+- **`.service-card-footer`** — fila `justify-content: space-between; align-items: end`: `.service-card-icon` (5em × 5em, **intercambiable** — el `<svg>` interno usa `fill="currentColor"` o `stroke="currentColor"` para heredar color automáticamente) + `.service-card-arrow`.
 - **Sistema de color con `currentColor`**: en vez de repetir reglas de color para texto/ícono/arrow, todo usa `currentColor` y hereda del `color` de `.service-card`. Así el hover de toda la card (`.service-card:hover { color: #000; ... }`) recolorea título, ícono y arrow en una sola regla.
 - **Hover de la card**: bg pasa de transparent a `var(--color-purple)`, border igual, `color` pasa a `#000` (recolorea todo lo de adentro vía `currentColor`).
 - **Hover directo del arrow** (prioridad sobre el de la card, mismo patrón que `edtech-mentor-card`/`practices-card`): `background-color: #000`, `color: #fff` (ícono blanco), `border-color: #000`.
