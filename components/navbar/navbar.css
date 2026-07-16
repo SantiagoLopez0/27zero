@@ -385,7 +385,7 @@
   display: block;
   padding-left: 0.5em;
   color: var(--color-black);
-  font-size: 1.5em;
+  font-size: 14px;
   font-weight: 400;
   text-decoration: none;
   transition: font-weight 0.2s ease;
@@ -400,6 +400,7 @@
 .nav-mobile-menu .btn-nav {
   align-self: flex-start;
   flex-shrink: 0;
+  font-size: 14px;
   background-color: transparent;
   border-color: var(--color-black);
   color: var(--color-black);
