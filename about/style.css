@@ -78,7 +78,15 @@ h6 {
   letter-spacing: 0;
 }
 
-.text-body, .text-link {
+.text-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.text-link {
   font-family: 'Inter', sans-serif;
   font-size: 1.29em;
   line-height: 1.6;
@@ -186,8 +194,8 @@ h6 {
 .section--hero-marketing {
   position: relative;
   margin-top: 10em;
-  padding-top: 4.29em;   /* 60px @ 14px base */
-  padding-bottom: 8.57em; /* 120px @ 14px base */
+  padding-top: 6.43em;    /* 90px @ 14px base */
+  padding-bottom: 6.43em; /* 90px @ 14px base */
   overflow: hidden;
 }
 
@@ -214,7 +222,7 @@ h6 {
 .hero-marketing-container {
   position: relative;
   z-index: 1;
-  gap: 2.14em; /* 30px @ 14px base */
+  gap: 3.21em; /* 45px @ 14px base */
 }
 
 .hero-marketing-text {
@@ -254,7 +262,8 @@ h6 {
   }
   .hero-marketing-text { max-width: 100%; }
   .section--hero-marketing h1 { font-size: 32px; }
-  .text-body, .text-link, .text-body--sm { font-size: 13px; }
+  .text-body { font-size: 13px; font-weight: 400; }
+  .text-link, .text-body--sm { font-size: 13px; font-weight: 500; }
   .text-caption { font-size: 13px; }
   .btn { font-size: 13px; }
 }
