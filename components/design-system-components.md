@@ -65,15 +65,19 @@ El link "Work" del `.nav-links` desktop se reemplazó por un dropdown: `.nav-dro
 
 JS: click en `.nav-dropdown-toggle` togglea `.is-open` en `.nav-dropdown`; click afuera del dropdown lo cierra. Solo aplica al desktop — el "Work" del menú mobile (`.nav-mobile-links`) queda igual por ahora (pendiente, no pedido todavía).
 
-### Mobile (<=767px)
-A esa resolución se esconden `.nav-links` y el `.btn-nav` del `.nav-container`, y aparece `.nav-hamburger`.
+### Mobile (<=991px)
+A esta resolución se esconden `.nav-links` y el `.btn-nav` del `.nav-container`, y aparece `.nav-hamburger`. El breakpoint del menú mobile es distinto al breakpoint de tipografía global del proyecto (`768px`) — este es específico del navbar, subido a `991px` a pedido explícito (para que el modal fullscreen se active desde tablet también).
 
-- **`.nav-hamburger`** — botón que contiene el ícono lottie (`.nav-hamburger-icon`). Oculto en desktop (`display: none`), visible en mobile.
-- **Ícono (Lottie)** — `hamburger-menu-animation.json` (asset del componente, en esta misma carpeta). Se anima con `lottie-web` (CDN): click abre → `setDirection(1)` + `play()` (0% a 100%, hamburger a X); segundo click o click afuera → `setDirection(-1)` + `play()` (100% a 0%). El SVG viene en negro fijo por json, así que se invierte con `filter: invert(1)` en `nav--black` y `nav--scrolled`, igual que el logo.
-- **`.nav-mobile-menu`** — dropdown absoluto debajo del `.nav`, `max-width: 90%` centrado (`margin: 0 auto`). Estilo **fijo**, no cambia con la variante activa del nav (white/black/scrolled): fondo blanco, border `rgba(16,16,16,.25)`, shadow sutil. Oculto por defecto (`opacity: 0`, `pointer-events: none`), visible con `.is-open`.
-- **`.nav-mobile-links`** — misma lista de links que `.nav-links`, en columna. Links: `font-size: 2em`, `font-weight: 400`.
-- Dentro del dropdown se repite el `.btn-nav` como CTA, forzado a su estilo outline negro por defecto (no hereda el color de la variante del nav, ya que el fondo del dropdown es siempre blanco).
-- En mobile (`<=767px`), `.nav` cambia su padding lateral a `2em` (18px @ base 9px).
+- **`.nav-hamburger`** — botón que contiene el ícono lottie (`.nav-hamburger-icon`). Oculto en desktop (`display: none`), visible en mobile/tablet.
+- **Ícono (Lottie)** — `hamburger-menu-animation.json` (asset del componente, en esta misma carpeta). Se anima con `lottie-web` (CDN): click abre → `setDirection(1)` + `play()` (0% a 100%, hamburger a X); segundo click → `setDirection(-1)` + `play()` (100% a 0%). El SVG viene en negro fijo por json, así que se invierte con `filter: invert(1)` en `nav--black` y `nav--scrolled`, igual que el logo.
+
+**`.nav-mobile-menu` — modal fullscreen** (rediseñado; antes era un dropdown chico absoluto colgando del `.nav`). Ahora es `position: fixed; inset: 0; z-index: 500`, siempre bg blanco/texto negro, totalmente independiente de la posición y variante del `.nav` — esto evita el problema del dropdown anterior, que al ser `position: absolute` colgando de un `.nav` que se reposiciona (`top: 2.2em`) al hacer scroll, podía abrirse en un lugar inconsistente o con conflictos de color según el estado. Oculto por defecto (`opacity: 0; pointer-events: none`), visible con `.is-open` (fade simple).
+
+- **`.nav-mobile-header`** — fila propia dentro del modal: `.nav-mobile-logo` (mismo SVG del navbar, sin invertir — el modal es siempre blanco) + `.nav-mobile-close` (botón × que cierra el modal). Reemplaza visualmente al header del `.nav` mientras está abierto (lo cubre por completo, no conviven).
+- **`.nav-mobile-links`** — lista en columna. Cada item (`.nav-mobile-link` o el grupo `.nav-mobile-group`) usa `border-top: 1px solid rgba(0,0,0,.1)` como divisor (mismo patrón que `.dropdown-toggle` del componente `dropdown`), excepto el primero (`:first-child`, sin border-top). Padding vertical `2.14em` (30px) por item — aumentado respecto a la versión anterior, a pedido explícito ("aumentemos el gap"). Links: `font-size: 2em`, `font-weight: 400`.
+- **"Work" como acordeón inline** (`.nav-mobile-group`): `.nav-mobile-group-toggle` (texto "Work" + `.nav-mobile-group-chevron`, rota 180° con `.is-open`) → `.nav-mobile-group-content` (mismo approach de altura medida por JS que `/components/dropdown`: `height: 0 → scrollHeight px → auto`) con `.nav-mobile-group-inner` conteniendo los `.nav-mobile-sublink` ("by projects" / "by Clients", `font-size: 1.5em`, indentados con `padding-left`).
+- El `.btn-nav` ("Let's Talk!") se repite dentro del modal, forzado a su estilo outline negro por defecto (no hereda el color de la variante del nav, ya que el fondo del modal es siempre blanco). El layout general del modal es `justify-content: space-between` (header arriba, links justo debajo, CTA empujado al fondo).
+- En mobile (`<=991px`), `.nav` cambia su padding lateral a `2em` (18px @ base 9px).
 
 Requiere `lottie-web` cargado antes de `navbar.js` (CDN: `https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js`).
 

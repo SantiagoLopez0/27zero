@@ -20,15 +20,17 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================
-// Mobile menu — hamburger animado (Lottie) + dropdown
+// Mobile menu — modal fullscreen + hamburger animado (Lottie)
 // Requiere lottie-web cargado antes de este script.
-// Click en el hamburger: toggle del menú y de la animación (0% -> 100% / 100% -> 0%).
-// Click afuera del menú: lo cierra.
+// Click en el hamburger: abre el modal y anima el ícono (0% -> 100%).
+// El cierre es explícito (botón × dentro del modal, o tocar el hamburger
+// de nuevo) — al ser fullscreen ya no existe un "afuera" del menú.
 // ============================
 
 const hamburgerBtn = document.querySelector('.nav-hamburger');
 const hamburgerIcon = document.querySelector('.nav-hamburger-icon');
 const mobileMenu = document.querySelector('.nav-mobile-menu');
+const mobileCloseBtn = document.querySelector('.nav-mobile-close');
 
 if (hamburgerBtn && hamburgerIcon && mobileMenu && window.lottie) {
   const hamburgerAnim = lottie.loadAnimation({
@@ -60,9 +62,40 @@ if (hamburgerBtn && hamburgerIcon && mobileMenu && window.lottie) {
     isMenuOpen ? closeMobileMenu() : openMobileMenu();
   });
 
-  document.addEventListener('click', (e) => {
-    if (isMenuOpen && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-      closeMobileMenu();
+  if (mobileCloseBtn) {
+    mobileCloseBtn.addEventListener('click', closeMobileMenu);
+  }
+}
+
+// ===== "Work" como acordeón inline dentro del modal mobile =====
+// Mismo approach que /components/dropdown: height 0 -> scrollHeight -> auto.
+const mobileGroup = document.querySelector('.nav-mobile-group');
+
+if (mobileGroup) {
+  const mobileGroupToggle = mobileGroup.querySelector('.nav-mobile-group-toggle');
+  const mobileGroupContent = mobileGroup.querySelector('.nav-mobile-group-content');
+
+  mobileGroupToggle.addEventListener('click', () => {
+    const isOpen = mobileGroup.classList.contains('is-open');
+
+    if (!isOpen) {
+      mobileGroup.classList.add('is-open');
+      mobileGroupToggle.setAttribute('aria-expanded', 'true');
+      mobileGroupContent.style.height = mobileGroupContent.scrollHeight + 'px';
+
+      mobileGroupContent.addEventListener('transitionend', function onOpen(e) {
+        if (e.propertyName !== 'height') return;
+        if (mobileGroup.classList.contains('is-open')) {
+          mobileGroupContent.style.height = 'auto';
+        }
+        mobileGroupContent.removeEventListener('transitionend', onOpen);
+      });
+    } else {
+      mobileGroupContent.style.height = mobileGroupContent.scrollHeight + 'px';
+      mobileGroupContent.offsetHeight; // fuerza reflow
+      mobileGroup.classList.remove('is-open');
+      mobileGroupToggle.setAttribute('aria-expanded', 'false');
+      mobileGroupContent.style.height = '0px';
     }
   });
 }

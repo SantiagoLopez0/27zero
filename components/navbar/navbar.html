@@ -86,20 +86,46 @@
     </nav>
     <a href="/contact" class="btn btn-nav">Let's Talk!</a>
 
-    <!-- Hamburger — solo visible en mobile (<=767px) -->
+    <!-- Hamburger — solo visible en mobile (<=991px) -->
     <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
       <div class="nav-hamburger-icon"></div>
     </button>
   </div>
 
-  <!-- Dropdown mobile — hereda el color de la variante activa del nav -->
+  <!-- Modal mobile fullscreen — siempre blanco, con su propio header (logo + close),
+       independiente del estado/posición del .nav (evita conflictos con nav--scrolled) -->
   <div class="nav-mobile-menu" id="navMobileMenu">
+    <div class="nav-mobile-header">
+      <a href="/" class="nav-mobile-logo">
+        <img src="https://cdn.prod.website-files.com/65144cb53e0e9c74de079e3b/65144ded0328ecd5efb8b691_Logo.svg" alt="27zero">
+      </a>
+      <button class="nav-mobile-close" aria-label="Cerrar menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
     <nav class="nav-mobile-links">
-      <a href="/work">Work</a>
-      <a href="/edtech-marketing">Edtech Marketing</a>
-      <a href="/the-edtech-mentor">The EdTech Mentor</a>
-      <a href="/resources">Resources</a>
-      <a href="/about">About</a>
+      <div class="nav-mobile-group">
+        <button class="nav-mobile-group-toggle" aria-expanded="false">
+          Work
+          <svg class="nav-mobile-group-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="nav-mobile-group-content">
+          <div class="nav-mobile-group-inner">
+            <a href="/work?view=projects" class="nav-mobile-sublink">by projects</a>
+            <a href="/work?view=clients" class="nav-mobile-sublink">by Clients</a>
+          </div>
+        </div>
+      </div>
+      <a href="/edtech-marketing" class="nav-mobile-link">Edtech Marketing</a>
+      <a href="/the-edtech-mentor" class="nav-mobile-link">The EdTech Mentor</a>
+      <a href="/resources" class="nav-mobile-link">Resources</a>
+      <a href="/about" class="nav-mobile-link">About</a>
     </nav>
     <a href="/contact" class="btn btn-nav">Let's Talk!</a>
   </div>
