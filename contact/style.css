@@ -170,7 +170,7 @@ body {
   align-items: center;
   gap: 0.5em;
   text-align: center;
-  margin-bottom: 3.57em; /* 50px @ 14px base */
+  margin-bottom: 3em;
 }
 
 .contact-form-header h2 {
@@ -183,8 +183,8 @@ body {
   color: var(--color-indigo);
 }
 
-.contact-form-header .text-body--sm {
-  color: rgba(16, 16, 16, 0.7);
+.contact-form-header .text-body {
+  color: var(--color-black);
 }
 
 /* Grid del formulario — grid-template-areas permite reordenar en mobile sin tocar el HTML */
@@ -208,10 +208,12 @@ body {
 }
 
 .contact-form-field label {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.07em; /* 15px */
-  font-weight: 500;
-  line-height: 1.4;
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em; /* 21px @ 14px base */
+  line-height: 1.6;
+  letter-spacing: 0;
   color: var(--color-black);
 }
 
@@ -273,7 +275,7 @@ body {
   font-size: 1em; /* 14px */
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(16, 16, 16, 0.6);
+  color: var(--color-black);
 }
 
 .contact-form-footer {
@@ -283,7 +285,7 @@ body {
 }
 
 .contact-form-logo {
-  width: 7.86em; /* 110px @ 14px base */
+  width: 12em;
   height: auto;
   display: block;
 }
@@ -303,7 +305,9 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 1em; /* 14px */
   font-weight: 700;
-  line-height: 1.5;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 0;
   color: var(--color-black);
   margin-bottom: 0.29em;
 }
@@ -314,7 +318,7 @@ body {
   font-size: 1em; /* 14px */
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(16, 16, 16, 0.7);
+  color: var(--color-black);
 }
 
 /* ============================
@@ -360,10 +364,6 @@ body {
     border-radius: 10px;
   }
 
-  .contact-form-header {
-    margin-bottom: 3.56em; /* 32px @ 9px base */
-  }
-
   .contact-form-header h2 {
     font-size: 24px;
     line-height: 1.25;
@@ -386,7 +386,10 @@ body {
       "footer";
   }
 
-  .contact-form-field label,
+  .contact-form-field label {
+    font-size: 18px;
+  }
+
   .contact-form-field input,
   .contact-form-field select,
   .contact-form-field textarea,

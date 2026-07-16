@@ -56,15 +56,15 @@ Card blanca con el formulario de contacto. Va justo debajo de `.main-contact-tit
 
 ### `.contact-form-header`
 Wrapper del H2 + subtítulo, centrado.
-- `gap: 0.5em`, `margin-bottom: 3.57em` (50px @ 14px base)
+- `gap: 0.5em`, `margin-bottom: 3em`
 
 **H2** (`.contact-form-header h2`)
 - Lora, weight 500, style normal (replica el estilo del H1 de arriba, a diferencia del H2 global de Inter)
 - `font-size: 2.29em` (32px @ 14px base) — mobile: `24px` fijo
 - Color: `var(--color-indigo)`
 
-**Subtítulo** (`.contact-form-header .text-body--sm`)
-- Color `rgba(16,16,16,.7)`
+**Subtítulo** (`.contact-form-header .text-body`)
+- Usa `.text-body` (Inter, weight 400, 1.29em / 18px), color `var(--color-black)` sólido, sin opacidad
 
 ### `.contact-form`
 Grid de 2 columnas armado con `grid-template-areas` (`fname/lname`, `email/company`, `looking/challenge`, `button/footer`). En mobile las áreas se reordenan a una sola columna en orden de lectura, sin tocar el HTML — el orden de los campos en el DOM no importa porque cada `.contact-form-field` tiene su `grid-area` inline.
@@ -73,7 +73,7 @@ Grid de 2 columnas armado con `grid-template-areas` (`fname/lname`, `email/compa
 
 ### `.contact-form-field`
 Wrapper de label + input/select/textarea.
-- Label: Inter 500, 1.07em (15px)
+- Label: Lora, weight 400, style normal, `font-size: 1.5em` (21px @ 14px base) — mobile: `18px` fijo, `line-height: 1.6` (160%), `letter-spacing: 0`
 - Input/select/textarea: fondo transparente, sin borde propio, solo `border-bottom: 0.07em solid rgba(16,16,16,.15)`; en focus el borde pasa a `var(--color-indigo)`
 
 ### `.contact-form-field--select`
@@ -82,12 +82,12 @@ Variante para el campo "What are you looking for?". El `<select>` nativo se rese
 ### `.contact-form-submit`
 Agrupa el botón de envío y el caption.
 - Botón: `.btn.btn-purple` (variante global ya definida: bg purple, texto negro; hover bg transparente, borde y texto negro)
-- `.contact-form-caption`: Inter 400, 14px, color `rgba(16,16,16,.6)`
+- `.contact-form-caption`: Inter 400, 14px, color `var(--color-black)` sólido
 
 ### `.contact-form-footer`
 Agrupa el logo de 27zero (sin invertir, ya que la card tiene fondo blanco) y `.contact-form-locations`.
-- `.contact-form-logo`: `width: 7.86em` (110px @ 14px base)
-- `.contact-form-locations`: flex row, `gap: 2.86em` (40px); cada `.contact-form-location` tiene nombre del país en bold + dirección + teléfono, todo en 14px/`rgba(16,16,16,.7)` excepto el nombre del país que es negro sólido y bold
+- `.contact-form-logo`: `width: 12em`
+- `.contact-form-locations`: flex row, `gap: 2.86em` (40px); cada `.contact-form-location` tiene nombre del país (`.contact-form-location-name`: Inter 700, 14px — mobile 13px fijo, `line-height: 1.6`) + dirección + teléfono (`.contact-form-location-address` / `.contact-form-location-phone`: Inter 400, 14px — mobile 13px fijo), todos en color `var(--color-black)` sólido
 
 ### JS (`/contact/script.js`)
 El submit del form (`#contactForm`) hace `preventDefault()` y loguea un placeholder — pendiente conectar a un endpoint real cuando exista.
