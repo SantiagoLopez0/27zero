@@ -240,6 +240,11 @@ h6 {
 }
 
 /* ===== Credibility ===== */
+.section--credibility {
+  padding-top: 3.21em;   /* 45px @ 14px base */
+  padding-bottom: 6.86em; /* 96px @ 14px base */
+}
+
 .credibility-container {
   align-items: center;
   gap: 2.5em; /* 35px @ 14px base */

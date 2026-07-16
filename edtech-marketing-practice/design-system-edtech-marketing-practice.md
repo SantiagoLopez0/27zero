@@ -59,7 +59,9 @@ Wrapper del CTA (solo el botón — sin `.text-caption`).
 Sección de 3 bloques: título + subtítulo centrados, y una lista de textos en flex-wrap separados por dots.
 
 ### `.section--credibility`
-Modifier de `.section` — usa el padding default (`6.5em` top/bottom), sin overrides propios.
+Modifier de `.section`.
+- `padding-top: 3.21em` (45px @ 14px base)
+- `padding-bottom: 6.86em` (96px @ 14px base)
 
 ### `.credibility-container`
 Modifier de `.container`. `align-items: center` + `gap: 2.5em` (35px @ 14px base) entre `.credibility-intro` y `.credibility-list`.
