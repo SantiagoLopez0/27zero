@@ -190,14 +190,15 @@ Modifier de `.section`. Fondo `--color-black`.
 Modifier de `.container`. Mismo grid 2 columnas que `.conversation-engine-container` (`0.45fr 1fr`, `gap: 8.21em`, `align-items: start`). Mobile: `grid-template-columns: 1fr`, `gap: 4.29em`.
 
 ### `.menu-intro`
-Wrapper de título y subtítulo, a la izquierda.
+Wrapper de título y CTA, a la izquierda.
 - `display: flex; flex-direction: column; gap: 2.5em` (35px @ 14px base)
 
 ### `.menu-intro h2`
 - Lora, weight 500, `font-style: normal`, `font-size: 2.57em` (36px), `letter-spacing: -0.36px`, `color: var(--color-white)`. Mobile: `28px`
 
-### `.menu-intro .text-body`
-- `color: rgba(255, 255, 255, 0.85)`
+### `.menu-intro .btn-purple`
+Reemplaza al `.text-body` que tiene `/edtech-marketing` en este mismo bloque — acá es un botón `.btn.btn-purple` con el texto "For all".
+- `:hover` override: `background-color`/`border-color` en `--color-indigo`, `color` blanco — mismo motivo que `.dropdown-cta:hover`, el hover default de `.btn-purple` (bg transparent, texto/borde negro) es invisible sobre el fondo `#101010` de esta sección
 
 ### `.menu-blocks`
 Wrapper de los `.menu-block` (en esta página, solo 1).
