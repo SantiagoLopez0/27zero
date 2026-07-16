@@ -135,6 +135,43 @@ Los textos de "Customer Spotlights" y "Community-Driven Content" son placeholder
 
 ---
 
+## Sección Proof Point
+
+Sección nueva, ubicada entre `.section--conversation-engine` y `.section--closing-cta`. Grid de 2 columnas: bloque de media (placeholder gris, más ancho) a la izquierda + título "Proof Point" y párrafo a la derecha, sobre fondo `--color-indigo`.
+
+### `.section--proof-point`
+Modifier de `.section`. Fondo `--color-indigo`.
+- `padding-top: 6.86em` (96px @ 14px base)
+- `padding-bottom: 8.21em` (115px @ 14px base)
+- Mobile: `padding-top: 10.67em` (96px @ 9px base), `padding-bottom: 12.78em` (115px @ 9px base)
+
+### `.proof-point-container`
+Modifier de `.container`.
+- `display: grid; grid-template-columns: 2fr 1.5fr` — el bloque de media es más ancho que el de texto
+- `gap: 3.21em` (45px @ 14px base)
+- `align-items: center`
+- Mobile: `grid-template-columns: 1fr`, `gap: 5em` (45px @ 9px base)
+
+### `.proof-point-media`
+Placeholder del bloque de media (a reemplazar por imagen/video real).
+- `aspect-ratio: 5 / 3`
+- `border-radius: 0.5em` (mismo radio que `.card` en `work-card`)
+- Fondo `--color-gray` + label centrado en mayúsculas al 40% de opacidad, mismo patrón que `.hero-marketing-bg`
+- Mobile: `aspect-ratio: 16 / 9`
+
+### `.proof-point-text`
+Wrapper del título y párrafo.
+- `display: flex; flex-direction: column; gap: 1.71em` (24px @ 14px base)
+
+### `.proof-point-title`
+- Lora, weight 500, `font-style: normal`, `font-size: 1.71em` (24px), `color: var(--color-white)` (mismo patrón que `.menu-block-title` en `/edtech-marketing`)
+- Mobile: `21px`
+
+### `.proof-point-text .text-body--sm`
+- `color: var(--color-white)`
+
+---
+
 ## Sección Menu — Eliminada
 
 Se removió por completo esta sección (HTML, CSS desktop y mobile) junto con el import de `/components/service-card/service-card.css` en el `<head>`, que solo se usaba acá. Incluía `.section--menu`, `.menu-container`, `.menu-intro`, `.menu-blocks`, `.menu-block`, `.menu-block-title`, `.menu-block-grid`. Ya no existe en esta página.

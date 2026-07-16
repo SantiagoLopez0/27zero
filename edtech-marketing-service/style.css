@@ -319,6 +319,59 @@ h6 {
   border-color: var(--color-indigo);
 }
 
+/* ===== Proof Point ===== */
+.section--proof-point {
+  background-color: var(--color-indigo);
+  padding-top: 6.86em;    /* 96px @ 14px base */
+  padding-bottom: 8.21em; /* 115px @ 14px base */
+}
+
+.proof-point-container {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 3.21em; /* 45px @ 14px base */
+  align-items: center;
+}
+
+.proof-point-media {
+  aspect-ratio: 5 / 3;
+  border-radius: 0.5em;
+  background-color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proof-point-media span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-black);
+  opacity: 0.4;
+  text-transform: uppercase;
+}
+
+.proof-point-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.71em; /* 24px @ 14px base */
+}
+
+.proof-point-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.71em; /* 24px @ 14px base */
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--color-white);
+}
+
+.proof-point-text .text-body--sm {
+  color: var(--color-white);
+}
+
 /* ===== Closing CTA ===== */
 .section--closing-cta {
   background-color: var(--color-white);
@@ -377,6 +430,19 @@ h6 {
     grid-template-columns: 1fr;
     gap: 4.29em;
   }
+
+  /* Proof Point */
+  .section--proof-point {
+    padding-top: 10.67em;   /* 96px @ 9px base */
+    padding-bottom: 12.78em; /* 115px @ 9px base */
+  }
+  .proof-point-container {
+    grid-template-columns: 1fr;
+    gap: 5em; /* 45px @ 9px base */
+  }
+  .proof-point-media { aspect-ratio: 16 / 9; }
+  .proof-point-title { font-size: 21px; }
+  .proof-point-text .text-body--sm { font-size: 13px; }
 
   /* Closing CTA */
   .section--closing-cta {
