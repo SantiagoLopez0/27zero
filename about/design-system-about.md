@@ -138,6 +138,7 @@ Duplicado de `.section--proof-point` de `/edtech-marketing-service` (grid media 
 - `background-color: var(--color-white)` (en vez de indigo)
 - `.proof-point-title` y `.proof-point-text .text-body` en color black (en vez de white)
 - `padding-top: 4.64em` (65px @ 14px base), `padding-bottom: 9.29em` (130px @ 14px base) — en vez de 96px/115px
+- Copy propio: título "What is Lorem Ipsum?", subtítulo con texto placeholder de Lorem Ipsum.
 
 Todo lo demás (grid `2fr 1.5fr`, `.proof-point-media` placeholder, tipografía del título Lora 36px) es idéntico al original. Mobile también idéntico al original (60px padding, grid 1 columna, media 16:9, título 24px).
 
@@ -149,6 +150,7 @@ Usa los componentes `/components/cards-slider` + `/components/work-card` (mismo 
 - Título (`.slider-title`): **"Work"**
 - Cards: 6x `.card--work` con contenido placeholder (eyebrow `[Work]`)
 - `.section--work-slider`: `padding-top: 0; padding-bottom: 0` — el spacing lo maneja el propio `.slider-block`/`.slider-header`.
+- `.section--work-slider .card--work`: override scoped — `height: 30em; min-height: 30em` (en vez del 25em por defecto del componente).
 
 ---
 

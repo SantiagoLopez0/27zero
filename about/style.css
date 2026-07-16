@@ -417,6 +417,11 @@ h6 {
   padding-bottom: 0;
 }
 
+.section--work-slider .card--work {
+  height: 30em;
+  min-height: 30em;
+}
+
 /* ===== The EdTech Mentor ===== */
 /* Duplicado exacto de .section--mentor-home de /home (bg indigo, featured-card + cards-slider de edtech-mentor-card). */
 .section--mentor-home {
