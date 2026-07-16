@@ -54,6 +54,46 @@ Wrapper del CTA (solo el botón — sin `.text-caption`).
 
 ---
 
+## Sección Credibility
+
+Sección de 3 bloques: título + subtítulo centrados, y una lista de textos en flex-wrap separados por dots.
+
+### `.section--credibility`
+Modifier de `.section` — usa el padding default (`6.5em` top/bottom), sin overrides propios.
+
+### `.credibility-container`
+Modifier de `.container`. `align-items: center` + `gap: 2.5em` (35px @ 14px base) entre `.credibility-intro` y `.credibility-list`.
+
+### `.credibility-intro`
+Wrapper de título y subtítulo.
+- `display: flex; flex-direction: column; align-items: center; gap: 1.71em` (24px @ 14px base) entre h2 y párrafo
+- `max-width: 58em` — ancho estimado a partir del diseño para forzar el wrap del título a 2 líneas y el subtítulo a 3 líneas (mobile: `100%`)
+- `text-align: center`
+
+### `.credibility-intro h2`
+- Lora, weight 500, `font-style: normal` (mismo patrón que `.section--practices h2` en `/edtech-marketing`)
+- Mantiene el tamaño default de `h2` (`2.6em`/36.4px). Mobile: `24px` (mismo criterio usado en otras páginas del sitio)
+
+### `.credibility-list`
+Grid de textos en flex-wrap.
+- `display: flex; flex-wrap: wrap; justify-content: center; align-items: center`
+- `gap: 1.07em` (15px @ 14px base)
+
+### `.credibility-item`
+Cada texto de la lista.
+- Lora, weight 500, `font-style: normal`
+- `font-size: 1.21em` (17px @ 14px base; mobile fijo `15px`)
+- `line-height: 1.25`, `letter-spacing: -0.01em` (-1%), `text-align: center`
+
+### `.credibility-dot`
+Separador entre textos.
+- `width/height: 0.36em` (5px @ 14px base) — círculo (`border-radius: 50%`)
+- `background-color: var(--color-purple)`
+- `flex-shrink: 0`
+- No se define un tamaño fijo específico para mobile (queda en `em`, escala con el body de 9px base); ajustar si se requiere un tamaño visual distinto.
+
+---
+
 ## Navbar
 
 Variante `nav--white`, igual que el resto de páginas del sitio. Sin overrides — usa `/components/navbar/navbar.css` y `/components/navbar/navbar.js` tal cual.

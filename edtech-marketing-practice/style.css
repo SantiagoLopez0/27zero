@@ -239,6 +239,53 @@ h6 {
   border-color: var(--color-white);
 }
 
+/* ===== Credibility ===== */
+.credibility-container {
+  align-items: center;
+  gap: 2.5em; /* 35px @ 14px base */
+}
+
+.credibility-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.71em; /* 24px @ 14px base */
+  max-width: 58em;
+  text-align: center;
+}
+
+.credibility-intro h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.credibility-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.07em; /* 15px @ 14px base */
+}
+
+.credibility-item {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.21em; /* 17px @ 14px base */
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.credibility-dot {
+  width: 0.36em; /* 5px @ 14px base */
+  height: 0.36em;
+  border-radius: 50%;
+  background-color: var(--color-purple);
+  flex-shrink: 0;
+}
+
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
   body { font-size: 9px; }
@@ -258,4 +305,9 @@ h6 {
   .section--hero-marketing h1 { font-size: 32px; }
   .text-body, .text-link, .text-body--sm { font-size: 13px; }
   .btn { font-size: 13px; }
+
+  /* Credibility */
+  .credibility-intro h2 { font-size: 24px; }
+  .credibility-intro { max-width: 100%; }
+  .credibility-item { font-size: 15px; }
 }
