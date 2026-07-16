@@ -219,6 +219,32 @@ Wrapper de los `.menu-block` (en esta página, solo 1).
 
 ---
 
+## Sección Closing CTA
+
+Duplicada 1:1 desde `/edtech-marketing` (`.section--closing-cta`) — mismo markup, mismos estilos (desktop y mobile). Único cambio: el copy del `h2`.
+
+### `.section--closing-cta`
+Modifier de `.section`. Fondo `--color-white`.
+- `padding-top: 5.71em` (80px @ 14px base)
+- `padding-bottom: 5.71em` (80px @ 14px base)
+- `text-align: center`
+- Mobile: `padding-top/bottom: 6.67em` (60px @ 9px base)
+
+### `.closing-cta-container`
+Modifier de `.container`. `align-items: center`, `gap: 2.14em` (30px @ 14px base).
+
+### `.section--closing-cta h2`
+- Lora, weight 500, `font-style: normal`, `color: var(--color-black)`
+- `max-width: 50%` (mobile: `100%`)
+- Copy: "Turn your customers into your growth engine." (en `/edtech-marketing` es "Let's partner to articulate and unpack meaningful results.")
+- Mobile: `24px`
+
+### `.closing-cta-container .btn-dark`
+- `color: var(--color-white)` (override sobre `.btn-dark` base, que usa `color: var(--color-purple)`)
+- `:hover`: `color: var(--color-black)` (override sobre el hover base de `.btn-dark`, que usa `color: var(--color-black)` — mismo valor, redundante pero documentado por fidelidad a la sección original)
+
+---
+
 ## Navbar
 
 Variante `nav--white`, igual que el resto de páginas del sitio. Sin overrides — usa `/components/navbar/navbar.css` y `/components/navbar/navbar.js` tal cual.
