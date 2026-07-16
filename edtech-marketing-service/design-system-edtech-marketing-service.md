@@ -143,7 +143,7 @@ Sección nueva, ubicada entre `.section--conversation-engine` y `.section--closi
 Modifier de `.section`. Fondo `--color-indigo`.
 - `padding-top: 6.86em` (96px @ 14px base)
 - `padding-bottom: 8.21em` (115px @ 14px base)
-- Mobile: `padding-top: 10.67em` (96px @ 9px base), `padding-bottom: 12.78em` (115px @ 9px base)
+- Mobile: `padding-top: 6.67em` (60px @ 9px base), `padding-bottom: 6.67em` (60px @ 9px base)
 
 ### `.proof-point-container`
 Modifier de `.container`.
