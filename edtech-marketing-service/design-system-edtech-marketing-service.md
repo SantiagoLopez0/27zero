@@ -10,7 +10,7 @@ Estado: en construcción — navbar, hero y footer implementados. Faltan las sec
 
 ## Sección Hero
 
-Sección duplicada desde `/edtech-marketing` (`.section--hero-marketing`) — mismo markup y mismos estilos. Copy propio de esta práctica ya aplicado: H1 "Turning communities into growth engines." + texto de `.text-body` sobre storytelling entre pares. Se eliminó el `.text-caption` ("Free. 30 min. No sales pitch.") del `.hero-home-cta` — queda solo el botón.
+Sección duplicada desde `/edtech-marketing` (`.section--hero-marketing`) — mismo markup y mismos estilos. Copy propio de esta página: H1 "Website Adjustments or Updates" + texto de `.text-body` sobre ghostwriting/thought leadership. Se eliminó el `.text-caption` ("Free. 30 min. No sales pitch.") del `.hero-home-cta` — queda solo el botón. Se agregó un ícono SVG (`.hero-marketing-icon`) arriba del H1.
 
 ### `.section--hero-marketing`
 Modifier de `.section`. Hero principal de la página.
@@ -36,6 +36,14 @@ Wrapper del título y subtítulo.
 - `display: flex; flex-direction: column; gap: 0.5em`
 - `max-width: 50%` (mobile: `100%`)
 
+### `.hero-marketing-icon`
+Ícono SVG propio de esta página, ubicado arriba del H1 dentro de `.hero-marketing-text`.
+- `width/height: 5.71em` (80px @ 14px base)
+- `color: var(--color-black)` — el SVG usa `fill="currentColor"` para heredar el color
+- `margin-bottom: 0.5em`
+- El `svg` interno se estira a `width/height: 100%` del wrapper
+- No tiene override específico para mobile — escala junto con el body de 9px base (≈ 51px); ajustar si se requiere un tamaño fijo distinto en mobile
+
 ### `.section--hero-marketing h1`
 - Lora, weight 500, `font-style: normal`
 - `font-size: 3.43em`, `line-height: 1.25`, `letter-spacing: -0.48px`
@@ -56,7 +64,7 @@ Wrapper del CTA (solo el botón — sin `.text-caption`).
 
 ## Sección Credibility
 
-Sección de 3 bloques: título + subtítulo centrados, y una lista de textos en flex-wrap separados por dots.
+Sección de 2 bloques: título + subtítulo centrados. Se eliminó la lista de textos separados por dots (`.credibility-list`) que traía la página original — solo queda `.credibility-intro`.
 
 ### `.section--credibility`
 Modifier de `.section`.
@@ -64,7 +72,7 @@ Modifier de `.section`.
 - `padding-bottom: 6.86em` (96px @ 14px base)
 
 ### `.credibility-container`
-Modifier de `.container`. `align-items: center` + `gap: 2.5em` (35px @ 14px base) entre `.credibility-intro` y `.credibility-list`.
+Modifier de `.container`. `align-items: center` + `gap: 2.5em` (35px @ 14px base).
 
 ### `.credibility-intro`
 Wrapper de título y subtítulo.
@@ -79,62 +87,14 @@ Wrapper de título y subtítulo.
 ### `.credibility-intro p`
 - `max-width: 80%` (mobile: `100%`)
 
-### `.credibility-list`
-Grid de textos en flex-wrap.
-- `display: flex; flex-wrap: wrap; justify-content: center; align-items: center`
-- `gap: 1.07em` (15px @ 14px base)
-- `max-width: 80%` (mobile: `100%`)
-
-### `.credibility-item`
-Cada texto de la lista.
-- Lora, weight 500, `font-style: normal`
-- `font-size: 1.21em` (17px @ 14px base; mobile fijo `15px`)
-- `line-height: 1.25`, `letter-spacing: -0.01em` (-1%), `text-align: center`
-
-### `.credibility-dot`
-Separador entre textos.
-- `width/height: 0.36em` (5px @ 14px base) — círculo (`border-radius: 50%`)
-- `background-color: var(--color-purple)`
-- `flex-shrink: 0`
-- No se define un tamaño fijo específico para mobile (queda en `em`, escala con el body de 9px base); ajustar si se requiere un tamaño visual distinto.
+### Eliminado: `.credibility-list`, `.credibility-item`, `.credibility-dot`
+Se removieron del HTML y del CSS (desktop y mobile) por instrucción explícita — ya no forman parte de esta página.
 
 ---
 
-## Sección Brand Logos
+## Sección Brand Logos — Eliminada
 
-Grid de 3 columnas (1 en mobile) con logo + texto por celda, sobre fondo indigo. Usa `/assets/placeholder.png` como logo temporal en todas las celdas.
-
-### `.section--brand-logos`
-Modifier de `.section`. Fondo `--color-indigo`.
-- `padding-top: 8.57em` (120px @ 14px base)
-- `padding-bottom: 8.57em` (120px @ 14px base)
-
-### `.brand-logos-container`
-Modifier de `.container`. `gap: 5.71em` (80px @ 14px base) entre el `h2` y `.brand-logos-grid`.
-
-### `.brand-logos-container h2`
-- Lora, weight 500, `font-style: normal`, `color: var(--color-white)` (mismo patrón que `.section--practices h2`)
-- `max-width: 30%` (mobile: `100%`)
-- Mobile: `24px`
-
-### `.brand-logos-grid`
-- `display: grid; grid-template-columns: repeat(3, 1fr)`
-- `gap: 5.71em` (80px @ 14px base)
-- Mobile: `grid-template-columns: 1fr` (1 columna)
-
-### `.brand-logos-item`
-Celda individual (logo + texto).
-- `display: flex; flex-direction: column; align-items: start; gap: 2.14em` (30px @ 14px base)
-
-### `.brand-logos-logo`
-Imagen del logo (placeholder por ahora).
-- `height: 4em`, `width: auto`, `object-fit: contain`
-
-### `.brand-logos-item .text-body--sm`
-- `color: var(--color-white)` (blanco sólido, sin opacity)
-
-### Nota sobre placeholder
-`/assets/placeholder.png` se usa como logo temporal en las 4 celdas. Reemplazar por el logo real de cada marca (Busuu, D2L, Anthology, Instructure) cuando estén disponibles los assets definitivos.
+Se removió por completo esta sección (HTML, CSS desktop y mobile). Incluía el grid de 3 columnas con logo + texto sobre fondo indigo (`.section--brand-logos`, `.brand-logos-container`, `.brand-logos-grid`, `.brand-logos-item`, `.brand-logos-logo`). Ya no existe en esta página.
 
 ---
 
@@ -175,48 +135,9 @@ Los textos de "Customer Spotlights" y "Community-Driven Content" son placeholder
 
 ---
 
-## Sección Menu
+## Sección Menu — Eliminada
 
-Duplicada 1:1 desde `/edtech-marketing` (`.section--menu`) — mismo markup, mismos estilos (desktop y mobile), mismo copy de `.menu-intro`. Único cambio: **solo se incluyó el primer `.menu-block`** ("UX/UI & Web Design", 3 `service-card`) de los 8 que tiene la página original — el resto se omitió a propósito. También **`padding-top: 0`** en `.section--menu` (en `/edtech-marketing` es `7.14em`/100px).
-
-Usa el componente `service-card` (`/components/service-card`) tal cual, sin overrides — solo el wrapper `.menu-block-grid .service-card` fuerza `width: 100%; aspect-ratio: 1/1` para que la card ocupe la celda del grid en vez de su tamaño fijo default (19em × 19em).
-
-### `.section--menu`
-Modifier de `.section`. Fondo `--color-black`.
-- `padding-top: 0`
-- `padding-bottom: 5.71em` (80px @ 14px base)
-
-### `.menu-container`
-Modifier de `.container`. Mismo grid 2 columnas que `.conversation-engine-container` (`0.45fr 1fr`, `gap: 8.21em`, `align-items: start`). Mobile: `grid-template-columns: 1fr`, `gap: 4.29em`.
-
-### `.menu-intro`
-Wrapper de título y CTA, a la izquierda.
-- `display: flex; flex-direction: column; align-items: flex-start; gap: 2.5em` (35px @ 14px base)
-
-### `.menu-intro h2`
-- Lora, weight 500, `font-style: normal`, `font-size: 2.57em` (36px), `letter-spacing: -0.36px`, `color: var(--color-white)`. Mobile: `28px`
-
-### `.menu-intro .btn-purple`
-Reemplaza al `.text-body` que tiene `/edtech-marketing` en este mismo bloque — acá es un botón `.btn.btn-purple` con el texto "For all".
-- `:hover` override: `background-color`/`border-color` en `--color-indigo`, `color` blanco — mismo motivo que `.dropdown-cta:hover`, el hover default de `.btn-purple` (bg transparent, texto/borde negro) es invisible sobre el fondo `#101010` de esta sección
-
-### `.menu-blocks`
-Wrapper de los `.menu-block` (en esta página, solo 1).
-- `display: flex; flex-direction: column; gap: 3.93em` (55px @ 14px base)
-
-### `.menu-block`
-- `display: flex; flex-direction: column; gap: 3em` (42px @ 14px base) entre el título del bloque y el grid de cards
-
-### `.menu-block-title`
-- Lora, weight 500, `font-style: normal`, `font-size: 1.71em` (24px), `color: var(--color-white)`. Mobile: `21px`
-
-### `.menu-block-grid`
-- Desktop: `display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.07em` (15px)
-- Mobile: se convierte en carrusel horizontal (`display: flex`, `overflow-x: auto`, `scroll-snap-type: x mandatory`, scrollbar oculta)
-
-### `.menu-block-grid .service-card`
-- Desktop: `width: 100%; height: auto; aspect-ratio: 1/1` (la card se estira a la celda del grid en vez de su 19em × 19em fijo)
-- Mobile: `flex: 0 0 60%; width: 60%; scroll-snap-align: start` (cada card ocupa 60% del viewport en el carrusel)
+Se removió por completo esta sección (HTML, CSS desktop y mobile) junto con el import de `/components/service-card/service-card.css` en el `<head>`, que solo se usaba acá. Incluía `.section--menu`, `.menu-container`, `.menu-intro`, `.menu-blocks`, `.menu-block`, `.menu-block-title`, `.menu-block-grid`. Ya no existe en esta página.
 
 ---
 
@@ -259,4 +180,5 @@ Sin overrides — usa `/components/footer/footer.css` tal cual, mismo markup y m
 ## Notas
 
 - Nombre de carpeta asumido como `edtech-marketing-service` (slug derivado del título de la sesión "Ed Tech Marketing Service"); no existía referencia previa a esta página en `/menu` ni en otras páginas del repo. Ajustar si el nombre final debe ser otro.
-- Aún no se agregó esta página a `/menu`. Pendiente de confirmar antes de agregarla.
+- Por instrucción explícita, esta página **no** se agrega a `/menu`.
+- Cambios aplicados sobre la duplicación inicial: nuevo copy e ícono en el Hero; simplificación de Credibility (se quitó `.credibility-list`); eliminación completa de las secciones Brand Logos y Menu (HTML + CSS + import de `service-card.css`).
