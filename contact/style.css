@@ -333,6 +333,81 @@ body {
   color: var(--color-white);
 }
 
+/* ===== Bloque de cards ===== */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.43em; /* 20px @ 14px base */
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4.29em; /* 60px @ 14px base — espacio entre el icono y el resto del contenido */
+  background-color: var(--color-gray);
+  border-radius: 0.71em; /* 10px @ 14px base */
+  padding: 2.86em 2.14em 3.57em; /* 40px / 30px / 50px @ 14px base */
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card-icon {
+  width: 4.21em; /* 59px @ 14px base */
+  height: auto;
+  display: block;
+}
+
+.contact-card-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.43em;
+}
+
+.contact-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.71em; /* 10px @ 14px base */
+}
+
+.contact-card-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.71em; /* 24px @ 14px base */
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--color-black);
+}
+
+.contact-card-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.07em; /* 15px */
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: var(--color-black);
+}
+
+.contact-card-arrow {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  border: 0.1em solid var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  background-color: transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.contact-card:hover .contact-card-arrow {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
 /* ============================
    Mobile — max-width: 768px
    ============================ */
@@ -372,6 +447,19 @@ body {
     line-height: 1.25;
     font-weight: 500;
     letter-spacing: -0.36px; /* -1% de 36px */
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card-title {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .contact-card-subtitle {
+    font-size: 13px;
   }
 
   .text-body--sm {

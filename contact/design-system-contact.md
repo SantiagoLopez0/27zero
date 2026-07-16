@@ -108,5 +108,44 @@ Bloque simple, solo título. Va justo debajo de `.main-contact-form-block`, dent
 
 ---
 
+## Bloque de cards (`.main-contact-cards-block`)
+
+Última parte de la sección. Va justo debajo de `.main-contact-ways-block`.
+
+### `.contact-cards-grid`
+Grid de 2 columnas — mobile: 1 columna.
+- `gap: 1.43em` (20px @ 14px base)
+
+### `.contact-card`
+Toda la card es un `<a>` clickeable.
+- `background-color: var(--color-gray)`
+- `border-radius: 0.71em` (10px @ 14px base)
+- `padding: 2.86em 2.14em 3.57em` (40px / 30px / 50px @ 14px base)
+- `display: flex; flex-direction: column; gap: 4.29em` (60px @ 14px base) — espacio entre el ícono y el resto del contenido
+
+### `.contact-card-icon`
+Ícono decorativo (SVG de 4 "comillas" en forma de flecha), igual en ambas cards.
+- `width: 4.21em` (59px @ 14px base), `height: auto`
+
+### `.contact-card-row`
+Fila inferior: agrupa `.contact-card-body` (título + subtítulo) a la izquierda y `.contact-card-arrow` a la derecha.
+- `display: flex; align-items: flex-end; justify-content: space-between`
+
+### `.contact-card-title`
+- Lora, weight 500, style normal
+- `font-size: 1.71em` (24px @ 14px base) — mobile: `18px` fijo
+- `line-height: 1.4` (140%), `letter-spacing: 0`
+
+### `.contact-card-subtitle`
+- Inter, weight 400, `font-size: 1.07em` (15px) — mobile: `13px` fijo
+- `line-height: 1.6`, color `var(--color-black)` sólido (equivalente a "text sm" con color `#000`)
+
+### `.contact-card-arrow`
+Botón circular de flecha, mismo patrón que `.card-work-arrow` de `/components/work-card`.
+- `2.5em × 2.5em`, borde negro, fondo transparente
+- Hover de **toda la card** (`.contact-card:hover .contact-card-arrow`) activa fondo negro + ícono blanco
+
+---
+
 ## Pendiente / próximas partes
 Nuevas partes de `.section--main-contact` se agregarán en próximas iteraciones dentro de `.main-contact-container`, manteniendo el `gap: 5em` entre bloques.
