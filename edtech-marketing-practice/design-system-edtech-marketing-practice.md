@@ -184,7 +184,7 @@ Usa el componente `service-card` (`/components/service-card`) tal cual, sin over
 ### `.section--menu`
 Modifier de `.section`. Fondo `--color-black`.
 - `padding-top: 0`
-- `padding-bottom: 10.71em` (150px @ 14px base)
+- `padding-bottom: 5.71em` (80px @ 14px base)
 
 ### `.menu-container`
 Modifier de `.container`. Mismo grid 2 columnas que `.conversation-engine-container` (`0.45fr 1fr`, `gap: 8.21em`, `align-items: start`). Mobile: `grid-template-columns: 1fr`, `gap: 4.29em`.
