@@ -16,6 +16,11 @@ Clases específicas de la página `/about`. Complementan el design system global
 
 - **Navbar** (`/components/navbar`) — variante `nav--white`.
 - **Footer** (`/components/footer`).
+- **Work Card** (`/components/work-card`) — sección Work Slider.
+- **Cards Slider** (`/components/cards-slider`) — sección Work Slider y sección The EdTech Mentor.
+- **Shapes Slider** (`/components/shapes-slider`) — sección Shapes Slider.
+- **Featured Card** (`/components/featured-card`) — sección The EdTech Mentor.
+- **EdTech Mentor Card** (`/components/edtech-mentor-card`) — sección The EdTech Mentor.
 
 ---
 
@@ -122,6 +127,46 @@ Nombre del miembro del equipo.
 Cargo del miembro del equipo.
 - Inter, `font-weight: 500`, `font-size: 1em` (14px @ 14px base), `line-height: 1.4`, `letter-spacing: 0`, `text-align: right`, color blanco.
 - Mobile: `font-size: 14px` fijo (igual que desktop).
+
+---
+
+## Sección Proof Point
+
+Duplicado de `.section--proof-point` de `/edtech-marketing-service` (grid media + texto). Componente 100% page-specific (no vive en `/components`).
+
+**Cambios respecto al original:**
+- `background-color: var(--color-white)` (en vez de indigo)
+- `.proof-point-title` y `.proof-point-text .text-body` en color black (en vez de white)
+- `padding-top: 4.64em` (65px @ 14px base), `padding-bottom: 9.29em` (130px @ 14px base) — en vez de 96px/115px
+
+Todo lo demás (grid `2fr 1.5fr`, `.proof-point-media` placeholder, tipografía del título Lora 36px) es idéntico al original. Mobile también idéntico al original (60px padding, grid 1 columna, media 16:9, título 24px).
+
+---
+
+## Sección Work Slider
+
+Usa los componentes `/components/cards-slider` + `/components/work-card` (mismo patrón que en `/work`).
+- Título (`.slider-title`): **"Work"**
+- Cards: 6x `.card--work` con contenido placeholder (eyebrow `[Work]`)
+- `.section--work-slider`: `padding-top: 0; padding-bottom: 0` — el spacing lo maneja el propio `.slider-block`/`.slider-header`.
+
+---
+
+## Sección Shapes Slider
+
+Duplicado exacto del componente `/components/shapes-slider`, tal cual se usa en `/edtech-marketing` (`.shapes-slider.section.section--apart-home`). Todo el CSS vive scoped bajo `.shapes-slider` dentro del propio componente — no requiere overrides en `/about`. El JS (`shapes-slider.js`) genera las shapes dinámicamente vía `#apartShapes`.
+
+---
+
+## Sección The EdTech Mentor
+
+Duplicado exacto de `.section--mentor-home` de `/home` — bg indigo, `.mentor-home-row` (texto + `featured-card`) y slider de `edtech-mentor-card` (`.sliders-container` + `.slider-block`).
+
+- `.mentor-home-featured-wrap`: `flex: 1; height: 30em` — define el wrapper para `featured-card` (ancho fluido, alto fijo).
+- 6 cards `.card--edtech-mentor` en el slider (mismo contenido placeholder que `/home`).
+- Mobile: `.mentor-home-row` pasa a columna, `.card--featured` a `width/height: 100%/auto`.
+
+Componentes usados: `/components/featured-card`, `/components/cards-slider` (con `/components/edtech-mentor-card`).
 
 ---
 
