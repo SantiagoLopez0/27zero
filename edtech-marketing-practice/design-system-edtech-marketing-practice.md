@@ -114,6 +114,7 @@ Modifier de `.container`. `gap: 5.71em` (80px @ 14px base) entre el `h2` y `.bra
 
 ### `.brand-logos-container h2`
 - Lora, weight 500, `font-style: normal`, `color: var(--color-white)` (mismo patrón que `.section--practices h2`)
+- `max-width: 30%` (mobile: `100%`)
 - Mobile: `24px`
 
 ### `.brand-logos-grid`
@@ -123,14 +124,14 @@ Modifier de `.container`. `gap: 5.71em` (80px @ 14px base) entre el `h2` y `.bra
 
 ### `.brand-logos-item`
 Celda individual (logo + texto).
-- `display: flex; flex-direction: column; gap: 2.14em` (30px @ 14px base)
+- `display: flex; flex-direction: column; align-items: start; gap: 2.14em` (30px @ 14px base)
 
 ### `.brand-logos-logo`
 Imagen del logo (placeholder por ahora).
-- `height: 2.29em` (32px @ 14px base), `width: auto`, `object-fit: contain`
+- `height: 4em`, `width: auto`, `object-fit: contain`
 
 ### `.brand-logos-item .text-body--sm`
-- `color: rgba(255, 255, 255, 0.85)` — mismo patrón que `.practices-intro .text-body--sm` sobre fondo indigo
+- `color: var(--color-white)` (blanco sólido, sin opacity)
 
 ### Nota sobre placeholder
 `/assets/placeholder.png` se usa como logo temporal en las 4 celdas. Reemplazar por el logo real de cada marca (Busuu, D2L, Anthology, Instructure) cuando estén disponibles los assets definitivos.

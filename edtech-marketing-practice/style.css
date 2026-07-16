@@ -312,6 +312,7 @@ h6 {
   font-weight: 500;
   font-style: normal;
   color: var(--color-white);
+  max-width: 30%;
 }
 
 .brand-logos-grid {
@@ -323,17 +324,18 @@ h6 {
 .brand-logos-item {
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 2.14em; /* 30px @ 14px base */
 }
 
 .brand-logos-logo {
-  height: 2.29em; /* 32px @ 14px base */
+  height: 4em;
   width: auto;
   object-fit: contain;
 }
 
 .brand-logos-item .text-body--sm {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-white);
 }
 
 /* ===== Mobile ===== */
@@ -363,6 +365,6 @@ h6 {
   .credibility-item { font-size: 15px; }
 
   /* Brand Logos */
-  .brand-logos-container h2 { font-size: 24px; }
+  .brand-logos-container h2 { font-size: 24px; max-width: 100%; }
   .brand-logos-grid { grid-template-columns: 1fr; }
 }
