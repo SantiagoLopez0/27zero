@@ -47,6 +47,31 @@ Override tipográfico: Lora, `font-weight: 500`, `font-style: normal`, `3.43em`,
 
 ---
 
+## Sección Creativity is our DNA
+
+### `.section--dna`
+Modifier de `.section`. Fondo purple.
+- `background-color: var(--color-purple)`
+- `padding-top: 5.71em` (80px @ 14px base)
+- `padding-bottom: 5.71em` (80px @ 14px base)
+
+### `.dna-container`
+Modifier de `.container`. Centra el contenido.
+- `align-items: center`
+- `gap: 3.21em` (45px @ 14px base)
+
+### `.dna-container h2`
+Título de la sección, centrado (`text-align: center`). Hereda tamaño/peso del `h2` global.
+
+### `.dna-subtitle`
+Clase nueva, específica de esta sección.
+- Inter, `font-weight: 400`, `font-size: 1.71em` (24px @ 14px base), `line-height: 1.6`, `letter-spacing: 0`
+- `text-align: center`
+- `max-width: 70%` (desktop), `100%` en mobile
+- Mobile: `font-size: 18px` fijo
+
+---
+
 ## Mobile
 
 Media query única `@media (max-width: 768px)` al final de `style.css`. Base EM mobile: `9px`. Textos con `px` fijos (`text-body`, `text-body--sm`, `text-caption`, `.btn`, H1 del hero: `32px`). Espaciados y layout siguen en EM.

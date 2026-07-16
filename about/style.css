@@ -245,6 +245,32 @@ h6 {
   max-width: 90%;
 }
 
+/* ===== Creativity is our DNA ===== */
+.section--dna {
+  background-color: var(--color-purple);
+  padding-top: 5.71em;    /* 80px @ 14px base */
+  padding-bottom: 5.71em; /* 80px @ 14px base */
+}
+
+.dna-container {
+  align-items: center;
+  gap: 3.21em; /* 45px @ 14px base */
+}
+
+.dna-container h2 {
+  text-align: center;
+}
+
+.dna-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.71em; /* 24px @ 14px base */
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-align: center;
+  max-width: 70%;
+}
+
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
   body { font-size: 9px; }
@@ -266,4 +292,10 @@ h6 {
   .text-link, .text-body--sm { font-size: 13px; font-weight: 500; }
   .text-caption { font-size: 13px; }
   .btn { font-size: 13px; }
+
+  /* Creativity is our DNA */
+  .dna-subtitle {
+    max-width: 100%;
+    font-size: 18px;
+  }
 }
