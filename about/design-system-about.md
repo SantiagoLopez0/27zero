@@ -110,7 +110,7 @@ Card individual del team. Usa `/assets/team.png` como placeholder de fondo (imag
 Wrapper de texto, posicionado arriba a la derecha sobre la imagen.
 - `position: absolute; top: 0; right: 0`
 - `padding: 4.43em 1.5em 1.5em` (62px top @ 14px base / 1.5em resto)
-- `max-width: 65%`
+- `max-width: 15em` (desktop), `75%` en mobile
 - `display: flex; flex-direction: column; align-items: flex-end; gap: 0.36em` (5px @ 14px base)
 
 ### `.team-card-name`

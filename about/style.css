@@ -328,7 +328,7 @@ h6 {
   align-items: flex-end;
   gap: 0.36em; /* 5px @ 14px base */
   padding: 4.43em 1.5em 1.5em; /* 62px @ 14px base / 1.5em / 1.5em */
-  max-width: 65%;
+  max-width: 15em;
   text-align: right;
 }
 
@@ -386,6 +386,7 @@ h6 {
   .team-grid {
     grid-template-columns: 1fr;
   }
+  .team-card-info { max-width: 75%; }
   .team-card-name { font-size: 28px; }
   .team-card-position { font-size: 14px; }
 }
