@@ -164,6 +164,8 @@ Wrapper de los 3 dropdowns.
 ### `.dropdown-cta`
 Clase auxiliar (encima de `.btn.btn-purple`) usada solo en el primer dropdown ("The EdTech Mentor") para separar el botón del párrafo.
 - `margin-top: 0.5em`
+- `margin-right: auto` — evita que el botón se estire a todo el ancho del `.dropdown-content-inner`
+- `:hover` override: `background-color` e `border-color` en `--color-indigo`, `color` blanco — el hover default de `.btn-purple` (bg transparent, texto/borde negro) es invisible sobre el fondo `#101010` de esta sección
 
 ### Primer dropdown abierto por defecto
 El dropdown "The EdTech Mentor" arranca con la clase `.is-open` en el HTML y `style="height: auto;"` inline en `.dropdown-content`, para que se muestre expandido al cargar la página (el componente en sí solo anima la altura vía JS al hacer click, no soporta un estado inicial abierto out-of-the-box).

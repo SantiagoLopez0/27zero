@@ -367,6 +367,13 @@ h6 {
 
 .dropdown-cta {
   margin-top: 0.5em;
+  margin-right: auto;
+}
+
+.dropdown-cta:hover {
+  background-color: var(--color-indigo);
+  color: var(--color-white);
+  border-color: var(--color-indigo);
 }
 
 /* ===== Mobile ===== */
