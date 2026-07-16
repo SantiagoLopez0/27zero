@@ -229,7 +229,7 @@ h6 {
 .hero-marketing-text {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 2.25em;
   max-width: 50%;
 }
 
@@ -255,7 +255,7 @@ h6 {
 
 .dna-container {
   align-items: center;
-  gap: 3.21em; /* 45px @ 14px base */
+  gap: 2.25em;
 }
 
 .dna-container h2 {
@@ -265,7 +265,7 @@ h6 {
 .dna-subtitle {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 1.71em; /* 24px @ 14px base */
+  font-size: 1.5em;
   line-height: 1.6;
   letter-spacing: 0;
   text-align: center;

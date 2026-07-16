@@ -42,7 +42,7 @@ Placeholder de imagen de fondo. `position: absolute; inset: 0`, fondo `--color-g
 Modifier de `.container`. `position: relative; z-index: 1; gap: 3.21em` (45px @ 14px base).
 
 ### `.hero-marketing-text`
-Columna de texto del hero (H1 + `.text-body`). `max-width: 50%` en desktop, `100%` en mobile.
+Columna de texto del hero (H1 + `.text-body`). `gap: 2.25em`. `max-width: 50%` en desktop, `100%` en mobile.
 
 ### `.section--hero-marketing h1`
 Override tipográfico: Lora, `font-weight: 500`, `font-style: normal`, `3.43em`, mobile fijo en `32px`.
@@ -60,14 +60,14 @@ Modifier de `.section`. Fondo purple.
 ### `.dna-container`
 Modifier de `.container`. Centra el contenido.
 - `align-items: center`
-- `gap: 3.21em` (45px @ 14px base)
+- `gap: 2.25em`
 
 ### `.dna-container h2`
 Título de la sección, centrado (`text-align: center`). Hereda tamaño/peso del `h2` global.
 
 ### `.dna-subtitle`
 Clase nueva, específica de esta sección.
-- Inter, `font-weight: 400`, `font-size: 1.71em` (24px @ 14px base), `line-height: 1.6`, `letter-spacing: 0`
+- Inter, `font-weight: 400`, `font-size: 1.5em` (21px @ 14px base), `line-height: 1.6`, `letter-spacing: 0`
 - `text-align: center`
 - `max-width: 70%` (desktop), `100%` en mobile
 - Mobile: `font-size: 18px` fijo
