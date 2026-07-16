@@ -77,7 +77,8 @@ Wrapper del título y subtítulo de la sección.
 
 ### `.practices-grid`
 - `display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.14em` (30px @ 14px base)
-- Mobile: `grid-template-columns: 1fr`
+- Mobile: pasa a `display: flex` con `overflow-x: auto` + `scroll-snap-type: x mandatory` (scroll horizontal, sin scrollbar visible), igual al patrón ya usado en `.menu-block-grid`
+- Mobile: `.practices-grid .practices-card` fija su tamaño con `flex: 0 0 300px; width: 300px; height: 380px` (en vez de expandirse al 100% del ancho)
 
 ### Practices Card (componente)
 3 instancias de `/components/practices-card/` implementadas **sin modificar el componente**. Cada una usa el ícono intercambiable documentado en `/components/design-system-components.md` (wrapper fijo, SVG interno reemplazable):

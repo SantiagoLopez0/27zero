@@ -406,7 +406,23 @@ h6 {
   /* Practices */
   .section--practices h2 { font-size: 24px; }
   .practices-intro .text-body--sm { max-width: 100%; }
-  .practices-grid { grid-template-columns: 1fr; }
+  .practices-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .practices-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .practices-grid .practices-card {
+    flex: 0 0 300px;
+    width: 300px;
+    height: 380px;
+    scroll-snap-align: start;
+  }
 
   /* Menu */
   .menu-container { grid-template-columns: 1fr; gap: 4.29em; }
