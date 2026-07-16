@@ -86,9 +86,13 @@
     </nav>
     <a href="/contact" class="btn btn-nav">Let's Talk!</a>
 
-    <!-- Hamburger — solo visible en mobile (<=991px) -->
+    <!-- Hamburger — solo visible en mobile (<=991px). Ícono estático, sin animación -->
     <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
-      <div class="nav-hamburger-icon"></div>
+      <svg class="nav-hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="7" x2="21" y2="7"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="17" x2="21" y2="17"></line>
+      </svg>
     </button>
   </div>
 
@@ -100,9 +104,10 @@
         <img src="https://cdn.prod.website-files.com/65144cb53e0e9c74de079e3b/65144ded0328ecd5efb8b691_Logo.svg" alt="27zero">
       </a>
       <button class="nav-mobile-close" aria-label="Cerrar menú">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-          <line x1="18" y1="6" x2="6" y2="18"></line>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="3" y1="10" x2="17" y2="10" stroke="currentColor" stroke-width="2"></line>
+          <line x1="3" y1="10" x2="17" y2="10" stroke="currentColor" stroke-width="2" transform="rotate(45 10 10)"></line>
+          <line x1="3" y1="10" x2="17" y2="10" stroke="currentColor" stroke-width="2" transform="rotate(135 10 10)"></line>
         </svg>
       </button>
     </div>
@@ -133,7 +138,6 @@
 
 <div class="scroll-spacer"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
 <script src="/components/navbar/navbar.js"></script>
 </body>
 </html>

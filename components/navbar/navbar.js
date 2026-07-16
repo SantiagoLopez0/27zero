@@ -20,41 +20,27 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================
-// Mobile menu — modal fullscreen + hamburger animado (Lottie)
-// Requiere lottie-web cargado antes de este script.
-// Click en el hamburger: abre el modal y anima el ícono (0% -> 100%).
+// Mobile menu — modal fullscreen
+// Click en el hamburger: abre el modal (ícono estático, sin animación).
 // El cierre es explícito (botón × dentro del modal, o tocar el hamburger
 // de nuevo) — al ser fullscreen ya no existe un "afuera" del menú.
 // ============================
 
 const hamburgerBtn = document.querySelector('.nav-hamburger');
-const hamburgerIcon = document.querySelector('.nav-hamburger-icon');
 const mobileMenu = document.querySelector('.nav-mobile-menu');
 const mobileCloseBtn = document.querySelector('.nav-mobile-close');
 
-if (hamburgerBtn && hamburgerIcon && mobileMenu && window.lottie) {
-  const hamburgerAnim = lottie.loadAnimation({
-    container: hamburgerIcon,
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    path: '/components/navbar/hamburger-menu-animation.json'
-  });
-
+if (hamburgerBtn && mobileMenu) {
   let isMenuOpen = false;
 
   function openMobileMenu() {
     isMenuOpen = true;
     mobileMenu.classList.add('is-open');
-    hamburgerAnim.setDirection(1);
-    hamburgerAnim.play();
   }
 
   function closeMobileMenu() {
     isMenuOpen = false;
     mobileMenu.classList.remove('is-open');
-    hamburgerAnim.setDirection(-1);
-    hamburgerAnim.play();
   }
 
   hamburgerBtn.addEventListener('click', (e) => {

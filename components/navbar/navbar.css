@@ -245,14 +245,9 @@
 }
 
 .nav-hamburger-icon {
-  width: 2.5em;
-  height: 2.5em;
-}
-
-/* El SVG del lottie viene en negro fijo — se invierte en variantes oscuras, igual que el logo */
-.nav--black .nav-hamburger-icon svg,
-.nav--scrolled .nav-hamburger-icon svg {
-  filter: invert(1);
+  width: 1.5em;
+  height: 1.5em;
+  color: currentColor;
 }
 
 /* Modal mobile fullscreen — siempre blanco, propio z-index por encima de
@@ -265,7 +260,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2em 3.25em 3.25em;
+  padding: 1.15em 5.25em 3.25em;
   background-color: var(--color-white);
   color: var(--color-black);
   overflow-y: auto;
@@ -312,7 +307,7 @@
 
 .nav-mobile-links > * {
   border-top: 0.07em solid rgba(0, 0, 0, 0.1); /* #0000001A */
-  padding: 2.14em 0; /* 30px — gap aumentado respecto a la versión anterior */
+  padding: 20px 0;
 }
 
 .nav-mobile-links > *:first-child {
@@ -322,9 +317,12 @@
 
 .nav-mobile-link {
   display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
   color: var(--color-black);
-  font-size: 2em;
-  font-weight: 400;
   text-decoration: none;
   transition: font-weight 0.2s ease;
 }
@@ -343,17 +341,19 @@
   border: none;
   padding: 0;
   margin: 0;
-  font-family: inherit;
+  font-family: 'Inter', sans-serif;
   color: var(--color-black);
-  font-size: 2em;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.6; /* 160% */
+  letter-spacing: 0;
   cursor: pointer;
   text-align: left;
   transition: font-weight 0.2s ease;
 }
 
 .nav-mobile-group-toggle:hover {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .nav-mobile-group-chevron {
