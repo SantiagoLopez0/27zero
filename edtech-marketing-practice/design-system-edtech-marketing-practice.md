@@ -10,7 +10,7 @@ Estado: en construcción — navbar, hero y footer implementados. Faltan las sec
 
 ## Sección Hero
 
-Sección duplicada 1:1 desde `/edtech-marketing` (`.section--hero-marketing`) — mismo markup, mismos estilos, mismo contenido placeholder. Se documenta aquí como copia base; cuando el copy/contenido definitivo de esta página se defina, se actualizará tanto el HTML como esta sección de la doc.
+Sección duplicada desde `/edtech-marketing` (`.section--hero-marketing`) — mismo markup y mismos estilos. Copy propio de esta práctica ya aplicado: H1 "Turning communities into growth engines." + texto de `.text-body` sobre storytelling entre pares. Se eliminó el `.text-caption` ("Free. 30 min. No sales pitch.") del `.hero-home-cta` — queda solo el botón.
 
 ### `.section--hero-marketing`
 Modifier de `.section`. Hero principal de la página.
@@ -45,7 +45,7 @@ Wrapper del título y subtítulo.
 - `max-width: 90%`
 
 ### `.hero-home-cta`
-Wrapper del CTA (botón + caption).
+Wrapper del CTA (solo el botón — sin `.text-caption`).
 - `display: flex; flex-direction: column; align-items: center; gap: 0.5em`
 - `margin-right: auto`
 

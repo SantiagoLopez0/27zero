@@ -94,15 +94,6 @@ h6 {
   letter-spacing: 0;
 }
 
-.text-caption {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.07em;
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: 0;
-  color: var(--color-black);
-}
-
 .lora {
   font-family: 'Lora', serif;
   font-style: normal;
@@ -266,6 +257,5 @@ h6 {
   .hero-marketing-text { max-width: 100%; }
   .section--hero-marketing h1 { font-size: 32px; }
   .text-body, .text-link, .text-body--sm { font-size: 13px; }
-  .text-caption { font-size: 13px; }
   .btn { font-size: 13px; }
 }
