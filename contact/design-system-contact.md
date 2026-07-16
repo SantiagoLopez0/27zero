@@ -31,11 +31,11 @@ Primer bloque de la sección: H1 + subtítulo + botón, centrado.
 - `font-size: 3.43em` (48px @ 14px base) — mobile: `36px` fijo
 - `line-height: 1.25` (125%)
 - `letter-spacing: -0.48px` (-1% de 48px) — mobile: `-0.36px` (-1% de 36px)
-- Color blanco, `max-width: 20em` para controlar el wrap
+- Color blanco, `max-width: 50%` — mobile: `max-width: 100%`
 
 **Subtítulo** (selector `.main-contact-title-block .text-body`)
 - Usa `.text-body` global (Inter, weight 400, 1.29em / 18px)
-- Color blanco, `max-width: 34em`
+- Color blanco, sin `max-width`
 
 **Botón** (`.btn.btn-white` dentro de `.section--main-contact`)
 - Override scoped sobre fondo indigo: `background-color` y `border-color` blancos, `color: var(--color-indigo)`
