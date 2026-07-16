@@ -58,6 +58,18 @@ Estado: ✅ terminado.
 
 `navbar.js` guarda la variante inicial (`nav--white` o `nav--black`) y la restaura al volver al top; baja el nav a `top: 2.2em` mientras está scrolled.
 
+### Dropdown "Work" (desktop)
+El link "Work" del `.nav-links` desktop se reemplazó por un dropdown: `.nav-dropdown` (wrapper, `position:relative`) → `.nav-dropdown-toggle` (botón con texto "Work" + chevron `.nav-dropdown-chevron`, rota 180° cuando `.nav-dropdown.is-open`) → `.nav-dropdown-content` (panel absoluto, oculto por default vía `opacity:0`/`pointer-events:none`, visible con `.is-open`) con dos `.nav-dropdown-link` ("by projects" / "by clients"), separados por `border-bottom: 1px solid rgba(0,0,0,.1)` (`#0000001A`).
+
+**Color consistente con la variante activa** (mismo criterio que el resto del nav — si los links tienen texto negro, el dropdown también):
+- `nav--white` (default, sin override explícito): panel bg blanco, texto negro — igual a la referencia visual.
+- `nav--black`: panel bg negro, texto blanco, divider `rgba(255,255,255,.1)`.
+- `nav--scrolled`: panel bg indigo, texto blanco, **más un `border: 1px solid rgba(0,0,0,.1)`** alrededor de todo el panel — para que no se pierda contra el contenido de la página mientras se scrollea.
+
+JS: click en `.nav-dropdown-toggle` togglea `.is-open` en `.nav-dropdown`; click afuera del dropdown lo cierra. Solo aplica al desktop — el "Work" del menú mobile (`.nav-mobile-links`) queda igual por ahora (pendiente, no pedido todavía).
+
+⚠️ Asunciones tomadas (la spec original no cubría todos los casos): el bg del panel en `nav--black` y el color del divider en cada variante no estaban explícitos — los inferí manteniendo la misma lógica de "texto consistente con la variante" aplicada también al fondo, para que el texto siempre sea legible.
+
 ### Mobile (<=767px)
 A esa resolución se esconden `.nav-links` y el `.btn-nav` del `.nav-container`, y aparece `.nav-hamburger`.
 

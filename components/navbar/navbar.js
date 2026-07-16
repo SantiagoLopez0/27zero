@@ -66,3 +66,26 @@ if (hamburgerBtn && hamburgerIcon && mobileMenu && window.lottie) {
     }
   });
 }
+
+// ============================
+// Dropdown "Work" (desktop) — click para abrir/cerrar, click afuera cierra.
+// ============================
+
+const navDropdown = document.querySelector('.nav-dropdown');
+
+if (navDropdown) {
+  const dropdownToggle = navDropdown.querySelector('.nav-dropdown-toggle');
+
+  dropdownToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navDropdown.classList.toggle('is-open');
+    dropdownToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (navDropdown.classList.contains('is-open') && !navDropdown.contains(e.target)) {
+      navDropdown.classList.remove('is-open');
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}

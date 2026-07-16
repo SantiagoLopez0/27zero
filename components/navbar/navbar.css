@@ -60,6 +60,88 @@
   font-weight: 700;
 }
 
+/* ─── Dropdown "Work" (desktop) ───
+   Default (nav--white / nav--black): panel bg blanco, texto negro,
+   igual que en la referencia visual — ver overrides por variante abajo. */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 1.15em;
+  font-weight: 500;
+  line-height: 1.25em;
+  color: inherit;
+  cursor: pointer;
+  transition: font-weight 0.2s ease;
+}
+
+.nav-dropdown-toggle:hover {
+  font-weight: 700;
+}
+
+.nav-dropdown-chevron {
+  width: 0.75em;
+  height: 0.75em;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown.is-open .nav-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.85em;
+  min-width: 10em;
+  padding: 0.35em 0;
+  border-radius: 0.6em;
+  background-color: var(--color-white);
+  box-shadow: 0 0.5em 1.5em rgba(16, 16, 16, 0.08);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(-0.35em);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.nav-dropdown.is-open .nav-dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown-link {
+  padding: 0.7em 1.15em;
+  font-size: 1.05em;
+  font-weight: 500;
+  color: var(--color-black);
+  text-decoration: none;
+  border-bottom: 0.07em solid rgba(0, 0, 0, 0.1); /* #0000001A */
+  transition: font-weight 0.2s ease;
+}
+
+.nav-dropdown-link:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-link:hover {
+  font-weight: 700;
+}
+
 /* ─── Variante TOP WHITE — fondo blanco, texto/logo negro ─── */
 .nav--white .nav-container {
   background-color: transparent;
@@ -86,6 +168,15 @@
   font-weight: 700;
 }
 
+/* Dropdown "Work" en variante black: panel oscuro, texto blanco */
+.nav--black .nav-dropdown-content {
+  background-color: var(--color-black);
+}
+.nav--black .nav-dropdown-link {
+  color: var(--color-white);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
 /* ─── Variante SCROLLED (indigo) — fondo indigo, todo blanco ─── */
 /* Se aplica vía JS al pasar 50px de scroll, sin importar si el estado inicial era white o black */
 .nav--scrolled .nav-container {
@@ -98,6 +189,17 @@
 .nav--scrolled .nav-links a:hover {
   color: var(--color-white);
   font-weight: 700;
+}
+
+/* Dropdown "Work" en scrolled: texto blanco + border sutil para que el
+   panel no se confunda con el fondo de la página mientras se scrollea */
+.nav--scrolled .nav-dropdown-content {
+  background-color: var(--color-indigo);
+  border: 0.07em solid rgba(0, 0, 0, 0.1); /* #0000001A */
+}
+.nav--scrolled .nav-dropdown-link {
+  color: var(--color-white);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Logo invertido solo en estado scrolled */
