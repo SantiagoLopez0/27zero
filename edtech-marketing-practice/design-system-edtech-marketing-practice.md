@@ -191,7 +191,7 @@ Modifier de `.container`. Mismo grid 2 columnas que `.conversation-engine-contai
 
 ### `.menu-intro`
 Wrapper de título y CTA, a la izquierda.
-- `display: flex; flex-direction: column; gap: 2.5em` (35px @ 14px base)
+- `display: flex; flex-direction: column; align-items: flex-start; gap: 2.5em` (35px @ 14px base)
 
 ### `.menu-intro h2`
 - Lora, weight 500, `font-style: normal`, `font-size: 2.57em` (36px), `letter-spacing: -0.36px`, `color: var(--color-white)`. Mobile: `28px`
