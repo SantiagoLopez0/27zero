@@ -94,5 +94,19 @@ El submit del form (`#contactForm`) hace `preventDefault()` y loguea un placehol
 
 ---
 
+## Bloque de título secundario (`.main-contact-ways-block`)
+
+Bloque simple, solo título. Va justo debajo de `.main-contact-form-block`, dentro de `.main-contact-container`.
+
+### `.main-contact-ways-block h2`
+- Lora, weight 500, style normal
+- `font-size: 3.43em` (48px @ 14px base) — mobile: `36px` fijo
+- `line-height: 1.25` (125%)
+- `letter-spacing: -0.48px` (-1% de 48px) — mobile: `-0.36px` (-1% de 36px)
+- `text-align: center`
+- Color: `var(--color-white)`
+
+---
+
 ## Pendiente / próximas partes
 Nuevas partes de `.section--main-contact` se agregarán en próximas iteraciones dentro de `.main-contact-container`, manteniendo el `gap: 5em` entre bloques.
