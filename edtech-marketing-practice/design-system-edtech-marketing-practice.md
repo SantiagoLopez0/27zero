@@ -138,6 +138,41 @@ Imagen del logo (placeholder por ahora).
 
 ---
 
+## Sección Conversation Engine
+
+Bloque de 2 columnas: título a la izquierda + 3 `dropdown` (componente `/components/dropdown`) a la derecha. El componente se importa tal cual — `dropdown.css` y `dropdown.js` sin overrides — sobre fondo `#101010` (mismo bg que espera el componente por diseño).
+
+### `.section--conversation-engine`
+Modifier de `.section`. Fondo `--color-black` (#101010).
+- `padding-top: 8.21em` (115px @ 14px base)
+- `padding-bottom: 5.71em` (80px @ 14px base)
+
+### `.conversation-engine-container`
+Modifier de `.container`.
+- `display: grid; grid-template-columns: 0.45fr 1fr`
+- `gap: 8.21em`
+- `align-items: start`
+- Mobile: `grid-template-columns: 1fr`, `gap: 4.29em`
+
+### `.conversation-engine-container h2`
+- Lora, weight 500, `font-style: normal`, `color: var(--color-white)` (mismo patrón que el resto de h2 sobre fondo oscuro)
+
+### `.conversation-engine-dropdowns`
+Wrapper de los 3 dropdowns.
+- `display: flex; flex-direction: column; gap: 0` — el propio componente ya trae `border-top` y padding vertical en `.dropdown-toggle`, así que el gap entre items es 0
+
+### `.dropdown-cta`
+Clase auxiliar (encima de `.btn.btn-purple`) usada solo en el primer dropdown ("The EdTech Mentor") para separar el botón del párrafo.
+- `margin-top: 0.5em`
+
+### Primer dropdown abierto por defecto
+El dropdown "The EdTech Mentor" arranca con la clase `.is-open` en el HTML y `style="height: auto;"` inline en `.dropdown-content`, para que se muestre expandido al cargar la página (el componente en sí solo anima la altura vía JS al hacer click, no soporta un estado inicial abierto out-of-the-box).
+
+### Contenido placeholder
+Los textos de "Customer Spotlights" y "Community-Driven Content" son placeholder (no estaban visibles en el diseño de referencia, que los mostraba cerrados) — ajustar cuando el copy definitivo esté listo.
+
+---
+
 ## Navbar
 
 Variante `nav--white`, igual que el resto de páginas del sitio. Sin overrides — usa `/components/navbar/navbar.css` y `/components/navbar/navbar.js` tal cual.

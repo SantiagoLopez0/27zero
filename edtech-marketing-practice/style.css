@@ -338,6 +338,37 @@ h6 {
   color: var(--color-white);
 }
 
+/* ===== Conversation Engine ===== */
+.section--conversation-engine {
+  background-color: var(--color-black);
+  padding-top: 8.21em;   /* 115px @ 14px base */
+  padding-bottom: 5.71em; /* 80px @ 14px base */
+}
+
+.conversation-engine-container {
+  display: grid;
+  grid-template-columns: 0.45fr 1fr;
+  gap: 8.21em;
+  align-items: start;
+}
+
+.conversation-engine-container h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--color-white);
+}
+
+.conversation-engine-dropdowns {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dropdown-cta {
+  margin-top: 0.5em;
+}
+
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
   body { font-size: 9px; }
@@ -367,4 +398,10 @@ h6 {
   /* Brand Logos */
   .brand-logos-container h2 { font-size: 24px; max-width: 100%; }
   .brand-logos-grid { grid-template-columns: 1fr; }
+
+  /* Conversation Engine */
+  .conversation-engine-container {
+    grid-template-columns: 1fr;
+    gap: 4.29em;
+  }
 }
