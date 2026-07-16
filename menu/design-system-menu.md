@@ -36,6 +36,27 @@ Cada link de la lista:
 
 ---
 
+## Sección Intro (overview + aviso + botón repo)
+
+Bloque antes de la lista de páginas, con contexto para quien vea el proyecto por primera vez.
+
+### `.site-menu-intro`
+Wrapper en columna. `border-bottom` sutil en `--color-gray` para separarlo visualmente de la lista de páginas.
+
+### `.site-menu-overview`
+Párrafos de overview del proyecto. `font-size: 1.29em` (18px) desktop / `13px` mobile. `max-width: 42em` para no correr edge-to-edge.
+
+### `.site-menu-warning`
+Caja de aviso sobre los links placeholder (navbar/footer no navegables). Fondo `--color-gray`, borde izquierdo de acento en `--color-indigo`.
+
+### `.site-menu-warning-label`
+Eyebrow del aviso ("Aviso"). Uppercase, `--color-indigo`, `0.86em` (12px) desktop / `12px` mobile.
+
+### `.btn-menu-repo`
+Botón "Ver repositorio" — pill shape, fondo `--color-indigo`, texto blanco, tipografía Lora (mismo patrón que `.btn` global). Hover: fondo negro.
+
+---
+
 ## Páginas listadas
 
 | Página | Ruta |
