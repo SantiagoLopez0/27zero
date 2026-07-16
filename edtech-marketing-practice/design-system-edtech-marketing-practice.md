@@ -100,6 +100,43 @@ Separador entre textos.
 
 ---
 
+## Sección Brand Logos
+
+Grid de 3 columnas (1 en mobile) con logo + texto por celda, sobre fondo indigo. Usa `/assets/placeholder.png` como logo temporal en todas las celdas.
+
+### `.section--brand-logos`
+Modifier de `.section`. Fondo `--color-indigo`.
+- `padding-top: 8.57em` (120px @ 14px base)
+- `padding-bottom: 8.57em` (120px @ 14px base)
+
+### `.brand-logos-container`
+Modifier de `.container`. `gap: 5.71em` (80px @ 14px base) entre el `h2` y `.brand-logos-grid`.
+
+### `.brand-logos-container h2`
+- Lora, weight 500, `font-style: normal`, `color: var(--color-white)` (mismo patrón que `.section--practices h2`)
+- Mobile: `24px`
+
+### `.brand-logos-grid`
+- `display: grid; grid-template-columns: repeat(3, 1fr)`
+- `gap: 5.71em` (80px @ 14px base)
+- Mobile: `grid-template-columns: 1fr` (1 columna)
+
+### `.brand-logos-item`
+Celda individual (logo + texto).
+- `display: flex; flex-direction: column; gap: 2.14em` (30px @ 14px base)
+
+### `.brand-logos-logo`
+Imagen del logo (placeholder por ahora).
+- `height: 2.29em` (32px @ 14px base), `width: auto`, `object-fit: contain`
+
+### `.brand-logos-item .text-body--sm`
+- `color: rgba(255, 255, 255, 0.85)` — mismo patrón que `.practices-intro .text-body--sm` sobre fondo indigo
+
+### Nota sobre placeholder
+`/assets/placeholder.png` se usa como logo temporal en las 4 celdas. Reemplazar por el logo real de cada marca (Busuu, D2L, Anthology, Instructure) cuando estén disponibles los assets definitivos.
+
+---
+
 ## Navbar
 
 Variante `nav--white`, igual que el resto de páginas del sitio. Sin overrides — usa `/components/navbar/navbar.css` y `/components/navbar/navbar.js` tal cual.
