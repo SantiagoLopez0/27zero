@@ -8,6 +8,8 @@ Clases específicas de la página `/about`. Complementan el design system global
 
 `.text-body` corregido a `font-weight: 400` (desktop y mobile), separado de `.text-link` (`font-weight: 500`), según `/design-system.md`.
 
+`h2` siempre en Lora (`font-family: 'Lora', serif; font-weight: 500; font-style: normal`), no Inter.
+
 ---
 
 ## Componentes globales usados
