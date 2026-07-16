@@ -175,6 +175,50 @@ Los textos de "Customer Spotlights" y "Community-Driven Content" son placeholder
 
 ---
 
+## Sección Menu
+
+Duplicada 1:1 desde `/edtech-marketing` (`.section--menu`) — mismo markup, mismos estilos (desktop y mobile), mismo copy de `.menu-intro`. Único cambio: **solo se incluyó el primer `.menu-block`** ("UX/UI & Web Design", 3 `service-card`) de los 8 que tiene la página original — el resto se omitió a propósito. También **`padding-top: 0`** en `.section--menu` (en `/edtech-marketing` es `7.14em`/100px).
+
+Usa el componente `service-card` (`/components/service-card`) tal cual, sin overrides — solo el wrapper `.menu-block-grid .service-card` fuerza `width: 100%; aspect-ratio: 1/1` para que la card ocupe la celda del grid en vez de su tamaño fijo default (19em × 19em).
+
+### `.section--menu`
+Modifier de `.section`. Fondo `--color-black`.
+- `padding-top: 0`
+- `padding-bottom: 10.71em` (150px @ 14px base)
+
+### `.menu-container`
+Modifier de `.container`. Mismo grid 2 columnas que `.conversation-engine-container` (`0.45fr 1fr`, `gap: 8.21em`, `align-items: start`). Mobile: `grid-template-columns: 1fr`, `gap: 4.29em`.
+
+### `.menu-intro`
+Wrapper de título y subtítulo, a la izquierda.
+- `display: flex; flex-direction: column; gap: 2.5em` (35px @ 14px base)
+
+### `.menu-intro h2`
+- Lora, weight 500, `font-style: normal`, `font-size: 2.57em` (36px), `letter-spacing: -0.36px`, `color: var(--color-white)`. Mobile: `28px`
+
+### `.menu-intro .text-body`
+- `color: rgba(255, 255, 255, 0.85)`
+
+### `.menu-blocks`
+Wrapper de los `.menu-block` (en esta página, solo 1).
+- `display: flex; flex-direction: column; gap: 3.93em` (55px @ 14px base)
+
+### `.menu-block`
+- `display: flex; flex-direction: column; gap: 3em` (42px @ 14px base) entre el título del bloque y el grid de cards
+
+### `.menu-block-title`
+- Lora, weight 500, `font-style: normal`, `font-size: 1.71em` (24px), `color: var(--color-white)`. Mobile: `21px`
+
+### `.menu-block-grid`
+- Desktop: `display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.07em` (15px)
+- Mobile: se convierte en carrusel horizontal (`display: flex`, `overflow-x: auto`, `scroll-snap-type: x mandatory`, scrollbar oculta)
+
+### `.menu-block-grid .service-card`
+- Desktop: `width: 100%; height: auto; aspect-ratio: 1/1` (la card se estira a la celda del grid en vez de su 19em × 19em fijo)
+- Mobile: `flex: 0 0 60%; width: 60%; scroll-snap-align: start` (cada card ocupa 60% del viewport en el carrusel)
+
+---
+
 ## Navbar
 
 Variante `nav--white`, igual que el resto de páginas del sitio. Sin overrides — usa `/components/navbar/navbar.css` y `/components/navbar/navbar.js` tal cual.
