@@ -113,7 +113,15 @@ h6 {
   letter-spacing: 0;
 }
 
-.text-body, .text-link {
+.text-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.29em;       /* 18px */
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.text-link {
   font-family: 'Inter', sans-serif;
   font-size: 1.29em;       /* 18px */
   line-height: 1.6;
@@ -188,7 +196,14 @@ h6 {
     letter-spacing: 0;
   }
 
-  .text-body, .text-link, .text-body--sm, .text-button {
+  .text-body {
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .text-link, .text-body--sm, .text-button {
     font-size: 13px;
     line-height: 1.5;
     font-weight: 500;
