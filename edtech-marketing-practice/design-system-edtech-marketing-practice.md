@@ -16,8 +16,8 @@ Sección duplicada desde `/edtech-marketing` (`.section--hero-marketing`) — mi
 Modifier de `.section`. Hero principal de la página.
 - `position: relative` — necesario para posicionar el bg absoluto
 - `margin-top: 10em`
-- `padding-top: 4.29em` (60px @ 14px base)
-- `padding-bottom: 8.57em` (120px @ 14px base)
+- `padding-top: 6.86em` (96px @ 14px base)
+- `padding-bottom: 8.93em` (125px @ 14px base)
 - `overflow: hidden`
 - Mobile: `margin-top: 10.67em` (96px @ 9px base), `padding-top: 13.89em` (125px @ 9px base), `padding-bottom: 19.44em` (175px @ 9px base)
 

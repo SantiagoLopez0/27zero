@@ -176,8 +176,8 @@ h6 {
 .section--hero-marketing {
   position: relative;
   margin-top: 10em;
-  padding-top: 4.29em;   /* 60px @ 14px base */
-  padding-bottom: 8.57em; /* 120px @ 14px base */
+  padding-top: 6.86em;   /* 96px @ 14px base */
+  padding-bottom: 8.93em; /* 125px @ 14px base */
   overflow: hidden;
 }
 
