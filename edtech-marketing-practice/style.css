@@ -250,7 +250,6 @@ h6 {
   flex-direction: column;
   align-items: center;
   gap: 1.71em; /* 24px @ 14px base */
-  max-width: 58em;
   text-align: center;
 }
 
@@ -258,6 +257,11 @@ h6 {
   font-family: 'Lora', serif;
   font-weight: 500;
   font-style: normal;
+  max-width: 55%;
+}
+
+.credibility-intro p {
+  max-width: 80%;
 }
 
 .credibility-list {
@@ -266,6 +270,7 @@ h6 {
   justify-content: center;
   align-items: center;
   gap: 1.07em; /* 15px @ 14px base */
+  max-width: 80%;
 }
 
 .credibility-item {
@@ -307,7 +312,8 @@ h6 {
   .btn { font-size: 13px; }
 
   /* Credibility */
-  .credibility-intro h2 { font-size: 24px; }
-  .credibility-intro { max-width: 100%; }
+  .credibility-intro h2 { font-size: 24px; max-width: 100%; }
+  .credibility-intro p { max-width: 100%; }
+  .credibility-list { max-width: 100%; }
   .credibility-item { font-size: 15px; }
 }
