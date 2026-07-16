@@ -82,7 +82,7 @@ h6 {
   font-family: 'Inter', sans-serif;
   font-size: 1.29em;
   line-height: 1.6;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0;
 }
 
@@ -330,7 +330,6 @@ h6 {
   display: grid;
   grid-template-columns: 2fr 1.5fr;
   gap: 3.21em; /* 45px @ 14px base */
-  align-items: center;
 }
 
 .proof-point-media {
@@ -356,19 +355,21 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 1.71em; /* 24px @ 14px base */
+  height: 100%;
+  justify-content: end;
 }
 
 .proof-point-title {
   font-family: 'Lora', serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 1.71em; /* 24px @ 14px base */
-  line-height: 1.4;
-  letter-spacing: 0;
+  font-size: 2.57em; /* 36px @ 14px base */
+  line-height: 1.25;
+  letter-spacing: -0.36px; /* -1% of 36px */
   color: var(--color-white);
 }
 
-.proof-point-text .text-body--sm {
+.proof-point-text .text-body {
   color: var(--color-white);
 }
 
@@ -441,8 +442,7 @@ h6 {
     gap: 5em; /* 45px @ 9px base */
   }
   .proof-point-media { aspect-ratio: 16 / 9; }
-  .proof-point-title { font-size: 21px; }
-  .proof-point-text .text-body--sm { font-size: 13px; }
+  .proof-point-title { font-size: 24px; }
 
   /* Closing CTA */
   .section--closing-cta {

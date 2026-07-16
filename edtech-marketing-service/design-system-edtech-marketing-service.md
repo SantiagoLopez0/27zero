@@ -149,7 +149,7 @@ Modifier de `.section`. Fondo `--color-indigo`.
 Modifier de `.container`.
 - `display: grid; grid-template-columns: 2fr 1.5fr` — el bloque de media es más ancho que el de texto
 - `gap: 3.21em` (45px @ 14px base)
-- `align-items: center`
+- Sin `align-items` (queda en `stretch`, el default) — necesario para que `.proof-point-text` con `height: 100%` tome la altura completa de la fila del grid
 - Mobile: `grid-template-columns: 1fr`, `gap: 5em` (45px @ 9px base)
 
 ### `.proof-point-media`
@@ -162,13 +162,21 @@ Placeholder del bloque de media (a reemplazar por imagen/video real).
 ### `.proof-point-text`
 Wrapper del título y párrafo.
 - `display: flex; flex-direction: column; gap: 1.71em` (24px @ 14px base)
+- `height: 100%; justify-content: end` — como `.proof-point-container` no define `align-items` (queda en `stretch`), este item toma la altura completa de la fila del grid y el contenido queda anclado abajo
 
 ### `.proof-point-title`
-- Lora, weight 500, `font-style: normal`, `font-size: 1.71em` (24px), `color: var(--color-white)` (mismo patrón que `.menu-block-title` en `/edtech-marketing`)
-- Mobile: `21px`
+- Lora, weight 500, `font-style: normal`, `font-size: 2.57em` (36px @ 14px base), `line-height: 1.25`, `letter-spacing: -0.36px` (-1%), `color: var(--color-white)`
+- Mobile: `24px` fijo
 
-### `.proof-point-text .text-body--sm`
+### `.proof-point-text .text-body`
 - `color: var(--color-white)`
+- Usa `.text-body` (no `.text-body--sm`) — ver nota global sobre `.text-body` más abajo.
+
+---
+
+## Nota global: `.text-body` font-weight
+
+Se cambió `.text-body` (y `.text-link`, que comparte regla) de `font-weight: 500` a `font-weight: 400` — aplica a **todos** los usos de `.text-body` en la página (hero y proof point). `.text-body--sm` no se tocó, ya tenía `font-weight: 400`.
 
 ---
 
