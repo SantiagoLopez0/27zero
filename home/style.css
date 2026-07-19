@@ -62,7 +62,7 @@ h4 {
   letter-spacing: -0.42px;
 }
 
-.text-body, a, .text-link {
+.text-body, .text-link {
   font-family: 'Inter', sans-serif;
   font-size: 1.29em;
   line-height: 1.6;
@@ -603,6 +603,6 @@ h4 {
   .section--hero-home h1 { font-size: 32px; }
   .intro-home-text h2:not(.slider-title) { font-size: 24px; }
   .section--mentor-home h2 { font-size: 24px; }
-  .text-body, a, .text-link, .text-body--sm { font-size: 13px !important; }
+  .text-body, .text-link, .text-body--sm { font-size: 13px !important; }
   .btn { font-size: 13px !important; }
 }
